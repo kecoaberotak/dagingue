@@ -47,13 +47,61 @@ table {
 	border-spacing: 0;
 }
 
+/* ================ Style ==================- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+html {
+  background: #ddd;
+  font-family: 'Montserrat', sans-serif;
+}
 
 
-/* ================ Style ================== */
-.container-header {
+
+/* ================ Container ================== */
+.container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.header {
   width: 1025px;
   height: 379px;
-  background-image: url(image/hero-image.jpg);
+  background: url("image/hero-image.jpg");
   background-position: center;
-  margin: 20px auto;
+  margin-top: 30px;
+  display: grid;
+  grid-template-areas: 
+  "logo logo"
+  "navbar socmed";
+  grid-template-columns: 2fr 1fr;
+  justify-items: center;
+}
+
+.logo {
+  width: 282.72px;
+  height: 233px;
+  grid-area: logo;
+  margin-top: 50px;
+}
+
+.navbar {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 22px;
+  grid-area: navbar;
+  border: 5px solid yellow;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #FFFBFD;
+  font-weight: 700;
+}
+
+.socmed {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 22px;
+  grid-area: socmed;
 }
