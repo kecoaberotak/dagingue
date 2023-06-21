@@ -85,6 +85,8 @@ html {
   margin-top: 50px;
 }
 
+
+/* ================ Header ================== */
 .header {
   grid-area: header;
   background-image: url(image/hero-image.jpg);
@@ -113,6 +115,10 @@ html {
   text-decoration: none;
   color: var(--font-putih);
   font-weight: var(--bold);
+}
+
+.navbar a:hover {
+  border-bottom: 3px solid var(--font-merah);
 }
 
 .socmed {
