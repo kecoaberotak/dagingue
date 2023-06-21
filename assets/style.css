@@ -69,6 +69,7 @@ html {
   background: #ddd;
   font-family: 'Montserrat', sans-serif;
   font-weight: var(--regular);
+  scroll-behavior: smooth;
 }
 
 body {
