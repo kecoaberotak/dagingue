@@ -75,57 +75,51 @@ html {
 /* ================ Container ================== */
 .container {
   display: grid;
-  justify-content: center;
-  align-content: center;
-}
-
-.header {
-  width: 1025px;
-  height: 379px;
-  background: url("image/hero-image.jpg");
-  background-position: center;
-  margin-top: 30px;
-  display: grid;
   grid-template-areas: 
-  "logo"
-  "navbar";
-  grid-template-rows: 1fr 1fr 0.2fr;
-  justify-items: center;
-}
-
-.logo {
-  width: 282.72px;
-  height: 233px;
-  grid-area: logo;
+  "header"
+  "about"
+  "produk-potong"
+  "produk-bumbu"
+  "footer";
+  justify-content: center;
   margin-top: 50px;
 }
 
-.navbar-socmed {
-  grid-area: navbar;
+.header {
+  grid-area: header;
+  background-image: url(image/hero-image.jpg);
+  width: 1025px;
+  height: 379px;
+  background-position: center;
   display: grid;
-  grid-auto-flow: column;
-  border: 5px solid salmon;
-  grid-template-columns: 2fr 1fr;
-  grid-auto-flow: column;
+  justify-content: center;
 }
 
-.navbar {
+.logo {
+  margin-top: 50px;
+  display: grid;
+  justify-content: center;
+}
+
+.navbar{
   display: grid;
   grid-auto-flow: column;
+  justify-content: center;
   gap: 22px;
-  border: 5px solid yellow;
+  margin-top: 50px;
 }
 
 .navbar a {
   text-decoration: none;
   color: var(--font-putih);
-  font-weight: 700;
+  font-weight: var(--bold);
 }
 
 .socmed {
   display: grid;
   grid-auto-flow: column;
+  justify-content: center;
   gap: 22px;
-  grid-area: socmed;
-  border: 5px solid purple;
+  margin-left: 850px;
+  margin-top: -20px;
 }
