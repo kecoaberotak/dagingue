@@ -170,6 +170,9 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  left: 50px;
+  top: -50px;
 }
 
 .foto-1 {
@@ -206,8 +209,8 @@ h3 {
 }
 
 .article-about li::before {
-  content: "\25CB";
+  content: "\25CB"; /*unicode disc "\25CB"*/
   color: var(--font-merah);
 }
 
-/*unicode disc "\25CB"*/
+/* ================ Product - Potongan Daging ================== */
