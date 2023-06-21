@@ -102,11 +102,11 @@ h3 {
   grid-template-areas: 
   "header"
   "about"
-  "produk-potong"
-  "produk-bumbu"
+  "produk"
   "footer";
   justify-content: center;
   margin-top: 50px;
+  gap: 50px;
 }
 
 
@@ -157,7 +157,6 @@ h3 {
 
 /* ================ About ================== */
 .about {
-  margin-top: 50px;
   grid-area: about;
   display: grid;
   grid-template-areas: 
@@ -214,4 +213,78 @@ h3 {
   color: var(--font-merah);
 }
 
-/* ================ Product - Potongan Daging ================== */
+/* ================ Product ================== */
+.product {
+  grid-area: produk;
+  display: grid;
+}
+
+.product-potong {
+  height: 379px;
+  width: 1025px;
+  background: url(image/background.png);
+  display: grid;
+  justify-content: center;
+}
+
+.title-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.title-section p {
+  color: var(--font-black);
+  font-size: 32px;
+  font-weight: var(--bold);
+}
+
+.title-section h3 {
+  color: var(--font-merah);
+}
+
+.cards-product {
+  display: flex;
+  width: 644px;
+  height: 243px;
+  gap: 22px;
+}
+.card {
+  width: 311px;
+  height: 243px;
+  background: var(--font-putih);
+  border: 1px solid var(--font-putih);
+  border-radius: 15px;
+  display: grid;
+}
+
+.card-product {
+  width: 274px;
+  height: 136px;
+  border: 1px solid var(--font-putih);
+  border-radius: 15px;
+  justify-self: center;
+  align-self: center;
+}
+
+.card-product-info {
+  margin-left: 1rem;
+}
+
+.card-product-info p:first-child {
+  font-size: 24px;
+  font-weight: var(--medium);
+}
+
+.potong-1 {
+  background: url(image/product-3.jpg);
+  background-position: center;
+  background-size: 308px;
+}
+
+.potong-2 {
+  background: url(image/product-1.jpg);
+  background-position: center;
+  background-size: 308px;
+}
