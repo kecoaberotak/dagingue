@@ -381,21 +381,25 @@ h3 {
 /* ================ Footer - Contact ================== */
 .footer-contact {
   display: grid;
-  gap: 200px;
+  gap: 50px;
   grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
 .contact-info {
   display: grid;
   gap: 50px;
+  justify-content: center;
+  align-content: center;
 }
 
 .contact-info-main {
   color: var(--font-putih);
   display: grid;
   gap: 8px;
+  justify-items: start;
+  align-items: center;
 }
 
 .contact-info-main p:last-child {
@@ -404,4 +408,17 @@ h3 {
 
 .contact-info-main a {
   color: var(--font-putih);
+}
+
+.contact-info-socmed {
+  display: flex;
+  gap: 22px;
+  justify-content: start;
+  align-items: center;
+}
+
+.contact-logo {
+  display: grid;
+  justify-items: center;
+  align-items: center;
 }
