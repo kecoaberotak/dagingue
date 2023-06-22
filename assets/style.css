@@ -216,8 +216,11 @@ h3 {
 .product {
   grid-area: produk;
   display: grid;
+  gap: 50px;
 }
 
+
+/* ================ Product - Potong ================== */
 .product-potong {
   height: 379px;
   width: 1025px;
@@ -290,4 +293,17 @@ h3 {
   background: url(image/product-1.jpg);
   background-position: center;
   background-size: 308px;
+}
+
+
+/* ================ Product - Bumbu ================== */
+.product-bumbu {
+  display: grid;
+  gap: 50px;
+}
+
+.gallery-info-image img{
+  width: 276px;
+  height: 276px;
+  border: 3px solid var(--font-merah);
 }
