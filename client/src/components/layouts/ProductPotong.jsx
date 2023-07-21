@@ -1,4 +1,4 @@
-import Title from "../fragments/Title";
+import Title from "../elements/Title";
 import Card from "../fragments/Card";
 
 const ProductPotong = () => {
