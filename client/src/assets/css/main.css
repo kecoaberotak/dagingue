@@ -269,6 +269,7 @@ h3 {
   border-radius: 15px;
   justify-self: center;
   align-self: center;
+  overflow: hidden;
 }
 
 .card-product-info {
@@ -284,16 +285,18 @@ h3 {
   font-weight: var(--medium);
 }
 
-.potong-1 {
-  background: url(image/product-3.jpg);
-  background-position: center;
-  background-size: 308px;
+.potong-1{
+  position: relative;
+  top: -86px;
+  left: -18px;
+  width: 308px;
 }
 
 .potong-2 {
-  background: url(image/product-1.jpg);
-  background-position: center;
-  background-size: 308px;
+  position: relative;
+  top: -86px;
+  left: -18px;
+  width: 308px;
 }
 
 
