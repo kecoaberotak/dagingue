@@ -339,10 +339,33 @@ h3 {
   grid-auto-rows: 1fr;
 }
 
+.gallery-item-image{
+  position: relative;
+}
+
+.cover{
+  position: absolute;
+  top: 0;
+  height: 133px;
+  width: 133px;
+  background-color: var(--font-merah);
+  opacity: 0;
+}
+
+.cover:hover {
+  opacity: 50%;
+}
+
+.selected {
+  opacity: 50%;
+}
+
 .gallery-item-image img{
   width: 132px;
   height: 132px;
+  cursor: pointer;
   border: 3px solid var(--font-merah);
+  box-sizing: border-box;
 }
 
 

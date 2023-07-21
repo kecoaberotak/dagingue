@@ -1,7 +1,10 @@
 const GalleryItemsImage = (props) => {
-  const {image} = props;
+  const {image, classSelect} = props;
   return (
-    <div className="gallery-item-image"><img src={image} alt="404" /></div>
+    <div className="gallery-item-image">
+      <img src={image} alt="404" />
+      <div className={`cover ${classSelect}`}></div>
+    </div>
   );
 };
 
