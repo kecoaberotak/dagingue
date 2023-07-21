@@ -1,7 +1,7 @@
 const Header = () => {
   return(
     <header className="header" id="home">
-      <section className="logo"><img src="./images/Logo.png" alt="Logo Dagingue" /></section>
+      <div className="logo"><img src="./images/Logo.png" alt="Logo Dagingue" /></div>
         <ul className="navbar">
           <li><a href="#home">Beranda</a></li>
           <li><a href="#about">Tentang Kami</a></li>
