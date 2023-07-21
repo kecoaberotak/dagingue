@@ -357,7 +357,7 @@ h3 {
 .footer-banner {
   width: 1025px;
   height: 100px;
-  background-image: url(image/bg-banner-footer.jpg);
+  background-image: url(./images/bg-banner-footer.jpg);
   display: flex;
   align-items: center;
 }
@@ -378,7 +378,7 @@ h3 {
 .footer-contact {
   width: 1025px;
   height: 378px;
-  background-image: url(image/bg-footer.jpg);
+  background-image: url(./images/bg-footer.jpg);
 }
 
 /* ================ Footer - Contact ================== */
