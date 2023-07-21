@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import ImageSelectedContexProvider from './contexts/ImageSelected'
 
 // CSS
 import './assets/css/main.css'
@@ -9,6 +10,8 @@ import LandingPage from './pages/LandingPage'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <LandingPage></LandingPage>
+    <ImageSelectedContexProvider>
+      <LandingPage></LandingPage>
+    </ImageSelectedContexProvider>
   </React.StrictMode>,
 )
