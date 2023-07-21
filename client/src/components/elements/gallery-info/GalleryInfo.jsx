@@ -1,10 +1,12 @@
 import GalleryInfoImage from "./GalleryInfoImage";
 import GalleryInfoBumbu from "./GalleryInfoBumbu";
 
-const GalleryInfo = () => {
+const GalleryInfo = (props) => {
+  const {toChild} = props;
+
   return(
     <section className="gallery-info">
-      <GalleryInfoImage image="./images/product-chop-1.jpg" />
+      <GalleryInfoImage image={toChild ? toChild : './images/product-chop-1.jpg'} />
       <GalleryInfoBumbu title="Teriyaki Garlic">
         <p>
           Bumbu teriyaki garlic memiliki rasa manis<br/>
