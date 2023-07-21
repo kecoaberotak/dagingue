@@ -1,10 +1,9 @@
+import Title from "../fragments/Title";
+
 const ProductBumbu = () => {
   return(
     <div className="product-bumbu">
-      <section className="title-section bumbu">
-        <h3>Produk</h3>
-        <p>Varian Bumbu</p>
-      </section>
+      <Title classname='bumbu' title='Produk' subTitle='Varian Bumbu' />
       <div className="gallery">
         <section className="gallery-info">
           <div className="gallery-info-image"><img src="./images/product-chop-1.jpg" alt="Foto bumbu yang dipilih" /></div>
