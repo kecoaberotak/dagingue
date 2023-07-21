@@ -1,9 +1,9 @@
 const GalleryItemsImage = (props) => {
-  const {image, classSelect} = props;
+  const {image} = props;
   return (
-    <div className="gallery-item-image">
+    <div className="gallery-item-image" onClick={(e) => console.log(e.target)}>
       <img src={image} alt="404" />
-      <div className={`cover ${classSelect}`} data-image={image}></div>
+      <div className='cover' data-image={image}></div>
     </div>
   );
 };
