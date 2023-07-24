@@ -2,6 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import ImageSelectedContexProvider from './contexts/ImageSelected'
 
+// css
+import './assets/css/main.css'
+
 // Pages
 import LandingPage from './pages/LandingPage'
 import ErrorPage from './pages/errorPage'

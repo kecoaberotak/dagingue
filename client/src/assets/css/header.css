@@ -2,18 +2,22 @@
 .header {
   grid-area: header;
   background-image: url(./images/hero-image.jpg);
-  width: 1025px;
+  width: 100%;
   height: 379px;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   display: grid;
   justify-content: center;
 }
 
 .logo {
+  width: 100%;
   margin-top: 50px;
   display: grid;
   justify-content: center;
 }
+
 
 .navbar{
   display: grid;

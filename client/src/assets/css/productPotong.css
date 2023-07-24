@@ -1,8 +1,11 @@
 /* ================ Product - Potong ================== */
 .product-potong {
   height: 379px;
-  width: 1025px;
+  width: 100%;
   background: url(./images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: grid;
   justify-content: center;
 }

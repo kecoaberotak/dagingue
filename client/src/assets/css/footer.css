@@ -1,15 +1,17 @@
 /* ================ Footer ================== */
 .footer {
   display: grid;
-  justify-content: center;
+  width: 100%;
   margin-top: 100px;
 }
 
 /* ================ Footer - Banner ================== */
 .footer-banner {
-  width: 1025px;
+  width: 100%;
   height: 100px;
   background-image: url(./images/bg-banner-footer.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   align-items: center;
 }
@@ -27,14 +29,12 @@
   font-weight: var(--bold);
 }
 
-.footer-contact {
-  width: 1025px;
-  height: 378px;
-  background-image: url(./images/bg-footer.jpg);
-}
 
 /* ================ Footer - Contact ================== */
 .footer-contact {
+  width: 100%;
+  height: 378px;
+  background-image: url(./images/bg-footer.jpg);
   display: grid;
   gap: 50px;
   grid-template-columns: repeat(2, 1fr);
