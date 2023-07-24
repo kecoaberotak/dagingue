@@ -4,7 +4,7 @@ import Products from "../components/layouts/Products";
 import Footer from "../components/layouts/Footer";
 
 // CSS
-import '../assets/css/landingPage.css'
+import '../assets/landing-page-css/landingPage.css'
 
 const LandingPage = () => {
   return (

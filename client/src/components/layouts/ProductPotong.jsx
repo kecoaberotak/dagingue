@@ -1,7 +1,7 @@
 import Title from "../elements/Title";
 import Card from "../fragments/Card";
 
-import '../../assets/css/productPotong.css'
+import '../../assets/landing-page-css/productPotong.css'
 
 const ProductPotong = () => {
   return(

@@ -1,7 +1,7 @@
 import Title from "../elements/Title";
 import Gallery from "../fragments/Gallery";
 
-import '../../assets/css/productBumbu.css'
+import '../../assets/landing-page-css/productBumbu.css'
 
 const ProductBumbu = () => {
   return(

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-import '../../assets/css/about.css'
+import '../../assets/landing-page-css/about.css'
 
 const About = () => {
   return (
