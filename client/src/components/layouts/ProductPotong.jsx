@@ -1,6 +1,8 @@
 import Title from "../elements/Title";
 import Card from "../fragments/Card";
 
+import '../../assets/css/productPotong.css'
+
 const ProductPotong = () => {
   return(
     <div className="product-potong">

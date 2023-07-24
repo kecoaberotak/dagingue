@@ -6,9 +6,6 @@ import ImageSelectedContexProvider from './contexts/ImageSelected'
 import LandingPage from './pages/LandingPage'
 import ErrorPage from './pages/errorPage'
 
-// CSS
-import './assets/css/main.css'
-
 // Router
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 const router = createBrowserRouter([

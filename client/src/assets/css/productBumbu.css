@@ -1,0 +1,67 @@
+/* ================ Product - Bumbu ================== */
+.product-bumbu {
+  display: grid;
+  justify-content: center;
+  gap: 50px;
+}
+
+.gallery {
+  display: grid;
+  gap: 25px;
+}
+
+.gallery-info {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 98px;
+}
+
+.gallery-info-image img{
+  width: 276px;
+  height: 276px;
+  border: 3px solid var(--font-merah);
+}
+
+.gallery-info-bumbu {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  line-height: 1.5;
+}
+
+.gallery-items {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(5,1fr);
+  grid-auto-rows: 1fr;
+}
+
+.gallery-item-image{
+  position: relative;
+}
+
+.cover{
+  position: absolute;
+  top: 0;
+  height: 133px;
+  width: 133px;
+  background-color: var(--font-merah);
+  opacity: 0;
+}
+
+.cover:hover {
+  opacity: 50%;
+}
+
+.selected {
+  opacity: 50%;
+}
+
+.gallery-item-image img{
+  width: 132px;
+  height: 132px;
+  cursor: pointer;
+  border: 3px solid var(--font-merah);
+  box-sizing: border-box;
+}

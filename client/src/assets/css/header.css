@@ -1,0 +1,44 @@
+/* ================ Header ================== */
+.header {
+  grid-area: header;
+  background-image: url(./images/hero-image.jpg);
+  width: 1025px;
+  height: 379px;
+  background-position: center;
+  display: grid;
+  justify-content: center;
+}
+
+.logo {
+  margin-top: 50px;
+  display: grid;
+  justify-content: center;
+}
+
+.navbar{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 50px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--font-putih);
+  font-weight: var(--bold);
+}
+
+.navbar a:hover {
+  border-bottom: 3px solid var(--font-merah);
+}
+
+.socmed {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 22px;
+  position: relative;
+  left: 420px;
+  top: -20px;
+}

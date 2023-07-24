@@ -3,6 +3,9 @@ import About from "../components/layouts/About";
 import Products from "../components/layouts/Products";
 import Footer from "../components/layouts/Footer";
 
+// CSS
+import '../assets/css/landingPage.css'
+
 const LandingPage = () => {
   return (
     <div className="container">

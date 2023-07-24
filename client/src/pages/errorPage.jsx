@@ -1,6 +1,8 @@
 import { Fragment } from "react";
 import { useRouteError } from "react-router-dom";
 
+import '../assets/css/errorPage.css'
+
 const ErrorPage = () => {
   const error = useRouteError();
   console.log(error.statusText || error.message);

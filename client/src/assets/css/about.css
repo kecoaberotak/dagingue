@@ -1,0 +1,57 @@
+/* ================ About ================== */
+.about {
+  grid-area: about;
+  display: grid;
+  grid-template-areas: 
+  "image article";
+  justify-content: center;
+  align-content: center;
+}
+
+.image-about {
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 50px;
+  top: -50px;
+}
+
+.foto-1 {
+  width: 282px;
+  border: 3px solid var(--font-merah);
+}
+
+.foto-2 {
+  width: 201px;
+  border: 3px solid var(--font-merah);
+  position: relative;
+  left: -110px;
+  top: 145px;
+}
+
+.article-about {
+  grid-area: article;
+  display: grid;
+  gap: 18px;
+  line-height: 1.5;
+}
+
+.article-about h3 {
+  color: var(--font-merah);
+}
+
+.article-about ul p {
+  margin-bottom: 10px;
+}
+
+.article-about li {
+  text-indent: 1rem;
+  list-style-type: none;
+}
+
+.article-about li::before {
+  content: "\25CB"; /*unicode disc "\25CB"*/
+  color: var(--font-merah);
+}

@@ -1,6 +1,8 @@
 import Logo from "../elements/Logo";
 import Socmed from "../fragments/Socmed";
 
+import '../../assets/css/header.css'
+
 const Header = () => {
   return(
     <header className="header" id="home">

@@ -1,0 +1,74 @@
+/* ================ Product - Potong ================== */
+.product-potong {
+  height: 379px;
+  width: 1025px;
+  background: url(./images/background.png);
+  display: grid;
+  justify-content: center;
+}
+
+.potong {
+  margin-top: 30px;
+}
+
+.title-section p {
+  color: var(--font-black);
+  font-size: 32px;
+  font-weight: var(--bold);
+}
+
+.title-section h3 {
+  color: var(--font-merah);
+}
+
+.cards-product {
+  display: flex;
+  width: 644px;
+  height: 243px;
+  gap: 22px;
+}
+.card {
+  width: 311px;
+  height: 243px;
+  background: var(--font-putih);
+  border: 1px solid var(--font-putih);
+  border-radius: 15px;
+  display: grid;
+}
+
+.card-product {
+  width: 274px;
+  height: 136px;
+  border: 1px solid var(--font-putih);
+  border-radius: 15px;
+  justify-self: center;
+  align-self: center;
+  overflow: hidden;
+}
+
+.card-product-info {
+  margin-left: 1rem;
+}
+
+.card-product-info p {
+  margin: 5px auto;
+}
+
+.card-product-info p:first-child {
+  font-size: 24px;
+  font-weight: var(--medium);
+}
+
+.potong-1{
+  position: relative;
+  top: -86px;
+  left: -18px;
+  width: 308px;
+}
+
+.potong-2 {
+  position: relative;
+  top: -86px;
+  left: -18px;
+  width: 308px;
+}
