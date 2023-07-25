@@ -1,0 +1,32 @@
+/*====== Admin Panel Navbar ======*/
+.content-nav ul{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 30px;
+  color: var(--font-black);
+  font-weight: var(--semiBold);
+}
+
+.content-nav ul li a{
+  text-decoration: none;
+  color: var(--font-black);
+}
+
+.content-nav ul li a:hover{
+  text-decoration: none;
+  color: var(--font-merah);
+}
+
+.content-nav ul li a:focus{
+  text-decoration: none;
+  color: var(--font-merah);
+}
+
+/*====== Admin Panel Content ======*/
+.admin-panel-content {
+  margin-top: 80px;
+  margin-left: 30px;
+}
