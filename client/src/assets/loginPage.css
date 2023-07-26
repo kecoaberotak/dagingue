@@ -1,0 +1,28 @@
+.form-login{
+  width: 400px;
+  margin: auto;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 35px;
+  border: 3px solid #666;
+  border-radius: 5px;
+}
+
+.form-login p {
+  font-size: 30px;
+  margin-bottom: 5px;
+  font-weight: var(--bold);
+}
+
+.form-login input{
+  display: block;
+  border: 2px solid #ddd;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.form-login Button {
+  width: 100%;
+}

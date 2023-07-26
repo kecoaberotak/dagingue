@@ -9,6 +9,7 @@ import './assets/main.css'
 import LandingPage from './pages/LandingPage'
 import ErrorPage from './pages/errorPage'
 import AdminPage from './pages/adminPage'
+import LoginPage from './pages/loginPage'
 
 // Router
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: '/admin',
     element: <AdminPage />,
+  },
+  {
+    path: '/login',
+    element: <LoginPage />,
   },
 ]);
 

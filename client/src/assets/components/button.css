@@ -2,7 +2,15 @@
   margin-right: 50px;
   background-color: black;
   color: white;
+  font-weight: var(--bold);
+  border: 1px solid black;
   border-radius: 5px;
-  width: 80px;
+  width: 100px;
   height: 30px;
+  cursor: pointer;
+}
+
+.button:hover {
+  border: 1px solid #666;
+  background-color: #666;
 }
