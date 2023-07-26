@@ -19,7 +19,7 @@
 }
 
 
-.navbar{
+.navbar-header{
   display: grid;
   grid-auto-flow: column;
   justify-content: center;
@@ -27,13 +27,13 @@
   margin-top: 50px;
 }
 
-.navbar a {
+.navbar-header a{
   text-decoration: none;
   color: var(--font-putih);
   font-weight: var(--bold);
 }
 
-.navbar a:hover {
+.navbar-header a:hover {
   border-bottom: 3px solid var(--font-merah);
 }
 
