@@ -1,22 +1,36 @@
 import Button from "../components/elements/button";
 import '../assets/loginPage.css'
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { login } from "../services/auth-service";
+import { getAdmin } from "../services/auth-service";
 
 const LoginPage = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [loginFailed, setLoginFailed] = useState('');
 
-  async function handleLogin(e){
+  function handleLogin(e){
     e.preventDefault();
-    await fetch('http://localhost:4000/login', {
-      method: 'POST',
-      body: JSON.stringify({username, password}),
-      headers: {'Content-Type': 'application/json'}
+
+    const data = {
+      username: e.target.username.value,
+      password: e.target.password.value,
+    };
+
+    login(data, (status, res) => {
+      if(status){
+        console.log(res.data.message);
+        console.log(res.data.admin);
+        // localStorage.setItem('username', res.data.username);
+        // window.location.href = '/products'
+      } else {
+        // setLoginFailed(res.response.data);
+        console.log(res.data.message);
+      }
     });
   }
 
+  // get data - coba doang
   useEffect(() => {
-    fetch('http://localhost:4000/getAdmin')
+    getAdmin(data => console.log(data));
   }, []);
 
   return(
@@ -24,17 +38,16 @@ const LoginPage = () => {
       <p>Login</p>
       <input 
         type="text" 
-        placeholder="Username" 
-        value={username} 
-        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Username"
+        name="username"
       />
       <input 
         type="password" 
-        placeholder="Password" 
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+        name="password"
       />
       <Button>Login</Button>
+      {loginFailed && <p className="text-red-500 mt-3 text-center">{loginFailed}</p>}
     </form>
   );
 };
