@@ -4,6 +4,7 @@ export const login = (data, callback) => {
   axios.post('http://localhost:4000/login', data).then(res => {
     callback(true, res);
   }).catch(err => {
+    console.log(data,err);
     callback(false, err);
   })
 };
