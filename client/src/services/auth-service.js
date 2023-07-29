@@ -1,14 +1,5 @@
 import axios from 'axios';
 
-// export const login = (data, callback) => {
-//   axios.post('http://localhost:4000/login', data).then(res => {
-//     callback(true, res);
-//   }).catch(err => {
-//     console.log(data,err);
-//     callback(false, err);
-//   })
-// };
-
 export const login = (data, callback) => {
   axios.post('http://localhost:4000/login', data, {withCredentials: true}).then(res => {
     callback(res.data.status, res);
@@ -17,11 +8,10 @@ export const login = (data, callback) => {
   });
 };
 
-
-export const getAdmin = (callback) => {
-  axios.get('http://localhost:4000/getAdmin').then(res => {
-    callback(res.data);
+export const getToken = (callback) => {
+  axios.get('http://localhost:4000/profile',{withCredentials: true}).then(res => {
+    callback(res);
   }).catch(err => {
-    console.log(err);
+    throw err;
   })
-};
+}
