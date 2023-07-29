@@ -26,3 +26,10 @@
 .form-login Button {
   width: 100%;
 }
+
+.login-failed{
+  text-align: center;
+  font-size: 18px;
+  font-weight: var(--bold);
+  color: var(--font-merah);
+}
