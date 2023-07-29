@@ -10,8 +10,16 @@ export const login = (data, callback) => {
 
 export const getToken = (callback) => {
   axios.get('http://localhost:4000/profile',{withCredentials: true}).then(res => {
-    callback(res);
+    callback(res.data);
   }).catch(err => {
     throw err;
   })
-}
+};
+
+export const logout = (callback) => {
+  axios.post('http://localhost:4000/logout', {withCredentials: true}).then(res => {
+    callback(res);
+  }).catch(err => {
+    throw err;
+  });
+};

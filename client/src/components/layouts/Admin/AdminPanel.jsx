@@ -12,7 +12,7 @@ const AdminPanel = () => {
   }
 
   useEffect(() => {
-    console.log(halaman)
+    
   }, [halaman]);
 
   return(

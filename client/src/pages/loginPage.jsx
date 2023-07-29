@@ -1,12 +1,14 @@
 import Button from "../components/elements/button";
 import '../assets/loginPage.css'
-import { useState} from "react";
+import { useContext, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../services/auth-service";
-// import axios from 'axios';
+import { getToken } from "../services/auth-service";
+import { AdminInfo } from "../contexts/AdminInfo";
 
 const LoginPage = () => {
   const [loginFailed, setLoginFailed] = useState('');
+  const {setAdminInfo} = useContext(AdminInfo);
   const navigate = useNavigate();
 
   function handleLogin(e){
@@ -17,8 +19,9 @@ const LoginPage = () => {
       password: e.target.password.value,
     };
 
-    login(data, (status, res) => {
+    login(data, async (status, res) => {
       if(status === true){
+        getToken(res => setAdminInfo(res))
         return navigate('/admin');
       } else {
         setLoginFailed(res.data.message);

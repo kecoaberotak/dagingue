@@ -1,19 +1,27 @@
 import '../../assets/components/navbar.css'
 import Button from "../elements/button";
-import { useEffect, useState} from "react";
-import {getToken} from '../../services/auth-service.js'
+import { useContext} from "react";
+import { logout } from '../../services/auth-service.js';
+import { useNavigate } from 'react-router-dom';
+import { AdminInfo } from '../../contexts/AdminInfo';
 
 const Navbar = () => {
-  const [username, setUsername] = useState('');
+  const navigate = useNavigate();
+  const {adminInfo, setAdminInfo} = useContext(AdminInfo);
 
-  useEffect(() => {
-    getToken((res) => setUsername(res.data.username));
-  }, []);
+  const handleLogout = () => {
+    logout(res => {
+      if(res.data.status) {
+        setAdminInfo('');
+      }
+    });
+    navigate('/login');
+  };
 
   return(
     <nav className="navbar">
-      <p>{username}</p>
-      <Button>Logout</Button>
+      <p>{adminInfo.username}</p>
+      <Button onClick={handleLogout}>Logout</Button>
     </nav>
   );
 };

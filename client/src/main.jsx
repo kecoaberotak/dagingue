@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import ImageSelectedContexProvider from './contexts/ImageSelected'
+import AdminInfoProvider from './contexts/AdminInfo'
 
 // css
 import './assets/main.css'
@@ -31,8 +32,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ImageSelectedContexProvider>
-      <RouterProvider router={router} />
-    </ImageSelectedContexProvider>
+    <AdminInfoProvider>
+      <ImageSelectedContexProvider>
+        <RouterProvider router={router} />
+      </ImageSelectedContexProvider>
+    </AdminInfoProvider>
   </React.StrictMode>,
 )

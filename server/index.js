@@ -28,7 +28,7 @@ mongoose.connect('mongodb+srv://dagingue:Dagingue123!@cluster0.01bn11g.mongodb.n
 //   };
 // });
 
-// Fungsi Login
+// Login
 app.post('/login', async (req, res) => {
   const {username, password} = req.body;
   const adminDoc =  await AdminModel.findOne({username});
@@ -59,6 +59,12 @@ app.get('/profile', (req, res) => {
     if(err) throw err;
     res.json(info);
   });
+});
+
+
+// Logout
+app.post('/logout', (req, res) => {
+  res.cookie('token', '').json({status : true ,message: 'logout success'});
 });
 
 app.listen(4000); 
