@@ -1,7 +1,7 @@
 import '../assets/admin-page-css/admin-page.css'
 import { Fragment } from 'react';
 import Navbar from '../components/fragments/Navbar';
-import AdminPanel from '../components/layouts/Admin/AdminPanel';
+import Dashboard from '../components/layouts/Admin/Dashboard';
 import PrivateRoute from '../routes/PrivateRoutes';
 
 const AdminPage = () => {
@@ -9,7 +9,7 @@ const AdminPage = () => {
     <Fragment>
       <Navbar/>
       <PrivateRoute>
-        <AdminPanel></AdminPanel>
+        <Dashboard></Dashboard>
       </PrivateRoute>
     </Fragment>
   );
