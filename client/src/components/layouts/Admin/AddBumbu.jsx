@@ -3,9 +3,12 @@ import Button from '../../elements/button';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { addBumbu } from '../../../services/admin-service';
+import { useNavigate } from 'react-router-dom';
 
 
 const AddBumbu = () => {
+  const navigate = useNavigate();
+
   const [title, setTitle] = useState('');
   const [file, setFile] = useState('');
   const [desc, setDesc] = useState();
@@ -34,7 +37,7 @@ const AddBumbu = () => {
     data.set('desc', desc);
     addBumbu(data, res => {
       if(res.statusText === 'OK'){
-        console.log(res.statusText);
+        navigate('/admin');
       }
     });
 

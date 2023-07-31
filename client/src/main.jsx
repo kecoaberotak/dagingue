@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import ImageSelectedContexProvider from './contexts/ImageSelected'
 import AdminInfoProvider from './contexts/AdminInfo'
+import LoginStatusProvider from './contexts/LoginStatus'
 
 // css
 import './assets/main.css'
@@ -32,10 +33,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AdminInfoProvider>
-      <ImageSelectedContexProvider>
-        <RouterProvider router={router} />
-      </ImageSelectedContexProvider>
-    </AdminInfoProvider>
+    <LoginStatusProvider>
+      <AdminInfoProvider>
+        <ImageSelectedContexProvider>
+          <RouterProvider router={router} />
+        </ImageSelectedContexProvider>
+      </AdminInfoProvider>
+    </LoginStatusProvider>
   </React.StrictMode>,
 )

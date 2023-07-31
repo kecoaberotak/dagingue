@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../services/auth-service";
 import { getToken } from "../services/auth-service";
 import { AdminInfo } from "../contexts/AdminInfo";
+import { LoginStatus } from "../contexts/LoginStatus";
 
 const LoginPage = () => {
   const [loginFailed, setLoginFailed] = useState('');
   const {adminInfo, setAdminInfo} = useContext(AdminInfo);
-  const [status, setStatus] = useState(false);
+  const {loginStatus, setLoginStatus} = useContext(LoginStatus);
   const navigate = useNavigate();
   const usernameFocus = useRef();
 
@@ -25,7 +26,7 @@ const LoginPage = () => {
       if(status === true){
         getToken(res => {
           setAdminInfo(res);
-          setStatus(true);
+          setLoginStatus(true);
         })
       } else {
         setLoginFailed(res.data.message);
@@ -34,11 +35,10 @@ const LoginPage = () => {
   }
 
   useEffect(() => {
-    if(adminInfo.username && status) {
-      setStatus(false);
+    if(adminInfo.username && loginStatus) {
       navigate('/admin');
     }
-  }, [adminInfo, status, navigate])
+  }, [adminInfo, loginStatus, navigate])
 
   useEffect(() => {
     usernameFocus.current.focus();
