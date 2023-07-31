@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Button from '../../elements/button';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import axios from 'axios';
+import { addBumbu } from '../../../services/admin-service';
 
 
 const AddBumbu = () => {
@@ -30,17 +30,15 @@ const AddBumbu = () => {
     e.preventDefault();
     const data = new FormData();
     data.set('title', title);
-    data.set('file', file[0]);
+    data.set('file', file[file.length - 1]);
     data.set('desc', desc);
+    addBumbu(data, res => {
+      if(res.statusText === 'OK'){
+        console.log(res.statusText);
+      }
+    });
 
-    axios.post('http://localhost:4000/addBumbu', data);
   };
-
-  useEffect(() => {
-    console.log(desc)
-    console.log(title)
-    console.log(file)
-  }, [desc, title, file]);
 
   return (
     <>

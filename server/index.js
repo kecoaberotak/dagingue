@@ -95,4 +95,4 @@ app.post('/addBumbu', upload.single('file'), async (req, res) => {
   res.send({message: 'upload success'});
 });
 
-app.listen(4000); 
+app.listen(4000);
