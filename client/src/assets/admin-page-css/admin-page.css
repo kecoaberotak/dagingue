@@ -44,3 +44,56 @@
 .form-content label{
   margin-top: 15px;
 }
+
+
+/* Table */
+.table tr, td, th{
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.table th{
+  font-weight: var(--bold);
+}
+
+.table td {
+  padding: 10px 15px;
+}
+
+.table-button {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 5px;
+  height: 100px;
+  box-sizing: border-box;
+  border: none;
+}
+
+.table-button Button {
+  margin: auto;
+}
+
+.table-button .button-edit {
+  background-color: rgb(57, 231, 57);
+  border: 1px solid rgb(57, 231, 57);
+}
+
+.table-button .button-edit:hover {
+  background-color: lightgreen;
+  border: 1px solid lightgreen;
+}
+
+.table-button .button-delete {
+  background-color: rgb(233, 66, 66);
+  border: 1px solid rgb(233, 66, 66);
+}
+
+.table-button .button-delete:hover {
+  background-color: lightcoral;
+  border: 1px solid lightcoral;
+}
+
+.button-add Button{
+  margin-bottom: 50px;
+}

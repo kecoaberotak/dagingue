@@ -7,3 +7,11 @@ export const addBumbu = (data, callback) => {
     throw err;
   })
 };
+
+export const getBumbu = (callback) => {
+  axios.get('http://localhost:4000/getBumbu').then(res => {
+    callback(res.data);
+  }).catch(err => {
+    throw err;
+  })
+};

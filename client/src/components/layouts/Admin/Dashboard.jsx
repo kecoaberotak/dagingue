@@ -1,15 +1,18 @@
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import ProductPotong from "./ProductPotong";
 import ProductBumbu from './ProductBumbu';
+import { DisplayStatus } from "../../../contexts/DisplayStatus";
 
 import '../../../assets/admin-page-css/admin-page.css'
 
 const AdminPanel = () => {
   const [halaman, setHalaman] = useState('');
+  const {setDisplayStatus} = useContext(DisplayStatus);
 
   const handleHalaman = e => {
     setHalaman(e.target.getAttribute('value'));
+    setDisplayStatus(false);
   }
 
   return(

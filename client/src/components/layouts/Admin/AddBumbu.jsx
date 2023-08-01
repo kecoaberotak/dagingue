@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Button from '../../elements/button';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { addBumbu } from '../../../services/admin-service';
-import { useNavigate } from 'react-router-dom';
+import { DisplayStatus } from '../../../contexts/DisplayStatus';
 
 
 const AddBumbu = () => {
-  const navigate = useNavigate();
+  const {setDisplayStatus} = useContext(DisplayStatus);
 
   const [title, setTitle] = useState('');
   const [file, setFile] = useState('');
@@ -37,7 +37,7 @@ const AddBumbu = () => {
     data.set('desc', desc);
     addBumbu(data, res => {
       if(res.statusText === 'OK'){
-        navigate('/admin');
+        setDisplayStatus(false);
       }
     });
 
@@ -45,6 +45,7 @@ const AddBumbu = () => {
 
   return (
     <>
+      <h1>Jenis Bumbu</h1>
       <form className="form-content" onSubmit={addNewBumbu}>
         <input 
           type="title" 

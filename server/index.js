@@ -21,18 +21,10 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors({credentials: true, origin: 'http://localhost:5173'}));
 app.use(cookie());
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 // Dagingue123!
 mongoose.connect('mongodb+srv://dagingue:Dagingue123!@cluster0.01bn11g.mongodb.net/dagingue?retryWrites=true&w=majority');
-
-// app.get('/getAdmin', async (req, res) => {
-//   try {
-//     const data = await AdminModel.find({});
-//     res.json(data);
-//   }catch (err) {
-//     throw err;
-//   };
-// });
 
 // Login
 app.post('/login', async (req, res) => {
@@ -77,22 +69,34 @@ app.post('/logout', (req, res) => {
 
 // addBumbu
 app.post('/addBumbu', upload.single('file'), async (req, res) => {
-  const {originalname, path} = req.file;
-  const parts = originalname.split('.');
-  const ext = parts[parts.length - 1];
-  const image = parts[0] + '.' + ext;
+  if(req){
+    const {originalname, path} = req.file;
+    const parts = originalname.split('.');
+    const ext = parts[parts.length - 1];
+    const image = parts[0] + '.' + ext;
+  
+    const newPath = path.slice(0, 8) + image;
+    fs.renameSync(path, newPath);
+  
+    const {title, desc} = req.body;
+    await BumbuModel.create({
+      title,
+      desc,
+      file: newPath,
+    });
+  
+    res.send({message: 'upload success'});
+  }else res.json({message: 'Form harus diisi'})
+});
 
-  const newPath = path.slice(0, 8) + image;
-  fs.renameSync(path, newPath);
-
-  const {title, desc} = req.body;
-  await BumbuModel.create({
-    title,
-    desc,
-    file: newPath,
-  });
-
-  res.send({message: 'upload success'});
+// getBumbu
+app.get('/getBumbu', async (req, res) => {
+  try {
+    const data = await BumbuModel.find({});
+    res.json(data);
+  }catch (err) {
+    throw err;
+  };
 });
 
 app.listen(4000);

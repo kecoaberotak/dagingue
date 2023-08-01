@@ -5,6 +5,7 @@ import Navbar from '../components/fragments/Navbar';
 import Dashboard from '../components/layouts/Admin/Dashboard';
 import PrivateRoute from '../routes/PrivateRoutes';
 import { LoginStatus } from '../contexts/LoginStatus';
+import DisplayStatusProvider from '../contexts/DisplayStatus';
 
 const AdminPage = () => {
   const {loginStatus} = useContext(LoginStatus);
@@ -20,7 +21,9 @@ const AdminPage = () => {
     <Fragment>
       <Navbar/>
       <PrivateRoute>
+      <DisplayStatusProvider>
         <Dashboard></Dashboard>
+      </DisplayStatusProvider>
       </PrivateRoute>
     </Fragment>
   );
