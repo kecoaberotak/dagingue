@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { getBumbu } from "../../../services/admin-service";
+import { getBumbu, deleteBumbu } from "../../../services/admin-service";
 import Button from "../../elements/button";
 import { DisplayStatus } from "../../../contexts/DisplayStatus";
 
@@ -31,7 +31,16 @@ const ShowBumbu = () => {
                 <td dangerouslySetInnerHTML={{__html:data.desc}}></td>
                 <td className="table-button">
                   <Button classname="button-edit">Edit</Button>
-                  <Button classname="button-delete">Hapus</Button>
+                  <Button classname="button-delete" onClick={() => {
+                    const dataBumbu = {
+                      id : data._id,
+                    }
+                    console.log((data._id));
+                    deleteBumbu(dataBumbu, res => {
+                      alert(res.message);
+                      setDisplayStatus(false);
+                    });
+                  }}>Hapus</Button>
                 </td>
               </tr>
               </>

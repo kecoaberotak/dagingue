@@ -15,3 +15,11 @@ export const getBumbu = (callback) => {
     throw err;
   })
 };
+
+export const deleteBumbu = (data, callback) => {
+  axios.delete('http://localhost:4000/deleteBumbu', data).then(res => {
+    callback(res.data);
+  }).catch(err => {
+    throw err
+  });
+};

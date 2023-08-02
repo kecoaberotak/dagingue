@@ -18,7 +18,7 @@ const BumbuModel = require('./models/Bumbu');
 
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: false}));
 app.use(cors({credentials: true, origin: 'http://localhost:5173'}));
 app.use(cookie());
 app.use('/uploads', express.static(__dirname + '/uploads'));
@@ -66,37 +66,52 @@ app.post('/logout', (req, res) => {
 });
 
 // ====== BUMBU =====
+app.use('/api/bumbu', require('./routes/bumbuRoutes'));
 
-// addBumbu
-app.post('/addBumbu', upload.single('file'), async (req, res) => {
-  if(req){
-    const {originalname, path} = req.file;
-    const parts = originalname.split('.');
-    const ext = parts[parts.length - 1];
-    const image = parts[0] + '.' + ext;
+// // addBumbu
+// app.post('/addBumbu', upload.single('file'), async (req, res) => {
+//   if(req){
+//     const {originalname, path} = req.file;
+//     const parts = originalname.split('.');
+//     const ext = parts[parts.length - 1];
+//     const image = parts[0] + '.' + ext;
   
-    const newPath = path.slice(0, 8) + image;
-    fs.renameSync(path, newPath);
+//     const newPath = path.slice(0, 8) + image;
+//     fs.renameSync(path, newPath);
   
-    const {title, desc} = req.body;
-    await BumbuModel.create({
-      title,
-      desc,
-      file: newPath,
-    });
+//     const {title, desc} = req.body;
+//     await BumbuModel.create({
+//       title,
+//       desc,
+//       file: newPath,
+//     });
   
-    res.send({message: 'upload success'});
-  }else res.json({message: 'Form harus diisi'})
-});
+//     res.send({message: 'upload success'});
+//   }else res.json({message: 'Form harus diisi'})
+// });
 
-// getBumbu
-app.get('/getBumbu', async (req, res) => {
-  try {
-    const data = await BumbuModel.find({});
-    res.json(data);
-  }catch (err) {
-    throw err;
-  };
-});
+// // getBumbu
+// app.get('/getBumbu', async (req, res) => {
+//   try {
+//     const data = await BumbuModel.find({});
+//     res.json(data);
+//   }catch (err) {
+//     throw err;
+//   };
+// });
+
+// // deleteBumbu
+// app.delete('/deleteBumbu', async (req, res) => {
+//   const bumbu = await BumbuModel.findById(req.params.id);
+
+//   if (!todo) {
+//     res.status(400);
+//     throw new Error('Todo not found');
+//   }
+
+//   await todo.remove();
+
+//   res.status(200).json({ id: req.params.id });
+// });
 
 app.listen(4000);

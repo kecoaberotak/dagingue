@@ -5,7 +5,6 @@ import { useContext } from "react";
 
 const ProductBumbu = () => {
   const {displayStatus} = useContext(DisplayStatus);
-  console.log(displayStatus);
   return(
     <>
       {displayStatus ? <AddBumbu /> : <ShowBumbu />}
