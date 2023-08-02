@@ -16,9 +16,9 @@ export const getBumbu = (callback) => {
   })
 };
 
-export const deleteBumbu = (data, callback) => {
-  axios.delete('http://localhost:4000/bumbu/', data).then(res => {
-    callback(res.data);
+export const deleteBumbu = (id, callback) => {
+  axios.delete(`http://localhost:4000/api/bumbu/${id}`).then(res => {
+    callback(res);
   }).catch(err => {
     callback(err.response);
   });

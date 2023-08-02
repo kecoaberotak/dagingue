@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useReducer, useState } from "react";
 import { getBumbu, deleteBumbu } from "../../../services/admin-service";
 import Button from "../../elements/button";
 import { DisplayStatus } from "../../../contexts/DisplayStatus";
@@ -6,10 +6,11 @@ import { DisplayStatus } from "../../../contexts/DisplayStatus";
 const ShowBumbu = () => {
   const [dataBumbu, setDataBumbu] = useState([]);
   const {setDisplayStatus} = useContext(DisplayStatus);
+  const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
 
   useEffect(() => {
     getBumbu(res => setDataBumbu(res.data));
-  }, []);
+  }, [reducerValue]);
 
   return (
     <>
@@ -32,12 +33,9 @@ const ShowBumbu = () => {
                 <td className="table-button">
                   <Button classname="button-edit">Edit</Button>
                   <Button classname="button-delete" onClick={() => {
-                    const dataBumbu = {
-                      id : data._id,
-                    }
-                    console.log((data._id));
-                    deleteBumbu(dataBumbu, res => {
-                      alert(res.message);
+                    deleteBumbu(data._id, res => {
+                      alert(res.data.message);
+                      forceUpdate();
                     });
                   }}>Hapus</Button>
                 </td>

@@ -23,9 +23,6 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 // ====== BUMBU =====
 app.use('/api/bumbu', require('./routes/bumbuRoutes'));
 
-
-
-
 // Login
 app.post('/login', async (req, res) => {
   const {username, password} = req.body;
@@ -69,29 +66,5 @@ app.post('/logout', (req, res) => {
 const {errorHandler} = require('./middleware/errorMiddleware');
 app.use(errorHandler);
 
-
-// // getBumbu
-// app.get('/getBumbu', async (req, res) => {
-//   try {
-//     const data = await BumbuModel.find({});
-//     res.json(data);
-//   }catch (err) {
-//     throw err;
-//   };
-// });
-
-// // deleteBumbu
-// app.delete('/deleteBumbu', async (req, res) => {
-//   const bumbu = await BumbuModel.findById(req.params.id);
-
-//   if (!todo) {
-//     res.status(400);
-//     throw new Error('Todo not found');
-//   }
-
-//   await todo.remove();
-
-//   res.status(200).json({ id: req.params.id });
-// });
 
 app.listen(4000);

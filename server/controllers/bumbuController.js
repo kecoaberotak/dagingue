@@ -45,9 +45,18 @@ const updateBumbu = (req, res) => {
 }
 
 // Delete Bumbu
-const deleteBumbu = (req, res) => {
-  res.status(200).json({message: `Delete bumbu ${req.params.id}`})
-}
+const deleteBumbu = asyncHandler(async (req, res) => {
+  const data = await BumbuModel.findById(req.params.id);
+
+  if(!data){
+    res.status(400);
+    throw new Error('Data not found');
+  };
+
+  await data.deleteOne({_id: req.params.id});
+
+  res.status(200).json({message: 'Data Deleted'});
+})
 
 module.exports = {
   getBumbu,
