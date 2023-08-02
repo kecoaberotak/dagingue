@@ -8,7 +8,7 @@ const ShowBumbu = () => {
   const {setDisplayStatus} = useContext(DisplayStatus);
 
   useEffect(() => {
-    getBumbu(res => setDataBumbu(res));
+    getBumbu(res => setDataBumbu(res.data));
   }, []);
 
   return (
@@ -38,7 +38,6 @@ const ShowBumbu = () => {
                     console.log((data._id));
                     deleteBumbu(dataBumbu, res => {
                       alert(res.message);
-                      setDisplayStatus(false);
                     });
                   }}>Hapus</Button>
                 </td>

@@ -2,19 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const cookie = require('cookie-parser');
-const fs = require('fs');
+
+// Dagingue123!
+mongoose.connect('mongodb+srv://dagingue:Dagingue123!@cluster0.01bn11g.mongodb.net/dagingue?retryWrites=true&w=majority');
 
 // jwt
 const jwt = require("jsonwebtoken");
 const secret = 'IARZIMZEhm0l0qw3jLNqiFVuQkSrc1UqzKzmgob8cwF5v1NxQR962MzdAH5l6ay';
 
-// Multer - buat upload file
-const multer = require('multer');
-const upload = multer({ dest: 'uploads/' })
-
 // models
 const AdminModel = require('./models/Admin');
-const BumbuModel = require('./models/Bumbu');
 
 const app = express();
 app.use(express.json());
@@ -23,8 +20,11 @@ app.use(cors({credentials: true, origin: 'http://localhost:5173'}));
 app.use(cookie());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-// Dagingue123!
-mongoose.connect('mongodb+srv://dagingue:Dagingue123!@cluster0.01bn11g.mongodb.net/dagingue?retryWrites=true&w=majority');
+// ====== BUMBU =====
+app.use('/api/bumbu', require('./routes/bumbuRoutes'));
+
+
+
 
 // Login
 app.post('/login', async (req, res) => {
@@ -65,30 +65,10 @@ app.post('/logout', (req, res) => {
   res.cookie('token', '').json({status : true ,message: 'logout success'});
 });
 
-// ====== BUMBU =====
-app.use('/api/bumbu', require('./routes/bumbuRoutes'));
+// middleware
+const {errorHandler} = require('./middleware/errorMiddleware');
+app.use(errorHandler);
 
-// // addBumbu
-// app.post('/addBumbu', upload.single('file'), async (req, res) => {
-//   if(req){
-//     const {originalname, path} = req.file;
-//     const parts = originalname.split('.');
-//     const ext = parts[parts.length - 1];
-//     const image = parts[0] + '.' + ext;
-  
-//     const newPath = path.slice(0, 8) + image;
-//     fs.renameSync(path, newPath);
-  
-//     const {title, desc} = req.body;
-//     await BumbuModel.create({
-//       title,
-//       desc,
-//       file: newPath,
-//     });
-  
-//     res.send({message: 'upload success'});
-//   }else res.json({message: 'Form harus diisi'})
-// });
 
 // // getBumbu
 // app.get('/getBumbu', async (req, res) => {

@@ -1,25 +1,25 @@
 import axios from "axios";
 
 export const addBumbu = (data, callback) => {
-  axios.post('http://localhost:4000/addBumbu', data).then(res => {
+  axios.post('http://localhost:4000/api/bumbu', data).then(res => {
     callback(res);
   }).catch(err => {
-    throw err;
+    callback(err.response);
   })
 };
 
 export const getBumbu = (callback) => {
-  axios.get('http://localhost:4000/getBumbu').then(res => {
+  axios.get('http://localhost:4000/api/bumbu').then(res => {
     callback(res.data);
   }).catch(err => {
-    throw err;
+    callback(err.response);
   })
 };
 
 export const deleteBumbu = (data, callback) => {
-  axios.delete('http://localhost:4000/deleteBumbu', data).then(res => {
+  axios.delete('http://localhost:4000/bumbu/', data).then(res => {
     callback(res.data);
   }).catch(err => {
-    throw err
+    callback(err.response);
   });
 };

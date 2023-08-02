@@ -36,9 +36,8 @@ const AddBumbu = () => {
     data.set('file', file[file.length - 1]);
     data.set('desc', desc);
     addBumbu(data, res => {
-      if(res.statusText === 'OK'){
-        setDisplayStatus(false);
-      }
+      alert(res.data.message);
+      setDisplayStatus(false)
     });
 
   };
