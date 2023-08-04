@@ -25,30 +25,28 @@ const ShowBumbu = () => {
             <th scope="col">Aksi</th>
           </tr>
         </thead>
-        <tbody>
           {dataBumbu.map(data => {
             return(
-              <>
-              <tr key={data._id}>
-                <td>{data.title}</td>
-                <td dangerouslySetInnerHTML={{__html:data.desc}}></td>
-                <td className="table-button">
-                  <Button classname="button-edit" onClick={() => {
-                    setDisplayStatus('edit')
-                    setIdBumbu(data._id);
-                  }}>Edit</Button>
-                  <Button classname="button-delete" onClick={() => {
-                    deleteBumbu(data._id, res => {
-                      alert(res.data.message);
-                      forceUpdate();
-                    });
-                  }}>Hapus</Button>
-                </td>
-              </tr>
-              </>
+              <tbody key={data._id}>
+                <tr>
+                  <td>{data.title}</td>
+                  <td dangerouslySetInnerHTML={{__html:data.desc}}></td>
+                  <td className="table-button">
+                    <Button classname="button-edit" onClick={() => {
+                      setDisplayStatus('edit')
+                      setIdBumbu(data._id);
+                    }}>Edit</Button>
+                    <Button classname="button-delete" onClick={() => {
+                      deleteBumbu(data._id, res => {
+                        alert(res.data.message);
+                        forceUpdate();
+                      });
+                    }}>Hapus</Button>
+                  </td>
+                </tr>
+              </tbody>
             )
           })}
-        </tbody>
       </table>
       <div className="button-add">
         <Button onClick={() => setDisplayStatus('add')}>Tambah</Button>

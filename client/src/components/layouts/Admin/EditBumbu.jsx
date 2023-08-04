@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from 'react';
 import Button from '../../elements/button';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { addBumbu } from '../../../services/admin-service';
 import { DisplayStatus } from '../../../contexts/DisplayStatus';
 import { IdBumbu } from '../../../contexts/IdBumbu';
 import { getDetailBumbu } from '../../../services/admin-service';
@@ -10,12 +9,13 @@ import { getDetailBumbu } from '../../../services/admin-service';
 
 const EditBumbu = () => {
   const {setDisplayStatus} = useContext(DisplayStatus);
-  const {idBumbu, setIdBumbu} = useContext(IdBumbu);
+  const {idBumbu} = useContext(IdBumbu);
   const [infoBumbu, setInfoBumbu] = useState([]);
-  const [fileInfoBumbu, setFileInfoBumbu] = useState();
+  const [preview, setPreview] = useState();
+  const [srcPreview, setSrcPreview] = useState();
 
   const [title, setTitle] = useState('');
-  const [file, setFile] = useState('');
+  const [file, setFile] = useState();
   const [desc, setDesc] = useState();
 
   useEffect(() => {
@@ -28,10 +28,19 @@ const EditBumbu = () => {
     if(infoBumbu.length !== 0){
       setTitle(infoBumbu.data.title);
       setDesc(infoBumbu.data.desc);
-      console.log(infoBumbu.data.file);
+      setFile(infoBumbu.data.file);
     }
   }, [infoBumbu]);
 
+  useEffect(() => { 
+    if(!preview){
+      setPreview(file);
+    }
+  }, [preview, file]);
+
+  useEffect(() => {
+    setSrcPreview(`http://localhost:4000/${preview}`);
+  }, [preview]);
 
   const modules = {
     toolbar: [
@@ -52,43 +61,49 @@ const EditBumbu = () => {
 
   const addNewBumbu = (e) => {
     e.preventDefault();
-    const data = new FormData();
-    data.set('title', title);
-    data.set('file', file[file.length - 1]);
-    data.set('desc', desc);
+    setDisplayStatus('show')
+    // const data = new FormData();
+    // data.set('title', title);
+    // data.set('file', file[file.length - 1]);
+    // data.set('desc', desc);
 
-    if(!data.get('title') || data.get('file') === 'undefined' || data.get('desc') === 'undefined'){
-      alert('Masukkan Data Bumbu!');
-    }else {
-      addBumbu(data, res => {
-        if(res.status === 400){
-          alert(res.data.message)
-        }else if(res.status === 200){
-          alert(res.data.message);
-          setDisplayStatus('show');
-        }
-      });
-    }
+    // if(!data.get('title') || data.get('file') === 'undefined' || data.get('desc') === 'undefined'){
+    //   alert('Masukkan Data Bumbu!');
+    // }else {
+    //   addBumbu(data, res => {
+    //     if(res.status === 400){
+    //       alert(res.data.message)
+    //     }else if(res.status === 200){
+    //       alert(res.data.message);
+    //       setDisplayStatus('show');
+    //     }
+    //   });
+    // }
   };
 
   return (
     <>
       <h1>Edit Bumbu</h1>
       <form className="form-content" onSubmit={addNewBumbu}>
+        <label htmlFor="nama-bumbu">Nama Bumbu</label>
         <input 
           type="title" 
           placeholder="Nama bumbu" 
           value={title} 
+          name='nama-bumbu'
           onChange={e => 
           setTitle(e.target.value)}
         />
-        <label htmlFor="gambar-bumbu"><p>Upload gambar bumbu</p></label>
-        <img src={`http://localhost:4000/${infoBumbu.data.file}`} alt="" />
+        <label htmlFor="gambar-bumbu"><p>Gambar bumbu</p></label>
+        <img src={`${srcPreview}`} alt="Gambar Bumbu" className='gambar-bumbu'/>
         <input 
           type="file" 
           name='gambar-bumbu' 
-          value={file}
-          onChange={e => setFile(e.target.files)}
+          onChange={e => {
+            const objectUrl = URL.createObjectURL(e.target.files[0])
+            setSrcPreview(objectUrl);
+            setFile(e.target.files);
+          }}
         />
         <label htmlFor="penjelasan-bumbu">Penjelasan Bumbu</label>
         <ReactQuill 

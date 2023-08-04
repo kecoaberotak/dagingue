@@ -54,10 +54,12 @@ const AddBumbu = () => {
     <>
       <h1>Tambah Bumbu</h1>
       <form className="form-content" onSubmit={addNewBumbu}>
+        <label htmlFor="nama-bumbu">Nama Bumbu</label>
         <input 
           type="title" 
           placeholder="Nama bumbu" 
           value={title} 
+          name='nama-bumbu'
           onChange={e => 
           setTitle(e.target.value)}
         />

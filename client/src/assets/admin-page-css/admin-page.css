@@ -97,3 +97,9 @@
 .button-add Button{
   margin-bottom: 50px;
 }
+
+/* ====== Gambar Bumbu ====== */
+.gambar-bumbu{
+  width: 350px;
+  height: 350px;
+}
