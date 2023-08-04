@@ -10,11 +10,22 @@ const getBumbu = asyncHandler(async (req, res) => {
   res.status(200).json({data, message: 'Get Bumbu'});
 });
 
+// Get Detail Bumbu
+const getDetailBumbu = asyncHandler(async (req, res) => {
+  const data = await BumbuModel.findById(req.params.id)
+  res.status(200).json({data, message: 'Get Detail Bumbu'});
+});
+
 // Set Bumbu
 const setBumbu = asyncHandler(async (req, res) => {
   if(!req.body.title) {
     res.status(400);
     throw new Error('Please add title')
+  }
+
+  if(req.body.desc === 'undefined' || req.body.desc === '<p><br></p>') {
+    res.status(400);
+    throw new Error('Please add description')
   }
 
   if(!req.file) {
@@ -60,6 +71,7 @@ const deleteBumbu = asyncHandler(async (req, res) => {
 
 module.exports = {
   getBumbu,
+  getDetailBumbu,
   setBumbu,
   updateBumbu,
   deleteBumbu

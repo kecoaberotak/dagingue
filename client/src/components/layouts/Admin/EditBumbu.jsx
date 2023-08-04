@@ -1,17 +1,38 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Button from '../../elements/button';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { addBumbu } from '../../../services/admin-service';
 import { DisplayStatus } from '../../../contexts/DisplayStatus';
+import { IdBumbu } from '../../../contexts/IdBumbu';
+import { getDetailBumbu } from '../../../services/admin-service';
 
 
-const AddBumbu = () => {
+const EditBumbu = () => {
   const {setDisplayStatus} = useContext(DisplayStatus);
+  const {idBumbu, setIdBumbu} = useContext(IdBumbu);
+  const [infoBumbu, setInfoBumbu] = useState([]);
+  const [fileInfoBumbu, setFileInfoBumbu] = useState();
 
   const [title, setTitle] = useState('');
   const [file, setFile] = useState('');
   const [desc, setDesc] = useState();
+
+  useEffect(() => {
+    getDetailBumbu(idBumbu, res => {
+      setInfoBumbu(res.data);
+    })
+  }, [idBumbu])
+
+  useEffect(() => {
+    if(infoBumbu.length !== 0){
+      setTitle(infoBumbu.data.title);
+      setDesc(infoBumbu.data.desc);
+      console.log(infoBumbu.data.file);
+    }
+  }, [infoBumbu]);
+
+
   const modules = {
     toolbar: [
       [{ 'header': [1, 2, false] }],
@@ -52,7 +73,7 @@ const AddBumbu = () => {
 
   return (
     <>
-      <h1>Tambah Bumbu</h1>
+      <h1>Edit Bumbu</h1>
       <form className="form-content" onSubmit={addNewBumbu}>
         <input 
           type="title" 
@@ -62,9 +83,11 @@ const AddBumbu = () => {
           setTitle(e.target.value)}
         />
         <label htmlFor="gambar-bumbu"><p>Upload gambar bumbu</p></label>
+        <img src={`http://localhost:4000/${infoBumbu.data.file}`} alt="" />
         <input 
           type="file" 
           name='gambar-bumbu' 
+          value={file}
           onChange={e => setFile(e.target.files)}
         />
         <label htmlFor="penjelasan-bumbu">Penjelasan Bumbu</label>
@@ -82,4 +105,4 @@ const AddBumbu = () => {
   )
 }
 
-export default AddBumbu;
+export default EditBumbu;

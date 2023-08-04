@@ -1,5 +1,5 @@
-import ProductPotong from "./ProductPotong";
-import ProductBumbu from "./ProductBumbu";
+import ProductBumbu from './ClientProductBumbu';
+import ProductPotong from './ClientProductPotong';
 
 import '../../assets/landing-page-css/product.css'
 
