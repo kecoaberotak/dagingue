@@ -51,9 +51,23 @@ const setBumbu = asyncHandler(async (req, res) => {
 });
 
 // Update Bumbu
-const updateBumbu = (req, res) => {
-  res.status(200).json({message: `Update bumbu ${req.params.id}`})
-}
+const updateBumbu = asyncHandler(async (req, res) => {
+  const data = await BumbuModel.findById(req.params.id);
+  const {title, desc} = req.body;
+  const {file} =  req.file;
+
+  if (!data) {
+    res.status(400);
+    throw new Error('Bumbu not found');
+  }
+
+  // const updatedBumbu = await BumbuModel.findByIdAndUpdate(req.params.id, req.body, {
+  //   new: true,
+  // });
+
+  // res.status(200).json({data, message: 'Success Update Data'});
+  res.status(200).json(req.file);
+});
 
 // Delete Bumbu
 const deleteBumbu = asyncHandler(async (req, res) => {

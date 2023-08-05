@@ -7,6 +7,6 @@ const multer = require('multer');
 const upload = multer({ dest: 'uploads/' })
 
 router.route('/').get(getBumbu).post(upload.single('file'), setBumbu);
-router.route('/:id').get(getDetailBumbu).put(updateBumbu).delete(deleteBumbu);
+router.route('/:id').get(getDetailBumbu).put(upload.single('file'),updateBumbu).delete(deleteBumbu);
 
 module.exports = router;

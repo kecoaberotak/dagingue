@@ -5,12 +5,14 @@ import 'react-quill/dist/quill.snow.css';
 import { DisplayStatus } from '../../../contexts/DisplayStatus';
 import { IdBumbu } from '../../../contexts/IdBumbu';
 import { getDetailBumbu } from '../../../services/admin-service';
+import { putBumbu } from '../../../services/admin-service';
 
 
 const EditBumbu = () => {
   const {setDisplayStatus} = useContext(DisplayStatus);
   const {idBumbu} = useContext(IdBumbu);
   const [infoBumbu, setInfoBumbu] = useState([]);
+
   const [preview, setPreview] = useState();
   const [srcPreview, setSrcPreview] = useState();
 
@@ -59,32 +61,32 @@ const EditBumbu = () => {
     'link', 'image'
   ];
 
-  const addNewBumbu = (e) => {
+  const editBumbu = (e) => {
     e.preventDefault();
-    setDisplayStatus('show')
-    // const data = new FormData();
-    // data.set('title', title);
-    // data.set('file', file[file.length - 1]);
-    // data.set('desc', desc);
+    const data = new FormData();
+    data.set('title', title);
+    data.set('file', file[file.length - 1]);
+    data.set('desc', desc);
 
-    // if(!data.get('title') || data.get('file') === 'undefined' || data.get('desc') === 'undefined'){
-    //   alert('Masukkan Data Bumbu!');
-    // }else {
-    //   addBumbu(data, res => {
-    //     if(res.status === 400){
-    //       alert(res.data.message)
-    //     }else if(res.status === 200){
-    //       alert(res.data.message);
-    //       setDisplayStatus('show');
-    //     }
-    //   });
-    // }
+    console.log(file, title, desc);
+
+    putBumbu(infoBumbu.data._id ,data, res => {
+      console.log(res);
+      // if(res.status === 400){
+      //     alert(res.data.message)
+      // } else if(res.status === 200)
+      // {
+      //   alert(res.data.message);
+      //   console.log(res.data);
+      //   // setDisplayStatus('show');
+      // }
+    });
   };
 
   return (
     <>
       <h1>Edit Bumbu</h1>
-      <form className="form-content" onSubmit={addNewBumbu}>
+      <form className="form-content" onSubmit={editBumbu}>
         <label htmlFor="nama-bumbu">Nama Bumbu</label>
         <input 
           type="title" 
@@ -114,7 +116,9 @@ const EditBumbu = () => {
           formats={formats} 
           name='penjelasan-bumbu'
         />
-        <Button>Submit</Button>
+        <div className="button-submit">
+          <Button>Submit</Button>
+        </div>
       </form>
     </>
   )

@@ -42,7 +42,7 @@
 }
 
 .form-content label{
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 
@@ -100,6 +100,11 @@
 
 /* ====== Gambar Bumbu ====== */
 .gambar-bumbu{
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
+}
+
+/* ====== Button ====== */
+.button-submit {
+  margin-bottom: 50px;
 }

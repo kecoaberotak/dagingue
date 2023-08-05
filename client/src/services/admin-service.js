@@ -32,8 +32,8 @@ export const getDetailBumbu = (id, callback) => {
   });
 };
 
-export const editBumbu = (id, callback) => {
-  axios.put(`http://localhost:4000/api/bumbu/${id}`).then(res => {
+export const putBumbu = (id, data, callback) => {
+  axios.put(`http://localhost:4000/api/bumbu/${id}`, data).then(res => {
     callback(res.data);
   }).catch(err => {
     callback(err.response);
