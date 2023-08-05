@@ -105,6 +105,17 @@
 }
 
 /* ====== Button ====== */
-.button-submit {
+.form-edit-button {
+  display: flex;
   margin-bottom: 50px;
+}
+
+.button-cancel Button {
+  background-color: rgb(235, 71, 71);
+  border: 1px solid rgb(235, 71, 71);
+}
+
+.button-cancel Button:hover {
+  background-color: lightcoral;
+  border: 1px solid lightcoral;
 }

@@ -30,7 +30,7 @@ const setBumbu = asyncHandler(async (req, res) => {
 
   if(!req.file) {
     res.status(400);
-    throw new Error('Please add file')
+    throw new Error('Please add image')
   }
 
   const {originalname, path} = req.file;
@@ -53,20 +53,44 @@ const setBumbu = asyncHandler(async (req, res) => {
 // Update Bumbu
 const updateBumbu = asyncHandler(async (req, res) => {
   const data = await BumbuModel.findById(req.params.id);
-  const {title, desc} = req.body;
-  const {file} =  req.file;
 
   if (!data) {
     res.status(400);
     throw new Error('Bumbu not found');
   }
 
-  // const updatedBumbu = await BumbuModel.findByIdAndUpdate(req.params.id, req.body, {
-  //   new: true,
-  // });
+  if(!req.body.title) {
+    res.status(400);
+    throw new Error('Please add title')
+  }
 
-  // res.status(200).json({data, message: 'Success Update Data'});
-  res.status(200).json(req.file);
+  if(req.body.desc === 'undefined' || req.body.desc === '<p><br></p>') {
+    res.status(400);
+    throw new Error('Please add description')
+  }
+
+  if(!req.file) {
+    res.status(400);
+    throw new Error('Please add image')
+  }
+
+  const {originalname, path} = req.file;
+  const parts = originalname.split('.');
+  const ext = parts[parts.length - 1];
+  const image = parts[0] + '.' + ext;
+
+  const newPath = path.slice(0, 8) + image;
+  fs.renameSync(path, newPath);
+
+  const {title, desc} = req.body;
+  await BumbuModel.findByIdAndUpdate(req.params.id,
+  {
+    title,
+    desc,
+    file: newPath,
+  });
+
+  res.status(200).json({message: 'Success Update Data'})
 });
 
 // Delete Bumbu

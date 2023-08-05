@@ -34,7 +34,7 @@ export const getDetailBumbu = (id, callback) => {
 
 export const putBumbu = (id, data, callback) => {
   axios.put(`http://localhost:4000/api/bumbu/${id}`, data).then(res => {
-    callback(res.data);
+    callback(res);
   }).catch(err => {
     callback(err.response);
   });

@@ -15,6 +15,7 @@ const EditBumbu = () => {
 
   const [preview, setPreview] = useState();
   const [srcPreview, setSrcPreview] = useState();
+  const [buttonStatus, setButtonStatus] = useState('');
 
   const [title, setTitle] = useState('');
   const [file, setFile] = useState();
@@ -63,24 +64,23 @@ const EditBumbu = () => {
 
   const editBumbu = (e) => {
     e.preventDefault();
-    const data = new FormData();
-    data.set('title', title);
-    data.set('file', file[file.length - 1]);
-    data.set('desc', desc);
-
-    console.log(file, title, desc);
-
-    putBumbu(infoBumbu.data._id ,data, res => {
-      console.log(res);
-      // if(res.status === 400){
-      //     alert(res.data.message)
-      // } else if(res.status === 200)
-      // {
-      //   alert(res.data.message);
-      //   console.log(res.data);
-      //   // setDisplayStatus('show');
-      // }
-    });
+    if(buttonStatus === 'submit'){
+      const data = new FormData();
+      data.set('title', title);
+      data.set('file', file[file.length - 1]);
+      data.set('desc', desc);
+  
+      putBumbu(infoBumbu.data._id ,data, res => {
+        if(res.status === 400){
+          alert(res.data.message)
+        }else if(res.status === 200){
+          alert(res.data.message);
+          setDisplayStatus('show');
+        }
+      });
+    }else if(buttonStatus === 'cancel'){
+      setDisplayStatus('show');
+    }
   };
 
   return (
@@ -116,8 +116,11 @@ const EditBumbu = () => {
           formats={formats} 
           name='penjelasan-bumbu'
         />
-        <div className="button-submit">
-          <Button>Submit</Button>
+        <div className="form-edit-button">
+          <Button onClick={() => setButtonStatus('submit')}>Submit</Button>
+          <div className="button-cancel">
+            <Button onClick={() => setButtonStatus('cancel')}>Cancel</Button>
+          </div>
         </div>
       </form>
     </>
