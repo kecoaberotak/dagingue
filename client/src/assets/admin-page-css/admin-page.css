@@ -54,6 +54,7 @@
 
 .table th{
   font-weight: var(--bold);
+  padding: 10px;
 }
 
 .table td {

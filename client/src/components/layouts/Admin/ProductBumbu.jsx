@@ -22,14 +22,12 @@ const ProductBumbu = () => {
         <EditBumbu />
       )
     }
-  }
+  };
 
   return(
-    <>
     <IdBumbuProvider>
       {<Display />}
     </IdBumbuProvider>
-    </>
   );
 };
 
