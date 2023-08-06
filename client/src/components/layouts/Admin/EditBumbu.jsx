@@ -4,8 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { DisplayStatus } from '../../../contexts/DisplayStatus';
 import { IdBumbu } from '../../../contexts/IdBumbu';
-import { getDetailBumbu } from '../../../services/admin-service';
-import { putBumbu } from '../../../services/admin-service';
+import { getDetailBumbu, putBumbu } from '../../../services/bumbu-service';
 
 
 const EditBumbu = () => {

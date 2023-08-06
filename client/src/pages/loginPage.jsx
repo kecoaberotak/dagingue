@@ -22,13 +22,14 @@ const LoginPage = () => {
       password: e.target.password.value,
     };
 
-    login(data, async (status, res) => {
-      if(status === true){
+    login(data, (res) => {
+      if(res.status === 200){
         getToken(res => {
+          setLoginFailed(null);
           setAdminInfo(res);
           setLoginStatus(true);
         })
-      } else {
+      } else if(res.status === 400){
         setLoginFailed(res.data.message);
       }
     });

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useReducer, useState } from "react";
-import { getBumbu, deleteBumbu } from "../../../services/admin-service";
+import { getBumbu, deleteBumbu } from "../../../services/bumbu-service";
 import Button from "../../elements/button";
 import { DisplayStatus } from "../../../contexts/DisplayStatus";
 import { IdBumbu } from "../../../contexts/IdBumbu";

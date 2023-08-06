@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout(res => {
-      if(res.data.status) {
+      if(res.status === 200) {
         setAdminInfo('');
         setLoginStatus(false);
         navigate('/login');

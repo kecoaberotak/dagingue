@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import Button from '../../elements/button';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { addBumbu } from '../../../services/admin-service';
+import { addBumbu } from '../../../services/bumbu-service';
 import { DisplayStatus } from '../../../contexts/DisplayStatus';
 
 
