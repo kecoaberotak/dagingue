@@ -116,7 +116,7 @@ const EditBumbu = () => {
           formats={formats} 
           name='penjelasan-bumbu'
         />
-        <div className="form-edit-button">
+        <div className="form-button">
           <Button onClick={() => setButtonStatus('submit')}>Submit</Button>
           <div className="button-cancel">
             <Button onClick={() => setButtonStatus('cancel')}>Cancel</Button>

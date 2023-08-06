@@ -1,6 +1,6 @@
 const express = require('express');
-const { getBumbu, getDetailBumbu, setBumbu, updateBumbu, deleteBumbu } = require('../controllers/bumbuController');
 const router = express.Router();
+const { getBumbu, getDetailBumbu, setBumbu, updateBumbu, deleteBumbu } = require('../controllers/bumbuController');
 
 // Multer - buat upload file
 const multer = require('multer');

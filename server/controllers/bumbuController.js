@@ -10,11 +10,13 @@ const getBumbu = asyncHandler(async (req, res) => {
   res.status(200).json({data, message: 'Get Bumbu'});
 });
 
+
 // Get Detail Bumbu
 const getDetailBumbu = asyncHandler(async (req, res) => {
   const data = await BumbuModel.findById(req.params.id)
   res.status(200).json({data, message: 'Get Detail Bumbu'});
 });
+
 
 // Set Bumbu
 const setBumbu = asyncHandler(async (req, res) => {
@@ -49,6 +51,7 @@ const setBumbu = asyncHandler(async (req, res) => {
   });
   res.status(200).json({message: 'Success Add New Data'})
 });
+
 
 // Update Bumbu
 const updateBumbu = asyncHandler(async (req, res) => {
@@ -93,6 +96,7 @@ const updateBumbu = asyncHandler(async (req, res) => {
   res.status(200).json({message: 'Success Update Data'})
 });
 
+
 // Delete Bumbu
 const deleteBumbu = asyncHandler(async (req, res) => {
   const data = await BumbuModel.findById(req.params.id);
@@ -105,7 +109,8 @@ const deleteBumbu = asyncHandler(async (req, res) => {
   await data.deleteOne({_id: req.params.id});
 
   res.status(200).json({message: 'Data Deleted'});
-})
+});
+
 
 module.exports = {
   getBumbu,
