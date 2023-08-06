@@ -12,7 +12,7 @@ const AdminPanel = () => {
 
   const handleHalaman = e => {
     setHalaman(e.target.getAttribute('value'));
-    setDisplayStatus(false);
+    setDisplayStatus('show');
   }
 
   return(
