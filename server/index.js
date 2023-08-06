@@ -19,6 +19,9 @@ app.use('/auth', require('./routes/authRoutes'));
 // ====== BUMBU =====
 app.use('/api/bumbu', require('./routes/bumbuRoutes'));
 
+// ====== POTONG ======
+app.use('/api/potong', require('./routes/potongRoutes'));
+
 
 // middleware
 const {errorHandler} = require('./middleware/errorMiddleware');

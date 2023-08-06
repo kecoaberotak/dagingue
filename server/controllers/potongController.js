@@ -2,28 +2,28 @@ const asyncHandler = require('express-async-handler');
 const fs = require('fs');
 
 // Model
-const BumbuModel = require('../models/Bumbu');
+const PotongModel = require('../models/Potong');
 
-// Get Bumbu
-const getBumbu = asyncHandler(async (req, res) => {
-  const data = await BumbuModel.find();
-  res.status(200).json({data, message: 'Get Bumbu'});
+// Get Potong
+const getPotong = asyncHandler(async (req, res) => {
+  const data = await PotongModel.find();
+  res.status(200).json({data, message: 'Get Potong'});
 });
 
 
-// Get Detail Bumbu
-const getDetailBumbu = asyncHandler(async (req, res) => {
-  const data = await BumbuModel.findById(req.params.id)
+// Get Detail Potong
+const getDetailPotong = asyncHandler(async (req, res) => {
+  const data = await PotongModel.findById(req.params.id)
   if(!data){
     res.status(400);
     throw new Error('Data not found')
   }
-  res.status(200).json({data, message: 'Get Detail Bumbu'});
+  res.status(200).json({data, message: 'Get Detail Potong'});
 });
 
 
-// Set Bumbu
-const setBumbu = asyncHandler(async (req, res) => {
+// Set Potong
+const setPotong = asyncHandler(async (req, res) => {
   if(!req.body.title) {
     res.status(400);
     throw new Error('Please add title')
@@ -48,7 +48,7 @@ const setBumbu = asyncHandler(async (req, res) => {
   fs.renameSync(path, newPath);
 
   const {title, desc} = req.body;
-  await BumbuModel.create({
+  await PotongModel.create({
     title,
     desc,
     file: newPath,
@@ -57,13 +57,13 @@ const setBumbu = asyncHandler(async (req, res) => {
 });
 
 
-// Update Bumbu
-const updateBumbu = asyncHandler(async (req, res) => {
-  const data = await BumbuModel.findById(req.params.id);
+// Update Potong
+const updatePotong = asyncHandler(async (req, res) => {
+  const data = await PotongModel.findById(req.params.id);
 
   if (!data) {
     res.status(400);
-    throw new Error('Bumbu not found');
+    throw new Error('Data not found');
   }
 
   if(!req.body.title) {
@@ -90,7 +90,7 @@ const updateBumbu = asyncHandler(async (req, res) => {
   fs.renameSync(path, newPath);
 
   const {title, desc} = req.body;
-  await BumbuModel.findByIdAndUpdate(req.params.id,
+  await PotongModel.findByIdAndUpdate(req.params.id,
   {
     title,
     desc,
@@ -101,9 +101,9 @@ const updateBumbu = asyncHandler(async (req, res) => {
 });
 
 
-// Delete Bumbu
-const deleteBumbu = asyncHandler(async (req, res) => {
-  const data = await BumbuModel.findById(req.params.id);
+// Delete Potong
+const deletePotong = asyncHandler(async (req, res) => {
+  const data = await PotongModel.findById(req.params.id);
 
   if(!data){
     res.status(400);
@@ -117,9 +117,9 @@ const deleteBumbu = asyncHandler(async (req, res) => {
 
 
 module.exports = {
-  getBumbu,
-  getDetailBumbu,
-  setBumbu,
-  updateBumbu,
-  deleteBumbu
+  getPotong,
+  getDetailPotong,
+  setPotong,
+  updatePotong,
+  deletePotong
 }
