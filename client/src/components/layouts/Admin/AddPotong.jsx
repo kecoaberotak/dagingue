@@ -55,7 +55,7 @@ const AddPotong = () => {
           onChange={e => 
           setTitle(e.target.value)}
         />
-        <label htmlFor="desc-potong">Penjelasan Bumbu</label>
+        <label htmlFor="desc-potong">Penjelasan Jenis Potongan</label>
         <input 
           type="title" 
           placeholder="Penjelasan jenis potongan" 
