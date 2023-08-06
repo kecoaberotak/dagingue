@@ -105,6 +105,11 @@
   height: 250px;
 }
 
+.gambar-potong{
+  width: 250px;
+  height: 250px;
+}
+
 /* ====== Button ====== */
 .form-button {
   display: flex;
