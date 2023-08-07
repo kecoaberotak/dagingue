@@ -6,21 +6,19 @@ const AboutModel = require('../models/About');
 
 // Get About
 const getAbout = asyncHandler(async (req, res) => {
-  // const data = await PotongModel.find();
-  // res.status(200).json({data, message: 'Get About'});
-  res.status(200).json({message: 'Get About'});
+  const data = await AboutModel.find();
+  res.status(200).json({data, message: 'Get About'});
 });
 
 
 // Get Detail About
 const getDetailAbout = asyncHandler(async (req, res) => {
-  // const data = await PotongModel.findById(req.params.id)
-  // if(!data){
-  //   res.status(400);
-  //   throw new Error('Data not found')
-  // }
-  // res.status(200).json({data, message: 'Get Detail About'});
-  res.status(200).json({message: 'Get Detail About'});
+  const data = await AboutModel.findById(req.params.id)
+  if(!data){
+    res.status(400);
+    throw new Error('Data not found')
+  }
+  res.status(200).json({data, message: 'Get Detail About'});
 });
 
 
@@ -55,7 +53,8 @@ const setAbout = asyncHandler(async (req, res) => {
   //   desc,
   //   file: newPath,
   // });
-  res.status(200).json({message: 'Success Add New Data'})
+  // res.status(200).json({message: 'Success Add New Data'})
+  res.status(200).json(req.body);
 });
 
 

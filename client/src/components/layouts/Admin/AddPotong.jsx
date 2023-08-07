@@ -14,11 +14,6 @@ const AddPotong = () => {
 
   const addNewPotong = (e) => {
     e.preventDefault();
-    const data = new FormData();
-    data.set('title', title);
-    data.set('file', file[file.length - 1]);
-    data.set('desc', desc);
-
     if(buttonStatus === 'submit'){
       const data = new FormData();
       data.set('title', title);
