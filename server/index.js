@@ -16,6 +16,9 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 // ====== AUTH ======
 app.use('/auth', require('./routes/authRoutes'));
 
+// ====== ABOUT ======
+app.use('/api/about', require('./routes/aboutRoutes'));
+
 // ====== BUMBU =====
 app.use('/api/bumbu', require('./routes/bumbuRoutes'));
 

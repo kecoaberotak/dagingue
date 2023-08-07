@@ -13,6 +13,6 @@ const AboutSchema = new Schema (
   }
 );
 
-const AboutModel = model('potong', AboutSchema);
+const AboutModel = model('about', AboutSchema);
 
 module.exports =  AboutModel;
