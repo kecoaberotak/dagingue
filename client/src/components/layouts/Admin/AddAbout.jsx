@@ -12,8 +12,8 @@ const AddAbout = () => {
 
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState();
-  const [cover1, setCover1] = useState('');
-  const [cover2, setCover2] = useState('');
+  const [file, setFile] = useState([]);
+
   const modules = {
     toolbar: [
       [{ 'header': [1, 2, false] }],
@@ -36,8 +36,9 @@ const AddAbout = () => {
     const data = new FormData();
     data.set('title', title);
     data.set('desc', desc);
-    data.set('cover1', cover1[cover1.length - 1]);
-    data.set('cover2', cover2[cover2.length - 1]);
+    for(let i = 0; i <= file.length; i++){
+      data.append('file', file[i]);
+    }
 
     if(!data.get('title') || data.get('cover1') === 'undefined' || data.get('cover2') === 'undefined' || data.get('desc') === 'undefined'){
       alert('Masukkan Data!');
@@ -72,9 +73,11 @@ const AddAbout = () => {
           type="file" 
           name='gambar1' 
           onChange={e => {
+            const newData = [...file];
+            newData[0] = e.target.files[0];
+            setFile(newData);
             const objectUrl = URL.createObjectURL(e.target.files[0])
             setSrcPreview(objectUrl);
-            setCover1(e.target.files);
           }}
         />
         <label htmlFor="gambar2"><p>Upload gambar content 2</p></label>
@@ -83,9 +86,15 @@ const AddAbout = () => {
           type="file" 
           name='gambar2' 
           onChange={e => {
+            const newData = [...file];
+            if(newData.length > 0){
+              newData[1] = e.target.files[0];
+            }else if(newData.length === 0){
+              newData.push(e.target.files[0]);
+            }
+            setFile(newData);
             const objectUrl = URL.createObjectURL(e.target.files[0])
             setSrcPreview2(objectUrl);
-            setCover2(e.target.files);
           }}
         />
         <label htmlFor="main-content">Isi Content</label>

@@ -24,37 +24,49 @@ const getDetailAbout = asyncHandler(async (req, res) => {
 
 // Set About
 const setAbout = asyncHandler(async (req, res) => {
-  // if(!req.body.title) {
-  //   res.status(400);
-  //   throw new Error('Please add title')
-  // }
+  const file1 = req.files[0];
+  const file2 = req.files[1];
 
-  // if(req.body.desc === 'undefined' || req.body.desc === '<p><br></p>') {
-  //   res.status(400);
-  //   throw new Error('Please add description')
-  // }
+  if(!req.body.title) {
+    res.status(400);
+    throw new Error('Please add title')
+  }
 
-  // if(!req.file) {
-  //   res.status(400);
-  //   throw new Error('Please add image')
-  // }
+  if(req.body.desc === 'undefined' || req.body.desc === '<p><br></p>') {
+    res.status(400);
+    throw new Error('Please add description')
+  }
 
-  // const {originalname, path} = req.file;
-  // const parts = originalname.split('.');
-  // const ext = parts[parts.length - 1];
-  // const image = parts[0] + '.' + ext;
+  if(!req.files) {
+    res.status(400);
+    throw new Error('Please add image')
+  }
 
-  // const newPath = path.slice(0, 8) + image;
-  // fs.renameSync(path, newPath);
+  const {originalname, path} = file1;
+  const parts = originalname.split('.');
+  const ext = parts[parts.length - 1];
+  const image = parts[0] + '.' + ext;
 
-  // const {title, desc} = req.body;
-  // await PotongModel.create({
-  //   title,
-  //   desc,
-  //   file: newPath,
-  // });
-  // res.status(200).json({message: 'Success Add New Data'})
-  res.status(200).json(req.body);
+  const newPath = path.slice(0, 8) + image;
+  fs.renameSync(path, newPath);
+
+  const originalname2 = file2.originalname;
+  const path2 = file2.path;
+  const parts2 = originalname2.split('.');
+  const ext2 = parts2[parts2.length - 1];
+  const image2 = parts2[0] + '.' + ext2;
+
+  const newPath2 = path2.slice(0, 8) + image2;
+  fs.renameSync(path2, newPath2);
+
+  const {title, desc} = req.body;
+  const data = await AboutModel.create({
+    title,
+    desc,
+    file1: newPath,
+    file2: newPath2,
+  });
+  res.status(200).json({data, message: 'Success Add New Data'});
 });
 
 

@@ -5,8 +5,8 @@ const AboutSchema = new Schema (
   {
     title: String,
     desc: String,
-    cover1: String,
-    cover2: String,
+    file1: String,
+    file2: String,
   },
   {
     timestamps: true,
