@@ -3,7 +3,7 @@ import Button from '../../elements/button';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { DisplayStatus } from '../../../contexts/DisplayStatus';
-import { getContent } from '../../../services/about-service';
+import { getContent, putContent } from '../../../services/about-service';
 
 const EditAbout = () => {
   const [data, setData] = useState();
@@ -49,6 +49,25 @@ const EditAbout = () => {
 
   const editContent = (e) => {
     e.preventDefault();
+    const data = new FormData();
+    data.set('title', title);
+    data.set('desc', desc);
+    for(let i = 0; i <= file.length; i++){
+      data.append('file', file[i]);
+    }
+
+    if(!data.get('title') || data.get('file') === 'undefined' || data.get('desc') === 'undefined'){
+      alert('Masukkan Data!');
+    }else {
+      putContent(idContent ,data, res => {
+        if(res.status === 400){
+          alert(res.data.message)
+        }else if(res.status === 200){
+          alert(res.data.message);
+          setDisplayStatus('show');
+        }
+      });
+    }
   }
 
   return (

@@ -40,7 +40,7 @@ const AddAbout = () => {
       data.append('file', file[i]);
     }
 
-    if(!data.get('title') || data.get('cover1') === 'undefined' || data.get('cover2') === 'undefined' || data.get('desc') === 'undefined'){
+    if(!data.get('title') || data.get('file') === 'undefined' || data.get('desc') === 'undefined'){
       alert('Masukkan Data!');
     }else {
       addContent(data, res => {

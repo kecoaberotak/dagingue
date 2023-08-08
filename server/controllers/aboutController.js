@@ -24,23 +24,24 @@ const getDetailAbout = asyncHandler(async (req, res) => {
 
 // Set About
 const setAbout = asyncHandler(async (req, res) => {
-  const file1 = req.files[0];
-  const file2 = req.files[1];
-
+  
   if(!req.body.title) {
     res.status(400);
     throw new Error('Please add title')
   }
-
+  
   if(req.body.desc === 'undefined' || req.body.desc === '<p><br></p>') {
     res.status(400);
     throw new Error('Please add description')
   }
-
+  
   if(!req.files) {
     res.status(400);
     throw new Error('Please add image')
   }
+  
+  const file1 = req.files[0];
+  const file2 = req.files[1];
 
   const {originalname, path} = file1;
   const parts = originalname.split('.');
@@ -72,43 +73,51 @@ const setAbout = asyncHandler(async (req, res) => {
 
 // Update About
 const updateAbout = asyncHandler(async (req, res) => {
-  // const data = await PotongModel.findById(req.params.id);
+  const data = await AboutModel.findById(req.params.id);
 
-  // if (!data) {
-  //   res.status(400);
-  //   throw new Error('Data not found');
-  // }
+  if(!req.body.title) {
+    res.status(400);
+    throw new Error('Please add title')
+  }
+  
+  if(req.body.desc === 'undefined' || req.body.desc === '<p><br></p>') {
+    res.status(400);
+    throw new Error('Please add description')
+  }
+  
+  if(!req.files) {
+    res.status(400);
+    throw new Error('Please add image')
+  }
+  
+  const file1 = req.files[0];
+  const file2 = req.files[1];
 
-  // if(!req.body.title) {
-  //   res.status(400);
-  //   throw new Error('Please add title')
-  // }
+  const {originalname, path} = file1;
+  const parts = originalname.split('.');
+  const ext = parts[parts.length - 1];
+  const image = parts[0] + '.' + ext;
 
-  // if(req.body.desc === 'undefined' || req.body.desc === '<p><br></p>') {
-  //   res.status(400);
-  //   throw new Error('Please add description')
-  // }
+  const newPath = path.slice(0, 8) + image;
+  fs.renameSync(path, newPath);
 
-  // if(!req.file) {
-  //   res.status(400);
-  //   throw new Error('Please add image')
-  // }
+  const originalname2 = file2.originalname;
+  const path2 = file2.path;
+  const parts2 = originalname2.split('.');
+  const ext2 = parts2[parts2.length - 1];
+  const image2 = parts2[0] + '.' + ext2;
 
-  // const {originalname, path} = req.file;
-  // const parts = originalname.split('.');
-  // const ext = parts[parts.length - 1];
-  // const image = parts[0] + '.' + ext;
+  const newPath2 = path2.slice(0, 8) + image2;
+  fs.renameSync(path2, newPath2);
 
-  // const newPath = path.slice(0, 8) + image;
-  // fs.renameSync(path, newPath);
-
-  // const {title, desc} = req.body;
-  // await PotongModel.findByIdAndUpdate(req.params.id,
-  // {
-  //   title,
-  //   desc,
-  //   file: newPath,
-  // });
+  const {title, desc} = req.body;
+  await AboutModel.findByIdAndUpdate(req.params.id,
+  {
+    title,
+    desc,
+    file1: newPath,
+    file2: newPath2,
+  });
 
   res.status(200).json({message: 'Success Update Data'})
 });
