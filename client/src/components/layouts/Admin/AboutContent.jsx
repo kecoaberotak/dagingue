@@ -1,10 +1,10 @@
 import IdAboutProvider from "../../../contexts/idAbout";
-import AddAbout from "./AddAbout";
+import EditAbout from "./EditAbout";
 
 const AboutContent = () => {
   return(
     <IdAboutProvider>
-      <AddAbout />
+      <EditAbout />
     </IdAboutProvider>
   );
 }

@@ -116,14 +116,14 @@ const updateAbout = asyncHandler(async (req, res) => {
 
 // Delete About
 const deleteAbout = asyncHandler(async (req, res) => {
-  // const data = await PotongModel.findById(req.params.id);
+  const data = await AboutModel.findById(req.params.id);
 
-  // if(!data){
-  //   res.status(400);
-  //   throw new Error('Data not found');
-  // };
+  if(!data){
+    res.status(400);
+    throw new Error('Data not found');
+  };
 
-  // await data.deleteOne({_id: req.params.id});
+  await data.deleteOne({_id: req.params.id});
 
   res.status(200).json({message: 'Data Deleted'});
 });
