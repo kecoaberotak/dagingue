@@ -115,6 +115,18 @@
   height: 250px;
 }
 
+.upload-gambar-about {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.upload-gambar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
 /* ====== Button ====== */
 .form-button {
   display: flex;

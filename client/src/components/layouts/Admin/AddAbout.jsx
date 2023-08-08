@@ -67,36 +67,42 @@ const AddAbout = () => {
           onChange={e => 
           setTitle(e.target.value)}
         />
-        <label htmlFor="gambar1"><p>Upload gambar content 1</p></label>
-        {srcPreview && <img src={`${srcPreview}`} alt="Gambar Content" className='gambar-content'/>}
-        <input 
-          type="file" 
-          name='gambar1' 
-          onChange={e => {
-            const newData = [...file];
-            newData[0] = e.target.files[0];
-            setFile(newData);
-            const objectUrl = URL.createObjectURL(e.target.files[0])
-            setSrcPreview(objectUrl);
-          }}
-        />
-        <label htmlFor="gambar2"><p>Upload gambar content 2</p></label>
-        {srcPreview2 && <img src={`${srcPreview2}`} alt="Gambar Content" className='gambar-content'/>}
-        <input 
-          type="file" 
-          name='gambar2' 
-          onChange={e => {
-            const newData = [...file];
-            if(newData.length > 0){
-              newData[1] = e.target.files[0];
-            }else if(newData.length === 0){
-              newData.push(e.target.files[0]);
-            }
-            setFile(newData);
-            const objectUrl = URL.createObjectURL(e.target.files[0])
-            setSrcPreview2(objectUrl);
-          }}
-        />
+        <div className="upload-gambar-about">
+          <section className="upload-gambar">
+            <label htmlFor="gambar1"><p>Upload gambar content 1</p></label>
+            {srcPreview && <img src={`${srcPreview}`} alt="Gambar Content" className='gambar-content'/>}
+            <input 
+              type="file" 
+              name='gambar1' 
+              onChange={e => {
+                const newData = [...file];
+                newData[0] = e.target.files[0];
+                setFile(newData);
+                const objectUrl = URL.createObjectURL(e.target.files[0])
+                setSrcPreview(objectUrl);
+              }}
+            />
+          </section>
+          <section className="upload-gambar">
+            <label htmlFor="gambar2"><p>Upload gambar content 2</p></label>
+            {srcPreview2 && <img src={`${srcPreview2}`} alt="Gambar Content" className='gambar-content'/>}
+            <input 
+              type="file" 
+              name='gambar2' 
+              onChange={e => {
+                const newData = [...file];
+                if(newData.length > 0){
+                  newData[1] = e.target.files[0];
+                }else if(newData.length === 0){
+                  newData.push(e.target.files[0]);
+                }
+                setFile(newData);
+                const objectUrl = URL.createObjectURL(e.target.files[0])
+                setSrcPreview2(objectUrl);
+              }}
+            />
+          </section>
+        </div>
         <label htmlFor="main-content">Isi Content</label>
         <ReactQuill 
           theme="snow"  
