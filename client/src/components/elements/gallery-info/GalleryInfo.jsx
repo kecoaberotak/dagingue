@@ -18,10 +18,10 @@ const GalleryInfo = () => {
           <div dangerouslySetInnerHTML={{__html:descSelected}}></div>
           :
           <p>
-            Bumbu teriyaki garlic memiliki rasa manis<br/>
-            dan asin. Dengan tambahan aroma khas<br/>
-            bawang putih, akan meningkatkan<br/>
-            kenikmatan dari daging yang anda beli.<br/>
+            Memiliki rasa manis dan asin.<br/>
+            Dengan tambahan aroma khas<br/>
+            bawang putih, yang menambah<br/>
+            kenikmatan daging.<br/>
           </p>
         }
       </GalleryInfoBumbu>
