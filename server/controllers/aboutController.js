@@ -24,15 +24,10 @@ const getDetailAbout = asyncHandler(async (req, res) => {
 
 // Set About
 const setAbout = asyncHandler(async (req, res) => {
-  
-  if(!req.body.title) {
+
+  if(req.body.content === 'undefined' || req.body.content === '<p><br></p>') {
     res.status(400);
-    throw new Error('Please add title')
-  }
-  
-  if(req.body.desc === 'undefined' || req.body.desc === '<p><br></p>') {
-    res.status(400);
-    throw new Error('Please add description')
+    throw new Error('Please add content')
   }
   
   if(!req.files) {
@@ -60,10 +55,9 @@ const setAbout = asyncHandler(async (req, res) => {
   const newPath2 = path2.slice(0, 8) + image2;
   fs.renameSync(path2, newPath2);
 
-  const {title, desc} = req.body;
+  const {content} = req.body;
   const data = await AboutModel.create({
-    title,
-    desc,
+    content,
     file1: newPath,
     file2: newPath2,
   });
@@ -75,14 +69,14 @@ const setAbout = asyncHandler(async (req, res) => {
 const updateAbout = asyncHandler(async (req, res) => {
   const data = await AboutModel.findById(req.params.id);
 
-  if(!req.body.title) {
+  if (!data) {
     res.status(400);
-    throw new Error('Please add title')
+    throw new Error('Content not found');
   }
   
-  if(req.body.desc === 'undefined' || req.body.desc === '<p><br></p>') {
+  if(req.body.content === 'undefined' || req.body.content === '<p><br></p>') {
     res.status(400);
-    throw new Error('Please add description')
+    throw new Error('Please add content')
   }
   
   if(!req.files) {
@@ -110,11 +104,10 @@ const updateAbout = asyncHandler(async (req, res) => {
   const newPath2 = path2.slice(0, 8) + image2;
   fs.renameSync(path2, newPath2);
 
-  const {title, desc} = req.body;
+  const {content} = req.body;
   await AboutModel.findByIdAndUpdate(req.params.id,
   {
-    title,
-    desc,
+    content,
     file1: newPath,
     file2: newPath2,
   });

@@ -3,8 +3,7 @@ const {Schema, model} = mongoose;
 
 const AboutSchema = new Schema (
   {
-    title: String,
-    desc: String,
+    content: String,
     file1: String,
     file2: String,
   },

@@ -1,28 +1,35 @@
-import { Fragment } from "react";
-
-import '../../assets/landing-page-css/about.css'
+import { Fragment, useEffect, useState } from "react";
+import '../../assets/landing-page-css/about.css';
+import { getContent } from "../../services/about-service";
 
 const About = () => {
+  const [data, setData] = useState();
+  const [srcPreview, setSrcPreview] = useState();
+  const [srcPreview2, setSrcPreview2] = useState();
+  const [content, setContent] = useState();
+
+  useEffect(() => {
+    getContent(res => setData(res.data[0]));
+  }, []);
+
+  useEffect(() => {
+    if(data){
+      setContent(data.content)
+      setSrcPreview(`http://localhost:4000/${data.file1}`);
+      setSrcPreview2(`http://localhost:4000/${data.file2}`);
+    }
+  }, [data]);
+
   return (
     <Fragment>
       <section className="about" id="about">
         <div className="image-about">
-          <img src="./images/about-us.jpg" alt="foto 1" className="foto-1" />
-          <img src="./images/product-2.jpg" alt="foto 2" className="foto-2" />
+          <img src={srcPreview} alt="foto 1" className="foto-1" />
+          <img src={srcPreview2} alt="foto 2" className="foto-2" />
         </div>
         <article className="article-about">
           <h3>Tentang Dagingue</h3>
-          <h1>Menyediakan Beef Slice<br />Terbaik Untuk Anda</h1>
-          <p>Dagingue menyediakan Beef Slice dengan dengan<br />varian bumbu dan jenis potongan sesuai selera anda.</p>
-          <p>Ada dua jenis potong daging yang kami sediakan.<br />Potongan tipis ala korean barberque dan potongan<br />dadu yang tebal.</p>
-          <ul>
-            <p>Varian Bumbu :</p>
-            <li> Spicy Korean</li>
-            <li> Bulgogi</li>
-            <li> Lada Hitam</li>
-            <li> Teriyaki Garlic</li>
-            <li> Barbeque</li>
-          </ul>
+          <div dangerouslySetInnerHTML={{__html:content}}></div>
         </article>
       </section>
     </Fragment>

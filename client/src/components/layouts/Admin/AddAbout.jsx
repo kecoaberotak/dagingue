@@ -10,8 +10,7 @@ const AddAbout = () => {
   const [srcPreview2, setSrcPreview2] = useState();
   const {setDisplayStatus} = useContext(DisplayStatus);
 
-  const [title, setTitle] = useState('');
-  const [desc, setDesc] = useState();
+  const [content, setContent] = useState();
   const [file, setFile] = useState([]);
 
   const modules = {
@@ -34,13 +33,12 @@ const AddAbout = () => {
   const addNewContent = (e) => {
     e.preventDefault();
     const data = new FormData();
-    data.set('title', title);
-    data.set('desc', desc);
+    data.set('content', content);
     for(let i = 0; i <= file.length; i++){
       data.append('file', file[i]);
     }
 
-    if(!data.get('title') || data.get('file') === 'undefined' || data.get('desc') === 'undefined'){
+    if(data.get('file') === 'undefined' || data.get('content') === 'undefined'){
       alert('Masukkan Data!');
     }else {
       addContent(data, res => {
@@ -58,15 +56,6 @@ const AddAbout = () => {
     <>
       <h1>Tambah Content About</h1>
       <form className="form-content" onSubmit={addNewContent}>
-        <label htmlFor="judul-content">Judul Content</label>
-        <input 
-          type="title" 
-          placeholder="Judul Content" 
-          value={title} 
-          name='judul-content'
-          onChange={e => 
-          setTitle(e.target.value)}
-        />
         <div className="upload-gambar-about">
           <section className="upload-gambar">
             <label htmlFor="gambar1"><p>Upload gambar content 1</p></label>
@@ -106,8 +95,8 @@ const AddAbout = () => {
         <label htmlFor="main-content">Isi Content</label>
         <ReactQuill 
           theme="snow"  
-          value={desc} 
-          onChange={setDesc} 
+          value={content} 
+          onChange={setContent}
           modules={modules} 
           formats={formats} 
           name='main-content'
