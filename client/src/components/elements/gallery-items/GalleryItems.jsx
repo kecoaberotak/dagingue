@@ -1,13 +1,13 @@
 import GalleryItemsImage from "./GalleryItemsImage";
+import { DataBumbu } from "../../../contexts/DataBumbu";
+import { useContext } from "react";
 
 const GalleryItems = () => {
+  const {dataBumbu} = useContext(DataBumbu);
+
   return(
     <section className="gallery-items">
-      <GalleryItemsImage image="./images/product-chop-1.jpg"/>
-      <GalleryItemsImage image="./images/product-chop-2.jpg" />
-      <GalleryItemsImage image="./images/product-chop-3.jpg" />
-      <GalleryItemsImage image="./images/product-chop-4.jpg" />
-      <GalleryItemsImage image="./images/product-chop-5.jpg" />
+      {dataBumbu.map(data => <GalleryItemsImage key={data._id} title={data.title} desc={data.desc} image={`http://localhost:4000/${data.file}`} />)}
     </section>
   );
 };

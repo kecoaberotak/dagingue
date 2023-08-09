@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import ImageSelectedContexProvider from './contexts/ImageSelected'
 import AdminInfoProvider from './contexts/AdminInfo'
 import LoginStatusProvider from './contexts/LoginStatus'
 
@@ -35,9 +34,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <LoginStatusProvider>
       <AdminInfoProvider>
-        <ImageSelectedContexProvider>
-          <RouterProvider router={router} />
-        </ImageSelectedContexProvider>
+        <RouterProvider router={router} />
       </AdminInfoProvider>
     </LoginStatusProvider>
   </React.StrictMode>,
