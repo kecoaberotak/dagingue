@@ -1,6 +1,6 @@
 /* ================ Product - Potong ================== */
 .product-potong {
-  height: 379px;
+  height: fit-content;
   width: 100%;
   background: url(./images/background.png);
   background-repeat: no-repeat;
@@ -8,6 +8,7 @@
   background-position: center;
   display: grid;
   justify-content: center;
+  gap: 15px;
 }
 
 .potong {
@@ -24,12 +25,30 @@
   color: var(--font-merah);
 }
 
-.cards-product {
-  display: flex;
-  width: 644px;
-  height: 243px;
+.cards-product-1 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr;
   gap: 22px;
+  padding-bottom: 15px;
 }
+
+.cards-product-2 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  padding-bottom: 15px;
+}
+
+.cards-product-3 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  padding-bottom: 15px;
+}
+
 .card {
   width: 311px;
   height: 243px;
