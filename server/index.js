@@ -31,4 +31,6 @@ const {errorHandler} = require('./middleware/errorMiddleware');
 app.use(errorHandler);
 
 
-app.listen(4000);
+app.listen(4000, () => {
+  console.log("Server listening on Port 4000");
+});
