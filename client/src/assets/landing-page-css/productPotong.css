@@ -81,6 +81,16 @@
   font-weight: var(--medium);
 }
 
+.load-card {
+  width: 450px;
+  height: 300px;
+  background-color: var(--font-abu);
+  position: relative;
+  border: 1px solid var(--font-abu);
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
 .potong-1{
   position: relative;
   top: -86px;
