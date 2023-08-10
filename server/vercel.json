@@ -5,8 +5,8 @@
   ],
   "routes"  : [
     {
-      "src" : "/api/bumbu",
-      "dest": "/"
+      "src" : "/api/about",
+      "dest": "/api/about"
     }
   ]
 }
