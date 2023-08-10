@@ -4,16 +4,18 @@ import { useContext } from "react";
 import { ImageSelected } from "../../../contexts/ImageSelected";
 import { DescSelected } from "../../../contexts/DescSelected";
 import { TitleSelected } from "../../../contexts/titleSelected";
+import { DataBumbu } from "../../../contexts/DataBumbu";
 
 const GalleryInfo = () => {
   const {selectedImage} = useContext(ImageSelected);
   const {descSelected} = useContext(DescSelected);
   const {titleSelected} = useContext(TitleSelected);
+  const {dataBumbu} = useContext(DataBumbu);
 
   return(
     <section className="gallery-info">
-      <GalleryInfoImage image={selectedImage ? selectedImage : './images/product-chop-1.jpg'} />
-      <GalleryInfoBumbu title={titleSelected ? titleSelected : "Teriyaki Garlic"}>
+      <GalleryInfoImage image={selectedImage ? selectedImage : `http://localhost:4000/${dataBumbu[0].file}`} />
+      <GalleryInfoBumbu title={titleSelected ? titleSelected : dataBumbu[0].title}>
         {descSelected ? 
           <div dangerouslySetInnerHTML={{__html:descSelected}}></div>
           :
