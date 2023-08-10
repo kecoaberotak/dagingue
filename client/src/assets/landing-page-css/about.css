@@ -31,6 +31,26 @@
   top: 145px;
 }
 
+.load-gambar {
+  width: 350px;
+  height: 350px;
+  background-color: var(--font-abu);
+  position: relative;
+  left: -80px;
+  top: 45px;
+  border: 1px solid var(--font-abu);
+  border-radius: 15px;
+}
+
+.load-content {
+  width: 450px;
+  height: 300px;
+  background-color: var(--font-abu);
+  position: relative;
+  border: 1px solid var(--font-abu);
+  border-radius: 15px;
+}
+
 .article-about {
   grid-area: article;
   display: grid;

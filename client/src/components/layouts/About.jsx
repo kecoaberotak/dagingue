@@ -24,12 +24,23 @@ const About = () => {
     <Fragment>
       <section className="about" id="about">
         <div className="image-about">
-          <img src={srcPreview} alt="foto 1" className="foto-1" />
-          <img src={srcPreview2} alt="foto 2" className="foto-2" />
+          {console.log(data)}
+          {srcPreview ? 
+          <>
+            <img src={srcPreview} alt="foto 1" className="foto-1" />
+            <img src={srcPreview2} alt="foto 2" className="foto-2" />
+          </>
+          :
+          <div className="load-gambar"></div>
+          }
         </div>
         <article className="article-about">
           <h3>Tentang Dagingue</h3>
+          {content ?
           <div dangerouslySetInnerHTML={{__html:content}}></div>
+          :
+          <div className="load-content"></div>
+          }
         </article>
       </section>
     </Fragment>
