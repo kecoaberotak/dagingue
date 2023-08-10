@@ -14,19 +14,23 @@ const GalleryInfo = () => {
 
   return(
     <section className="gallery-info">
-      <GalleryInfoImage image={selectedImage ? selectedImage : `http://localhost:4000/${dataBumbu[0].file}`} />
-      <GalleryInfoBumbu title={titleSelected ? titleSelected : dataBumbu[0].title}>
-        {descSelected ? 
-          <div dangerouslySetInnerHTML={{__html:descSelected}}></div>
-          :
-          <p>
-            Memiliki rasa manis dan asin.<br/>
-            Dengan tambahan aroma khas<br/>
-            bawang putih, yang menambah<br/>
-            kenikmatan daging.<br/>
-          </p>
-        }
-      </GalleryInfoBumbu>
+      {dataBumbu ? 
+        <>
+          <GalleryInfoImage image={selectedImage ? selectedImage : `http://localhost:4000/${dataBumbu[0].file}`} />
+          <GalleryInfoBumbu title={titleSelected ? titleSelected : dataBumbu[0].title}>
+            {descSelected ? 
+              <div dangerouslySetInnerHTML={{__html:descSelected}}></div>
+              :
+              <div dangerouslySetInnerHTML={{__html:dataBumbu[0].desc}}></div>
+            }
+          </GalleryInfoBumbu>
+        </>
+        :
+        <>
+          <div className="load-info-img"></div>
+          <div className="load-info-bumbu"></div>
+        </>
+      }
     </section>
   );
 };

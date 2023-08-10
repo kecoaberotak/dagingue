@@ -6,21 +6,18 @@ import { useContext, useEffect } from "react";
 import { getBumbu } from "../../services/bumbu-service";
 
 const ProductBumbu = () => {
-  const {dataBumbu ,setDataBumbu} = useContext(DataBumbu);
+  const {setDataBumbu} = useContext(DataBumbu);
 
   useEffect(() => {
     getBumbu(res => setDataBumbu(res.data))
   }, [setDataBumbu]);
 
-  if(dataBumbu){
     return(
       <div className="product-bumbu">
         <Title classname='title-section bumbu' title='Produk' subTitle='Varian Bumbu' />
         <Gallery />
       </div>
     );
-  }
-
 };
 
 export default ProductBumbu;
