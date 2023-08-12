@@ -9,7 +9,7 @@ mongoose.connect('mongodb+srv://dagingue:Dagingue123!@cluster0.01bn11g.mongodb.n
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(cors({credentials: true, origin: 'http://localhost:5173'}));
+app.use(cors({credentials: true, origin: ['http://localhost:5173', 'https://dagingue.vercel.app/']}));
 app.use(cookie());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 const port = 4000;
