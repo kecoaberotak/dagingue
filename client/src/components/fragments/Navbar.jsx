@@ -1,5 +1,5 @@
 import '../../assets/components/navbar.css'
-import Button from "../elements/button";
+import Button from "../elements/Button";
 import { useContext} from "react";
 import { logout } from '../../services/auth-service.js';
 import { useNavigate } from 'react-router-dom';
