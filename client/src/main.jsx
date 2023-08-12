@@ -7,7 +7,7 @@ import LoginStatusProvider from './contexts/LoginStatus'
 import './assets/main.css'
 
 // Pages
-import LandingPage from './pages/LandingPage'
+import LandingPage from './pages/landingPage'
 import ErrorPage from './pages/errorPage'
 import AdminPage from './pages/adminPage'
 import LoginPage from './pages/loginPage'
