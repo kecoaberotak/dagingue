@@ -12,6 +12,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors({credentials: true, origin: 'http://localhost:5173'}));
 app.use(cookie());
 app.use('/uploads', express.static(__dirname + '/uploads'));
+const port = 4000;
 
 // ====== AUTH ======
 app.use('/auth', require('./routes/authRoutes'));
@@ -31,6 +32,6 @@ const {errorHandler} = require('./middleware/errorMiddleware');
 app.use(errorHandler);
 
 
-app.listen(4000, () => {
-  console.log("Server listening on Port 4000");
+app.listen(port, () => {
+  console.log(`Server listening on Port ${port}`);
 });
