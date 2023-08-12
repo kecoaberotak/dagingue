@@ -1,6 +1,5 @@
 import Logo from "../elements/Logo";
 import Socmed from "../fragments/Socmed";
-
 import '../../assets/landing-page-css/header.css'
 
 const Header = () => {
