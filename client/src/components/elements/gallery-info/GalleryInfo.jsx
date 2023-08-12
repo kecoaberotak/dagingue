@@ -3,7 +3,7 @@ import GalleryInfoBumbu from "./GalleryInfoBumbu";
 import { useContext } from "react";
 import { ImageSelected } from "../../../contexts/ImageSelected";
 import { DescSelected } from "../../../contexts/DescSelected";
-import { TitleSelected } from "../../../contexts/titleSelected";
+import { TitleSelected } from "../../../contexts/TitleSelected";
 import { DataBumbu } from "../../../contexts/DataBumbu";
 
 const GalleryInfo = () => {

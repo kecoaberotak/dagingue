@@ -3,7 +3,7 @@ import ProductPotong from './ClientProductPotong';
 import ImageSelectedContexProvider from '../../contexts/ImageSelected';
 import DataBumbuProvider from '../../contexts/DataBumbu';
 import DescSelectedProvider from '../../contexts/DescSelected';
-import TitleSelectedProvider from '../../contexts/titleSelected';
+import TitleSelectedProvider from '../../contexts/TitleSelected';
 import '../../assets/landing-page-css/product.css'
 
 const Products = () => {
