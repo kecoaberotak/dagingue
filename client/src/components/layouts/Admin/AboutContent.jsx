@@ -1,4 +1,4 @@
-import IdAboutProvider from "../../../contexts/idAbout";
+import IdAboutProvider from "../../../contexts/IdAbout";
 import EditAbout from "./EditAbout";
 
 const AboutContent = () => {

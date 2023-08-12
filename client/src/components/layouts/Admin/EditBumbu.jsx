@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import Button from '../../elements/button';
+import Button from '../../elements/Button';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { DisplayStatus } from '../../../contexts/DisplayStatus';

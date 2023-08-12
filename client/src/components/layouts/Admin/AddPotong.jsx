@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import Button from '../../elements/button';
+import Button from '../../elements/Button';
 import { DisplayStatus } from '../../../contexts/DisplayStatus';
 import { addPotong } from '../../../services/potong-service';
 

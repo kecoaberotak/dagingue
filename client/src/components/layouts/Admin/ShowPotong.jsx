@@ -2,7 +2,7 @@ import { useContext, useState, useReducer, useEffect } from "react";
 import { DisplayStatus } from "../../../contexts/DisplayStatus";
 import { IdPotong } from "../../../contexts/IdPotong";
 import { getPotong, deletePotong } from "../../../services/potong-service";
-import Button from "../../elements/button";
+import Button from "../../elements/Button";
 
 const ShowPotong = () => {
   const [dataPotong, setDataPotong] = useState([]);
