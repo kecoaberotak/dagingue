@@ -15,7 +15,7 @@ const FooterContact = () => {
         </section>
         <Socmed classname="contact-info-socmed" />
       </div>
-      <Logo classname='contact-logo' image='./images/Logo.png' />
+      <Logo classname='contact-logo' image='/Logo.png' />
     </section>
   );
 };

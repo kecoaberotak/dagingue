@@ -5,7 +5,7 @@ import '../../assets/landing-page-css/header.css'
 const Header = () => {
   return(
     <header className="header" id="home">
-      <Logo classname='logo' image='./images/Logo.png' />
+      <Logo classname='logo' image='/Logo.png' />
       <ul className="navbar-header">
         <li><a href="#home">Beranda</a></li>
         <li><a href="#about">Tentang Kami</a></li>
