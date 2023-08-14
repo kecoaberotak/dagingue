@@ -38,6 +38,16 @@ const setAbout = asyncHandler(async (req, res) => {
   const file1 = req.files[0];
   const file2 = req.files[1];
 
+  if(!file1.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
+    res.status(400);
+    throw new Error('Only image files are allowed!')
+  }
+
+  if(!file2.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
+    res.status(400);
+    throw new Error('Only image files are allowed!')
+  }
+
   const {originalname, path} = file1;
   const parts = originalname.split('.');
   const ext = parts[parts.length - 1];
@@ -86,6 +96,16 @@ const updateAbout = asyncHandler(async (req, res) => {
   
   const file1 = req.files[0];
   const file2 = req.files[1];
+
+  if(!file1.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
+    res.status(400);
+    throw new Error('Only image files are allowed!')
+  }
+
+  if(!file2.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
+    res.status(400);
+    throw new Error('Only image files are allowed!')
+  }
 
   const {originalname, path} = file1;
   const parts = originalname.split('.');

@@ -39,6 +39,11 @@ const setPotong = asyncHandler(async (req, res) => {
     throw new Error('Please add image')
   }
 
+  if(!req.file.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
+    res.status(400);
+    throw new Error('Only image files are allowed!')
+  }
+
   const {originalname, path} = req.file;
   const parts = originalname.split('.');
   const ext = parts[parts.length - 1];
@@ -79,6 +84,11 @@ const updatePotong = asyncHandler(async (req, res) => {
   if(!req.file) {
     res.status(400);
     throw new Error('Please add image')
+  }
+
+  if(!req.file.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
+    res.status(400);
+    throw new Error('Only image files are allowed!')
   }
 
   const {originalname, path} = req.file;
