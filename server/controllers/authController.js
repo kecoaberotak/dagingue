@@ -9,6 +9,13 @@ const AdminModel = require('../models/Admin');
 
 // login
 const login = asyncHandler(async (req, res) => {
+  const cookieOptions = {
+    httpOnly: true,
+    expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+    sameSite: "none",
+    secure: true, // this was 'false' before. 'true' works.
+  };
+
   const {username, password} = req.body;
   const adminDoc =  await AdminModel.findOne({username});
   if(adminDoc){
@@ -21,7 +28,7 @@ const login = asyncHandler(async (req, res) => {
         {}, 
         (err, token) => {
           if(err) throw err;
-          res.cookie('token', token).status(200).json({message:"login success"});
+          res.cookie('token', token, cookieOptions).status(200).json({message:"login success"});
         }
       )
     }else {
