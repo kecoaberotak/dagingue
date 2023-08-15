@@ -2,8 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+const config = require('./config');
 
-// Dagingue123!
+// Database MongoDB
 require('dotenv').config();
 mongoose.connect(process.env.DATABASE);
 
@@ -13,7 +14,6 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors({credentials: true, origin: ['http://localhost:5173', 'https://dagingue.vercel.app', `https://dagingue-kecoaberotak.vercel.app`, 'http://localhost:4173']}));
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
-const port = 4000;
 
 // ====== AUTH ======
 app.use('/auth', require('./routes/authRoutes'));
@@ -33,6 +33,6 @@ const {errorHandler} = require('./middleware/errorMiddleware');
 app.use(errorHandler);
 
 
-app.listen(port, () => {
-  console.log(`Server listening on Port ${port}`);
+app.listen(config.port, () => {
+  console.log(`Server listening on Port ${config.port}`);
 });

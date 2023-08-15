@@ -19,5 +19,6 @@ module.exports = {
     messagingSenderId: MESSAGING_SENDER_ID,
     appId: APP_ID,
     measurementId: MEASUREMENT_ID
-  }
+  },
+  port: 4000,
 }
