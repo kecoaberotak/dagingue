@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 
 // Dagingue123!
-mongoose.connect('mongodb+srv://dagingue:Dagingue123!@cluster0.01bn11g.mongodb.net/dagingue?retryWrites=true&w=majority');
+require('dotenv').config();
+mongoose.connect(process.env.DATABASE);
 
 const app = express();
 app.use(express.json());
