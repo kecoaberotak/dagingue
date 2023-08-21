@@ -27,7 +27,7 @@ const ProductPotong = () => {
         <section className={classname}>
         {data.map(potong => {
           return (
-            <Card key={potong._id} tipe={potong.title} berat={potong.desc} image={`http://localhost:4000/${potong.file}`} />
+            <Card key={potong._id} tipe={potong.title} berat={potong.desc} image={potong.file} />
           )
         })}
         </section>

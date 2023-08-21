@@ -2,7 +2,7 @@ const asyncHandler = require('express-async-handler');
 const fs = require('fs');
 
 // firebase
-const { getStorage, ref, uploadBytes } = require("firebase/storage");
+const { getStorage, ref, uploadBytes, getDownloadURL } = require("firebase/storage");
 const firebase = require('../firebase');
 const storage = getStorage(firebase);
 
@@ -53,7 +53,16 @@ const setPotong = asyncHandler(async (req, res) => {
   const {originalname} = req.file;
 
   const imageRef = ref(storage, `potong/${originalname}`);
-    await uploadBytes(imageRef, file.buffer);
+  await uploadBytes(imageRef, file.buffer).then(() => {
+    getDownloadURL(ref (storage, `potong/${originalname}`)).then(async(url) => {
+      const {title, desc} = req.body;
+      await PotongModel.create({
+        title,
+        desc,
+        file: url,
+      });
+    });
+  });
 
   // const parts = originalname.split('.');
   // const ext = parts[parts.length - 1];
@@ -69,8 +78,7 @@ const setPotong = asyncHandler(async (req, res) => {
   //   file: newPath,
   // });
 
-  // res.status(200).json({message: 'Success Add New Data'})
-  res.status(200).json({file, originalname, imageRef});
+  res.status(200).json({message: 'Success Add New Data'})
 });
 
 
