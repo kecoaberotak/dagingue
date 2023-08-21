@@ -25,10 +25,12 @@ const AddPotong = () => {
       }else {
         addPotong(data, res => {
           if(res.status === 400){
-            alert(res.data.message)
+            // alert(res.data.message)
+            console.log(res.data)
           }else if(res.status === 200){
-            alert(res.data.message);
-            setDisplayStatus('show');
+            // alert(res.data.message);
+            console.log(res.data)
+            // setDisplayStatus('show');
           }
         });
       }

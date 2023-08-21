@@ -1,11 +1,6 @@
-import { initializeApp } from 'firebase/app';
-import { getStorage } from "firebase/storage";
+const { initializeApp } = require('firebase/app');
 const config = require('./config');
 
-const app = initializeApp(config.firebaseConfig);
-const storage = getStorage(app);
+const firebase = initializeApp(config.firebaseConfig);
 
-module.exports = {
-  app,
-  storage,
-};
+module.exports = firebase;

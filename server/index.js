@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const config = require('./config');
+// global.XMLHttpRequest = require("xhr2");
 
 // Database MongoDB
 require('dotenv').config();
