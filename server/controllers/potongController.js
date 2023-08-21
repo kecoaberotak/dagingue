@@ -1,5 +1,4 @@
 const asyncHandler = require('express-async-handler');
-const fs = require('fs');
 
 // firebase
 const { getStorage, ref, uploadBytes, getDownloadURL } = require("firebase/storage");
@@ -64,20 +63,6 @@ const setPotong = asyncHandler(async (req, res) => {
     });
   });
 
-  // const parts = originalname.split('.');
-  // const ext = parts[parts.length - 1];
-  // const image = parts[0] + '.' + ext;
-
-  // const newPath = path.slice(0, 8) + image;
-  // fs.renameSync(path, newPath);
-
-  // const {title, desc} = req.body;
-  // await PotongModel.create({
-  //   title,
-  //   desc,
-  //   file: newPath,
-  // });
-
   res.status(200).json({message: 'Success Add New Data'})
 });
 
@@ -111,20 +96,20 @@ const updatePotong = asyncHandler(async (req, res) => {
     throw new Error('Only image files are allowed!')
   }
 
-  const {originalname, path} = req.file;
-  const parts = originalname.split('.');
-  const ext = parts[parts.length - 1];
-  const image = parts[0] + '.' + ext;
+  const file = req.file;
+  const {originalname} = req.file;
 
-  const newPath = path.slice(0, 8) + image;
-  fs.renameSync(path, newPath);
-
-  const {title, desc} = req.body;
-  await PotongModel.findByIdAndUpdate(req.params.id,
-  {
-    title,
-    desc,
-    file: newPath,
+  const imageRef = ref(storage, `potong/${originalname}`);
+  await uploadBytes(imageRef, file.buffer).then(() => {
+    getDownloadURL(ref (storage, `potong/${originalname}`)).then(async(url) => {
+      const {title, desc} = req.body;
+      await PotongModel.findByIdAndUpdate(req.params.id,
+      {
+        title,
+        desc,
+        file: url,
+      });
+    });
   });
 
   res.status(200).json({message: 'Success Update Data'})
