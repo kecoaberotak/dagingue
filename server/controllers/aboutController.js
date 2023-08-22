@@ -1,5 +1,9 @@
 const asyncHandler = require('express-async-handler');
-const fs = require('fs');
+
+// firebase
+const { getStorage, ref, uploadBytes, getDownloadURL } = require("firebase/storage");
+const firebase = require('../firebase');
+const storage = getStorage(firebase);
 
 // Model
 const AboutModel = require('../models/About');
@@ -48,29 +52,28 @@ const setAbout = asyncHandler(async (req, res) => {
     throw new Error('Only image files are allowed!')
   }
 
-  const {originalname, path} = file1;
-  const parts = originalname.split('.');
-  const ext = parts[parts.length - 1];
-  const image = parts[0] + '.' + ext;
-
-  const newPath = path.slice(0, 8) + image;
-  fs.renameSync(path, newPath);
-
+  const {originalname} = file1;
   const originalname2 = file2.originalname;
-  const path2 = file2.path;
-  const parts2 = originalname2.split('.');
-  const ext2 = parts2[parts2.length - 1];
-  const image2 = parts2[0] + '.' + ext2;
 
-  const newPath2 = path2.slice(0, 8) + image2;
-  fs.renameSync(path2, newPath2);
+  const imageRef1 = ref(storage, `about/${originalname}`);
+  const imageRef2 = ref(storage, `about/${originalname2}`);
+  let data = {};
 
-  const {content} = req.body;
-  const data = await AboutModel.create({
-    content,
-    file1: newPath,
-    file2: newPath2,
+  await uploadBytes(imageRef1, file1.buffer).then(() => {
+    getDownloadURL(ref (storage, `about/${originalname}`)).then(async(url) => {
+      await uploadBytes(imageRef2, file2.buffer).then(() => {
+        getDownloadURL(ref (storage, `about/${originalname2}`)).then(async(url2) => {
+          const {content} = req.body;
+          data = await AboutModel.create({
+            content,
+            file1: url,
+            file2: url2,
+          });
+        });
+      });
+    });
   });
+
   res.status(200).json({data, message: 'Success Add New Data'});
 });
 
@@ -107,29 +110,26 @@ const updateAbout = asyncHandler(async (req, res) => {
     throw new Error('Only image files are allowed!')
   }
 
-  const {originalname, path} = file1;
-  const parts = originalname.split('.');
-  const ext = parts[parts.length - 1];
-  const image = parts[0] + '.' + ext;
-
-  const newPath = path.slice(0, 8) + image;
-  fs.renameSync(path, newPath);
-
+  const {originalname} = file1;
   const originalname2 = file2.originalname;
-  const path2 = file2.path;
-  const parts2 = originalname2.split('.');
-  const ext2 = parts2[parts2.length - 1];
-  const image2 = parts2[0] + '.' + ext2;
 
-  const newPath2 = path2.slice(0, 8) + image2;
-  fs.renameSync(path2, newPath2);
+  const imageRef1 = ref(storage, `about/${originalname}`);
+  const imageRef2 = ref(storage, `about/${originalname2}`);
 
-  const {content} = req.body;
-  await AboutModel.findByIdAndUpdate(req.params.id,
-  {
-    content,
-    file1: newPath,
-    file2: newPath2,
+  await uploadBytes(imageRef1, file1.buffer).then(() => {
+    getDownloadURL(ref (storage, `about/${originalname}`)).then(async(url) => {
+      await uploadBytes(imageRef2, file2.buffer).then(() => {
+        getDownloadURL(ref (storage, `about/${originalname2}`)).then(async(url2) => {
+          const {content} = req.body;
+          await AboutModel.findByIdAndUpdate(req.params.id,
+          {
+            content,
+            file1: url,
+            file2: url2,
+          });
+        });
+      });
+    });
   });
 
   res.status(200).json({message: 'Success Update Data'})

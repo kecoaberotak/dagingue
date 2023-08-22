@@ -15,8 +15,8 @@ const About = () => {
   useEffect(() => {
     if(data){
       setContent(data.content)
-      setSrcPreview(`http://localhost:4000/${data.file1}`);
-      setSrcPreview2(`http://localhost:4000/${data.file2}`);
+      setSrcPreview(data.file1);
+      setSrcPreview2(data.file2);
     }
   }, [data]);
 

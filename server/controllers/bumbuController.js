@@ -1,5 +1,4 @@
 const asyncHandler = require('express-async-handler');
-const fs = require('fs');
 
 // firebase
 const { getStorage, ref, uploadBytes, getDownloadURL } = require("firebase/storage");
