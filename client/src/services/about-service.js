@@ -1,7 +1,8 @@
 import axios from "axios";
+const apiUrl = import.meta.env.VITE_DAGINGUE_API_URL;
 
 export const getContent = (callback) => {
-  axios.get('https://dagingue-api.vercel.app/api/about').then(res => {
+  axios.get(apiUrl + '/api/about').then(res => {
     callback(res.data);
   }).catch(err => {
     callback(err.response);
@@ -9,7 +10,7 @@ export const getContent = (callback) => {
 };
 
 export const addContent = (data, callback) => {
-  axios.post('https://dagingue-api.vercel.app/api/about', data).then(res => {
+  axios.post(apiUrl + '/api/about', data).then(res => {
     callback(res);
   }).catch(err => {
     callback(err.response);
@@ -17,7 +18,7 @@ export const addContent = (data, callback) => {
 };
 
 export const getDetailContent = (id, callback) => {
-  axios.get(`https://dagingue-api.vercel.app/api/about/${id}`).then(res => {
+  axios.get(apiUrl + '/api/about/' + id).then(res => {
     callback(res);
   }).catch(err => {
     callback(err.response);
@@ -25,7 +26,7 @@ export const getDetailContent = (id, callback) => {
 };
 
 export const putContent = (id, data, callback) => {
-  axios.put(`https://dagingue-api.vercel.app/api/about/${id}`, data).then(res => {
+  axios.put(apiUrl + '/api/about/' + id, data).then(res => {
     callback(res);
   }).catch(err => {
     callback(err.response);
