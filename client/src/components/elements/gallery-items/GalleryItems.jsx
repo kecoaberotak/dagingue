@@ -8,7 +8,7 @@ const GalleryItems = () => {
   if(dataBumbu){
     return(
       <section className="gallery-items">
-        {dataBumbu.map(data => <GalleryItemsImage key={data._id} title={data.title} desc={data.desc} image={`http://localhost:4000/${data.file}`} />)}
+        {dataBumbu.map(data => <GalleryItemsImage key={data._id} title={data.title} desc={data.desc} image={data.file} />)}
       </section>
     );
   }

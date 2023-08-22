@@ -41,7 +41,7 @@ const EditBumbu = () => {
   }, [preview, file]);
 
   useEffect(() => {
-    setSrcPreview(`http://localhost:4000/${preview}`);
+    setSrcPreview(preview);
   }, [preview]);
 
   const modules = {

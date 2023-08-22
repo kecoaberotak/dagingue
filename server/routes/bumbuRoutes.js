@@ -4,7 +4,8 @@ const { getBumbu, getDetailBumbu, setBumbu, updateBumbu, deleteBumbu } = require
 
 // Multer - buat upload file
 const multer = require('multer');
-const upload = multer({ dest: 'uploads/' })
+const storage = multer.memoryStorage();
+const upload = multer({storage});
 
 router.route('/').get(getBumbu).post(upload.single('file'), setBumbu);
 router.route('/:id').get(getDetailBumbu).put(upload.single('file'),updateBumbu).delete(deleteBumbu);

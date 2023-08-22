@@ -1,6 +1,11 @@
 const asyncHandler = require('express-async-handler');
 const fs = require('fs');
 
+// firebase
+const { getStorage, ref, uploadBytes, getDownloadURL } = require("firebase/storage");
+const firebase = require('../firebase');
+const storage = getStorage(firebase);
+
 // Model
 const BumbuModel = require('../models/Bumbu');
 
@@ -44,19 +49,19 @@ const setBumbu = asyncHandler(async (req, res) => {
     throw new Error('Only image files are allowed!')
   }
 
-  const {originalname, path} = req.file;
-  const parts = originalname.split('.');
-  const ext = parts[parts.length - 1];
-  const image = parts[0] + '.' + ext;
+  const file = req.file;
+  const {originalname} = req.file;
 
-  const newPath = path.slice(0, 8) + image;
-  fs.renameSync(path, newPath);
-
-  const {title, desc} = req.body;
-  await BumbuModel.create({
-    title,
-    desc,
-    file: newPath,
+  const imageRef = ref(storage, `bumbu/${originalname}`);
+  await uploadBytes(imageRef, file.buffer).then(() => {
+    getDownloadURL(ref (storage, `bumbu/${originalname}`)).then(async(url) => {
+      const {title, desc} = req.body;
+      await BumbuModel.create({
+        title,
+        desc,
+        file: url,
+      });
+    });
   });
   res.status(200).json({message: 'Success Add New Data'})
 });
@@ -91,20 +96,20 @@ const updateBumbu = asyncHandler(async (req, res) => {
     throw new Error('Only image files are allowed!')
   }
 
-  const {originalname, path} = req.file;
-  const parts = originalname.split('.');
-  const ext = parts[parts.length - 1];
-  const image = parts[0] + '.' + ext;
+  const file = req.file;
+  const {originalname} = req.file;
 
-  const newPath = path.slice(0, 8) + image;
-  fs.renameSync(path, newPath);
-
-  const {title, desc} = req.body;
-  await BumbuModel.findByIdAndUpdate(req.params.id,
-  {
-    title,
-    desc,
-    file: newPath,
+  const imageRef = ref(storage, `bumbu/${originalname}`);
+  await uploadBytes(imageRef, file.buffer).then(() => {
+    getDownloadURL(ref (storage, `bumbu/${originalname}`)).then(async(url) => {
+      const {title, desc} = req.body;
+      await BumbuModel.findByIdAndUpdate(req.params.id,
+      {
+        title,
+        desc,
+        file: url,
+      });
+    });
   });
 
   res.status(200).json({message: 'Success Update Data'})
