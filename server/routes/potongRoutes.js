@@ -4,7 +4,6 @@ const {getPotong, getDetailPotong ,setPotong, updatePotong, deletePotong} = requ
 
 // Multer - buat upload file
 const multer = require('multer');
-// const upload = multer({ dest: 'uploads/' });
 const storage = multer.memoryStorage();
 const upload = multer({storage});
 
