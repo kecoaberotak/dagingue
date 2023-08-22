@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const login = (data, callback) => {
-  axios.post('http://localhost:4000/auth/login', data, {withCredentials: true}).then(res => {
+  axios.post('https://dagingue-api.vercel.app/auth/login', data, {withCredentials: true}).then(res => {
     callback(res);
   }).catch(err => {
     callback(err.response);
@@ -9,7 +9,7 @@ export const login = (data, callback) => {
 };
 
 export const getToken = (callback) => {
-  axios.get('http://localhost:4000/auth/login',{withCredentials: true}).then(res => {
+  axios.get('https://dagingue-api.vercel.app/auth/login',{withCredentials: true}).then(res => {
     callback(res.data);
   }).catch(err => {
     callback(err.response);
@@ -17,7 +17,7 @@ export const getToken = (callback) => {
 };
 
 export const logout = (callback) => {
-  axios.post('http://localhost:4000/auth/logout', {withCredentials: true}).then(res => {
+  axios.post('https://dagingue-api.vercel.app/auth/logout', {withCredentials: true}).then(res => {
     callback(res);
   }).catch(err => {
     callback(err.response);

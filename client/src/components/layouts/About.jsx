@@ -24,7 +24,6 @@ const About = () => {
     <Fragment>
       <section className="about" id="about">
         <div className="image-about">
-          {console.log(data)}
           {srcPreview ? 
           <>
             <img src={srcPreview} alt="foto 1" className="foto-1" />

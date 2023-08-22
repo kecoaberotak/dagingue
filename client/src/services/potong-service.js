@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const addPotong = (data, callback) => {
-  axios.post('http://localhost:4000/api/potong', data).then(res => {
+  axios.post('https://dagingue-api.vercel.app/api/potong', data).then(res => {
     callback(res);
   }).catch(err => {
     callback(err.response);
@@ -9,7 +9,7 @@ export const addPotong = (data, callback) => {
 };
 
 export const getPotong = (callback) => {
-  axios.get('http://localhost:4000/api/potong').then(res => {
+  axios.get('https://dagingue-api.vercel.app/api/potong').then(res => {
     callback(res.data);
   }).catch(err => {
     callback(err.response);
@@ -17,7 +17,7 @@ export const getPotong = (callback) => {
 };
 
 export const deletePotong = (id, callback) => {
-  axios.delete(`http://localhost:4000/api/potong/${id}`).then(res => {
+  axios.delete(`https://dagingue-api.vercel.app/api/potong/${id}`).then(res => {
     callback(res);
   }).catch(err => {
     callback(err.response);
@@ -25,7 +25,7 @@ export const deletePotong = (id, callback) => {
 };
 
 export const getDetailPotong = (id, callback) => {
-  axios.get(`http://localhost:4000/api/potong/${id}`).then(res => {
+  axios.get(`https://dagingue-api.vercel.app/api/potong/${id}`).then(res => {
     callback(res);
   }).catch(err => {
     callback(err.response);
@@ -33,7 +33,7 @@ export const getDetailPotong = (id, callback) => {
 };
 
 export const putPotong = (id, data, callback) => {
-  axios.put(`http://localhost:4000/api/potong/${id}`, data).then(res => {
+  axios.put(`https://dagingue-api.vercel.app/api/potong/${id}`, data).then(res => {
     callback(res);
   }).catch(err => {
     callback(err.response);
