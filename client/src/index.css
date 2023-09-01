@@ -23,3 +23,29 @@
     @apply font-normal text-lg;
   }
 }
+
+@layer components {
+  .header {
+    @apply bg-[url('/hero-image.jpg')] w-full h-[379px] bg-no-repeat bg-cover bg-center mb-[50px] grid justify-center;
+  }
+
+  .logo {
+    @apply w-full mt-[50px] grid justify-center;
+  }
+
+  .navbar-header {
+    @apply grid grid-flow-col justify-center gap-[22px] mt-[50px];
+  }
+
+  .socmed {
+    @apply grid grid-flow-col justify-center gap-[22px] relative left-96 -top-7;
+  }
+}
+
+.navbar-header a{
+  @apply text-putih font-bold;
+}
+
+.navbar-header a:hover {
+  @apply hover:border-b-[3px] border-merah;
+}
