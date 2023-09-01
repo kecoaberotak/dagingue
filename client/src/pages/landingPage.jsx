@@ -4,16 +4,20 @@ import Products from "../components/layouts/Products";
 import Footer from "../components/layouts/Footer";
 
 // CSS
-import '../assets/landing-page-css/landingPage.css'
+// import '../assets/landing-page-css/landingPage.css'
+import '../index.css'
 
 const LandingPage = () => {
   return (
-    <div className="container">
-      <Header></Header>
-      <About></About>
-      <Products></Products>
-      <Footer></Footer>
-    </div>
+    // <div className="container">
+    //   <Header></Header>
+    //   <About></About>
+    //   <Products></Products>
+    //   <Footer></Footer>
+    // </div>
+    <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
   );
 };
 
