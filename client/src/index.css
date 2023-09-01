@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/* h1 {
-  @apply text-3xl font-bold underline;
-} */
+@layer base {
+  html {
+    @apply font-montserrat font-normal scroll-smooth;
+  }
+
+  body {
+    @apply bg-putih;
+  }
+
+  h1 {
+    @apply font-semibold text-[32px];
+  }
+  
+  h2 {
+    @apply font-medium text-2xl;
+  }
+  
+  h3 {
+    @apply font-normal text-lg;
+  }
+}

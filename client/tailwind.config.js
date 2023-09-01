@@ -8,6 +8,11 @@ export default {
     extend: {
       fontFamily: {
         montserrat: ['Montserrat'],
+      },
+      colors: {
+        putih: '#FFFBFD',
+        merah: '#9D2330',
+        abu: '#666',
       }
     },
   },

@@ -4,7 +4,6 @@ import AdminInfoProvider from './contexts/AdminInfo'
 import LoginStatusProvider from './contexts/LoginStatus'
 
 // css
-// import './assets/main.css'
 import './index.css';
 
 // Pages

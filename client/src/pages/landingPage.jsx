@@ -9,15 +9,15 @@ import '../index.css'
 
 const LandingPage = () => {
   return (
-    // <div className="container">
-    //   <Header></Header>
-    //   <About></About>
-    //   <Products></Products>
-    //   <Footer></Footer>
-    // </div>
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className="container">
+    <h1>Header 1</h1>
+    <h2>Header 2</h2>
+    <h3>Header 3</h3>
+      <Header></Header>
+      {/* <About></About> */}
+      {/* <Products></Products> */}
+      {/* <Footer></Footer> */}
+    </div>
   );
 };
 
