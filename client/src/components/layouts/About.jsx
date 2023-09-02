@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import '../../assets/landing-page-css/about.css';
+// import '../../assets/landing-page-css/about.css';
 import { getContent } from "../../services/about-service";
 
 const About = () => {
