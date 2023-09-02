@@ -24,6 +24,7 @@
   }
 }
 
+/* ====== Header ======*/
 @layer components {
   .header {
     @apply bg-[url('/hero-image.jpg')] w-full h-[379px] bg-no-repeat bg-cover bg-center mb-[50px] grid justify-center;
@@ -34,11 +35,11 @@
   }
 
   .navbar-header {
-    @apply grid grid-flow-col justify-center gap-[22px] mt-[50px];
+    @apply grid grid-flow-col justify-center text-sm gap-[15px] mt-[50px] sm:text-base sm:gap-[22px];
   }
 
   .socmed {
-    @apply grid grid-flow-col justify-center gap-[22px] relative left-96 -top-7;
+    @apply justify-center relative w-1/3 hidden md:grid md:gap-[22px] md:left-[430px] md:-top-[25px] md:grid-flow-col lg:left-[500px] lg:-top-[25px] xl:left-[650px];
   }
 }
 

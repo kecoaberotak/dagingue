@@ -1,5 +1,5 @@
 import Header from "../components/layouts/Header";
-// import About from "../components/layouts/About";
+import About from "../components/layouts/About";
 // import Products from "../components/layouts/Products";
 // import Footer from "../components/layouts/Footer";
 
@@ -10,7 +10,7 @@ const LandingPage = () => {
   return (
     <>
       <Header></Header>
-      {/* <About></About> */}
+      <About></About>
       {/* <Products></Products> */}
       {/* <Footer></Footer> */}
     </>
