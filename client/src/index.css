@@ -55,11 +55,11 @@
 /* ====== ABOUT ====== */
 @layer components {
   .about {
-    @apply grid grid-cols-2 justify-center content-center mb-[50px];
+    @apply grid justify-center content-center mb-[50px] md:grid-cols-2;
   }
 
   .image-about {
-    @apply order-1 flex justify-center items-center relative left-20 -top-[50px];
+    @apply justify-center items-center relative left-20 -top-[50px] hidden md:flex md:order-1 md:scale-90 lg:scale-100;
   }
 
   .foto-1 {
@@ -71,7 +71,7 @@
   }
 
   .article-about {
-    @apply order-2 grid gap-[8px] leading-normal;
+    @apply md:order-2 grid gap-[8px] p-6 leading-normal md:scale-90;
   }
 
   .article-about h3 {
