@@ -1,7 +1,7 @@
 import Title from "../elements/Title";
 import Card from "../fragments/Card";
 import { getPotong } from "../../services/potong-service";
-import '../../assets/landing-page-css/productPotong.css';
+// import '../../assets/landing-page-css/productPotong.css';
 import { useEffect, useState } from "react";
 
 const ProductPotong = () => {

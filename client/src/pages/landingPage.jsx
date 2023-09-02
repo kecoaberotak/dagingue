@@ -1,6 +1,6 @@
 import Header from "../components/layouts/Header";
 import About from "../components/layouts/About";
-// import Products from "../components/layouts/Products";
+import Products from "../components/layouts/Products";
 // import Footer from "../components/layouts/Footer";
 
 // CSS
@@ -11,7 +11,7 @@ const LandingPage = () => {
     <>
       <Header></Header>
       <About></About>
-      {/* <Products></Products> */}
+      <Products></Products>
       {/* <Footer></Footer> */}
     </>
   );

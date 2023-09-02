@@ -3,7 +3,7 @@ const Card = (props) => {
   return(
     <div className="card" key={key}>
       <section className="card-product">
-          <img className="potong-1" src={image} alt="404" />
+          <img className="potong-img" src={image} alt="404" />
       </section>
       <section className="card-product-info">
         <p>{tipe}</p>

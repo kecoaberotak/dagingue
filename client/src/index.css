@@ -87,3 +87,104 @@
     @apply text-merah;
   }
 }
+
+/* ====== PRODUCT ====== */
+@layer components {
+  .product {
+    @apply mb-[50px] grid gap-[50px];
+  }
+  
+  .title-section {
+    @apply flex flex-col items-center;
+  }
+
+  /* ====== POTONG ====== */
+  .product-potong {
+    @apply h-fit w-full bg-[url('/background.png')] bg-no-repeat bg-cover bg-center grid justify-center gap-[15px];
+  }
+
+  .potong {
+    @apply mt-[30px];
+  }
+
+  .title-section p {
+    /* color: var(--font-black);
+    font-size: 32px;
+    font-weight: var(--bold); */
+    @apply text-black text-2xl font-bold;
+  }
+  
+  .title-section h3 {
+    @apply text-merah;
+  }
+
+  .cards-product-1 {
+    /* display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding-bottom: 15px; */
+  }
+  
+  .cards-product-2 {
+    /* display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    padding-bottom: 15px; */
+    @apply grid grid-flow-row grid-cols-2 gap-[22px] pb-4;
+  }
+  
+  .cards-product-3 {
+    /* display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    padding-bottom: 15px; */
+  }
+
+  .card {
+    /* width: 311px;
+    height: 243px;
+    background: var(--font-putih);
+    border: 1px solid var(--font-putih);
+    border-radius: 15px;
+    display: grid; */
+    @apply grid bg-putih w-[155px] h-[130px] border-putih rounded-[10px];
+  }
+
+  .card-product {
+    /* width: 274px;
+    height: 136px;
+    border: 1px solid var(--font-putih);
+    border-radius: 15px;
+    justify-self: center;
+    align-self: center;
+    overflow: hidden; */
+    @apply w-[138px] h-[68px] overflow-hidden border-putih rounded-[10px] justify-self-center self-center mt-1;
+  }
+
+  .card-product-info {
+    /* margin-left: 1rem; */
+    @apply ml-2 text-sm;
+  }
+  
+  .card-product-info p {
+    /* margin: 5px auto; */
+    @apply my-1;
+  }
+  
+  .card-product-info p:first-child {
+    /* font-size: 24px;
+    font-weight: var(--medium); */
+    @apply text-[18px]
+  }
+
+  .potong-img{
+    /* position: relative;
+    top: -86px;
+    left: -18px;
+    width: 308px; */
+    @apply relative -top-9
+  }
+}
