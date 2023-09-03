@@ -124,7 +124,7 @@
   }
   
   .cards-product-3 {
-    @apply grid grid-flow-row grid-cols-3 gap-[22px] pb-4;
+    @apply grid grid-flow-row grid-cols-2 gap-[22px] pb-4 lg:grid-cols-3;
   }
 
   .card {
@@ -149,5 +149,57 @@
 
   .potong-img{
     @apply relative -top-9 sm:-top-16 ;
+  }
+
+  /* ====== BUMBU ====== */
+  .product-bumbu {
+    @apply grid justify-center gap-[50px];
+  }
+
+  .gallery {
+    @apply grid gap-[25px] scale-90 md:scale-100;
+  }
+
+  .gallery-info {
+    @apply grid grid-flow-col box-border sm:gap-16;
+  }
+
+  .gallery-info-image img{
+    @apply w-[138px] h-[138px] border-[3px] border-merah sm:w-[276px] sm:h-[276px];
+  }
+  
+  .gallery-info-bumbu {
+    @apply self-center flex flex-col gap-[15px] scale-90 sm:scale-100;
+  }
+
+  .gallery-info-bumbu h2{
+    @apply scale-90 sm:scale-100;
+  }
+  .gallery-info-bumbu p{
+    @apply text-sm scale-90 sm:scale-100 sm:text-base;
+  }
+
+  .gallery-items {
+    @apply grid grid-cols-5 grid-rows-1 gap-3;
+  }
+  
+  .gallery-item-image{
+    @apply relative;
+  }
+
+  .gallery-item-image img{
+    @apply w-[66px] h-[66px] cursor-pointer border-[3px] border-merah box-border sm:w-[132px] sm:h-[132px];
+  }
+
+  .cover{
+    @apply absolute top-0 h-[66px] w-[66px] bg-merah opacity-0 sm:w-[132px] sm:h-[132px];
+  }
+  
+  .cover:hover {
+    @apply opacity-50;
+  }
+  
+  .selected {
+    @apply opacity-50;
   }
 }

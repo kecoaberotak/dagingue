@@ -1,7 +1,6 @@
 import Title from "../elements/Title";
 import Gallery from "../fragments/Gallery";
 import { DataBumbu } from "../../contexts/DataBumbu";
-import '../../assets/landing-page-css/productBumbu.css'
 import { useContext, useEffect } from "react";
 import { getBumbu } from "../../services/bumbu-service";
 
