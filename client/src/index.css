@@ -442,6 +442,12 @@
     @apply text-xl font-semibold;
   }
 
+  .gambar-content{
+    /* width: 250px;
+    height: 250px; */
+    @apply max-w-[250px] self-center;
+  }
+
   /* ====== Button ====== */
   .form-button {
     /* display: flex;
