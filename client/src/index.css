@@ -389,7 +389,7 @@
 
   /*====== Admin Panel Navbar ======*/
   .content-nav ul{
-    @apply flex flex-row gap-[1rem] text-xl mt-5 ml-8 text-black font-semibold;
+    @apply flex flex-row gap-[1rem] text-xl mt-5 ml-6 text-black font-semibold;
   }
 
   .content-nav ul li a{
@@ -402,7 +402,7 @@
   }
 
   .form-title {
-    @apply text-2xl font-semibold sm:text-merah md:text-abu;
+    @apply text-2xl font-semibold;
   }
 
   .form-content {
@@ -432,7 +432,7 @@
 
   /* ====== Table ====== */
   .table {
-    @apply self-center;
+    @apply self-center sm:self-auto;
   }
 
   .table td, th{
@@ -444,30 +444,23 @@
   }
 
   .table td {
-    @apply py-3 px-2 text-base;
+    @apply py-3 px-4 text-sm sm:px-4 sm:text-base font-medium;
   }
 
   .table-button {
-    /* display: grid;
-    justify-items: center;
-    align-items: center;
-    gap: 5px;
-    height: 100px;
-    box-sizing: border-box;
-    border: none; */
     @apply flex flex-col gap-2;
   }
 
-  /* .table-button Button {
-    margin: auto;
-  } */
+  .table-button {
+    @apply grid justify-center;
+  }
 
   .table-button .button-edit {
-    @apply bg-green-500 border-green-500 hover:bg-green-400 hover:border-green-400 duration-300 font-semibold p-1 text-sm;
+    @apply bg-green-500 border-green-500 hover:bg-green-400 hover:border-green-400 duration-300 font-semibold py-1 px-2 text-sm md:text-base;
   }
 
   .table-button .button-delete {
-    @apply bg-red-500 border-red-500 hover:bg-red-400 hover:border-red-400 duration-300 font-semibold p-1 text-sm;
+    @apply bg-red-500 border-red-500 hover:bg-red-400 hover:border-red-400 duration-300 font-semibold py-1 px-2 text-sm md:text-base;
   }
 
   /* ====== Button ====== */
@@ -490,7 +483,6 @@
   } */
 
   .button-add Button{
-    /* margin-bottom: 50px; */
     @apply mb-14 bg-black text-white text-sm font-semibold py-1 px-2 hover:bg-abu duration-300;
   }
 }
