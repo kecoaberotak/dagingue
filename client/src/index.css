@@ -24,7 +24,7 @@
   }
 }
 
-/* ====== Header ======*/
+/* ============ Header ============*/
 @layer components {
   .header {
     @apply bg-[url('/hero-image.jpg')] w-full h-[379px] bg-no-repeat bg-cover bg-center mb-[50px] grid justify-center;
@@ -38,21 +38,21 @@
     @apply grid grid-flow-col justify-center text-sm gap-[15px] mt-[50px] mb-[50px] md:mb-0 sm:text-base sm:gap-[22px];
   }
 
+  .navbar-header a{
+    @apply text-putih font-bold;
+  }
+  
+  .navbar-header a:hover {
+    @apply hover:border-b-[3px] border-merah;
+  }
+
   .socmed {
     @apply justify-center relative w-1/3 hidden md:grid md:gap-[22px] md:left-[430px] md:-top-[25px] md:grid-flow-col lg:left-[500px] lg:-top-[25px] xl:left-[650px];
   }
 }
 
-.navbar-header a{
-  @apply text-putih font-bold;
-}
 
-.navbar-header a:hover {
-  @apply hover:border-b-[3px] border-merah;
-}
-
-
-/* ====== ABOUT ====== */
+/* ============ ABOUT ============ */
 @layer components {
   .about {
     @apply grid justify-center content-center mb-[50px] md:grid-cols-2;
@@ -88,7 +88,8 @@
   }
 }
 
-/* ====== PRODUCT ====== */
+
+/* ============ PRODUCT ============ */
 @layer components {
   .product {
     @apply mb-[50px] grid gap-[50px];
@@ -202,8 +203,11 @@
   .selected {
     @apply opacity-50;
   }
+}
 
-    /* ================ Footer ================== */
+
+/* ================ Footer ================== */
+@layer components {
   .footer {
     @apply grid w-full mt-[100px];
   }
