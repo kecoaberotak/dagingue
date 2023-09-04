@@ -1,4 +1,3 @@
-import '../assets/admin-page-css/admin-page.css'
 import { Fragment, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/fragments/Navbar';
@@ -6,6 +5,8 @@ import Dashboard from '../components/layouts/Admin/Dashboard';
 import PrivateRoute from '../routes/PrivateRoutes';
 import { LoginStatus } from '../contexts/LoginStatus';
 import DisplayStatusProvider from '../contexts/DisplayStatus';
+
+import '../index.css';
 
 const AdminPage = () => {
   const {loginStatus} = useContext(LoginStatus);

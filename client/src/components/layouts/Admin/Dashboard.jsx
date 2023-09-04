@@ -5,7 +5,7 @@ import ProductBumbu from './ProductBumbu';
 import AboutContent from "./AboutContent";
 import { DisplayStatus } from "../../../contexts/DisplayStatus";
 
-import '../../../assets/admin-page-css/admin-page.css'
+// import '../../../assets/admin-page-css/admin-page.css'
 
 const AdminPanel = () => {
   const [halaman, setHalaman] = useState('');

@@ -69,7 +69,7 @@ const EditAbout = () => {
 
   return (
     <>
-      <h1>Edit Content About</h1>
+      <h1 className='form-title'>Edit Content About</h1>
       <form className="form-content" onSubmit={editContent}>
         <div className="upload-gambar-about">
           <section className="upload-gambar">
@@ -107,7 +107,7 @@ const EditAbout = () => {
             />
           </section>
         </div>
-        <label htmlFor="main-content">Isi Content</label>
+        <label htmlFor="main-content">Isi Content: </label>
         <ReactQuill 
           theme="snow"  
           value={content} 
