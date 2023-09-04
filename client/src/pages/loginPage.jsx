@@ -1,11 +1,12 @@
 import Button from "../components/elements/Button";
-import '../assets/loginPage.css'
 import { useContext, useState, useEffect, useRef} from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../services/auth-service";
 import { getToken } from "../services/auth-service";
 import { AdminInfo } from "../contexts/AdminInfo";
 import { LoginStatus } from "../contexts/LoginStatus";
+
+import '../index.css'
 
 const LoginPage = () => {
   const [loginFailed, setLoginFailed] = useState('');

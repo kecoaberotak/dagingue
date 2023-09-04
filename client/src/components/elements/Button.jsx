@@ -1,4 +1,5 @@
-import '../../assets/components/button.css'
+// import '../../assets/components/button.css'
+import '../../index.css'
 
 const Button = (props) => {
   const {children, onClick, classname} = props;
