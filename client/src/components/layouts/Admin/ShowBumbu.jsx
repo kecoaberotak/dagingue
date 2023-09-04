@@ -16,7 +16,7 @@ const ShowBumbu = () => {
 
   return (
     <>
-      <h1>Jenis Bumbu</h1>
+      <h1 className="form-title">Jenis Bumbu</h1>
       <table className="table">
         <thead>
           <tr>

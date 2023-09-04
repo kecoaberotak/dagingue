@@ -402,7 +402,7 @@
   }
 
   .form-title {
-    @apply text-2xl font-semibold;
+    @apply text-2xl font-semibold sm:text-merah md:text-abu;
   }
 
   .form-content {
@@ -444,7 +444,7 @@
   }
 
   .table td {
-    @apply py-3 px-4 text-base;
+    @apply py-3 px-2 text-base;
   }
 
   .table-button {
@@ -463,11 +463,11 @@
   } */
 
   .table-button .button-edit {
-    @apply bg-green-500 border-green-500 hover:bg-green-400 hover:border-green-400 duration-300 font-semibold p-1
+    @apply bg-green-500 border-green-500 hover:bg-green-400 hover:border-green-400 duration-300 font-semibold p-1 text-sm;
   }
 
   .table-button .button-delete {
-    @apply bg-red-500 border-red-500 hover:bg-red-400 hover:border-red-400 duration-300 font-semibold p-1
+    @apply bg-red-500 border-red-500 hover:bg-red-400 hover:border-red-400 duration-300 font-semibold p-1 text-sm;
   }
 
   /* ====== Button ====== */
