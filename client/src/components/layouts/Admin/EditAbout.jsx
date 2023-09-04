@@ -73,7 +73,7 @@ const EditAbout = () => {
       <form className="form-content" onSubmit={editContent}>
         <div className="upload-gambar-about">
           <section className="upload-gambar">
-            <label htmlFor="gambar1"><p>Gambar content 1</p></label>
+            <label htmlFor="gambar1"><p>Gambar content 1 :</p></label>
             {srcPreview && <img src={`${srcPreview}`} alt="Gambar Content" className='gambar-content'/>}
             <input 
               type="file" 
@@ -88,7 +88,7 @@ const EditAbout = () => {
             />
           </section>
           <section className="upload-gambar">
-            <label htmlFor="gambar2"><p>Gambar content 2</p></label>
+            <label htmlFor="gambar2"><p>Gambar content 2 :</p></label>
             {srcPreview2 && <img src={`${srcPreview2}`} alt="Gambar Content" className='gambar-content'/>}
             <input 
               type="file" 
@@ -107,7 +107,7 @@ const EditAbout = () => {
             />
           </section>
         </div>
-        <label htmlFor="main-content">Isi Content: </label>
+        <label htmlFor="main-content">Isi Content : </label>
         <ReactQuill 
           theme="snow"  
           value={content} 

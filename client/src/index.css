@@ -398,44 +398,28 @@
 
   /*====== Admin Panel Content ======*/
   .admin-panel-content {
-    /* width: 80%;
-    margin-top: 50px;
-    margin-left: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px; */
     @apply w-[80%] mt-[50px] mx-auto flex flex-col gap-[30px];
   }
 
   .form-title {
-    @apply text-2xl font-semibold sm:text-merah md:text-abu;
+    @apply text-2xl font-semibold;
   }
 
   .form-content {
-    /* display: flex;
-    flex-direction: column;
-    gap: 15px; */
     @apply flex flex-col gap-4;
   }
   
   .form-content label{
-    /* margin-top: 10px; */
     @apply mt-5 text-lg font-semibold;
   }
 
   /* ====== GAMBAR ====== */
   .upload-gambar-about {
-    /* display: grid;
-    grid-auto-flow: row; */
-    @apply flex flex-col gap-4;
+    @apply flex flex-col gap-4 sm:flex-row sm:gap-6;
   }
 
   .upload-gambar {
-    /* display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center; */
-    @apply flex flex-col gap-5 border border-abu py-6 px-4 rounded-xl;
+    @apply flex flex-col gap-5 border border-abu py-6 px-4 rounded-xl sm:w-1/2 md:gap-7;
   }
 
   .upload-gambar label {
@@ -443,20 +427,16 @@
   }
 
   .gambar-content{
-    /* width: 250px;
-    height: 250px; */
-    @apply max-w-[250px] self-center;
+    @apply max-w-[250px] self-center sm:max-w-[175px] md:max-w-[250px];
   }
 
   /* ====== Button ====== */
   .form-button {
-    /* display: flex;
-    margin-bottom: 50px; */
     @apply flex mb-14;
   }
 
   .form-button Button{
-    @apply bg-black text-white text-sm font-semibold py-1 px-2;
+    @apply bg-black text-white text-sm font-semibold py-1 px-2 hover:bg-abu duration-300;
   }
 
   /* .button-cancel Button {
