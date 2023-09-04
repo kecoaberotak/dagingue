@@ -389,7 +389,7 @@
 
   /*====== Admin Panel Navbar ======*/
   .content-nav ul{
-    @apply flex flex-row gap-[1rem] text-xl mt-5 ml-6 text-black font-semibold;
+    @apply flex flex-row gap-[1rem] text-xl mt-5 ml-6 text-black font-semibold md:ml-8;
   }
 
   .content-nav ul li a{
@@ -402,7 +402,7 @@
   }
 
   .form-title {
-    @apply text-2xl font-semibold;
+    @apply text-2xl font-semibold sm:text-merah md:text-abu lg:text-sky-500;
   }
 
   .form-content {
