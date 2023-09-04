@@ -1,4 +1,3 @@
-// import '../../assets/components/button.css'
 import '../../index.css'
 
 const Button = (props) => {

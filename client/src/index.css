@@ -32,16 +32,17 @@
   }
 
   /* ====== NAVBAR ====== */
-  /* .navbar {
-    border-bottom: 1px solid #666;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    margin-top: 0;
-    height: 50px;
-    gap: 15px
-  } */
+  .navbar {
+    @apply border-b border-abu flex items-center justify-end h-12 gap-4;
+  }
+
+  .navbar p {
+    @apply font-semibold text-lg;
+  }
+
+  .navbar Button {
+    @apply bg-black text-white py-1 px-2 font-semibold mr-4 hover:bg-abu hover:border-abu duration-300;
+  }
 }
 
 /* ============ Header ============*/
