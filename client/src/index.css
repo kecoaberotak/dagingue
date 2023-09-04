@@ -214,7 +214,7 @@
   }
 
   .banner-info {
-    @apply ml-[7.6rem];
+    @apply ml-[2rem] md:ml-[5rem] lg:ml-[6rem] xl:ml-[7.6rem];
   }
 
   .banner-info h3 {
@@ -222,17 +222,17 @@
   }
 
   .banner-info p {
-    @apply font-bold text-[32px];
+    @apply font-bold text-[22px] sm:text-[28px] md:text-[32px];
   }
 
 
   /* ================ Footer - Contact ================== */
   .footer-contact {
-    @apply w-full h-[378px] bg-[url('/bg-footer.jpg')] grid grid-cols-2 gap-[50px] justify-center content-center;
+    @apply w-full h-[378px] bg-[url('/bg-footer.jpg')] grid grid-cols-2 justify-center content-center md:gap-[50px];
   }
 
   .contact-info {
-    @apply grid gap-[50px] justify-center content-center;
+    @apply grid gap-[50px] justify-center content-center scale-75 sm:scale-90 md:scale-100;
   }
 
   .contact-info-main {
@@ -252,6 +252,6 @@
   }
 
   .contact-logo {
-    @apply flex justify-center items-center;
+    @apply flex justify-center items-center scale-90 sm:scale-95 md:scale-100;
   }
 }
