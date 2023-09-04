@@ -31,17 +31,20 @@ const ShowBumbu = () => {
                 <tr>
                   <td>{data.title}</td>
                   <td dangerouslySetInnerHTML={{__html:data.desc}}></td>
-                  <td className="table-button">
-                    <Button classname="button-edit" onClick={() => {
-                      setDisplayStatus('edit')
-                      setIdBumbu(data._id);
-                    }}>Edit</Button>
-                    <Button classname="button-delete" onClick={() => {
-                      deleteBumbu(data._id, res => {
-                        alert(res.data.message);
-                        forceUpdate();
-                      });
-                    }}>Hapus</Button>
+                  <td>
+                    <div className="table-button">
+                      <Button classname="button-edit" onClick={() => {
+                        setDisplayStatus('edit')
+                        setIdBumbu(data._id);
+                      }}>Edit</Button>
+                      <Button classname="button-delete" onClick={() => {
+                        deleteBumbu(data._id, res => {
+                          alert(res.data.message);
+                          forceUpdate();
+                        });
+                      }}>Hapus</Button>
+
+                    </div>
                   </td>
                 </tr>
               </tbody>
