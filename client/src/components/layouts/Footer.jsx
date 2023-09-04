@@ -1,7 +1,7 @@
 import FooterBanner from "../fragments/FooterBanner";
 import FooterContact from "../fragments/FooterContact";
 
-import '../../assets/landing-page-css/footer.css'
+// import '../../assets/landing-page-css/footer.css'
 
 const Footer = () => {
   return(

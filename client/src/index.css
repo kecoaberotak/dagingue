@@ -108,11 +108,11 @@
   }
 
   .title-section p {
-    @apply text-black text-2xl font-bold;
+    @apply text-black text-[32px] font-bold;
   }
   
   .title-section h3 {
-    @apply text-merah;
+    @apply text-merah font-semibold;
   }
 
   .cards-product-1 {
@@ -201,5 +201,57 @@
   
   .selected {
     @apply opacity-50;
+  }
+
+    /* ================ Footer ================== */
+  .footer {
+    @apply grid w-full mt-[100px];
+  }
+
+  /* ================ Footer - Banner ================== */
+  .footer-banner {
+    @apply w-full h-full bg-[url('/bg-banner-footer.jpg')] bg-no-repeat bg-cover flex items-center py-3;
+  }
+
+  .banner-info {
+    @apply ml-[7.6rem];
+  }
+
+  .banner-info h3 {
+    @apply text-merah font-semibold;
+  }
+
+  .banner-info p {
+    @apply font-bold text-[32px];
+  }
+
+
+  /* ================ Footer - Contact ================== */
+  .footer-contact {
+    @apply w-full h-[378px] bg-[url('/bg-footer.jpg')] grid grid-cols-2 gap-[50px] justify-center content-center;
+  }
+
+  .contact-info {
+    @apply grid gap-[50px] justify-center content-center;
+  }
+
+  .contact-info-main {
+    @apply grid gap-2 justify-items-start items-center text-putih font-semibold;
+  }
+
+  .contact-info-main p:last-child {
+    @apply mt-[7px];
+  }
+
+  .contact-info-main a {
+    @apply text-putih;
+  }
+
+  .contact-info-socmed {
+    @apply flex gap-5 content-center justify-start;
+  }
+
+  .contact-logo {
+    @apply flex justify-center items-center;
   }
 }
