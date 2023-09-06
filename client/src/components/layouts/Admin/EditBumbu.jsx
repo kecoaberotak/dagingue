@@ -84,7 +84,7 @@ const EditBumbu = () => {
 
   return (
     <>
-      <h1>Edit Bumbu</h1>
+      <h1 className='form-title'>Edit Bumbu</h1>
       <form className="form-content" onSubmit={editBumbu}>
         <label htmlFor="nama-bumbu">Nama Bumbu</label>
         <input 
