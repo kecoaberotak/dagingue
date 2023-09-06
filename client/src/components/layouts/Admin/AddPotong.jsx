@@ -39,7 +39,7 @@ const AddPotong = () => {
 
   return (
     <>
-    <h1>Tambah Jenis Potongan</h1>
+    <h1 className='form-title'>Tambah Jenis Potongan</h1>
     <form className="form-content" onSubmit={addNewPotong}>
         <label htmlFor="jenis-potong">Jenis Potongan</label>
         <input 
@@ -47,6 +47,7 @@ const AddPotong = () => {
           placeholder="Jenis Potongan" 
           value={title} 
           name='jenis-potong'
+          className='input-info-produk'
           onChange={e => 
           setTitle(e.target.value)}
         />
@@ -56,6 +57,7 @@ const AddPotong = () => {
           placeholder="Penjelasan jenis potongan" 
           value={desc} 
           name='desc-potong'
+          className='input-info-produk'
           onChange={e => 
           setDesc(e.target.value)}
         />

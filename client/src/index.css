@@ -413,6 +413,10 @@
     @apply mt-5 text-lg font-semibold;
   }
 
+  .input-info-produk {
+    @apply border-2 border-[#ddd] rounded-lg px-2 sm:py-2;
+  }
+
   /* ====== GAMBAR ====== */
   .upload-gambar-about {
     @apply flex flex-col gap-4 sm:flex-row sm:gap-6;
@@ -431,6 +435,10 @@
   }
 
   .gambar-bumbu{
+    @apply max-w-[250px];
+  }
+
+  .gambar-potong{
     @apply max-w-[250px];
   }
 
@@ -477,7 +485,7 @@
   }
 
   .button-cancel Button {
-    @apply bg-red-500 border-red-500 font-semibold hover:bg-red-400 hover:border-red-400 duration-300
+    @apply bg-red-500 border-red-500 font-semibold hover:bg-red-400 hover:border-red-400 duration-300;
   }
 
   .button-add Button{

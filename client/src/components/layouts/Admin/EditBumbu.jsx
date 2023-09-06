@@ -92,6 +92,7 @@ const EditBumbu = () => {
           placeholder="Nama bumbu" 
           value={title} 
           name='nama-bumbu'
+          className='input-info-produk'
           onChange={e => 
           setTitle(e.target.value)}
         />

@@ -73,6 +73,7 @@ const EditPotong = () => {
           placeholder="Jenis Potongan" 
           value={title} 
           name='jenis-potong'
+          className='input-info-produk'
           onChange={e => 
           setTitle(e.target.value)}
         />
@@ -82,6 +83,7 @@ const EditPotong = () => {
           placeholder="Penjelasan jenis potongan" 
           value={desc} 
           name='desc-potong'
+          className='input-info-produk'
           onChange={e => 
           setDesc(e.target.value)}
         />

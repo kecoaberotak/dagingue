@@ -16,7 +16,7 @@ const ShowPotong = () => {
 
   return (
     <>
-    <h1>Jenis Potongan Daging</h1>
+    <h1 className='form-title'>Jenis Potongan Daging</h1>
     <table className="table">
         <thead>
           <tr>
