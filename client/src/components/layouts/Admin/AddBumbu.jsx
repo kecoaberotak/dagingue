@@ -58,7 +58,7 @@ const AddBumbu = () => {
 
   return (
     <>
-      <h1>Tambah Bumbu</h1>
+      <h1 className='form-title'>Tambah Bumbu</h1>
       <form className="form-content" onSubmit={addNewBumbu}>
         <label htmlFor="nama-bumbu">Nama Bumbu</label>
         <input 

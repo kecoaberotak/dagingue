@@ -430,6 +430,10 @@
     @apply max-w-[250px] self-center sm:max-w-[175px] md:max-w-[250px];
   }
 
+  .gambar-bumbu{
+    @apply max-w-[250px];
+  }
+
   /* ====== Table ====== */
   .table {
     @apply self-center sm:self-auto;
@@ -465,22 +469,16 @@
 
   /* ====== Button ====== */
   .form-button {
-    @apply flex mb-14;
+    @apply flex mb-14 gap-1;
   }
 
   .form-button Button{
     @apply bg-black text-white text-sm font-semibold py-1 px-2 hover:bg-abu duration-300;
   }
 
-  /* .button-cancel Button {
-    background-color: rgb(235, 71, 71);
-    border: 1px solid rgb(235, 71, 71);
+  .button-cancel Button {
+    @apply bg-red-500 border-red-500 font-semibold hover:bg-red-400 hover:border-red-400 duration-300
   }
-
-  .button-cancel Button:hover {
-    background-color: lightcoral;
-    border: 1px solid lightcoral;
-  } */
 
   .button-add Button{
     @apply mb-14 bg-black text-white text-sm font-semibold py-1 px-2 hover:bg-abu duration-300;
