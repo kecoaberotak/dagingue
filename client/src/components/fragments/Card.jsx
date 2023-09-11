@@ -1,7 +1,7 @@
 const Card = (props) => {
-  const {tipe, berat, image, key} = props
+  const {tipe, berat, image} = props
   return(
-    <div className="card" key={key}>
+    <div className="card">
       <section className="card-product">
           <img className="potong-img" src={image} alt="404" />
       </section>
