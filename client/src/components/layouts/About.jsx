@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { getContent } from "../../services/about-service";
+import AboutArticleSkeleton from "./Skeleton/AboutArticleSkeleton";
 
 const About = () => {
   const [data, setData] = useState();
@@ -33,11 +34,13 @@ const About = () => {
           }
         </div>
         <article className="article-about">
-          <h3>Tentang Dagingue</h3>
           {content ?
-          <div dangerouslySetInnerHTML={{__html:content}}></div>
+          <>
+            <h3>Tentang Dagingue</h3>
+            <div dangerouslySetInnerHTML={{__html:content}}></div>
+          </>
           :
-          <div className="load-content"></div>
+          <AboutArticleSkeleton />
           }
         </article>
       </section>
