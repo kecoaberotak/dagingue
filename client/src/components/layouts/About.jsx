@@ -24,7 +24,6 @@ const About = () => {
 
   const onLoad = () => {
     setLoad(true);
-    console.log(load);
   }
 
   return (
