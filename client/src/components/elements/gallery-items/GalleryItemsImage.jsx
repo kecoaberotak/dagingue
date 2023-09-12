@@ -22,11 +22,11 @@ const GalleryItemsImage = (props) => {
     e.target.classList.add('selected');
   };
 
-  const {image, key, title, desc} = props;
+  const {image, title, desc} = props;
   return (
     <div className="gallery-item-image" onClick={selectImage}>
       <img src={image} alt="404" />
-      <div className='cover' key={key} data-title={title} data-desc={desc} data-image={image}></div>
+      <div className='cover' data-title={title} data-desc={desc} data-image={image}></div>
     </div>
   );
 };
