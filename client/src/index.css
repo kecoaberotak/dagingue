@@ -158,7 +158,7 @@
   }
 
   .card-product-info {
-    @apply ml-2 text-sm sm:ml-4;
+    @apply ml-2 text-sm sm:ml-4 w-4/5;
   }
   
   .card-product-info p {
