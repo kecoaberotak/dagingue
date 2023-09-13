@@ -1,6 +1,7 @@
 import GalleryItemsImage from "./GalleryItemsImage";
 import { DataBumbu } from "../../../contexts/DataBumbu";
 import { useContext } from "react";
+import SkeletonGalleryItems from "../../layouts/Skeleton/SkeletonGalleryItems";
 
 const GalleryItems = () => {
   const {dataBumbu} = useContext(DataBumbu);
@@ -11,6 +12,10 @@ const GalleryItems = () => {
         {dataBumbu.map(data => <GalleryItemsImage key={data._id} title={data.title} desc={data.desc} image={data.file} />)}
       </section>
     );
+  }else {
+    return (
+      <SkeletonGalleryItems />
+    )
   }
 };
 
