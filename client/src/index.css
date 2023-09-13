@@ -186,7 +186,7 @@
     @apply grid grid-flow-col box-border sm:gap-16;
   }
 
-  .gallery-info-image img{
+  .gallery-info-image {
     @apply w-[138px] h-[138px] border-[3px] border-merah hidden sm:block sm:w-[276px] sm:h-[276px];
   }
   
