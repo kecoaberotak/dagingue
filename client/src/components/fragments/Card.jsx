@@ -14,7 +14,7 @@ const Card = (props) => {
     <div className="card">
       <section className="card-product">
           <img className={`potong-img ${load ? '' : 'hidden'}`} src={image} alt="404" onLoad={onLoad}/>
-          {!load && <Skeleton height={150} />}
+          {!load && <Skeleton height={`100%`} />}
       </section>
       <section className="card-product-info">
         <p>{tipe}</p>

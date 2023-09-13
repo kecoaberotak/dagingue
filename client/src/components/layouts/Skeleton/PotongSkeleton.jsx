@@ -5,7 +5,7 @@ const PotongSkeleton = () => {
   return (
     <div className="card">
       <section className="card-product">
-        <Skeleton height={150} />
+        <Skeleton height={`100%`} />
       </section>
       <section className="card-product-info">
         <p>{<Skeleton />}</p>
