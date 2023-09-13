@@ -191,14 +191,14 @@
   }
   
   .gallery-info-bumbu {
-    @apply self-center flex flex-col gap-[15px] scale-90 sm:scale-100;
+    @apply self-center flex flex-col gap-[15px] justify-self-start;
   }
 
   .gallery-info-bumbu h2{
-    @apply scale-90 sm:scale-100;
+    @apply scale-95 sm:scale-100;
   }
   .gallery-info-bumbu p{
-    @apply text-sm scale-90 sm:scale-100 sm:text-base;
+    @apply text-sm scale-95 sm:scale-100 sm:text-base;
   }
 
   .gallery-items {

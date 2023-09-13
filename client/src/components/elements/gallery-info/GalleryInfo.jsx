@@ -15,9 +15,9 @@ const GalleryInfo = () => {
   const {dataBumbu} = useContext(DataBumbu);
 
   return(
-    <section className="gallery-info">
+    <>
       {dataBumbu ? 
-        <>
+        <section className="gallery-info">
           <GalleryInfoImage image={selectedImage ? selectedImage : dataBumbu[0].file} />
           <GalleryInfoBumbu title={titleSelected ? titleSelected : dataBumbu[0].title}>
             {descSelected ? 
@@ -26,14 +26,14 @@ const GalleryInfo = () => {
               <div dangerouslySetInnerHTML={{__html:dataBumbu[0].desc}}></div>
             }
           </GalleryInfoBumbu>
-        </>
+        </section>
         :
-        <>
+        <section className="grid grid-flow-col box-border">
           <SkeletonInfoImage />
           <SkeletonBumbuInfoContent />
-        </>
+        </section>
       }
-    </section>
+    </>
   );
 };
 
