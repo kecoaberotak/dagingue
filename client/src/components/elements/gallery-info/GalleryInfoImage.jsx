@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
@@ -8,10 +8,6 @@ const GalleryInfoImage = (props) => {
   const onLoad = () => {
     setLoad(true);
   }
-
-  useEffect(()=>{
-    console.log(load);
-  }, [load])
 
   const {image} = props;
   return(
