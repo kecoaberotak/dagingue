@@ -6,6 +6,7 @@ import { DescSelected } from "../../../contexts/DescSelected";
 import { TitleSelected } from "../../../contexts/TitleSelected";
 import { DataBumbu } from "../../../contexts/DataBumbu";
 import SkeletonInfoImage from "../../layouts/Skeleton/SkeletonBumbuInfoImage";
+import SkeletonBumbuInfoContent from "../../layouts/Skeleton/SkeletonBumbuInfoContent";
 
 const GalleryInfo = () => {
   const {selectedImage} = useContext(ImageSelected);
@@ -15,7 +16,7 @@ const GalleryInfo = () => {
 
   return(
     <section className="gallery-info">
-      {/* {dataBumbu ? 
+      {dataBumbu ? 
         <>
           <GalleryInfoImage image={selectedImage ? selectedImage : dataBumbu[0].file} />
           <GalleryInfoBumbu title={titleSelected ? titleSelected : dataBumbu[0].title}>
@@ -29,9 +30,9 @@ const GalleryInfo = () => {
         :
         <>
           <SkeletonInfoImage />
+          <SkeletonBumbuInfoContent />
         </>
-      } */}
-      <SkeletonInfoImage />
+      }
     </section>
   );
 };

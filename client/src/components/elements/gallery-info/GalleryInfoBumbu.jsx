@@ -3,7 +3,9 @@ const GalleryInfoBumbu = (props) => {
   return(
     <div className="gallery-info-bumbu">
       <h2>{title}</h2>
-      {children}
+      <div className="w-[300px] h-[120px] sm:w-[376px] sm:h-[130px]">
+        {children}
+      </div>
     </div>
   );
 };
