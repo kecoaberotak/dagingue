@@ -12,6 +12,9 @@ import ErrorPage from './pages/errorPage'
 import AdminPage from './pages/adminPage'
 import LoginPage from './pages/loginPage'
 
+// Middleware
+import {HelmetProvider} from "react-helmet-async"
+
 // Router
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 const router = createBrowserRouter([
@@ -34,7 +37,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <LoginStatusProvider>
       <AdminInfoProvider>
-        <RouterProvider router={router} />
+        <HelmetProvider>
+          <RouterProvider router={router} />
+        </HelmetProvider>
       </AdminInfoProvider>
     </LoginStatusProvider>
   </React.StrictMode>,

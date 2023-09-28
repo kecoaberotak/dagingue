@@ -5,6 +5,7 @@ import { login } from "../services/auth-service";
 import { getToken } from "../services/auth-service";
 import { AdminInfo } from "../contexts/AdminInfo";
 import { LoginStatus } from "../contexts/LoginStatus";
+import { Helmet } from "react-helmet-async";
 
 import '../index.css'
 
@@ -47,22 +48,28 @@ const LoginPage = () => {
   }, []);
 
   return(
-    <form className="form-login" onSubmit={handleLogin}>
-      <p>Login</p>
-      <input 
-        type="text" 
-        placeholder="Username"
-        name="username"
-        ref={usernameFocus}
-      />
-      <input 
-        type="password" 
-        placeholder="Password"
-        name="password"
-      />
-      <Button>Login</Button>
-      {loginFailed && <span className='login-failed'>{loginFailed.toUpperCase()}!</span>}
-    </form>
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex" />
+      </Helmet>
+
+      <form className="form-login" onSubmit={handleLogin}>
+        <p>Login</p>
+        <input 
+          type="text" 
+          placeholder="Username"
+          name="username"
+          ref={usernameFocus}
+        />
+        <input 
+          type="password" 
+          placeholder="Password"
+          name="password"
+        />
+        <Button>Login</Button>
+        {loginFailed && <span className='login-failed'>{loginFailed.toUpperCase()}!</span>}
+      </form>
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import Dashboard from '../components/layouts/Admin/Dashboard';
 import PrivateRoute from '../routes/PrivateRoutes';
 import { LoginStatus } from '../contexts/LoginStatus';
 import DisplayStatusProvider from '../contexts/DisplayStatus';
+import { Helmet } from 'react-helmet-async';
 
 import '../index.css';
 
@@ -20,6 +21,9 @@ const AdminPage = () => {
 
   return(
     <Fragment>
+      <Helmet>
+        <meta name="robots" content="noindex" />
+      </Helmet>
       <Navbar/>
       <PrivateRoute>
       <DisplayStatusProvider>
