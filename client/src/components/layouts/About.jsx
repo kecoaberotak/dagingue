@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import { getContent } from "../../services/about-service";
 import AboutArticleSkeleton from "./Skeleton/AboutArticleSkeleton";
 import AboutSkeletonImages from "./Skeleton/AboutSkeletonImages";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   const [data, setData] = useState();
@@ -37,6 +38,15 @@ const About = () => {
         <article className="article-about">
           {content ?
           <>
+            <Helmet>
+              <meta property="og:type" content="article" />
+              <meta property="og:title" content="Tentang Dagingue" />
+              <meta property="og:description" content="Menjual beef slice dengan berbagai varian bumbu." />
+              <meta property="og:url" content="https://dagingue.vercel.app/" />
+              {load && <meta property="og:image" content={`${srcPreview}`} /> }
+              {load && <meta property="og:image:width" content="282" /> }
+              {load && <meta property="og:image:height" content="282" /> }
+            </Helmet>
             <h3>Tentang Dagingue</h3>
             <div dangerouslySetInnerHTML={{__html:content}}></div>
           </>
