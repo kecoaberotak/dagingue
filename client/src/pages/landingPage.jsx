@@ -13,8 +13,12 @@ const LandingPage = () => {
       <Helmet>
         <meta 
           name="description" 
-          content="Menjual beef slice dengan berbagai pilihan bumbu seperti barberque, teriyaki dan lada hitam. Berlokasi di Bogor, Jawa Barat"
+          content="Menjual beef slice dengan beragam varian bumbu. | Berlokasi di Bogor, Jawa Barat. Sedia pesan-antar."
           data-rh="true"
+        />
+        <meta 
+          name="keywords"
+          content="beef, daging, bogor, toko daging, daging bogor, beef slice, daging segar & beku, daging potong, beef slice bogor"
         />
         <link rel="canonical" href="https://dagingue.vercel.app/" />
       </Helmet>
