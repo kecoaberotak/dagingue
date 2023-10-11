@@ -50,6 +50,7 @@ const About = () => {
               <meta property="twitter:title" content="Dagingue | Beef Slice Bogor" />
               <meta property="twitter:description" content="Menjual beef slice dengan berbagai varian bumbu." />
               <meta property="twitter:creator" content="@kecoaberotak" />
+              <meta property="twitter:site" content="@kecoaberotak" />
               {load && <meta property="twitter:image" content={`${srcPreview}`} /> }
             </Helmet>
             <h3>Tentang Dagingue</h3>
