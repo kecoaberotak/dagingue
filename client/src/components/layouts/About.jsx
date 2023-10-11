@@ -40,12 +40,17 @@ const About = () => {
           <>
             <Helmet>
               <meta property="og:type" content="article" />
-              <meta property="og:title" content="Tentang Dagingue" />
+              <meta property="og:title" content="Dagingue | Beef Slice Bogor" />
               <meta property="og:description" content="Menjual beef slice dengan berbagai varian bumbu." />
               <meta property="og:url" content="https://dagingue.vercel.app/" />
               {load && <meta property="og:image" content={`${srcPreview}`} /> }
               {load && <meta property="og:image:width" content="282" /> }
               {load && <meta property="og:image:height" content="282" /> }
+              <meta property="twitter:card" content="summary" />
+              <meta property="twitter:title" content="Dagingue | Beef Slice Bogor" />
+              <meta property="twitter:description" content="Menjual beef slice dengan berbagai varian bumbu." />
+              <meta property="twitter:creator" content="@kecoaberotak" />
+              {load && <meta property="twitter:image" content={`${srcPreview}`} /> }
             </Helmet>
             <h3>Tentang Dagingue</h3>
             <div dangerouslySetInnerHTML={{__html:content}}></div>
