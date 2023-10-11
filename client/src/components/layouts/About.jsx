@@ -46,12 +46,12 @@ const About = () => {
               {load && <meta property="og:image" content={`${srcPreview}`} /> }
               {load && <meta property="og:image:width" content="282" /> }
               {load && <meta property="og:image:height" content="282" /> }
-              <meta property="twitter:card" content="summary" />
-              <meta property="twitter:title" content="Dagingue | Beef Slice Bogor" />
-              <meta property="twitter:description" content="Menjual beef slice dengan berbagai varian bumbu." />
-              <meta property="twitter:creator" content="@kecoaberotak" />
-              <meta property="twitter:site" content="@kecoaberotak" />
-              {load && <meta property="twitter:image" content={`${srcPreview}`} /> }
+              <meta name="twitter:card" content="summary" />
+              <meta name="twitter:title" content="Dagingue | Beef Slice Bogor" />
+              <meta name="twitter:description" content="Menjual beef slice dengan berbagai varian bumbu." />
+              <meta name="twitter:creator" content="@kecoaberotak" />
+              <meta name="twitter:site" content="@kecoaberotak" />
+              {load && <meta name="twitter:image" content={`${srcPreview}`} /> }
             </Helmet>
             <h3>Tentang Dagingue</h3>
             <div dangerouslySetInnerHTML={{__html:content}}></div>
