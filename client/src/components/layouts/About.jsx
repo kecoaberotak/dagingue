@@ -51,7 +51,7 @@ const About = () => {
               <meta property="twitter:creator" content="@kecoaberotak" />
               <meta property="twitter:site" content="@kecoaberotak" />
               <meta name="twitter:card" content="summary_large_image" />
-              {load && <meta name="twitter:image" content={`${srcPreview}`} /> }
+              {load && <meta property="twitter:image" content={`${srcPreview}`} /> }
             </Helmet>
             <h3>Tentang Dagingue</h3>
             <div dangerouslySetInnerHTML={{__html:content}}></div>
