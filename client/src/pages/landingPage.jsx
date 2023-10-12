@@ -28,11 +28,11 @@ const LandingPage = () => {
         <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/dagingue-dc5c9.appspot.com/o/about%2Fabout-us.jpg?alt=media&token=d49211d1-08ae-4664-b9f2-139ba96affa3" />
         <meta property="og:image:width" content="282" />
         <meta property="og:image:height" content="282" />
-        <meta property="twitter:title" content="Dagingue | Beef Slice Bogor" />
-        <meta property="twitter:description" content="Menjual beef slice dengan berbagai varian bumbu." />
-        <meta property="twitter:creator" content="@kecoaberotak" />
-        <meta property="twitter:site" content="@kecoaberotak" />
-        <meta property="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/dagingue-dc5c9.appspot.com/o/about%2Fabout-us.jpg?alt=media&token=d49211d1-08ae-4664-b9f2-139ba96affa3" />
+        <meta name="twitter:title" content="Dagingue | Beef Slice Bogor" />
+        <meta name="twitter:description" content="Menjual beef slice dengan berbagai varian bumbu." />
+        <meta name="twitter:creator" content="@kecoaberotak" />
+        <meta name="twitter:site" content="@kecoaberotak" />
+        <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/dagingue-dc5c9.appspot.com/o/about%2Fabout-us.jpg?alt=media&token=d49211d1-08ae-4664-b9f2-139ba96affa3" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <Header></Header>
