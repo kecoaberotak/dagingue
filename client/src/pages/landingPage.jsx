@@ -13,7 +13,7 @@ const LandingPage = () => {
       <Helmet>
         <meta 
           name="description" 
-          content="test"
+          content="Menjual beef slice dengan beragam varian bumbu. | Berlokasi di Bogor, Jawa Barat | Sedia pesan-antar."
           data-rh="true"
         />
       </Helmet>
