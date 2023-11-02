@@ -18,7 +18,7 @@ const GalleryInfo = () => {
     <>
       {dataBumbu ? 
         <section className="gallery-info">
-          <GalleryInfoImage image={selectedImage ? selectedImage : dataBumbu[0].file} />
+          <GalleryInfoImage image={selectedImage ? selectedImage : dataBumbu[0].file} title={titleSelected ? titleSelected : dataBumbu[0].title}/>
           <GalleryInfoBumbu title={titleSelected ? titleSelected : dataBumbu[0].title}>
             {descSelected ? 
               <div dangerouslySetInnerHTML={{__html:descSelected}}></div>
