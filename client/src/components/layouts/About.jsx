@@ -37,7 +37,7 @@ const About = () => {
         <article className="article-about">
           {content ?
           <>
-            <h3>Tentang Dagingue</h3>
+            <h1>Tentang Dagingue</h1>
             <div dangerouslySetInnerHTML={{__html:content}}></div>
           </>
           :

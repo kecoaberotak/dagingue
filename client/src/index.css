@@ -95,8 +95,12 @@
     @apply md:order-2 grid gap-[8px] p-6 leading-normal md:scale-90;
   }
 
-  .article-about h3 {
-    @apply text-merah;
+  .article-about h1 {
+    @apply text-merah font-bold text-lg;
+  }
+
+  .article-about h2 {
+    @apply text-3xl;
   }
   
   .article-about li {
