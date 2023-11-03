@@ -13,7 +13,7 @@ const Card = (props) => {
   return(
     <div className="card">
       <section className="card-product">
-          <img className={`potong-img ${load ? '' : 'hidden'}`} src={image} alt={tipe} onLoad={onLoad}/>
+          <img className={`potong-img ${load ? '' : 'hidden'}`} src={image} alt={tipe} title={tipe} loading="lazy" onLoad={onLoad}/>
           {!load && <Skeleton height={`100%`} />}
       </section>
       <section className="card-product-info">
