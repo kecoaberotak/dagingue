@@ -32,7 +32,7 @@ const GalleryItemsImage = (props) => {
   const {image, title, desc} = props;
   return (
     <div className="gallery-item-image" onClick={selectImage}>
-      <img src={image} alt={title} title={title} loading="lazy" onLoad={onLoad} className={`${load ? '' : 'hidden'}`} />
+      <img src={image} alt={title} title={title} onLoad={onLoad} className={`${load ? '' : 'hidden'}`} />
       {!load && 
         <div className="w-[66px] h-[66px] sm:w-[132px] sm:h-[132px]">
           <Skeleton height={`100%`} />

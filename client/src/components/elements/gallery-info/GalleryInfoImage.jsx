@@ -12,7 +12,7 @@ const GalleryInfoImage = (props) => {
   const {image, title} = props;
   return(
     <div className="gallery-info-image">
-      <img src={image} alt={title} title={title} loading="lazy" onLoad={onLoad} className={`${load ? '' : 'hidden'}`}/>
+      <img src={image} alt={title} title={title} onLoad={onLoad} className={`${load ? '' : 'hidden'}`}/>
       {!load && <Skeleton height={`98%`} />}
     </div>
   );
