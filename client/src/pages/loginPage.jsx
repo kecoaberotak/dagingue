@@ -51,6 +51,7 @@ const LoginPage = () => {
     <>
       <Helmet>
         <meta name="robots" content="noindex" />
+        <title>Login | Dagingue</title>
       </Helmet>
 
       <form className="form-login" onSubmit={handleLogin}>

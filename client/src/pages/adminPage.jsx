@@ -23,6 +23,7 @@ const AdminPage = () => {
     <Fragment>
       <Helmet>
         <meta name="robots" content="noindex" />
+        <title>Admin Page | Dagingue</title>
       </Helmet>
       <Navbar/>
       <PrivateRoute>

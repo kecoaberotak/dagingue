@@ -1,11 +1,15 @@
 import { Fragment } from "react";
 import { useRouteError } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 const ErrorPage = () => {
   const error = useRouteError();
   console.log(error.statusText || error.message);
   return (
     <Fragment>
+      <Helmet>
+        <title>Page Not Found</title>
+      </Helmet>
       <div className="main"> 
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="470" height="290" viewBox="0 0 470 290">
             <defs>
