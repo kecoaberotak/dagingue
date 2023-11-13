@@ -410,7 +410,7 @@
   }
 
   .form-title {
-    @apply text-2xl font-semibold sm:text-merah md:text-abu lg:text-sky-500;
+    @apply text-2xl font-semibold;
   }
 
   .form-content {
