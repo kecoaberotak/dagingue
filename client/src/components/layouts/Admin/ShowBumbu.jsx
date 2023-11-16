@@ -43,7 +43,6 @@ const ShowBumbu = () => {
                           forceUpdate();
                         });
                       }}>Hapus</Button>
-
                     </div>
                   </td>
                 </tr>
