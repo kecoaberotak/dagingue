@@ -13,6 +13,7 @@ const ShowPotong = () => {
 
   useEffect(() => {
     getPotong(res => setDataPotong(res.data));
+    console.log(resetCount);
   }, [resetCount]);
 
   return (
