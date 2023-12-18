@@ -1,6 +1,5 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useReducer } from "react";
 import { DisplayStatus } from "../../../contexts/DisplayStatus";
-import { ResetCount } from "../../../contexts/ResetPage";
 import { IdPotong } from "../../../contexts/IdPotong";
 import { getPotong, deletePotong } from "../../../services/potong-service";
 import Button from "../../elements/Button";
@@ -9,12 +8,11 @@ const ShowPotong = () => {
   const [dataPotong, setDataPotong] = useState([]);
   const {setDisplayStatus} = useContext(DisplayStatus);
   const {setIdPotong} = useContext(IdPotong);
-  const {resetCount, setResetCount} =  useContext(ResetCount);
+  const [reducerValue, forceUpdate] =  useReducer(x => x + 1, 0);
 
   useEffect(() => {
     getPotong(res => setDataPotong(res.data));
-    console.log(resetCount);
-  }, [resetCount]);
+  }, [reducerValue]);
 
   return (
     <>
@@ -41,7 +39,7 @@ const ShowPotong = () => {
                     <Button classname="button-delete" onClick={() => {
                       deletePotong(data._id, res => {
                         alert(res.data.message);
-                        setResetCount(resetCount + 1);
+                        forceUpdate();
                       });
                     }}>Hapus</Button>
                   </td>

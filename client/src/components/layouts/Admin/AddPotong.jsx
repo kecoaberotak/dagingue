@@ -2,13 +2,11 @@ import { useContext, useState } from 'react';
 import Button from '../../elements/Button';
 import { DisplayStatus } from '../../../contexts/DisplayStatus';
 import { addPotong } from '../../../services/potong-service';
-import { ResetCount } from '../../../contexts/ResetPage';
 
 const AddPotong = () => {
   const {setDisplayStatus} = useContext(DisplayStatus);
   const [buttonStatus, setButtonStatus] = useState('');
   const [srcPreview, setSrcPreview] = useState();
-  const {resetCount, setResetCount} =  useContext(ResetCount);
 
   const [title, setTitle] = useState('');
   const [file, setFile] = useState('');
@@ -30,7 +28,6 @@ const AddPotong = () => {
             alert(res.data.message);
           }else if(res.status === 200){
             alert(res.data.message);
-            setResetCount(resetCount + 1);
             setDisplayStatus('show');
           }
         });
