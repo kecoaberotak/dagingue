@@ -14,6 +14,7 @@ const EditAbout = () => {
 
   const [content, setContent] = useState();
   const [file, setFile] = useState([]);
+  const [imglink, setImgLink] = useState([]);
 
   useEffect(() => {
     getContent(res => setData(res.data[0]));
@@ -25,6 +26,16 @@ const EditAbout = () => {
       setIdContent(data._id);
       setSrcPreview(data.file1);
       setSrcPreview2(data.file2);
+
+      const newData = [];
+      newData.push(srcPreview);
+      newData.push(srcPreview2);
+      setFile(newData);
+
+      const newLink = [];
+      newLink.push(srcPreview);
+      newLink.push(srcPreview2);
+      setImgLink(newLink);
     }
   }, [data]);
 
@@ -52,8 +63,11 @@ const EditAbout = () => {
     for(let i = 0; i <= file.length; i++){
       data.append('file', file[i]);
     }
+    for(let i = 0; i <= imglink.length; i++){
+      data.append('link', imglink[i]);
+    }
 
-    if(data.get('file') === 'undefined' || data.get('content') === 'undefined'){
+    if(data.get('content') === 'undefined'){
       alert('Masukkan Data!');
     }else {
       putContent(idContent ,data, res => {
@@ -61,6 +75,7 @@ const EditAbout = () => {
           alert(res.data.message)
         }else if(res.status === 200){
           alert(res.data.message);
+          console.log(res);
           setDisplayStatus('show');
         }
       });

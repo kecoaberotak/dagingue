@@ -85,52 +85,127 @@ const updateAbout = asyncHandler(async (req, res) => {
   if (!data) {
     res.status(400);
     throw new Error('Content not found');
-  }
+  };
   
   if(req.body.content === 'undefined' || req.body.content === '<p><br></p>') {
     res.status(400);
     throw new Error('Please add content')
-  }
+  };
   
   if(!req.files) {
     res.status(400);
     throw new Error('Please add image')
-  }
+  };
+
+  const checkFile1 = (file1) => {
+    if(!file1.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
+      res.status(400);
+      throw new Error('Only image files are allowed!')
+    };
+  };
+
+  const checkFile2 = (file2) => {
+    if(!file2.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
+      res.status(400);
+      throw new Error('Only image files are allowed!')
+    };
+  };
+
+  const uploadBothFiles = async(file1, file2) => {
+    const {originalname} = file1;
+    const originalname2 = file2.originalname;
   
-  const file1 = req.files[0];
-  const file2 = req.files[1];
-
-  if(!file1.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
-    res.status(400);
-    throw new Error('Only image files are allowed!')
-  }
-
-  if(!file2.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
-    res.status(400);
-    throw new Error('Only image files are allowed!')
-  }
-
-  const {originalname} = file1;
-  const originalname2 = file2.originalname;
-
-  const imageRef1 = ref(storage, `about/${originalname}`);
-  const imageRef2 = ref(storage, `about/${originalname2}`);
-
-  await uploadBytes(imageRef1, file1.buffer).then(() => {
-    getDownloadURL(ref (storage, `about/${originalname}`)).then(async(url) => {
-      await uploadBytes(imageRef2, file2.buffer).then(() => {
-        getDownloadURL(ref (storage, `about/${originalname2}`)).then(async(url2) => {
-          const {content} = req.body;
-          await AboutModel.findByIdAndUpdate(req.params.id,
-          {
-            content,
-            file1: url,
-            file2: url2,
+    const imageRef1 = ref(storage, `about/${originalname}`);
+    const imageRef2 = ref(storage, `about/${originalname2}`);
+  
+    await uploadBytes(imageRef1, file1.buffer).then(() => {
+      getDownloadURL(ref (storage, `about/${originalname}`)).then(async(url) => {
+        await uploadBytes(imageRef2, file2.buffer).then(() => {
+          getDownloadURL(ref (storage, `about/${originalname2}`)).then(async(url2) => {
+            const {content} = req.body;
+            await AboutModel.findByIdAndUpdate(req.params.id,
+            {
+              content,
+              file1: url,
+              file2: url2,
+            });
           });
         });
       });
     });
-  });
+  };
+
+  const uploadFileAndLink = async(file1, file2) => {
+    const {originalname} = file1;
+  
+    const imageRef1 = ref(storage, `about/${originalname}`);
+  
+    await uploadBytes(imageRef1, file1.buffer).then(() => {
+      getDownloadURL(ref (storage, `about/${originalname}`)).then(async(url) => {
+        const {content} = req.body;
+        await AboutModel.findByIdAndUpdate(req.params.id,
+        {
+          content,
+          file1: url,
+          file2,
+        });
+      });
+    });
+  };
+
+  const uploadLinkAndFile = async(file1, file2) => {
+    const {originalname} = file2;
+  
+    const imageRef1 = ref(storage, `about/${originalname}`);
+  
+    await uploadBytes(imageRef1, file2.buffer).then(() => {
+      getDownloadURL(ref (storage, `about/${originalname}`)).then(async(url) => {
+        const {content} = req.body;
+        await AboutModel.findByIdAndUpdate(req.params.id,
+        {
+          content,
+          file1,
+          file2 : url,
+        });
+      });
+    });
+  };
+
+  const uploadBothLink = async(file1, file2) => {
+    const {content} = req.body;
+    await AboutModel.findByIdAndUpdate(req.params.id,
+    {
+      content,
+      file1,
+      file2,
+    });
+  };
+
+  if(req.body.file[0] == req.body.link[0]){
+    const file1 = req.body.file[0];
+    if(req.body.file[1] == req.body.link[1]){
+      const file2 = req.body.file[1];
+      uploadBothLink(file1, file2);
+    } 
+    else {
+      const file2 = req.files[0];
+      checkFile2(file2);
+      uploadLinkAndFile(file1, file2);
+    }
+  } 
+  else {
+    const file1 = req.files[0];
+    checkFile1(file1);
+    if(req.body.file[0] == req.body.link[1]){
+      const file2 = req.body.link[1];
+      uploadFileAndLink(file1, file2);
+    } 
+    else {
+      const file2 = req.files[1];
+      checkFile2(file2);
+      uploadBothFiles(file1, file2);
+    }
+  }
 
   res.status(200).json({message: 'Success Update Data'})
 });
