@@ -75,7 +75,6 @@ const EditAbout = () => {
           alert(res.data.message)
         }else if(res.status === 200){
           alert(res.data.message);
-          console.log(res);
           setDisplayStatus('show');
         }
       });
