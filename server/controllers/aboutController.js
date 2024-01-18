@@ -85,52 +85,15 @@ const updateAbout = asyncHandler(async (req, res) => {
   if (!data) {
     res.status(400);
     throw new Error('Content not found');
-  }
-  
+  };
+
   if(req.body.content === 'undefined' || req.body.content === '<p><br></p>') {
     res.status(400);
     throw new Error('Please add content')
-  }
-  
-  if(!req.files) {
-    res.status(400);
-    throw new Error('Please add image')
-  }
-  
-  let file1 = req.files[0];
-  let file2 = req.files[1];
+  };
 
-  if(!file1.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
-    res.status(400);
-    throw new Error('Only image files are allowed!')
-  }
-
-  if(!file2.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
-    res.status(400);
-    throw new Error('Only image files are allowed!')
-  }
-
-  const {originalname} = file1;
-  const originalname2 = file2.originalname;
-
-  const imageRef1 = ref(storage, `about/${originalname}`);
-  const imageRef2 = ref(storage, `about/${originalname2}`);
-
-  await uploadBytes(imageRef1, file1.buffer).then(() => {
-    getDownloadURL(ref (storage, `about/${originalname}`)).then(async(url) => {
-      await uploadBytes(imageRef2, file2.buffer).then(() => {
-        getDownloadURL(ref (storage, `about/${originalname2}`)).then(async(url2) => {
-          const {content} = req.body;
-          await AboutModel.findByIdAndUpdate(req.params.id,
-          {
-            content,
-            file1: url,
-            file2: url2,
-          });
-        });
-      });
-    });
-  });
+  console.log(req.body.file, 'body file');
+  console.log(req.files, 'files');
 
   res.status(200).json({message: 'Success Update Data'})
 });
