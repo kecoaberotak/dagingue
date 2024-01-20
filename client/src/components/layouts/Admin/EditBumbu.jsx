@@ -12,13 +12,13 @@ const EditBumbu = () => {
   const {idBumbu} = useContext(IdBumbu);
   const [infoBumbu, setInfoBumbu] = useState([]);
 
-  const [preview, setPreview] = useState();
   const [srcPreview, setSrcPreview] = useState();
   const [buttonStatus, setButtonStatus] = useState('');
 
   const [title, setTitle] = useState('');
   const [file, setFile] = useState();
   const [desc, setDesc] = useState();
+  const [imglink, setImgLink] = useState();
 
   useEffect(() => {
     getDetailBumbu(idBumbu, res => {
@@ -31,18 +31,10 @@ const EditBumbu = () => {
       setTitle(infoBumbu.data.title);
       setDesc(infoBumbu.data.desc);
       setFile(infoBumbu.data.file);
+      setSrcPreview(infoBumbu.data.file);
+      setImgLink(infoBumbu.data.file);
     }
   }, [infoBumbu]);
-
-  useEffect(() => { 
-    if(!preview){
-      setPreview(file);
-    }
-  }, [preview, file]);
-
-  useEffect(() => {
-    setSrcPreview(preview);
-  }, [preview]);
 
   const modules = {
     toolbar: [
@@ -68,6 +60,7 @@ const EditBumbu = () => {
       data.set('title', title);
       data.set('file', file[file.length - 1]);
       data.set('desc', desc);
+      data.set('link', imglink);
   
       putBumbu(infoBumbu.data._id ,data, res => {
         if(res.status === 400){
