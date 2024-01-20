@@ -85,33 +85,35 @@ const updateBumbu = asyncHandler(async (req, res) => {
     throw new Error('Please add description')
   }
 
-  if(!req.file) {
-    res.status(400);
-    throw new Error('Please add image')
-  }
+  console.log(req.body.link);
 
-  if(!req.file.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
-    res.status(400);
-    throw new Error('Only image files are allowed!')
-  }
+  // if(!req.file) {
+  //   res.status(400);
+  //   throw new Error('Please add image')
+  // }
 
-  const file = req.file;
-  const {originalname} = req.file;
+  // if(!req.file.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
+  //   res.status(400);
+  //   throw new Error('Only image files are allowed!')
+  // }
 
-  const imageRef = ref(storage, `bumbu/${originalname}`);
-  await uploadBytes(imageRef, file.buffer).then(() => {
-    getDownloadURL(ref (storage, `bumbu/${originalname}`)).then(async(url) => {
-      const {title, desc} = req.body;
-      await BumbuModel.findByIdAndUpdate(req.params.id,
-      {
-        title,
-        desc,
-        file: url,
-      });
-    });
-  });
+  // const file = req.file;
+  // const {originalname} = req.file;
 
-  res.status(200).json({message: 'Success Update Data'})
+  // const imageRef = ref(storage, `bumbu/${originalname}`);
+  // await uploadBytes(imageRef, file.buffer).then(() => {
+  //   getDownloadURL(ref (storage, `bumbu/${originalname}`)).then(async(url) => {
+  //     const {title, desc} = req.body;
+  //     await BumbuModel.findByIdAndUpdate(req.params.id,
+  //     {
+  //       title,
+  //       desc,
+  //       file: url,
+  //     });
+  //   });
+  // });
+
+  res.status(200).json({message: 'test'})
 });
 
 
