@@ -92,7 +92,6 @@ const updateAbout = asyncHandler(async (req, res) => {
     throw new Error('Please add content')
   };
 
-  console.log(req.body, 'body');
   console.log(req.body.file, 'body file');
   console.log(req.files, 'files');
 
