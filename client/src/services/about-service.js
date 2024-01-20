@@ -25,8 +25,17 @@ export const getDetailContent = (id, callback) => {
   });
 };
 
+// export const putContent = (id, data, callback) => {
+//   axios.put(apiUrl + '/api/about/' + id, data).then(res => {
+//     callback(res);
+//   }).catch(err => {
+//     callback(err.response);
+//   });
+// };
+
+
 export const putContent = (id, data, callback) => {
-  axios.put(apiUrl + '/api/about/' + id, data).then(res => {
+  axios.put('http://localhost:4000/api/about/' + id, data).then(res => {
     callback(res);
   }).catch(err => {
     callback(err.response);

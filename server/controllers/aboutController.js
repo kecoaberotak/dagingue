@@ -78,7 +78,7 @@ const setAbout = asyncHandler(async (req, res) => {
 });
 
 
-// Update About (code lama)
+// Update About (coba code baru)
 const updateAbout = asyncHandler(async (req, res) => {
   const data = await AboutModel.findById(req.params.id);
 
