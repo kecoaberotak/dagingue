@@ -86,31 +86,43 @@ const updatePotong = asyncHandler(async (req, res) => {
     throw new Error('Please add description')
   }
 
-  if(!req.file) {
-    res.status(400);
-    throw new Error('Please add image')
-  }
+  const uploadLink = async() => {
+    const {title, desc, file} = req.body;
+    await PotongModel.findByIdAndUpdate(req.params.id,
+    {
+      title,
+      desc,
+      file,
+    });
+  };
 
-  if(!req.file.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
-    res.status(400);
-    throw new Error('Only image files are allowed!')
-  }
-
-  const file = req.file;
-  const {originalname} = req.file;
-
-  const imageRef = ref(storage, `potong/${originalname}`);
-  await uploadBytes(imageRef, file.buffer).then(() => {
-    getDownloadURL(ref (storage, `potong/${originalname}`)).then(async(url) => {
-      const {title, desc} = req.body;
-      await PotongModel.findByIdAndUpdate(req.params.id,
-      {
-        title,
-        desc,
-        file: url,
+  const uploadFile = async() => {
+    const file = req.file;
+    const {originalname} = req.file;
+  
+    const imageRef = ref(storage, `potong/${originalname}`);
+    await uploadBytes(imageRef, file.buffer).then(() => {
+      getDownloadURL(ref (storage, `potong/${originalname}`)).then(async(url) => {
+        const {title, desc} = req.body;
+        await PotongModel.findByIdAndUpdate(req.params.id,
+        {
+          title,
+          desc,
+          file: url,
+        });
       });
     });
-  });
+  };
+
+  if(req.body.link == req.body.file){
+    uploadLink();
+  } else {
+    if(!req.file.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
+      res.status(400);
+      throw new Error('Only image files are allowed!')
+    }
+    uploadFile();
+  };
 
   res.status(200).json({message: 'Success Update Data'})
 });
