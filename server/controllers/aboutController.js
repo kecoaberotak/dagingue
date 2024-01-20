@@ -78,7 +78,7 @@ const setAbout = asyncHandler(async (req, res) => {
 });
 
 
-// Update About (coba code baru)
+// Update About
 const updateAbout = asyncHandler(async (req, res) => {
   const data = await AboutModel.findById(req.params.id);
 
@@ -91,9 +91,6 @@ const updateAbout = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error('Please add content')
   };
-
-  console.log(req.body.file, 'body file');
-  console.log(req.files, 'files');
 
   const checkFile1 = (file1) => {
     if(!file1.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
@@ -213,7 +210,7 @@ const updateAbout = asyncHandler(async (req, res) => {
     }
   }
 
-  res.status(200).json({message: 'Berhasil'})
+  res.status(200).json({message: 'Success Edit Data'})
 });
 
 

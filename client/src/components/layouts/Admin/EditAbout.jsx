@@ -59,8 +59,6 @@ const EditAbout = () => {
   const editContent = (e) => {
     e.preventDefault();
 
-    console.log(imglink);
-
     const data = new FormData();
     data.set('content', content);
     for(let i = 0; i <= file.length; i++){
