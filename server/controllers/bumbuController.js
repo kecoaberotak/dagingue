@@ -88,6 +88,7 @@ const updateBumbu = asyncHandler(async (req, res) => {
   console.log(req.body.link, 'link');
   console.log(req.body.file, 'body file');
   console.log(req.files, 'files');
+  console.log(req.body.link === req.body.file, 'pengecekan');
 
   // if(!req.file) {
   //   res.status(400);
