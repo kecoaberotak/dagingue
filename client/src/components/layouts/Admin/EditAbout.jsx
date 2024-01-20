@@ -33,8 +33,8 @@ const EditAbout = () => {
       setFile(newData);
 
       const newLink = [];
-      newLink.push(srcPreview);
-      newLink.push(srcPreview2);
+      newLink.push(data.file1);
+      newLink.push(data.file2);
       setImgLink(newLink);
     }
   }, [data]);
