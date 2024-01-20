@@ -85,10 +85,6 @@ const updateBumbu = asyncHandler(async (req, res) => {
     throw new Error('Please add description')
   }
 
-  console.log(req.body.file, 'body file');
-  console.log(req.file, 'file');
-  console.log(req.body.link == req.body.file, 'pengecekan');
-
   const uploadLink = async() => {
     const {title, desc, file} = req.body;
     await BumbuModel.findByIdAndUpdate(req.params.id,
