@@ -69,6 +69,7 @@ const EditBumbu = () => {
   
       putBumbu(infoBumbu.data._id ,data, res => {
         if(res.status === 400){
+          console.log(res.data);
           alert(res.data.message)
         }else if(res.status === 200){
           alert(res.data.message);

@@ -100,11 +100,6 @@ const updateBumbu = asyncHandler(async (req, res) => {
   };
 
   const uploadFile = async() => {
-    if(!req.file.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
-      res.status(400);
-      throw new Error('Only image files are allowed!')
-    }
-  
     const file = req.file;
     const {originalname} = req.file;
   
@@ -125,6 +120,10 @@ const updateBumbu = asyncHandler(async (req, res) => {
   if(req.body.link == req.body.file){
     uploadLink();
   } else {
+    if(!req.file.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
+      res.status(400);
+      throw new Error('Only image files are allowed!')
+    }
     uploadFile();
   }
 
