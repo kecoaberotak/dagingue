@@ -28,8 +28,8 @@ const EditAbout = () => {
       setSrcPreview2(data.file2);
 
       const newData = [];
-      newData.push(srcPreview);
-      newData.push(srcPreview2);
+      newData.push(data.file1);
+      newData.push(data.file2);
       setFile(newData);
 
       const newLink = [];
