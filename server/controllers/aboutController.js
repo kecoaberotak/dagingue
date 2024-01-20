@@ -95,51 +95,7 @@ const updateAbout = asyncHandler(async (req, res) => {
   console.log(req.body.file, 'body file');
   console.log(req.files, 'files');
 
-  const checkFile1 = (file1) => {
-    if(!file1.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
-      res.status(400);
-      throw new Error('Only image files are allowed!')
-    };
-  };
-
-  const checkFile2 = (file2) => {
-    if(!file2.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
-      res.status(400);
-      throw new Error('Only image files are allowed!')
-    };
-  };
-
-  if(req.body.file[0] == req.body.link[0]){
-    const file1 = req.body.file[0];
-    if(req.body.file[1] == req.body.link[1]){
-      const file2 = req.body.file[1];
-      console.log(file1, 'file1');
-      console.log(file2, 'file2');
-    } 
-    else {
-      const file2 = req.files[0];
-      checkFile2(file2);
-      console.log(file1, 'file1');
-      console.log(file2, 'file2');
-    }
-  } 
-  else {
-    const file1 = req.files[0];
-    checkFile1(file1);
-    if(req.body.file[0] == req.body.link[1]){
-      const file2 = req.body.link[1];
-      console.log(file1, 'file1');
-      console.log(file2, 'file2');
-    } 
-    else {
-      const file2 = req.files[1];
-      checkFile2(file2);
-      console.log(file1, 'file1');
-      console.log(file2, 'file2');
-    }
-  }
-
-  res.status(200).json({message: 'Success Update Data'})
+  res.status(200).json({message: 'Berhasil'})
 });
 
 
