@@ -58,9 +58,14 @@ const EditBumbu = () => {
     if(buttonStatus === 'submit'){
       const data = new FormData();
       data.set('title', title);
-      data.set('file', file[file.length - 1]);
       data.set('desc', desc);
       data.set('link', imglink);
+
+      if(file == imglink){
+        data.set('file', file);
+      } else {
+        data.set('file', file[file.length - 1]);
+      }
   
       putBumbu(infoBumbu.data._id ,data, res => {
         if(res.status === 400){
