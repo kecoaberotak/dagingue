@@ -127,7 +127,7 @@ const updateBumbu = asyncHandler(async (req, res) => {
     uploadFile();
   }
 
-  res.status(200).json({message: 'test'})
+  res.status(200).json({message: 'Success Edit Data'})
 });
 
 
