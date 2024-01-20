@@ -9,13 +9,13 @@ const EditPotong = () => {
   const {idPotong} = useContext(IdPotong);
   const [infoPotong, setInfoPotong] = useState([]);
 
-  const [preview, setPreview] = useState();
   const [srcPreview, setSrcPreview] = useState();
   const [buttonStatus, setButtonStatus] = useState('');
 
   const [title, setTitle] = useState('');
   const [file, setFile] = useState();
   const [desc, setDesc] = useState();
+  const [imglink, setImgLink] = useState();
 
   useEffect(() => {
     getDetailPotong(idPotong, res => {
@@ -28,26 +28,24 @@ const EditPotong = () => {
       setTitle(infoPotong.data.title);
       setDesc(infoPotong.data.desc);
       setFile(infoPotong.data.file);
+      setSrcPreview(infoPotong.data.file);
+      setImgLink(infoPotong.data.file);
     }
   }, [infoPotong]);
-
-  useEffect(() => { 
-    if(!preview){
-      setPreview(file);
-    }
-  }, [preview, file]);
-
-  useEffect(() => {
-    setSrcPreview(preview);
-  }, [preview]);
 
   const editPotong = (e) => {
     e.preventDefault();
     if(buttonStatus === 'submit'){
       const data = new FormData();
       data.set('title', title);
-      data.set('file', file[file.length - 1]);
       data.set('desc', desc);
+      data.set('link', imglink);
+
+      if(file == imglink){
+        data.set('file', file);
+      } else {
+        data.set('file', file[file.length - 1]);
+      }
   
       putPotong(infoPotong.data._id ,data, res => {
         if(res.status === 400){
