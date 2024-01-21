@@ -60,7 +60,7 @@
   }
 
   .navbar-header a{
-    @apply text-putih font-bold hover:border-b-[3px] hover:border-merah;
+    @apply text-putih font-bold border-b-[0px] border-merah hover:border-b-[3px] duration-100;
   }
 
   .socmed {
