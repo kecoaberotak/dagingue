@@ -180,15 +180,11 @@ const updateAbout = asyncHandler(async (req, res) => {
     const file1 = req.body.file[0];
     if(req.body.file[1] == req.body.link[1]){
       const file2 = req.body.file[1];
-      console.log(file1, 'file1');
-      console.log(file2, 'file2');
       uploadBothLink(file1, file2);
     } 
     else {
       const file2 = req.files[0];
       checkFile2(file2);
-      console.log(file1, 'file1');
-      console.log(file2, 'file2');
       uploadLinkAndFile(file1, file2);
     }
   } 
@@ -197,15 +193,11 @@ const updateAbout = asyncHandler(async (req, res) => {
     checkFile1(file1);
     if(req.body.file[0] == req.body.link[1]){
       const file2 = req.body.link[1];
-      console.log(file1, 'file1');
-      console.log(file2, 'file2');
       uploadFileAndLink(file1, file2);
     } 
     else {
       const file2 = req.files[1];
       checkFile2(file2);
-      console.log(file1, 'file1');
-      console.log(file2, 'file2');
       uploadBothFiles(file1, file2);
     }
   }
