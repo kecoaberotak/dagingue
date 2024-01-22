@@ -12,7 +12,7 @@ mongoose.connect(process.env.DATABASE);
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(cors({credentials: true, origin: ['http://localhost:5173', 'https://dagingue.vercel.app', `https://dagingue-kecoaberotak.vercel.app`, 'http://localhost:4173']}));
+app.use(cors({credentials: true, origin: ['http://localhost:5173', 'https://www.dagingue.xyz', 'https://dagingue.vercel.app', `https://dagingue-kecoaberotak.vercel.app`, 'http://localhost:4173']}));
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
