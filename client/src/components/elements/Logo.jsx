@@ -2,7 +2,11 @@ const Logo = (props) => {
   const {classname} = props;
   return(
     <div className={classname}>
-      <img src='/logo.avif' alt="Logo Dagingue" title="Logo Dagingue" />
+      <picture>
+        <source srcSet="Logo.avif" type="image/avif"/>
+        <source srcSet="Logo.png" type="image/png"/>
+        <img src='/Logo.avif' alt="Logo Dagingue" title="Logo Dagingue" />
+      </picture>
     </div>
   );
 };
