@@ -13,7 +13,7 @@ const LandingPage = () => {
       <Helmet>
         <meta 
           name="description" 
-          content="Menjual beef slice dengan beragam varian bumbu. | Berlokasi di Bogor, Jawa Barat | Sedia pesan-antar."
+          content="Menjual beef slice bumbu marinasi teriyaki, bbq, lada hitam dan bulgogi | Berlokasi di Bogor, Jawa Barat | Sedia pesan-antar."
         />
         <title>Dagingue | Beef Slice Bogor | Daging Potong Bogor</title>
       </Helmet>
