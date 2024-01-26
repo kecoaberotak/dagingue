@@ -1,8 +1,8 @@
 const Logo = (props) => {
-  const {classname, image} = props;
+  const {classname} = props;
   return(
     <div className={classname}>
-      <img src={image} alt="Logo Dagingue" title="Logo Dagingue" />
+      <img src='/logo.avif' alt="Logo Dagingue" title="Logo Dagingue" />
     </div>
   );
 };

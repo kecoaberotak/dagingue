@@ -4,7 +4,7 @@ import Socmed from "../fragments/Socmed";
 const Header = () => {
   return(
     <header className="header" id="home">
-      <Logo classname='logo' image='/Logo.png' />
+      <Logo classname='logo' />
       <ul className="navbar-header">
         <li><a href="#about">Tentang Kami</a></li>
         <li><a href="#product">Produk</a></li>
