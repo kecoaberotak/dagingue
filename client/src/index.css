@@ -46,9 +46,16 @@
 }
 
 /* ============ Header ============*/
+.header {
+  background-image: image-set(
+    url('/hero-image.avif') type("image/avif"),
+    url('/hero-image.jpg') type("image/jpeg")
+  );
+}
+
 @layer components {
   .header {
-    @apply bg-[url('/hero-image.jpg')] w-full h-[379px] bg-no-repeat bg-cover bg-center mb-[50px] grid justify-center;
+    @apply w-full h-[379px] bg-no-repeat bg-cover bg-center mb-[50px] grid justify-center;
   }
 
   .logo {
@@ -126,7 +133,14 @@
 
   /* ====== POTONG ====== */
   .product-potong {
-    @apply h-fit w-full bg-[url('/background.png')] bg-no-repeat bg-cover bg-center grid justify-center gap-[15px];
+    background-image: image-set(
+      url('/background.avif') type("image/avif"),
+      url('/background.png') type("image/png")
+    );
+  }
+
+  .product-potong {
+    @apply h-fit w-full bg-no-repeat bg-cover bg-center grid justify-center gap-[15px];
   }
 
   .potong {
@@ -239,7 +253,14 @@
 
   /* ================ Footer - Banner ================== */
   .footer-banner {
-    @apply w-full h-full bg-[url('/bg-banner-footer.jpg')] bg-no-repeat bg-cover flex items-center py-3;
+    background-image: image-set(
+      url('/bg-banner-footer.avif') type("image/avif"),
+      url('/bg-banner-footer.jpg') type("image/jpeg")
+    );
+  }
+
+  .footer-banner {
+    @apply w-full h-full bg-no-repeat bg-cover flex items-center py-3;
   }
 
   .banner-info {
@@ -257,7 +278,14 @@
 
   /* ================ Footer - Contact ================== */
   .footer-contact {
-    @apply w-full h-[378px] bg-[url('/bg-footer.jpg')] grid grid-cols-2 justify-center content-center md:gap-[50px];
+    background-image: image-set(
+      url('/bg-footer.avif') type("image/avif"),
+      url('/bg-footer.jpg') type("image/jpeg")
+    );
+  }
+
+  .footer-contact {
+    @apply w-full h-[378px] grid grid-cols-2 justify-center content-center md:gap-[50px];
   }
 
   .contact-info {
