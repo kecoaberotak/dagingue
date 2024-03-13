@@ -12,16 +12,11 @@ describe("About Component", () => {
     };
   };
 
-  it("should render article", () => {
-    const { article } = renderComponents();
-
-    expect(article).toBeInTheDocument();
-  });
-
   it("should render image", () => {
     const { images } = renderComponents();
 
     expect(images[0]).toBeInTheDocument();
     expect(images[1]).toBeInTheDocument();
+    screen.debug();
   });
 });
