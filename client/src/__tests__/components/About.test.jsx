@@ -54,5 +54,22 @@ describe("About Component", () => {
     expect(skeletonImg2).not.toBeInTheDocument();
   });
 
-  // tinggal skeleton buat article
+  it("should render skeleton for article when data not loaded", () => {
+    render(<About />);
+
+    const skeletonArticle = screen.getByTestId("skeleton-article");
+    expect(skeletonArticle).toBeInTheDocument();
+  });
+
+  it("should not render skeleton for article when data is loaded", async () => {
+    render(<About />);
+
+    const skeletonArticle = screen.getByTestId("skeleton-article");
+
+    await screen.findByRole("heading", {
+      name: /tentang dagingue bogor/i,
+    });
+
+    expect(skeletonArticle).not.toBeInTheDocument();
+  });
 });
