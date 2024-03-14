@@ -14,11 +14,11 @@
   h1 {
     @apply font-medium text-[32px];
   }
-  
+
   h2 {
     @apply font-medium text-2xl;
   }
-  
+
   h3 {
     @apply font-normal text-lg;
   }
@@ -48,8 +48,8 @@
 /* ============ Header ============*/
 .header {
   background-image: image-set(
-    url('/hero-image.avif') type("image/avif"),
-    url('/hero-image.jpg') type("image/jpeg")
+    url("/hero-image.avif") type("image/avif"),
+    url("/hero-image.jpg") type("image/jpeg")
   );
 }
 
@@ -66,7 +66,7 @@
     @apply grid grid-flow-col justify-center text-sm gap-[15px] mt-[50px] mb-[50px] md:mb-0 sm:text-base sm:gap-[22px];
   }
 
-  .navbar-header a{
+  .navbar-header a {
     @apply text-putih font-bold border-b-[0px] border-merah hover:border-b-[3px] duration-100;
   }
 
@@ -78,7 +78,6 @@
     @apply text-putih;
   }
 }
-
 
 /* ============ ABOUT ============ */
 @layer components {
@@ -93,7 +92,7 @@
   .foto-1 {
     @apply w-[282px] border-[3px] border-merah;
   }
-  
+
   .foto-2 {
     @apply w-[201px] border-[3px] border-merah relative -left-[110px] top-[145px];
   }
@@ -109,24 +108,23 @@
   .article-about h2 {
     @apply text-3xl;
   }
-  
+
   .article-about li {
     @apply indent-4 list-none;
   }
-  
+
   .article-about li::before {
     content: "\25CB"; /*unicode disc "\25CB"*/
     @apply text-merah;
   }
 }
 
-
 /* ============ PRODUCT ============ */
 @layer components {
   .product {
     @apply mb-[50px] grid gap-[50px];
   }
-  
+
   .title-section {
     @apply flex flex-col items-center;
   }
@@ -134,8 +132,8 @@
   /* ====== POTONG ====== */
   .product-potong {
     background-image: image-set(
-      url('/background.avif') type("image/avif"),
-      url('/background.png') type("image/png")
+      url("/background.avif") type("image/avif"),
+      url("/background.png") type("image/png")
     );
   }
 
@@ -150,7 +148,7 @@
   .title-section p {
     @apply text-black text-[32px] font-bold;
   }
-  
+
   .title-section h3 {
     @apply text-merah font-semibold;
   }
@@ -158,11 +156,11 @@
   .cards-product-1 {
     @apply grid grid-flow-row grid-cols-1 gap-[22px] pb-4;
   }
-  
+
   .cards-product-2 {
     @apply grid grid-flow-row grid-cols-2 gap-[22px] pb-4;
   }
-  
+
   .cards-product-3 {
     @apply grid grid-flow-row grid-cols-2 gap-[22px] pb-4 lg:grid-cols-3;
   }
@@ -178,17 +176,17 @@
   .card-product-info {
     @apply ml-2 text-sm sm:ml-4 w-4/5;
   }
-  
+
   .card-product-info p {
     @apply my-1 sm:my-1 sm:text-lg;
   }
-  
+
   .card-product-info p:first-child {
     @apply font-medium text-[18px] sm:text-2xl;
   }
 
-  .potong-img{
-    @apply relative -top-9 sm:-top-16 ;
+  .potong-img {
+    @apply relative -top-9 sm:-top-16;
   }
 
   /* ====== BUMBU ====== */
@@ -207,43 +205,42 @@
   .gallery-info-image {
     @apply w-[138px] h-[138px] border-[3px] border-merah hidden sm:block sm:w-[276px] sm:h-[276px];
   }
-  
+
   .gallery-info-bumbu {
     @apply self-center flex flex-col gap-[15px] justify-self-start;
   }
 
-  .gallery-info-bumbu h2{
+  .gallery-info-bumbu h2 {
     @apply scale-95 sm:scale-100;
   }
-  .gallery-info-bumbu p{
+  .gallery-info-bumbu p {
     @apply text-sm scale-95 sm:scale-100 sm:text-base;
   }
 
   .gallery-items {
     @apply grid grid-cols-5 grid-rows-1 gap-3;
   }
-  
-  .gallery-item-image{
+
+  .gallery-item-image {
     @apply relative;
   }
 
-  .gallery-item-image img{
+  .gallery-item-image img {
     @apply w-[66px] h-[66px] cursor-pointer border-[3px] border-merah box-border sm:w-[132px] sm:h-[132px];
   }
 
-  .cover{
+  .cover {
     @apply absolute top-0 h-[66px] w-[66px] bg-merah opacity-0 sm:w-[132px] sm:h-[132px];
   }
-  
+
   .cover:hover {
     @apply opacity-50;
   }
-  
+
   .selected {
     @apply opacity-50;
   }
 }
-
 
 /* ================ Footer ================== */
 @layer components {
@@ -254,8 +251,8 @@
   /* ================ Footer - Banner ================== */
   .footer-banner {
     background-image: image-set(
-      url('/bg-banner-footer.avif') type("image/avif"),
-      url('/bg-banner-footer.jpg') type("image/jpeg")
+      url("/bg-banner-footer.avif") type("image/avif"),
+      url("/bg-banner-footer.jpg") type("image/jpeg")
     );
   }
 
@@ -275,12 +272,11 @@
     @apply font-bold text-[22px] sm:text-[28px] md:text-[32px];
   }
 
-
   /* ================ Footer - Contact ================== */
   .footer-contact {
     background-image: image-set(
-      url('/bg-footer.avif') type("image/avif"),
-      url('/bg-footer.jpg') type("image/jpeg")
+      url("/bg-footer.avif") type("image/avif"),
+      url("/bg-footer.jpg") type("image/jpeg")
     );
   }
 
@@ -315,61 +311,75 @@
 
 /* ============ ERROR PAGE ============ */
 @layer components {
-  .fundo{
-    animation: scales 3s alternate  infinite;
+  .fundo {
+    animation: scales 3s alternate infinite;
     transform-origin: center;
   }
-  .pao-baixo{
-    animation: rotatepao 14s cubic-bezier(.1,.49,.41,.97)  infinite;
+  .pao-baixo {
+    animation: rotatepao 14s cubic-bezier(0.1, 0.49, 0.41, 0.97) infinite;
     transform-origin: center;
   }
-  .pao-cima{
-    animation: rotatepao 7s 1s cubic-bezier(.1,.49,.41,.97)  infinite;
+  .pao-cima {
+    animation: rotatepao 7s 1s cubic-bezier(0.1, 0.49, 0.41, 0.97) infinite;
     transform-origin: center;
   }
-  .olhos{animation: olhos   2s  alternate  infinite;
+  .olhos {
+    animation: olhos 2s alternate infinite;
     transform-origin: center;
   }
 
-  .left-sparks{animation: left-sparks   4s  alternate  infinite;
-        transform-origin: 150px 156px;
+  .left-sparks {
+    animation: left-sparks 4s alternate infinite;
+    transform-origin: 150px 156px;
   }
 
-  .right-sparks{animation: left-sparks   4s  alternate  infinite;
-        transform-origin: 310px 150px;
+  .right-sparks {
+    animation: left-sparks 4s alternate infinite;
+    transform-origin: 310px 150px;
   }
 
-  .olhos{animation: olhos   2s  alternate  infinite;
+  .olhos {
+    animation: olhos 2s alternate infinite;
     transform-origin: center;
   }
-  @keyframes scales{
-    from { transform: scale(0.98)}
-    to{ transform: scale(1)}
+  @keyframes scales {
+    from {
+      transform: scale(0.98);
+    }
+    to {
+      transform: scale(1);
+    }
   }
 
-  @keyframes rotatepao{
-    0% { transform:  rotate(0deg)}
-    50% , 60%{ transform:  rotate(-20deg)}
-    100%{  transform:  rotate(0deg) }
-  
+  @keyframes rotatepao {
+    0% {
+      transform: rotate(0deg);
+    }
+    50%,
+    60% {
+      transform: rotate(-20deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
   }
 
-  @keyframes olhos{
-    0%{
+  @keyframes olhos {
+    0% {
       transform: rotateX(0deg);
     }
-    100%{
+    100% {
       transform: rotateX(30deg);
     }
   }
 
-  @keyframes left-sparks{
-    0%{
-      opacity: 0; 
+  @keyframes left-sparks {
+    0% {
+      opacity: 0;
     }
   }
 
-  .main{
+  .main {
     min-height: 600px;
     margin: 0px auto;
     width: auto;
@@ -382,53 +392,54 @@
   .path {
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
-    animation: dash 4s   alternate infinite;
+    animation: dash 4s alternate infinite;
   }
 
-  @keyframes dash{
-    0%, 30%{
+  @keyframes dash {
+    0%,
+    30% {
       fill: 4B4B62;
-      stroke-dashoffset:   0;
+      stroke-dashoffset: 0;
     }
-    80%,100%{
+    80%,
+    100% {
       fill: transparent;
-      stroke-dashoffset:  -200;
+      stroke-dashoffset: -200;
     }
   }
 }
 
 /* ============ LOGIN PAGE ============ */
 @layer components {
-  .form-login{
+  .form-login {
     @apply w-[20rem] sm:w-1/2 mx-auto my-auto mt-[150px] flex flex-col gap-4 p-9 border-4 border-black rounded-md;
   }
-  
+
   .form-login p {
     @apply text-2xl sm:text-3xl mb-1 font-bold;
   }
-  
-  .form-login input{
+
+  .form-login input {
     @apply block border-2 border-[#ddd] rounded-lg px-2 py-[5px] md:py-[10px];
   }
-  
+
   .form-login Button {
     @apply w-full bg-black border-black text-white font-semibold py-1 hover:bg-abu hover:border-abu duration-200;
   }
-  
-  .login-failed{
+
+  .login-failed {
     @apply text-center text-lg font-bold text-merah animate-pulse;
   }
 }
 
 /* ============ ADMIN PAGE ============ */
 @layer components {
-
   /*====== Admin Panel Navbar ======*/
-  .content-nav ul{
+  .content-nav ul {
     @apply flex flex-row gap-[1rem] text-xl mt-5 ml-6 text-black font-semibold md:ml-8;
   }
 
-  .content-nav ul li a{
+  .content-nav ul li a {
     @apply text-black hover:text-merah duration-300 focus:text-merah;
   }
 
@@ -444,8 +455,8 @@
   .form-content {
     @apply flex flex-col gap-4;
   }
-  
-  .form-content label{
+
+  .form-content label {
     @apply mt-5 text-lg font-semibold;
   }
 
@@ -466,15 +477,15 @@
     @apply text-xl font-semibold;
   }
 
-  .gambar-content{
+  .gambar-content {
     @apply max-w-[250px] self-center sm:max-w-[175px] md:max-w-[250px];
   }
 
-  .gambar-bumbu{
+  .gambar-bumbu {
     @apply max-w-[250px];
   }
 
-  .gambar-potong{
+  .gambar-potong {
     @apply max-w-[250px];
   }
 
@@ -483,11 +494,12 @@
     @apply self-center sm:self-auto;
   }
 
-  .table td, th{
+  .table td,
+  th {
     @apply border border-black;
   }
 
-  .table th{
+  .table th {
     @apply font-bold p-2;
   }
 
@@ -516,7 +528,7 @@
     @apply flex mb-14 gap-1;
   }
 
-  .form-button Button{
+  .form-button Button {
     @apply bg-black text-white text-sm font-semibold py-1 px-2 hover:bg-abu duration-300;
   }
 
@@ -524,7 +536,7 @@
     @apply bg-red-500 border-red-500 font-semibold hover:bg-red-400 hover:border-red-400 duration-300;
   }
 
-  .button-add Button{
+  .button-add Button {
     @apply mb-14 bg-black text-white text-sm font-semibold py-1 px-2 hover:bg-abu duration-300;
   }
 }
