@@ -9,5 +9,7 @@ describe("Header Component", () => {
 
     const element = screen.getByText(/produk/i);
     expect(element).toBeInTheDocument();
+
+    // check element lain
   });
 });
