@@ -72,6 +72,4 @@ describe("About Component", () => {
 
     expect(skeletonArticle).not.toBeInTheDocument();
   });
-
-  // tambahin kalo fetching data gagal
 });
