@@ -71,6 +71,17 @@ describe("ProductBumbu Component", () => {
   });
 
   //   GalleryInfoBumbu
+  it("should render heading and bumbu description when dataBumbu is provided", async () => {
+    renderComponent();
+
+    const container = await screen.findByTestId("gallery-info-bumbu");
+    const heading = within(container).getByRole("heading");
+    const desc = await screen.findByTestId("gallery-info-bumbu-desc");
+
+    expect(heading, desc).toBeInTheDocument();
+  });
+
+  // GalleryItems
 
   //   test juga pas user klik image
 });
