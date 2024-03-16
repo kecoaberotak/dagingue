@@ -60,5 +60,17 @@ describe("ProductBumbu Component", () => {
     await waitFor(() => expect(img).toHaveClass(/default/i));
   });
 
-  // kalo gambar belom load, render skeleton
+  it("should render skeleton for GalleryInfoImage if image not loaded", async () => {
+    renderComponent();
+
+    const container = await screen.findByTestId("gallery-info-image");
+
+    const skeleton = container.querySelector(".react-loading-skeleton");
+
+    expect(skeleton).toBeInTheDocument();
+  });
+
+  //   GalleryInfoBumbu
+
+  //   test juga pas user klik image
 });
