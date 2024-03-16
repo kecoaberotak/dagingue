@@ -8,7 +8,7 @@ import DescSelectedProvider from "../../contexts/DescSelected";
 import TitleSelectedProvider from "../../contexts/TitleSelected";
 
 describe("ProductBumbu Component", () => {
-  it("should render component", () => {
+  const renderComponent = () => {
     render(
       <DataBumbuProvider>
         <ImageSelectedContexProvider>
@@ -21,8 +21,15 @@ describe("ProductBumbu Component", () => {
       </DataBumbuProvider>
     );
 
-    expect(
-      screen.getByRole("heading", { name: /produk/i })
-    ).toBeInTheDocument();
+    return {
+      title: screen.getByRole("heading", { name: /produk/i }),
+      subTitle: screen.getByText(/varian/i),
+    };
+  };
+
+  it("should render title and subtitle", () => {
+    const { title, subTitle } = renderComponent();
+
+    expect(title, subTitle).toBeInTheDocument();
   });
 });
