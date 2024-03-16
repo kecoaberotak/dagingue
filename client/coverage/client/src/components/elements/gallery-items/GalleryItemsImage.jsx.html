@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.73% </span>
+                <span class="strong">69.56% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/46</span>
+                <span class='fraction'>32/46</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.73% </span>
+                <span class="strong">69.56% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/46</span>
+                <span class='fraction'>32/46</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -116,6 +116,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -128,30 +134,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { useContext, useState } from "react";
 import { ImageSelected } from "../../../contexts/ImageSelected";
@@ -160,13 +160,13 @@ import { TitleSelected } from "../../../contexts/TitleSelected";
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 &nbsp;
-const GalleryItemsImage = <span class="fstat-no" title="function not covered" >(props) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const {setSelectedImage} = useContext(ImageSelected);</span>
-<span class="cstat-no" title="statement not covered" >  const {setDescSelected} = useContext(DescSelected);</span>
-<span class="cstat-no" title="statement not covered" >  const {setTitleSelected} = useContext(TitleSelected);</span>
-<span class="cstat-no" title="statement not covered" >  const [load, setLoad] = useState(false);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const selectImage = (e) =&gt; {</span>
+const GalleryItemsImage = (props) =&gt; {
+  const {setSelectedImage} = useContext(ImageSelected);
+  const {setDescSelected} = useContext(DescSelected);
+  const {setTitleSelected} = useContext(TitleSelected);
+  const [load, setLoad] = useState(false);
+&nbsp;
+  const selectImage = <span class="fstat-no" title="function not covered" >(e) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    setSelectedImage(e.target.getAttribute('data-image'))</span>
 <span class="cstat-no" title="statement not covered" >    setDescSelected(e.target.getAttribute('data-desc'))</span>
 <span class="cstat-no" title="statement not covered" >    setTitleSelected(e.target.getAttribute('data-title'))</span>
@@ -179,24 +179,24 @@ const GalleryItemsImage = <span class="fstat-no" title="function not covered" >(
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >    e.target.classList.add('selected');</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const onLoad = () =&gt; {</span>
+&nbsp;
+  const onLoad = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    setLoad(true);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const {image, title, desc} = props;</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div className="gallery-item-image" onClick={selectImage}&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;img src={image} alt={title} title={title} onLoad={onLoad} className={`${load ? '' : 'hidden'}`} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >      {!load &amp;&amp; </span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className="w-[66px] h-[66px] sm:w-[132px] sm:h-[132px]"&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;Skeleton height={`100%`} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className={`cover ${load ? '' : 'hidden'}`} data-title={title} data-desc={desc} data-image={image}&gt;&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+&nbsp;
+  const {image, title, desc} = props;
+  return (
+    &lt;div className="gallery-item-image" onClick={selectImage}&gt;
+      &lt;img src={image} alt={title} title={title} onLoad={onLoad} className={`${<span class="branch-0 cbranch-no" title="branch not covered" >load ? '' : '</span>hidden'}`} /&gt;
+      {!load &amp;&amp; 
+        &lt;div className="w-[66px] h-[66px] sm:w-[132px] sm:h-[132px]"&gt;
+          &lt;Skeleton height={`100%`} /&gt;
+        &lt;/div&gt;
+      }
+      &lt;div className={`cover ${<span class="branch-0 cbranch-no" title="branch not covered" >load ? '' : '</span>hidden'}`} data-title={title} data-desc={desc} data-image={image}&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
 &nbsp;
 export default GalleryItemsImage;</pre></td></tr></table></pre>
 
@@ -205,7 +205,7 @@ export default GalleryItemsImage;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-16T07:12:25.553Z
+                at 2024-03-16T13:46:03.827Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
