@@ -32,4 +32,11 @@ describe("ProductBumbu Component", () => {
 
     expect(title, subTitle).toBeInTheDocument();
   });
+
+  it("should skeleton when dataBumbu is not provided", () => {
+    renderComponent();
+    const skeleton = screen.getByTestId("skeleton-gallery-info");
+
+    expect(skeleton).toBeInTheDocument();
+  });
 });
