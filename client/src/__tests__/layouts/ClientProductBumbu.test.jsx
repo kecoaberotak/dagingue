@@ -89,5 +89,40 @@ describe("ProductBumbu Component", () => {
     expect(skeleton).toBeInTheDocument();
   });
 
-  //   test juga pas user klik image
+  it("should render image for GalleryItems when dataBumbu provided", async () => {
+    renderComponent();
+
+    const container = await screen.findAllByTestId("gallery-item-image");
+
+    const image = within(container[0]).getByRole("img");
+    expect(image).toBeInTheDocument();
+
+    fireEvent.load(image);
+    await waitFor(() => expect(image).toHaveClass(/default/i));
+
+    const imageCover = container[0].querySelector(".cover");
+    expect(imageCover).toBeInTheDocument();
+    expect(imageCover).not.toHaveClass(/hidden/i);
+  });
+
+  it("should render skeleton image for GalleryItems when image not loaded", async () => {
+    renderComponent();
+
+    const container = await screen.findAllByTestId("gallery-item-image");
+
+    const image = within(container[0]).getByRole("img");
+    expect(image).toHaveClass(/hidden/i);
+
+    const imageCover = container[0].querySelector(".cover");
+    expect(imageCover).toHaveClass(/hidden/i);
+
+    const skeleton = within(container[0]).getByTestId(
+      "skeleton-gallery-item-image"
+    );
+    expect(skeleton).toBeInTheDocument();
+
+    screen.debug();
+  });
+
+  //   test juga pas user klik image dan covernya
 });
