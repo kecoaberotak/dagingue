@@ -120,8 +120,23 @@ describe("ProductBumbu Component", () => {
       "skeleton-gallery-item-image"
     );
     expect(skeleton).toBeInTheDocument();
+  });
 
-    screen.debug();
+  it("User should able to click image in GalleryItemsImage to change image for GalleryInfo", async () => {
+    renderComponent();
+
+    const container = await screen.findAllByTestId("gallery-item-image");
+
+    // test klik cover remove class selected masih belum bener
+    setTimeout(() => {
+      fireEvent.click(container[1]);
+      expect(container[1]).toHaveClass(/selected/i);
+    }, 1000);
+
+    fireEvent.click(container[0]);
+    expect(container[0]).toHaveClass(/selected/i);
+
+    expect(container[1]).not.toHaveClass(/selected/i);
   });
 
   //   test juga pas user klik image dan covernya

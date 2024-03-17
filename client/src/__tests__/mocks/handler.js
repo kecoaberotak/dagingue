@@ -72,6 +72,15 @@ const dataBumbu = {
       updatedAt: "2023-08-22T03:29:37.008Z",
       __v: 0,
     },
+    {
+      _id: "64e42bc80285ca3fbfe07843",
+      title: "Bulgogi",
+      desc: "<p>Saus hitam dengan cita rasa manis</p><p>dan pedas. Cocok untuk dinikmati</p><p>segala usia.</p>",
+      file: "https://firebasestorage.googleapis.com/v0/b/dagingue-dc5c9.appspot.com/o/bumbu%2Fbulgogi.jpg?alt=media&token=34f6034f-c2fe-434f-8782-45f3e83f79e8",
+      createdAt: "2023-08-22T03:30:16.382Z",
+      updatedAt: "2024-01-21T07:10:40.498Z",
+      __v: 0,
+    },
   ],
   message: "Get Bumbu",
 };

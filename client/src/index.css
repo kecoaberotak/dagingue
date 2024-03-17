@@ -222,7 +222,7 @@
   }
 
   .gallery-item-image {
-    @apply relative;
+    @apply relative cursor-pointer;
   }
 
   .gallery-item-image img {
