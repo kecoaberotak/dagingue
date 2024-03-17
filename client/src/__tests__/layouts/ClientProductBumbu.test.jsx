@@ -82,6 +82,12 @@ describe("ProductBumbu Component", () => {
   });
 
   // GalleryItems
+  it("should render skeleton for GalleryItems when dataBumbu not provided", () => {
+    renderComponent();
+
+    const skeleton = screen.getByTestId("skeleton-gallery-items");
+    expect(skeleton).toBeInTheDocument();
+  });
 
   //   test juga pas user klik image
 });
