@@ -56,6 +56,7 @@ const GalleryItemsImage = (props) => {
         data-title={title}
         data-desc={desc}
         data-image={image}
+        data-testid="gallery-item-image-cover"
       ></div>
     </div>
   );

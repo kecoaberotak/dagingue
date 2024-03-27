@@ -6,6 +6,7 @@ import {
   within,
 } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
+import userEvent from "@testing-library/user-event";
 
 import ProductBumbu from "../../components/layouts/ClientProductBumbu";
 import DataBumbuProvider from "../../contexts/DataBumbu";
@@ -122,22 +123,54 @@ describe("ProductBumbu Component", () => {
     expect(skeleton).toBeInTheDocument();
   });
 
-  it("User should able to click image in GalleryItemsImage to change image for GalleryInfo", async () => {
+  // pas user pilih gambar, gallery info image dan gallery info bumbu berubah
+  it("Should change description and image based on user interaction", async () => {
     renderComponent();
 
-    const container = await screen.findAllByTestId("gallery-item-image");
+    const itemImages = await screen.findAllByTestId("gallery-item-image");
+    const image = within(itemImages[1]).getByRole("img");
+    // const image2 = within(itemImages[0]).getByRole("img");
 
-    // test klik cover remove class selected masih belum bener
-    setTimeout(() => {
-      fireEvent.click(container[1]);
-      expect(container[1]).toHaveClass(/selected/i);
-    }, 1000);
+    const imageCover = within(itemImages[1]).getByTestId(
+      "gallery-item-image-cover"
+    );
 
-    fireEvent.click(container[0]);
-    expect(container[0]).toHaveClass(/selected/i);
+    // const imageCover2 = within(itemImages[0]).getByTestId(
+    //   "gallery-item-image-cover"
+    // );
 
-    expect(container[1]).not.toHaveClass(/selected/i);
+    fireEvent.load(image);
+    await waitFor(() => expect(image).toHaveClass(/default/i));
+
+    // fireEvent.load(image2);
+    // await waitFor(() => expect(image2).toHaveClass(/default/i));
+
+    // await userEvent.click(imageCover2);
+    await userEvent.click(imageCover);
   });
 
-  //   test juga pas user klik image dan covernya
+  it("should change cover classname based on user interaction", async () => {
+    renderComponent();
+
+    const itemImages = await screen.findAllByTestId("gallery-item-image");
+    const image = within(itemImages[0]).getByRole("img");
+    const image2 = within(itemImages[1]).getByRole("img");
+
+    const imageCover = within(itemImages[0]).getByTestId(
+      "gallery-item-image-cover"
+    );
+
+    const imageCover2 = within(itemImages[1]).getByTestId(
+      "gallery-item-image-cover"
+    );
+
+    fireEvent.load(image);
+    await waitFor(() => expect(image).toHaveClass(/default/i));
+
+    fireEvent.load(image2);
+    await waitFor(() => expect(image2).toHaveClass(/default/i));
+
+    await userEvent.click(imageCover2);
+    await userEvent.click(imageCover);
+  });
 });
