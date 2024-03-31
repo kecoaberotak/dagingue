@@ -37,8 +37,18 @@ describe("App entry point", () => {
     expect(screen.getByTestId("errorpage")).toBeInTheDocument();
   });
 
-  it("should open loginPage when route to login or route to admin before login ", () => {
+  it("should open loginPage when route to login", () => {
     renderRoutes("/login");
+
+    expect(screen.getByRole("button", { name: /login/i })).toBeInTheDocument();
+  });
+
+  it("should redirect to login page if try to open admin page before login", () => {
+    renderRoutes("/admin");
+
+    expect(
+      screen.queryByRole("link", { name: /about/i })
+    ).not.toBeInTheDocument();
 
     expect(screen.getByRole("button", { name: /login/i })).toBeInTheDocument();
   });
