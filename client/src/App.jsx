@@ -5,32 +5,15 @@ import LoginStatusProvider from "./contexts/LoginStatus";
 // css
 import "./index.css";
 
-// Pages
-import LandingPage from "./pages/landingPage";
-import ErrorPage from "./pages/errorPage";
-import AdminPage from "./pages/adminPage";
-import LoginPage from "./pages/loginPage";
+// Routes Config
+import routesConfig from "./routes/routesConfig";
 
 // Middleware
 import { HelmetProvider } from "react-helmet-async";
 
 // Router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <LandingPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/admin",
-    element: <AdminPage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
-]);
+const router = createBrowserRouter(routesConfig);
 
 const App = () => {
   return (
