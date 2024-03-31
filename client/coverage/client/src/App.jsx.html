@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for client/src/pages/adminPage.jsx</title>
+    <title>Code coverage report for client/src/App.jsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../prettify.css" />
-    <link rel="stylesheet" href="../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">client/src/pages</a> adminPage.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">client/src</a> App.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.84% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/38</span>
+                <span class='fraction'>0/30</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.84% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/38</span>
+                <span class='fraction'>0/30</span>
             </div>
         
             
@@ -93,25 +93,7 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -136,45 +118,42 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { Fragment, useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Navbar from '../components/fragments/Navbar';
-import Dashboard from '../components/layouts/Admin/Dashboard';
-import PrivateRoute from '../routes/PrivateRoutes';
-import { LoginStatus } from '../contexts/LoginStatus';
-import DisplayStatusProvider from '../contexts/DisplayStatus';
-import { Helmet } from 'react-helmet-async';
-&nbsp;
-import '../index.css';
-&nbsp;
-const AdminPage = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const {loginStatus} = useContext(LoginStatus);</span>
-<span class="cstat-no" title="statement not covered" >  const navigate = useNavigate();</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >// contexts</span></span></span>
+<span class="cstat-no" title="statement not covered" >import AdminInfoProvider from "./contexts/AdminInfo";</span>
+<span class="cstat-no" title="statement not covered" >import LoginStatusProvider from "./contexts/LoginStatus";</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if(!loginStatus){</span>
-<span class="cstat-no" title="statement not covered" >      navigate('/login');</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >  }, [loginStatus, navigate])</span>
+<span class="cstat-no" title="statement not covered" >// css</span>
+<span class="cstat-no" title="statement not covered" >import "./index.css";</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  return(</span>
-<span class="cstat-no" title="statement not covered" >    &lt;Fragment&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;Helmet&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;meta name="robots" content="noindex" /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;title&gt;Admin Page | Dagingue&lt;/title&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/Helmet&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;Navbar/&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;PrivateRoute&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;DisplayStatusProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;Dashboard&gt;&lt;/Dashboard&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/DisplayStatusProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/PrivateRoute&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/Fragment&gt;</span>
+<span class="cstat-no" title="statement not covered" >// Routes Config</span>
+<span class="cstat-no" title="statement not covered" >import routesConfig from "./routes/routesConfig";</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// Middleware</span>
+<span class="cstat-no" title="statement not covered" >import { HelmetProvider } from "react-helmet-async";</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// Router</span>
+<span class="cstat-no" title="statement not covered" >import { createBrowserRouter, RouterProvider } from "react-router-dom";</span>
+<span class="cstat-no" title="statement not covered" >const router = createBrowserRouter(routesConfig);</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const App = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  return (</span>
+<span class="cstat-no" title="statement not covered" >    &lt;LoginStatusProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;AdminInfoProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;HelmetProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;RouterProvider router={router} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/HelmetProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/AdminInfoProvider&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;/LoginStatusProvider&gt;</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-&nbsp;
-export default AdminPage;</pre></td></tr></table></pre>
+<span class="cstat-no" title="statement not covered" >};</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default App;</span>
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
@@ -183,14 +162,14 @@ export default AdminPage;</pre></td></tr></table></pre>
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2024-03-31T06:40:52.485Z
             </div>
-        <script src="../../../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../sorter.js"></script>
-        <script src="../../../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     
