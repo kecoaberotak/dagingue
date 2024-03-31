@@ -32,8 +32,14 @@ describe("App entry point", () => {
   });
 
   it("should open errorPage when route not provided ", () => {
-    renderRoutes("/aa");
+    renderRoutes("/bad/route");
 
     expect(screen.getByTestId("errorpage")).toBeInTheDocument();
+  });
+
+  it("should open loginPage when route to login or route to admin before login ", () => {
+    renderRoutes("/login");
+
+    expect(screen.getByRole("button", { name: /login/i })).toBeInTheDocument();
   });
 });
