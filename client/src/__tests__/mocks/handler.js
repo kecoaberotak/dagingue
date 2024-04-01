@@ -98,9 +98,9 @@ export const handler = [
   }),
   http.post(apiUrl + "/auth/login", async (data) => {
     if (data.usename === "admin" && data.password === "123") {
-      return HttpResponse.status(200).json({ message: "login success" });
+      return HttpResponse.json({ message: "login success" }, { status: 200 });
     } else {
-      return HttpResponse.status(400).json({ message: "login failed" });
+      return HttpResponse.json({ message: "login failed" }, { status: 400 });
     }
   }),
 ];

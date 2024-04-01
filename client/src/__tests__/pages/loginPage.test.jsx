@@ -34,7 +34,7 @@ describe("Login Page", () => {
     const inputUsername = screen.getByRole("textbox");
     const inputPassword = screen.getByPlaceholderText(/password/i);
 
-    // await userEvent.type(inputUsername, "ee");
+    await userEvent.type(inputUsername, "admin");
     await userEvent.type(inputPassword, "123");
 
     await userEvent.click(loginButton);
