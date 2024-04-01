@@ -96,4 +96,11 @@ export const handler = [
   http.get(apiUrl + "/api/bumbu", () => {
     return HttpResponse.json(dataBumbu);
   }),
+  http.post(apiUrl + "/auth/login", async (data) => {
+    if (data.usename === "admin" && data.password === "123") {
+      return HttpResponse.status(200).json({ message: "login success" });
+    } else {
+      return HttpResponse.status(400).json({ message: "login failed" });
+    }
+  }),
 ];

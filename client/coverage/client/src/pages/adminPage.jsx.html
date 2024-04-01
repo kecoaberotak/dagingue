@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.84% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/38</span>
+                <span class='fraction'>38/38</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.84% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/38</span>
+                <span class='fraction'>38/38</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -112,30 +112,30 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { Fragment, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -148,31 +148,31 @@ import { Helmet } from 'react-helmet-async';
 &nbsp;
 import '../index.css';
 &nbsp;
-const AdminPage = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const {loginStatus} = useContext(LoginStatus);</span>
-<span class="cstat-no" title="statement not covered" >  const navigate = useNavigate();</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if(!loginStatus){</span>
-<span class="cstat-no" title="statement not covered" >      navigate('/login');</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >  }, [loginStatus, navigate])</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  return(</span>
-<span class="cstat-no" title="statement not covered" >    &lt;Fragment&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;Helmet&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;meta name="robots" content="noindex" /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;title&gt;Admin Page | Dagingue&lt;/title&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/Helmet&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;Navbar/&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;PrivateRoute&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;DisplayStatusProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;Dashboard&gt;&lt;/Dashboard&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/DisplayStatusProvider&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/PrivateRoute&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/Fragment&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+const AdminPage = () =&gt; {
+  const {loginStatus} = useContext(LoginStatus);
+  const navigate = useNavigate();
+&nbsp;
+  useEffect(() =&gt; {
+    if(!loginStatus){
+      navigate('/login');
+    }
+  }, [loginStatus, navigate])
+&nbsp;
+  return(
+    &lt;Fragment&gt;
+      &lt;Helmet&gt;
+        &lt;meta name="robots" content="noindex" /&gt;
+        &lt;title&gt;Admin Page | Dagingue&lt;/title&gt;
+      &lt;/Helmet&gt;
+      &lt;Navbar/&gt;
+      &lt;PrivateRoute&gt;
+        &lt;DisplayStatusProvider&gt;
+          &lt;Dashboard&gt;&lt;/Dashboard&gt;
+        &lt;/DisplayStatusProvider&gt;
+      &lt;/PrivateRoute&gt;
+    &lt;/Fragment&gt;
+  );
+}
 &nbsp;
 export default AdminPage;</pre></td></tr></table></pre>
 
@@ -181,7 +181,7 @@ export default AdminPage;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-31T06:40:52.485Z
+                at 2024-04-01T05:45:52.055Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

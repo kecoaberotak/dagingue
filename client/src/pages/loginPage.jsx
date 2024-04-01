@@ -19,22 +19,26 @@ const LoginPage = () => {
   function handleLogin(e) {
     e.preventDefault();
 
-    const data = {
-      username: e.target.username.value,
-      password: e.target.password.value,
-    };
+    if (e.target.username.value === "" || e.target.password.value === "") {
+      setLoginFailed("Please insert your data");
+    } else {
+      const data = {
+        username: e.target.username.value,
+        password: e.target.password.value,
+      };
 
-    login(data, (res) => {
-      if (res.status === 200) {
-        getToken((res) => {
-          setLoginFailed(null);
-          setAdminInfo(res);
-          setLoginStatus(true);
-        });
-      } else if (res.status === 400) {
-        setLoginFailed(res.data.message);
-      }
-    });
+      login(data, (res) => {
+        if (res.status === 200) {
+          getToken((res) => {
+            setLoginFailed(null);
+            setAdminInfo(res);
+            setLoginStatus(true);
+          });
+        } else if (res.status === 400) {
+          setLoginFailed(res.data.message);
+        }
+      });
+    }
   }
 
   useEffect(() => {
