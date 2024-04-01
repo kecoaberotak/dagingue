@@ -10,23 +10,27 @@ import { Helmet } from "react-helmet-async";
 import "../index.css";
 
 const LoginPage = () => {
-  const [loginFailed, setLoginFailed] = useState("");
-  const { adminInfo, setAdminInfo } = useContext(AdminInfo);
-  const { loginStatus, setLoginStatus } = useContext(LoginStatus);
   const navigate = useNavigate();
   const usernameFocus = useRef();
+
+  const [loginFailed, setLoginFailed] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { adminInfo, setAdminInfo } = useContext(AdminInfo);
+  const { loginStatus, setLoginStatus } = useContext(LoginStatus);
 
   function handleLogin(e) {
     e.preventDefault();
 
-    if (e.target.username.value === "" || e.target.password.value === "") {
+    const data = {
+      username,
+      password,
+    };
+
+    if (username === "" || password === "") {
       setLoginFailed("Please insert your data");
     } else {
-      const data = {
-        username: e.target.username.value,
-        password: e.target.password.value,
-      };
-
       login(data, (res) => {
         if (res.status === 200) {
           getToken((res) => {
@@ -65,8 +69,14 @@ const LoginPage = () => {
           placeholder="Username"
           name="username"
           ref={usernameFocus}
+          onChange={(e) => setUsername(e.target.value)}
         />
-        <input type="password" placeholder="Password" name="password" />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <Button>Login</Button>
         {loginFailed && (
           <span className="login-failed">{loginFailed.toUpperCase()}!</span>
