@@ -1,7 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
-
-import userEvent from "@testing-library/user-event";
+import { render, screen } from "@testing-library/react";
 
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import routesConfig from "../../routes/routesConfig";
@@ -54,32 +52,4 @@ describe("App entry point", () => {
 
     expect(screen.getByRole("button", { name: /login/i })).toBeInTheDocument();
   });
-
-  // it("should open admin page after login successfully", async () => {
-  //   renderRoutes("/login");
-
-  //   const user = userEvent.setup();
-
-  //   const inputUsername = screen.getByPlaceholderText(/username/i);
-  //   const inputPassword = screen.getByPlaceholderText(/password/i);
-  //   const loginButton = screen.getByRole("button", { name: /login/i });
-
-  //   await userEvent.click(inputUsername);
-  //   await userEvent.clear(inputUsername);
-
-  //   await userEvent.click(inputPassword);
-  //   await userEvent.clear(inputPassword);
-
-  //   await waitFor(async () => {
-  //     await user.type(inputUsername, "admin");
-  //     expect(inputUsername.value).toBe("admin");
-
-  //     await user.type(inputPassword, "123");
-  //     expect(inputPassword.value).toBe("123");
-
-  //     await user.click(loginButton);
-  //   });
-
-  //   // screen.debug();
-  // });
 });
