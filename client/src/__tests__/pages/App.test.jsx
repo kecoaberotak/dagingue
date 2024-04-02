@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import routesConfig from "../../routes/routesConfig";
@@ -51,5 +52,22 @@ describe("App entry point", () => {
     ).not.toBeInTheDocument();
 
     expect(screen.getByRole("button", { name: /login/i })).toBeInTheDocument();
+  });
+  it("should render admin page if login success", async () => {
+    renderRoutes("/login");
+
+    const loginButton = screen.getByRole("button", { name: /login/i });
+    expect(loginButton).toHaveTextContent(/login/i);
+
+    const inputUsername = screen.getByRole("textbox");
+    const inputPassword = screen.getByPlaceholderText(/password/i);
+
+    await userEvent.type(inputUsername, "admin");
+    await userEvent.type(inputPassword, "123");
+
+    await userEvent.click(loginButton);
+
+    // tambahin expect buat bukti udah sukses render admin page
+    screen.debug();
   });
 });

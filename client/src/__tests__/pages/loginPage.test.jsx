@@ -25,7 +25,7 @@ describe("Login Page", () => {
     );
   };
 
-  it("should render login page if user not login", async () => {
+  it("should render login page", async () => {
     renderPage();
 
     const loginButton = screen.getByRole("button", { name: /login/i });
@@ -38,7 +38,8 @@ describe("Login Page", () => {
     await userEvent.type(inputPassword, "123");
 
     await userEvent.click(loginButton);
-
-    screen.debug();
+    // expect alert ga muncul
   });
+
+  // tambahin test lain buat yg fokus ke login pagenya
 });
