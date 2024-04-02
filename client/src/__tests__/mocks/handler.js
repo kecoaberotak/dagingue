@@ -85,6 +85,12 @@ const dataBumbu = {
   message: "Get Bumbu",
 };
 
+const token = {
+  username: "daging",
+  id: "64c507aa0b8b845fa26c388d",
+  iat: 1711887263,
+};
+
 export const handler = [
   // pas fetch ke api jsonplaceholder, responnya pake respon yg di mock ini
   http.get(apiUrl + "/api/about", () => {
@@ -106,5 +112,8 @@ export const handler = [
       console.log("login failed");
       return HttpResponse.json({ message: "login failed" }, { status: 400 });
     }
+  }),
+  http.get(apiUrl + "/auth/login", () => {
+    return HttpResponse.json(token);
   }),
 ];
