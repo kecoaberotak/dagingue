@@ -27,16 +27,8 @@ describe("App entry point", () => {
     );
   };
 
-  it("should render App", () => {
+  it("should render App and open landing page", () => {
     render(<App />);
-    // cari tau testing route dari App
-    // kalo ga bisa, berarti render aja landing page
-
-    // screen.debug();
-  });
-
-  it("should open landing page", () => {
-    renderRoutes("/");
 
     expect(screen.getByRole("link", { name: /produk/i })).toBeInTheDocument();
     expect(screen.getByRole("img", { name: /tentang/i })).toBeInTheDocument();
