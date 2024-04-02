@@ -38,8 +38,12 @@ describe("Login Page", () => {
     await userEvent.type(inputPassword, "123");
 
     await userEvent.click(loginButton);
-    // expect alert ga muncul
+    // expect alert ga muncul kalo login sukses
   });
 
+  // test alert muncul kalo input kosong
+  // test aler muncul kalo username salah
+  // test alert muncul kalo password salah
+  // mungkin test juga pas load awal langsung fokus ke input username karena useRef
   // tambahin test lain buat yg fokus ke login pagenya
 });
