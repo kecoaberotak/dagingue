@@ -78,7 +78,7 @@ describe("App entry point", () => {
 
     await userEvent.click(loginButton);
 
-    // tambahin expect buat bukti udah sukses render admin page
-    // screen.debug();
+    const headingEdit = screen.getByRole("heading", { name: /edit/i });
+    expect(headingEdit).toBeInTheDocument();
   });
 });
