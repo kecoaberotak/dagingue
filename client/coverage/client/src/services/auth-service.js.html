@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30.76% </span>
+                <span class="strong">69.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/26</span>
+                <span class='fraction'>18/26</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30.76% </span>
+                <span class="strong">69.23% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/26</span>
+                <span class='fraction'>18/26</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -92,20 +92,20 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -116,21 +116,21 @@
 <span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import axios from 'axios';
 const apiUrl = import.meta.env.VITE_DAGINGUE_API_URL;
 &nbsp;
-export const login = <span class="fstat-no" title="function not covered" >(data, callback) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  axios.post(apiUrl + '/auth/login', data, {withCredentials: true}).then(res =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    callback(res);</span>
-<span class="cstat-no" title="statement not covered" >  }).catch(err =&gt; {</span>
+export const login = (data, callback) =&gt; {
+  axios.post(apiUrl + '/auth/login', data, {withCredentials: true}).then(res =&gt; {
+    callback(res);
+  }).catch(err =&gt; {
 <span class="cstat-no" title="statement not covered" >    callback(err.response);</span>
-<span class="cstat-no" title="statement not covered" >  });</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+  });
+};
 &nbsp;
-export const getToken = <span class="fstat-no" title="function not covered" >(callback) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  axios.get(apiUrl + '/auth/login',{withCredentials: true}).then(res =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    callback(res.data);</span>
-<span class="cstat-no" title="statement not covered" >  }).catch(err =&gt; {</span>
+export const getToken = (callback) =&gt; {
+  axios.get(apiUrl + '/auth/login',{withCredentials: true}).then(res =&gt; {
+    callback(res.data);
+  }).catch(err =&gt; {
 <span class="cstat-no" title="statement not covered" >    callback(err.response);</span>
-<span class="cstat-no" title="statement not covered" >  })</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+  })
+};
 &nbsp;
 export const logout = <span class="fstat-no" title="function not covered" >(callback) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  axios.post(apiUrl + '/auth/logout', {withCredentials: true}).then(res =&gt; {</span>
@@ -145,7 +145,7 @@ export const logout = <span class="fstat-no" title="function not covered" >(call
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-01T05:45:52.055Z
+                at 2024-04-02T09:25:40.878Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

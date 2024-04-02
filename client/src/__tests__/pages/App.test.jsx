@@ -8,6 +8,8 @@ import LoginStatusProvider from "../../contexts/LoginStatus";
 import AdminInfoProvider from "../../contexts/AdminInfo";
 import { HelmetProvider } from "react-helmet-async";
 
+import App from "../../App";
+
 describe("App entry point", () => {
   const renderRoutes = (route) => {
     const router = createMemoryRouter(routesConfig, {
@@ -24,6 +26,14 @@ describe("App entry point", () => {
       </LoginStatusProvider>
     );
   };
+
+  it("should render App", () => {
+    render(<App />);
+    // cari tau testing route dari App
+    // kalo ga bisa, berarti render aja landing page
+
+    // screen.debug();
+  });
 
   it("should open landing page", () => {
     renderRoutes("/");
@@ -53,6 +63,7 @@ describe("App entry point", () => {
 
     expect(screen.getByRole("button", { name: /login/i })).toBeInTheDocument();
   });
+
   it("should render admin page if login success", async () => {
     renderRoutes("/login");
 
@@ -68,6 +79,6 @@ describe("App entry point", () => {
     await userEvent.click(loginButton);
 
     // tambahin expect buat bukti udah sukses render admin page
-    screen.debug();
+    // screen.debug();
   });
 });

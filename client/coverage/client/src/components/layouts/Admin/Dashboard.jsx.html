@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30.76% </span>
+                <span class="strong">92.3% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/39</span>
+                <span class='fraction'>36/39</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30.76% </span>
+                <span class="strong">92.3% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/39</span>
+                <span class='fraction'>36/39</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,33 +111,33 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { Fragment, useContext, useState } from "react";
 import { Link } from "react-router-dom";
@@ -148,34 +148,34 @@ import { DisplayStatus } from "../../../contexts/DisplayStatus";
 &nbsp;
 // import '../../../assets/admin-page-css/admin-page.css'
 &nbsp;
-const AdminPanel = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const [halaman, setHalaman] = useState('');</span>
-<span class="cstat-no" title="statement not covered" >  const {setDisplayStatus} = useContext(DisplayStatus);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const handleHalaman = e =&gt; {</span>
+const AdminPanel = () =&gt; {
+  const [halaman, setHalaman] = useState('');
+  const {setDisplayStatus} = useContext(DisplayStatus);
+&nbsp;
+  const handleHalaman = <span class="fstat-no" title="function not covered" >e =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    setHalaman(e.target.getAttribute('value'));</span>
 <span class="cstat-no" title="statement not covered" >    setDisplayStatus('show');</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  return(</span>
-<span class="cstat-no" title="statement not covered" >    &lt;Fragment&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;section className="admin-panel"&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;nav className="content-nav"&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;ul&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;li&gt;&lt;Link to="#" onClick={handleHalaman} value='about'&gt;About&lt;/Link&gt;&lt;/li&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;li&gt;&lt;span&gt;/&lt;/span&gt;&lt;/li&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;li&gt;&lt;Link to="#" onClick={handleHalaman} value='bumbu'&gt;Bumbu&lt;/Link&gt;&lt;/li&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;li&gt;&lt;span&gt;/&lt;/span&gt;&lt;/li&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;li&gt;&lt;Link to="#" onClick={handleHalaman} value='potong'&gt;Potongan&lt;/Link&gt;&lt;/li&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/ul&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/nav&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;main className="admin-panel-content"&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {halaman === '' ? &lt;AboutContent /&gt; : halaman === 'potong' ? &lt;ProductPotong /&gt; : halaman === 'bumbu' ? &lt;ProductBumbu /&gt; : &lt;AboutContent /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/main&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/section&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/Fragment&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+&nbsp;
+  return(
+    &lt;Fragment&gt;
+      &lt;section className="admin-panel"&gt;
+        &lt;nav className="content-nav"&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;Link to="#" onClick={handleHalaman} value='about'&gt;About&lt;/Link&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;span&gt;/&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;Link to="#" onClick={handleHalaman} value='bumbu'&gt;Bumbu&lt;/Link&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;span&gt;/&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;Link to="#" onClick={handleHalaman} value='potong'&gt;Potongan&lt;/Link&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;
+        &lt;main className="admin-panel-content"&gt;
+          {halaman === '' ? &lt;AboutContent <span class="branch-0 cbranch-no" title="branch not covered" >/&gt; : halaman === 'potong' ? &lt;ProductPotong /&gt; : halaman === 'bumbu' ? &lt;ProductBumbu /&gt; : &lt;AboutContent /&gt;}</span>
+        &lt;/main&gt;
+      &lt;/section&gt;
+    &lt;/Fragment&gt;
+  );
+}
 &nbsp;
 export default AdminPanel;</pre></td></tr></table></pre>
 
@@ -184,7 +184,7 @@ export default AdminPanel;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-01T05:45:52.055Z
+                at 2024-04-02T09:25:40.878Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
