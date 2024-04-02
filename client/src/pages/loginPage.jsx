@@ -79,7 +79,9 @@ const LoginPage = () => {
         />
         <Button>Login</Button>
         {loginFailed && (
-          <span className="login-failed">{loginFailed.toUpperCase()}!</span>
+          <span className="login-failed" data-testid="login-failed-alert">
+            {loginFailed.toUpperCase()}!
+          </span>
         )}
       </form>
     </>
