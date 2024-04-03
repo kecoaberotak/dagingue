@@ -21,5 +21,8 @@ describe("AboutContent", () => {
 
     expect(headingAbout).toBeInTheDocument();
   });
-  //   test lagi lebih banyak
+
+  // test set state content dari data
+  // test tampilin data dari hasil fetching
+  // test handler edit data
 });
