@@ -52,4 +52,15 @@ describe("Dashboard", () => {
     const headingPotong = screen.getByRole("heading", { name: /bumbu/i });
     expect(headingPotong).toBeInTheDocument();
   });
+
+  it("should render ProductPotong component when user click link 'About' ", () => {
+    renderComponent();
+
+    const linkPotong = screen.getByRole("link", { name: /about/i });
+
+    fireEvent.click(linkPotong);
+
+    const headingPotong = screen.getByRole("heading", { name: /about/i });
+    expect(headingPotong).toBeInTheDocument();
+  });
 });
