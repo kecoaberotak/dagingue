@@ -75,7 +75,5 @@ describe("App entry point", () => {
 
     const navbarAdmin = screen.getByTestId("navbar-admin");
     expect(navbarAdmin).toBeInTheDocument();
-
-    screen.debug();
   });
 });
