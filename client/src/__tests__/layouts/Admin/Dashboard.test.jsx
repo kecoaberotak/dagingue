@@ -63,6 +63,4 @@ describe("Dashboard", () => {
     const headingPotong = screen.getByRole("heading", { name: /about/i });
     expect(headingPotong).toBeInTheDocument();
   });
-
-  // test buat navbar
 });
