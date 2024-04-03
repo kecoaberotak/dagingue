@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15.51% </span>
+                <span class="strong">65.51% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/58</span>
+                <span class='fraction'>38/58</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15.51% </span>
+                <span class="strong">65.51% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/58</span>
+                <span class='fraction'>38/58</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -127,35 +127,27 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -177,34 +169,42 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { useContext, useState, useEffect, useReducer } from "react";
 import { DisplayStatus } from "../../../contexts/DisplayStatus";
 import { IdPotong } from "../../../contexts/IdPotong";
 import { getPotong, deletePotong } from "../../../services/potong-service";
 import Button from "../../elements/Button";
 &nbsp;
-const ShowPotong = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const [dataPotong, setDataPotong] = useState([]);</span>
-<span class="cstat-no" title="statement not covered" >  const {setDisplayStatus} = useContext(DisplayStatus);</span>
-<span class="cstat-no" title="statement not covered" >  const {setIdPotong} = useContext(IdPotong);</span>
-<span class="cstat-no" title="statement not covered" >  const [reducerValue, forceUpdate] =  useReducer(x =&gt; x + 1, 0);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    getPotong(res =&gt; setDataPotong(res.data));</span>
-<span class="cstat-no" title="statement not covered" >  }, [reducerValue]);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;h1 className='form-title'&gt;Jenis Potongan Daging&lt;/h1&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;table className="table"&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;thead&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;tr&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;th scope="col"&gt;Jenis Potongan&lt;/th&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;th scope="col"&gt;Deskripsi Jenis Potongan&lt;/th&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;th scope="col"&gt;Aksi&lt;/th&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/tr&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/thead&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {dataPotong.map(data =&gt; {</span>
+const ShowPotong = () =&gt; {
+  const [dataPotong, setDataPotong] = useState([]);
+  const {setDisplayStatus} = useContext(DisplayStatus);
+  const {setIdPotong} = useContext(IdPotong);
+  const [reducerValue, forceUpdate] =  useReducer(x =&gt; x + 1, 0);
+&nbsp;
+  useEffect(() =&gt; {
+    getPotong(res =&gt; setDataPotong(res.data));
+  }, [reducerValue]);
+&nbsp;
+  return (
+    &lt;&gt;
+      &lt;h1 className='form-title'&gt;Jenis Potongan Daging&lt;/h1&gt;
+      &lt;table className="table"&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th scope="col"&gt;Jenis Potongan&lt;/th&gt;
+            &lt;th scope="col"&gt;Deskripsi Jenis Potongan&lt;/th&gt;
+            &lt;th scope="col"&gt;Aksi&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+          {dataPotong.map(data =&gt; {
 <span class="cstat-no" title="statement not covered" >            return(</span>
 <span class="cstat-no" title="statement not covered" >              &lt;tbody key={data._id}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;tr&gt;</span>
@@ -225,14 +225,14 @@ const ShowPotong = <span class="fstat-no" title="function not covered" >() =&gt;
 <span class="cstat-no" title="statement not covered" >                &lt;/tr&gt;</span>
 <span class="cstat-no" title="statement not covered" >              &lt;/tbody&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >          })}</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/table&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className="button-add"&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Button onClick={() =&gt; setDisplayStatus('add')}&gt;Tambah&lt;/Button&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >  )</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+          })}
+      &lt;/table&gt;
+      &lt;div className="button-add"&gt;
+        &lt;Button onClick={<span class="fstat-no" title="function not covered" >() =&gt; setDisplayStatus('add')}&gt;T</span>ambah&lt;/Button&gt;
+      &lt;/div&gt;
+    &lt;/&gt;
+  )
+};
 &nbsp;
 export default ShowPotong;</pre></td></tr></table></pre>
 
@@ -241,7 +241,7 @@ export default ShowPotong;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-02T13:04:28.140Z
+                at 2024-04-03T05:13:31.689Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

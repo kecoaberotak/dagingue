@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15% </span>
+                <span class="strong">63.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/60</span>
+                <span class='fraction'>38/60</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15% </span>
+                <span class="strong">63.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/60</span>
+                <span class='fraction'>38/60</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -129,35 +129,27 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -181,34 +173,42 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { useContext, useEffect, useReducer, useState } from "react";
 import { getBumbu, deleteBumbu } from "../../../services/bumbu-service";
 import Button from "../../elements/Button";
 import { DisplayStatus } from "../../../contexts/DisplayStatus";
 import { IdBumbu } from "../../../contexts/IdBumbu";
 &nbsp;
-const ShowBumbu = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const [dataBumbu, setDataBumbu] = useState([]);</span>
-<span class="cstat-no" title="statement not covered" >  const {setDisplayStatus} = useContext(DisplayStatus);</span>
-<span class="cstat-no" title="statement not covered" >  const {setIdBumbu} = useContext(IdBumbu);</span>
-<span class="cstat-no" title="statement not covered" >  const [reducerValue, forceUpdate] = useReducer(x =&gt; x + 1, 0);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    getBumbu(res =&gt; setDataBumbu(res.data));</span>
-<span class="cstat-no" title="statement not covered" >  }, [reducerValue]);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;h1 className="form-title"&gt;Jenis Bumbu&lt;/h1&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;table className="table"&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;thead&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;tr&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;th scope="col"&gt;Nama Bumbu&lt;/th&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;th scope="col"&gt;Deskripsi Bumbu&lt;/th&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;th scope="col"&gt;Aksi&lt;/th&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/tr&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/thead&gt;</span>
-<span class="cstat-no" title="statement not covered" >          {dataBumbu.map(data =&gt; {</span>
+const ShowBumbu = () =&gt; {
+  const [dataBumbu, setDataBumbu] = useState([]);
+  const {setDisplayStatus} = useContext(DisplayStatus);
+  const {setIdBumbu} = useContext(IdBumbu);
+  const [reducerValue, forceUpdate] = useReducer(x =&gt; x + 1, 0);
+&nbsp;
+  useEffect(() =&gt; {
+    getBumbu(res =&gt; setDataBumbu(res.data));
+  }, [reducerValue]);
+&nbsp;
+  return (
+    &lt;&gt;
+      &lt;h1 className="form-title"&gt;Jenis Bumbu&lt;/h1&gt;
+      &lt;table className="table"&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th scope="col"&gt;Nama Bumbu&lt;/th&gt;
+            &lt;th scope="col"&gt;Deskripsi Bumbu&lt;/th&gt;
+            &lt;th scope="col"&gt;Aksi&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+          {dataBumbu.map(data =&gt; {
 <span class="cstat-no" title="statement not covered" >            return(</span>
 <span class="cstat-no" title="statement not covered" >              &lt;tbody key={data._id}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;tr&gt;</span>
@@ -231,14 +231,14 @@ const ShowBumbu = <span class="fstat-no" title="function not covered" >() =&gt; 
 <span class="cstat-no" title="statement not covered" >                &lt;/tr&gt;</span>
 <span class="cstat-no" title="statement not covered" >              &lt;/tbody&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >          })}</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/table&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className="button-add"&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Button onClick={() =&gt; setDisplayStatus('add')}&gt;Tambah&lt;/Button&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/&gt;</span>
-<span class="cstat-no" title="statement not covered" >  )</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+          })}
+      &lt;/table&gt;
+      &lt;div className="button-add"&gt;
+        &lt;Button onClick={<span class="fstat-no" title="function not covered" >() =&gt; setDisplayStatus('add')}&gt;T</span>ambah&lt;/Button&gt;
+      &lt;/div&gt;
+    &lt;/&gt;
+  )
+};
 &nbsp;
 export default ShowBumbu;</pre></td></tr></table></pre>
 
@@ -247,7 +247,7 @@ export default ShowBumbu;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-02T13:04:28.140Z
+                at 2024-04-03T05:13:31.689Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
