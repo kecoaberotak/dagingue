@@ -20,8 +20,6 @@ describe("AboutContent", () => {
     });
 
     expect(headingAbout).toBeInTheDocument();
-
-    screen.debug();
   });
   //   test lagi lebih banyak
 });

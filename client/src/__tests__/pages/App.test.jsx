@@ -72,5 +72,10 @@ describe("App entry point", () => {
 
     const headingEdit = screen.getByRole("heading", { name: /edit/i });
     expect(headingEdit).toBeInTheDocument();
+
+    const navbarAdmin = screen.getByTestId("navbar-admin");
+    expect(navbarAdmin).toBeInTheDocument();
+
+    screen.debug();
   });
 });
