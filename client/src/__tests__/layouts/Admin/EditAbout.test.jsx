@@ -23,10 +23,9 @@ describe("AboutContent", () => {
     expect(images[0]).toBeInTheDocument();
     expect(images[1]).toBeInTheDocument();
 
-    screen.debug();
+    const aboutContent = container.querySelector(".quill");
+    expect(aboutContent).toBeInTheDocument();
   });
 
-  // test set state content dari data
-  // test tampilin data dari hasil fetching
   // test handler edit data
 });
