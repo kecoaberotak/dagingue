@@ -23,8 +23,11 @@ describe("AboutContent", () => {
     expect(images[0]).toBeInTheDocument();
     expect(images[1]).toBeInTheDocument();
 
-    const aboutContent = container.querySelector(".quill");
-    expect(aboutContent).toBeInTheDocument();
+    const quill = container.querySelector(".quill");
+    expect(quill).toBeInTheDocument();
+
+    const submitButton = screen.getByRole("button", { name: /submit/i });
+    expect(submitButton).toBeInTheDocument();
   });
 
   // test handler edit data
