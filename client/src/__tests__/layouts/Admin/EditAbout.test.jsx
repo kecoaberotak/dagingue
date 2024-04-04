@@ -31,4 +31,8 @@ describe("AboutContent", () => {
   });
 
   // test handler edit data
+  // test kalo user ga ngedit konten dan ga update gambar
+  // test kalo user edit konten tapi ga update gambar
+  // ga edit tapi update gambar
+  // update salah satu gambar
 });
