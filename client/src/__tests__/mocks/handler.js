@@ -92,27 +92,38 @@ const token = {
 };
 
 export const handler = [
-  // pas fetch ke api jsonplaceholder, responnya pake respon yg di mock ini
+  // get About
   http.get(apiUrl + "/api/about", () => {
     return HttpResponse.json(dataAbout);
   }),
+  // edit about
+  http.put(apiUrl + "/api/about/:id", async ({ request, params }) => {
+    const { id } = params;
+    console.log(id);
+    // cari tau cara baca bodynya
+    // const data = await request.json();
+    // console.log(data);
+    return HttpResponse.json({ message: "edit success" }, { status: 200 });
+  }),
+  // get potong
   http.get(apiUrl + "/api/potong", () => {
     return HttpResponse.json(dataPotong);
   }),
+  // get bumbu
   http.get(apiUrl + "/api/bumbu", () => {
     return HttpResponse.json(dataBumbu);
   }),
+  //  login
   http.post(apiUrl + "/auth/login", async ({ request }) => {
     const data = await request.json();
 
     if (data.username === "admin" && data.password === "123") {
-      console.log("login success");
       return HttpResponse.json({ message: "login success" }, { status: 200 });
     } else {
-      console.log("login failed");
       return HttpResponse.json({ message: "login failed" }, { status: 400 });
     }
   }),
+  // token
   http.get(apiUrl + "/auth/login", () => {
     return HttpResponse.json(token);
   }),

@@ -84,6 +84,13 @@ const EditAbout = () => {
       alert("Masukkan Data!");
     } else {
       putContent(idContent, data, (res) => {
+        // console.log(idContent, "id");
+        console.log(data.get("link"), "data");
+        // console.log(typeof data, " typpeof data");
+        // console.log(res.status, "res status");
+        // console.log(res.data, "res data");
+
+        console.log(res.status, "res");
         if (res.status === 400) {
           alert(res.data.message);
         } else if (res.status === 200) {
@@ -113,6 +120,7 @@ const EditAbout = () => {
             <input
               type="file"
               name="gambar1"
+              data-testid="input-image-1"
               onChange={(e) => {
                 const newData = [...file];
                 newData[0] = e.target.files[0];
@@ -136,6 +144,7 @@ const EditAbout = () => {
             <input
               type="file"
               name="gambar2"
+              data-testid="input-image-2"
               onChange={(e) => {
                 const newData = [...file];
                 if (newData.length > 0) {
