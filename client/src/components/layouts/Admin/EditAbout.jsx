@@ -84,13 +84,11 @@ const EditAbout = () => {
       alert("Masukkan Data!");
     } else {
       putContent(idContent, data, (res) => {
-        // console.log(idContent, "id");
-        console.log(data.get("link"), "data");
-        // console.log(typeof data, " typpeof data");
-        // console.log(res.status, "res status");
+        // jangan lupa dihapus
+        // console.log(data.get("file"), "data");
         // console.log(res.data, "res data");
+        // console.log(res.status, "res status");
 
-        console.log(res.status, "res");
         if (res.status === 400) {
           alert(res.data.message);
         } else if (res.status === 200) {

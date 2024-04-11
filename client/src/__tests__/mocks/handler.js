@@ -99,10 +99,9 @@ export const handler = [
   // edit about
   http.put(apiUrl + "/api/about/:id", async ({ request, params }) => {
     const { id } = params;
-    console.log(id);
-    // cari tau cara baca bodynya
-    // const data = await request.json();
-    // console.log(data);
+    const data = await request.formData();
+    console.log(id, "req id");
+    console.log(data, "req data");
     return HttpResponse.json({ message: "edit success" }, { status: 200 });
   }),
   // get potong

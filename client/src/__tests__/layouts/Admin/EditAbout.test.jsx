@@ -1,5 +1,5 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
-import { describe, expect, it, vi, afterEach } from "vitest";
+import { render, screen, within } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 import AboutContent from "../../../components/layouts/Admin/AboutContent";
@@ -34,6 +34,9 @@ describe("AboutContent", () => {
     expect(input1).toBeInTheDocument();
     expect(input2).toBeInTheDocument();
 
+    expect(input1.type).toBe("file");
+    expect(input2.type).toBe("file");
+
     const quill = container.querySelector(".quill");
     expect(quill).toBeInTheDocument();
 
@@ -45,14 +48,13 @@ describe("AboutContent", () => {
     const user = userEvent.setup();
     renderComponent();
 
-    const testFile = new File(["about-us"], "/dagingue-product.jpg", {
+    const testFile = new File(["/dagingue-product.jpg"], "dagingue", {
       type: "image/jpg",
     });
 
     const input1 = screen.getByTestId("input-image-1");
     const input2 = screen.getByTestId("input-image-2");
 
-    // masalah di upload filenya
     await user.upload(input1, testFile);
     await user.upload(input2, testFile);
 
