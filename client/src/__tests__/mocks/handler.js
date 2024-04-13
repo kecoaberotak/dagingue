@@ -96,32 +96,21 @@ export const handler = [
   http.get(apiUrl + "/api/about", () => {
     return HttpResponse.json(dataAbout);
   }),
-  // edit about
+  // edit about MASIH KURANG TEPAT
   http.put(apiUrl + "/api/about/:id", async ({ request, params }) => {
     const { id } = params;
     const data = await request.formData();
-    // console.log(id, "req id");
-    // console.log(data, "req data");
-    console.log("======== Tokens =========");
     const tokens = data.getAll("token");
-    for (let i = 0; i < tokens.length - 1; i++) {
-      console.log(tokens[i], `indeks ${i}`);
-    }
-    console.log(tokens[0], "token 0");
-    console.log(dataAbout.data[0].file2, "data about");
-    console.log(
-      dataAbout.data[0].file2.includes("bulgogi.jpg") &&
-        tokens[0].includes("bulgogi.jpg")
-    );
 
-    console.log(" ");
-    console.log("======== File keys diterima =========");
-    for (const key of data.keys()) {
-      console.log(key);
+    if (dataAbout.data[0]._id !== id) {
+      return HttpResponse.json({ message: "edit failed" }, { status: 400 });
+    } else {
+      if (tokens[0].includes("bulgogi.jpg")) {
+        return HttpResponse.json({ message: "edit success" }, { status: 200 });
+      } else {
+        return HttpResponse.json({ message: "edit failed" }, { status: 400 });
+      }
     }
-    console.log(" ");
-
-    return HttpResponse.json({ message: "edit success" }, { status: 200 });
   }),
   // get potong
   http.get(apiUrl + "/api/potong", () => {

@@ -84,14 +84,6 @@ const EditAbout = () => {
       alert("Masukkan Data!");
     } else {
       putContent(idContent, data, (res) => {
-        // jangan lupa dihapus
-        // console.log(res.data, "res data");
-        // console.log(res.status, "res status");
-        console.log("======== File keys dikirim =========");
-        for (const key of data.keys()) {
-          console.log(key);
-        }
-
         if (res.status === 400) {
           alert(res.data.message);
         } else if (res.status === 200) {

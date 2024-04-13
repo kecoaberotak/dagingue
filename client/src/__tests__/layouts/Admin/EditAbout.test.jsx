@@ -63,7 +63,7 @@ describe("AboutContent", () => {
     await user.click(submitButton);
   });
 
-  // test handler edit data
+  // test user upload satu doang
   // test kalo user ga ngedit konten dan ga update gambar
   // test kalo user edit konten tapi ga update gambar
   // ga edit tapi update gambar
