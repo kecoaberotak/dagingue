@@ -102,6 +102,19 @@ export const handler = [
     const data = await request.formData();
     const tokens = data.getAll("token");
 
+    console.log(" ");
+    console.log("=============== DATA HANDLER ===============");
+    for (const key of data.keys()) {
+      console.log(key);
+    }
+    console.log(" ");
+
+    console.log("=============== TOKENS ===============");
+    for (const token of tokens) {
+      console.log(token);
+      console.log("----------------------");
+    }
+
     if (dataAbout.data[0]._id !== id) {
       return HttpResponse.json({ message: "edit failed" }, { status: 400 });
     } else {

@@ -48,15 +48,22 @@ describe("AboutContent", () => {
     const user = userEvent.setup();
     renderComponent();
 
-    const testFile = new File(["/dagingue-product.jpg"], "dagingue", {
+    const blob1 = new File(["/dagingue-product.jpg"], "test-file-1", {
+      type: "image/jpg",
+    });
+
+    const blob2 = new File(["/dagingue-product.jpg"], "test-file-2", {
       type: "image/jpg",
     });
 
     const input1 = screen.getByTestId("input-image-1");
     const input2 = screen.getByTestId("input-image-2");
 
-    await user.upload(input1, testFile);
-    await user.upload(input2, testFile);
+    // keambil kalo upload filenya yg input2
+    // mungkin kaya di handler beneran, yg kalo file req.files, kalo link body.file
+
+    // await user.upload(input1, blob1);
+    await user.upload(input2, blob2);
 
     const submitButton = screen.getByRole("button", { name: /submit/i });
 

@@ -91,6 +91,29 @@ const EditAbout = () => {
           setDisplayStatus("show");
         }
       });
+
+      console.log("=============== TEST DATA ===============");
+      const test = data.getAll("file");
+
+      console.log("=============== FILE 0 ===============");
+      console.log(test[0]);
+      if (typeof test[0] === "object") {
+        console.log(typeof test[0]);
+        console.log(test[0].name);
+        console.log(test[0].type);
+      } else {
+        console.log(typeof test[0]);
+      }
+
+      console.log("=============== FILE 1 ===============");
+      console.log(test[1]);
+      if (typeof test[1] === "object") {
+        console.log(typeof test[1]);
+        console.log(test[1].name);
+        console.log(test[1].type);
+      } else {
+        console.log(typeof test[1]);
+      }
     }
   };
 
