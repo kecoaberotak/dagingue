@@ -109,11 +109,17 @@ export const handler = [
     }
     console.log(" ");
 
-    console.log("=============== TOKENS ===============");
-    for (const token of tokens) {
-      console.log(token);
-      console.log("----------------------");
+    for (let index = 0; index < tokens.length; index++) {
+      console.log(`=============== TOKEN ${index + 1} ===============`);
+      console.log(typeof tokens[index], "tipe token");
+      console.log(tokens[index]);
+      console.log(" ");
     }
+
+    console.log(" ");
+    console.log("=============== REQUEST ===============");
+    const test = await request;
+    console.log(test);
 
     if (dataAbout.data[0]._id !== id) {
       return HttpResponse.json({ message: "edit failed" }, { status: 400 });

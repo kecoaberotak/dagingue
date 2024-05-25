@@ -61,8 +61,11 @@ describe("AboutContent", () => {
 
     // keambil kalo upload filenya yg input2
     // mungkin kaya di handler beneran, yg kalo file req.files, kalo link body.file
+    // coba token.file
+    // coba dibikin FormData() baru input
 
-    // await user.upload(input1, blob1);
+    // coba ubah code utamanya buat ngambil data
+    await user.upload(input1, blob1);
     await user.upload(input2, blob2);
 
     const submitButton = screen.getByRole("button", { name: /submit/i });

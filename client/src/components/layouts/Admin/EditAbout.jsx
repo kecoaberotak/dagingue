@@ -20,6 +20,7 @@ const EditAbout = () => {
     getContent((res) => setData(res.data[0]));
   }, []);
 
+  // ubah pake blob, dan satu satu
   useEffect(() => {
     if (data) {
       setContent(data.content);
