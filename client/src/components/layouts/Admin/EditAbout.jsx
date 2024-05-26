@@ -166,11 +166,7 @@ const EditAbout = () => {
               data-testid="input-image-2"
               onChange={(e) => {
                 const newData = [...file];
-                if (newData.length > 0) {
-                  newData[1] = e.target.files[0];
-                } else if (newData.length === 0) {
-                  newData.push(e.target.files[0]);
-                }
+                newData[1] = e.target.files[0];
                 setFile(newData);
                 const objectUrl = URL.createObjectURL(e.target.files[0]);
                 setSrcPreview2(objectUrl);
