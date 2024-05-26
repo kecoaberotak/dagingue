@@ -137,6 +137,7 @@ const EditAbout = () => {
             <input
               type="file"
               name="gambar1"
+              accept="image/*"
               data-testid="input-image-1"
               onChange={(e) => {
                 const newData = [...file];
@@ -161,6 +162,7 @@ const EditAbout = () => {
             <input
               type="file"
               name="gambar2"
+              accept="image/*"
               data-testid="input-image-2"
               onChange={(e) => {
                 const newData = [...file];
