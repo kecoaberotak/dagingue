@@ -12,15 +12,17 @@ const EditAbout = () => {
   const [srcPreview2, setSrcPreview2] = useState();
   const { setDisplayStatus } = useContext(DisplayStatus);
 
+  // ubah upload file dipisah satu satu
   const [content, setContent] = useState();
-  const [file, setFile] = useState([]);
-  const [imglink, setImgLink] = useState([]);
+  const [imglink1, setImgLink1] = useState();
+  const [imglink2, setImgLink2] = useState();
+  const [file1, setFile1] = useState();
+  const [file2, setFile2] = useState();
 
   useEffect(() => {
     getContent((res) => setData(res.data[0]));
   }, []);
 
-  // ubah pake blob, dan satu satu
   useEffect(() => {
     if (data) {
       setContent(data.content);
@@ -28,15 +30,11 @@ const EditAbout = () => {
       setSrcPreview(data.file1);
       setSrcPreview2(data.file2);
 
-      const newData = [];
-      newData.push(data.file1);
-      newData.push(data.file2);
-      setFile(newData);
+      setFile1(data.file1);
+      setFile2(data.file2);
 
-      const newLink = [];
-      newLink.push(data.file1);
-      newLink.push(data.file2);
-      setImgLink(newLink);
+      setImgLink1(data.file1);
+      setImgLink2(data.file2);
     }
   }, [data]);
 
@@ -74,12 +72,10 @@ const EditAbout = () => {
 
     const data = new FormData();
     data.set("content", content);
-    for (let i = 0; i <= file.length; i++) {
-      data.append("file", file[i]);
-    }
-    for (let i = 0; i <= imglink.length; i++) {
-      data.append("link", imglink[i]);
-    }
+    data.set("file1", file1);
+    data.set("file2", file2);
+    data.set("link1", imglink1);
+    data.set("link2", imglink2);
 
     if (data.get("content") === "undefined") {
       alert("Masukkan Data!");
@@ -93,6 +89,7 @@ const EditAbout = () => {
         }
       });
 
+      // BUAT TESTING
       console.log("=============== TEST DATA ===============");
       const test = data.getAll("file");
 
@@ -140,9 +137,7 @@ const EditAbout = () => {
               accept="image/*"
               data-testid="input-image-1"
               onChange={(e) => {
-                const newData = [...file];
-                newData[0] = e.target.files[0];
-                setFile(newData);
+                setFile1(e.target.files[0]);
                 const objectUrl = URL.createObjectURL(e.target.files[0]);
                 setSrcPreview(objectUrl);
               }}
@@ -165,9 +160,7 @@ const EditAbout = () => {
               accept="image/*"
               data-testid="input-image-2"
               onChange={(e) => {
-                const newData = [...file];
-                newData[1] = e.target.files[0];
-                setFile(newData);
+                setFile2(e.target.files[0]);
                 const objectUrl = URL.createObjectURL(e.target.files[0]);
                 setSrcPreview2(objectUrl);
               }}
