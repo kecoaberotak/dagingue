@@ -115,7 +115,6 @@ const EditAbout = () => {
               onChange={(e) => {
                 setFile1(e.target.files[0]);
                 const objectUrl = URL.createObjectURL(e.target.files[0]);
-                console.log(e.target.files);
                 setSrcPreview(objectUrl);
               }}
             />
