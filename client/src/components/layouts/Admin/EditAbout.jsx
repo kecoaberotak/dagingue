@@ -88,30 +88,6 @@ const EditAbout = () => {
           setDisplayStatus("show");
         }
       });
-
-      // BUAT TESTING
-      console.log("=============== TEST DATA ===============");
-      const test = data.getAll("file");
-
-      console.log("=============== FILE 0 ===============");
-      console.log(test[0]);
-      if (typeof test[0] === "object") {
-        console.log(typeof test[0]);
-        console.log(test[0].name);
-        console.log(test[0].type);
-      } else {
-        console.log(typeof test[0]);
-      }
-
-      console.log("=============== FILE 1 ===============");
-      console.log(test[1]);
-      if (typeof test[1] === "object") {
-        console.log(typeof test[1]);
-        console.log(test[1].name);
-        console.log(test[1].type);
-      } else {
-        console.log(typeof test[1]);
-      }
     }
   };
 
@@ -139,6 +115,7 @@ const EditAbout = () => {
               onChange={(e) => {
                 setFile1(e.target.files[0]);
                 const objectUrl = URL.createObjectURL(e.target.files[0]);
+                console.log(e.target.files);
                 setSrcPreview(objectUrl);
               }}
             />
