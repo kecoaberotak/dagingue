@@ -85,11 +85,6 @@ const setAbout = asyncHandler(async (req, res) => {
 const updateAbout = asyncHandler(async (req, res) => {
   const data = await AboutModel.findById(req.params.id);
 
-  // console.log(req.body, "BODY");
-  // console.log(req.files, "FILES");
-  // console.log(req.files.file1[0].originalname, "FILE 1");
-  // console.log(req.files.file2, "FILE 2");
-
   if (!data) {
     res.status(400);
     throw new Error("Content not found");
@@ -193,12 +188,10 @@ const updateAbout = asyncHandler(async (req, res) => {
     if (req.body.file2 == req.body.link2) {
       const file2 = req.body.file2;
       uploadBothLink(file1, file2);
-      console.log("uploadBothLink");
     } else {
       const file2 = req.files.file2[0];
       checkFile2(file2);
       uploadLinkAndFile(file1, file2);
-      console.log("uploadLinkAndFile");
     }
   } else {
     const file1 = req.files.file1[0];
@@ -206,12 +199,10 @@ const updateAbout = asyncHandler(async (req, res) => {
     if (req.body.file2 == req.body.link2) {
       const file2 = req.body.link2;
       uploadFileAndLink(file1, file2);
-      console.log("uploadFileAndLink");
     } else {
       const file2 = req.files.file2[0];
       checkFile2(file2);
       uploadBothFiles(file1, file2);
-      console.log("uploadBothFiles");
     }
   }
 
