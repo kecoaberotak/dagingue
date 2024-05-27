@@ -114,90 +114,90 @@ const updateAbout = asyncHandler(async (req, res) => {
     }
   };
 
-  // const uploadBothFiles = async (file1, file2) => {
-  //   const { originalname } = file1;
-  //   const originalname2 = file2.originalname;
+  const uploadBothFiles = async (file1, file2) => {
+    const { originalname } = file1;
+    const originalname2 = file2.originalname;
 
-  //   const imageRef1 = ref(storage, `about/${originalname}`);
-  //   const imageRef2 = ref(storage, `about/${originalname2}`);
+    const imageRef1 = ref(storage, `about/${originalname}`);
+    const imageRef2 = ref(storage, `about/${originalname2}`);
 
-  //   await uploadBytes(imageRef1, file1.buffer).then(() => {
-  //     getDownloadURL(ref(storage, `about/${originalname}`)).then(
-  //       async (url) => {
-  //         await uploadBytes(imageRef2, file2.buffer).then(() => {
-  //           getDownloadURL(ref(storage, `about/${originalname2}`)).then(
-  //             async (url2) => {
-  //               const { content } = req.body;
-  //               await AboutModel.findByIdAndUpdate(req.params.id, {
-  //                 content,
-  //                 file1: url,
-  //                 file2: url2,
-  //               });
-  //             }
-  //           );
-  //         });
-  //       }
-  //     );
-  //   });
-  // };
+    await uploadBytes(imageRef1, file1.buffer).then(() => {
+      getDownloadURL(ref(storage, `about/${originalname}`)).then(
+        async (url) => {
+          await uploadBytes(imageRef2, file2.buffer).then(() => {
+            getDownloadURL(ref(storage, `about/${originalname2}`)).then(
+              async (url2) => {
+                const { content } = req.body;
+                await AboutModel.findByIdAndUpdate(req.params.id, {
+                  content,
+                  file1: url,
+                  file2: url2,
+                });
+              }
+            );
+          });
+        }
+      );
+    });
+  };
 
-  // const uploadFileAndLink = async (file1, file2) => {
-  //   const { originalname } = file1;
+  const uploadFileAndLink = async (file1, file2) => {
+    const { originalname } = file1;
 
-  //   const imageRef1 = ref(storage, `about/${originalname}`);
+    const imageRef1 = ref(storage, `about/${originalname}`);
 
-  //   await uploadBytes(imageRef1, file1.buffer).then(() => {
-  //     getDownloadURL(ref(storage, `about/${originalname}`)).then(
-  //       async (url) => {
-  //         const { content } = req.body;
-  //         await AboutModel.findByIdAndUpdate(req.params.id, {
-  //           content,
-  //           file1: url,
-  //           file2,
-  //         });
-  //       }
-  //     );
-  //   });
-  // };
+    await uploadBytes(imageRef1, file1.buffer).then(() => {
+      getDownloadURL(ref(storage, `about/${originalname}`)).then(
+        async (url) => {
+          const { content } = req.body;
+          await AboutModel.findByIdAndUpdate(req.params.id, {
+            content,
+            file1: url,
+            file2,
+          });
+        }
+      );
+    });
+  };
 
-  // const uploadLinkAndFile = async (file1, file2) => {
-  //   const { originalname } = file2;
+  const uploadLinkAndFile = async (file1, file2) => {
+    const { originalname } = file2;
 
-  //   const imageRef1 = ref(storage, `about/${originalname}`);
+    const imageRef1 = ref(storage, `about/${originalname}`);
 
-  //   await uploadBytes(imageRef1, file2.buffer).then(() => {
-  //     getDownloadURL(ref(storage, `about/${originalname}`)).then(
-  //       async (url) => {
-  //         const { content } = req.body;
-  //         await AboutModel.findByIdAndUpdate(req.params.id, {
-  //           content,
-  //           file1,
-  //           file2: url,
-  //         });
-  //       }
-  //     );
-  //   });
-  // };
+    await uploadBytes(imageRef1, file2.buffer).then(() => {
+      getDownloadURL(ref(storage, `about/${originalname}`)).then(
+        async (url) => {
+          const { content } = req.body;
+          await AboutModel.findByIdAndUpdate(req.params.id, {
+            content,
+            file1,
+            file2: url,
+          });
+        }
+      );
+    });
+  };
 
-  // const uploadBothLink = async (file1, file2) => {
-  //   const { content } = req.body;
-  //   await AboutModel.findByIdAndUpdate(req.params.id, {
-  //     content,
-  //     file1,
-  //     file2,
-  //   });
-  // };
+  const uploadBothLink = async (file1, file2) => {
+    const { content } = req.body;
+    await AboutModel.findByIdAndUpdate(req.params.id, {
+      content,
+      file1,
+      file2,
+    });
+  };
 
   if (req.body.file1 == req.body.link1) {
     const file1 = req.body.file1;
     if (req.body.file2 == req.body.link2) {
       const file2 = req.body.file2;
-      // uploadBothLink(file1, file2);
+      uploadBothLink(file1, file2);
       console.log("uploadBothLink");
     } else {
       const file2 = req.files.file2[0];
       checkFile2(file2);
-      // uploadLinkAndFile(file1, file2);
+      uploadLinkAndFile(file1, file2);
       console.log("uploadLinkAndFile");
     }
   } else {
@@ -205,12 +205,12 @@ const updateAbout = asyncHandler(async (req, res) => {
     checkFile1(file1);
     if (req.body.file2 == req.body.link2) {
       const file2 = req.body.link2;
-      // uploadFileAndLink(file1, file2);
+      uploadFileAndLink(file1, file2);
       console.log("uploadFileAndLink");
     } else {
       const file2 = req.files.file2[0];
       checkFile2(file2);
-      // uploadBothFiles(file1, file2);
+      uploadBothFiles(file1, file2);
       console.log("uploadBothFiles");
     }
   }
