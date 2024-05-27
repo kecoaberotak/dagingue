@@ -84,32 +84,35 @@ const setAbout = asyncHandler(async (req, res) => {
 // Update About
 const updateAbout = asyncHandler(async (req, res) => {
   const data = await AboutModel.findById(req.params.id);
-  console.log(req.body, "BODY");
-  console.log(req.files, "FILES");
 
-  // if (!data) {
-  //   res.status(400);
-  //   throw new Error("Content not found");
-  // }
+  // console.log(req.body, "BODY");
+  // console.log(req.files, "FILES");
+  // console.log(req.files.file1[0].originalname, "FILE 1");
+  // console.log(req.files.file2, "FILE 2");
 
-  // if (req.body.content === "undefined" || req.body.content === "<p><br></p>") {
-  //   res.status(400);
-  //   throw new Error("Please add content");
-  // }
+  if (!data) {
+    res.status(400);
+    throw new Error("Content not found");
+  }
 
-  // const checkFile1 = (file1) => {
-  //   if (!file1.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)) {
-  //     res.status(400);
-  //     throw new Error("Only image files are allowed!");
-  //   }
-  // };
+  if (req.body.content === "undefined" || req.body.content === "<p><br></p>") {
+    res.status(400);
+    throw new Error("Please add content");
+  }
 
-  // const checkFile2 = (file2) => {
-  //   if (!file2.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)) {
-  //     res.status(400);
-  //     throw new Error("Only image files are allowed!");
-  //   }
-  // };
+  const checkFile1 = (file1) => {
+    if (!file1.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)) {
+      res.status(400);
+      throw new Error("Only image files are allowed!");
+    }
+  };
+
+  const checkFile2 = (file2) => {
+    if (!file2.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)) {
+      res.status(400);
+      throw new Error("Only image files are allowed!");
+    }
+  };
 
   // const uploadBothFiles = async (file1, file2) => {
   //   const { originalname } = file1;
@@ -185,28 +188,32 @@ const updateAbout = asyncHandler(async (req, res) => {
   //   });
   // };
 
-  // if (req.body.file[0] == req.body.link[0]) {
-  //   const file1 = req.body.file[0];
-  //   if (req.body.file[1] == req.body.link[1]) {
-  //     const file2 = req.body.file[1];
-  //     uploadBothLink(file1, file2);
-  //   } else {
-  //     const file2 = req.files[0];
-  //     checkFile2(file2);
-  //     uploadLinkAndFile(file1, file2);
-  //   }
-  // } else {
-  //   const file1 = req.files[0];
-  //   checkFile1(file1);
-  //   if (req.body.file[0] == req.body.link[1]) {
-  //     const file2 = req.body.link[1];
-  //     uploadFileAndLink(file1, file2);
-  //   } else {
-  //     const file2 = req.files[1];
-  //     checkFile2(file2);
-  //     uploadBothFiles(file1, file2);
-  //   }
-  // }
+  if (req.body.file1 == req.body.link1) {
+    const file1 = req.body.file1;
+    if (req.body.file2 == req.body.link2) {
+      const file2 = req.body.file2;
+      // uploadBothLink(file1, file2);
+      console.log("uploadBothLink");
+    } else {
+      const file2 = req.files.file2[0];
+      checkFile2(file2);
+      // uploadLinkAndFile(file1, file2);
+      console.log("uploadLinkAndFile");
+    }
+  } else {
+    const file1 = req.files.file1[0];
+    checkFile1(file1);
+    if (req.body.file2 == req.body.link2) {
+      const file2 = req.body.link2;
+      // uploadFileAndLink(file1, file2);
+      console.log("uploadFileAndLink");
+    } else {
+      const file2 = req.files.file2[0];
+      checkFile2(file2);
+      // uploadBothFiles(file1, file2);
+      console.log("uploadBothFiles");
+    }
+  }
 
   res.status(200).json({ message: "Success Edit Data" });
 });
