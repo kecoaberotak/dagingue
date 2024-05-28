@@ -1,5 +1,6 @@
 import { http, HttpResponse } from "msw";
 const apiUrl = import.meta.env.VITE_DAGINGUE_API_URL;
+const testApiUrlAbout = "http://localhost:4000";
 
 const dataAbout = {
   data: [
@@ -93,43 +94,15 @@ const token = {
 
 export const handler = [
   // get About
-  http.get(apiUrl + "/api/about", () => {
+  http.get(testApiUrlAbout + "/api/about", () => {
     return HttpResponse.json(dataAbout);
   }),
   // edit about MASIH KURANG TEPAT
-  http.put(apiUrl + "/api/about/:id", async ({ request, params }) => {
+  http.put(testApiUrlAbout + "/api/about/:id", async ({ request, params }) => {
     const { id } = params;
     const data = await request.formData();
-    const tokens = data.getAll("token");
-
-    console.log(" ");
-    console.log("=============== DATA HANDLER ===============");
-    for (const key of data.keys()) {
-      console.log(key);
-    }
-    console.log(" ");
-
-    for (let index = 0; index < tokens.length; index++) {
-      console.log(`=============== TOKEN ${index + 1} ===============`);
-      console.log(typeof tokens[index], "tipe token");
-      console.log(tokens[index]);
-      console.log(" ");
-    }
-
-    console.log(" ");
-    console.log("=============== REQUEST ===============");
-    const test = await request;
-    console.log(test);
-
-    if (dataAbout.data[0]._id !== id) {
-      return HttpResponse.json({ message: "edit failed" }, { status: 400 });
-    } else {
-      if (tokens[0].includes("bulgogi.jpg")) {
-        return HttpResponse.json({ message: "edit success" }, { status: 200 });
-      } else {
-        return HttpResponse.json({ message: "edit failed" }, { status: 400 });
-      }
-    }
+    console.log(id, "ID");
+    console.log(data, "DATA");
   }),
   // get potong
   http.get(apiUrl + "/api/potong", () => {
