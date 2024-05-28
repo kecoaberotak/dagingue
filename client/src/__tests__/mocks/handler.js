@@ -104,46 +104,21 @@ export const handler = [
     console.log(id, "ID");
     console.log(data, "DATA");
 
-    console.log(" ");
-    console.log(" ");
-
-    // buat cek testing
     let i = 0;
-    console.log(`========== KEYS ==========`);
-    for (const key of data.keys()) {
-      i++;
-      console.log(`========== KEY KE - ${i} ==========`);
-      console.log(key);
-    }
-    console.log(`======================================`);
-    console.log(" ");
-    console.log(" ");
-
-    i = 0;
     let temp = "";
     console.log(`========== VALUES ==========`);
     for (const value of data.values()) {
       i++;
-      console.log(`========== VALUE KE - ${i} ==========`);
-      console.log(value);
-
       if (i == 7) {
         temp = value;
       }
     }
-    console.log(`======================================`);
-    console.log(" ");
-    console.log(" ");
 
-    console.log(`========== VALUES ==========`);
-    console.log(temp);
-    console.log(" ");
-    console.log(" ");
-    console.log(temp.includes("file1"), "cek file1");
-    console.log(temp.includes("file2"), "cek file2");
-
-    // udah berhasil nangkep, tinggal nagngkep secara detail
-    return HttpResponse.json({ message: "update success" }, { status: 200 });
+    if (temp.includes("file1") && temp.includes("file2")) {
+      return HttpResponse.json({ message: "update success" }, { status: 200 });
+    } else {
+      return HttpResponse.json({ message: "update failed" }, { status: 400 });
+    }
   }),
   // get potong
   http.get(apiUrl + "/api/potong", () => {
