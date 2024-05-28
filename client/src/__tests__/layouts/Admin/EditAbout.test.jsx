@@ -72,4 +72,6 @@ describe("AboutContent", () => {
   // test kalo user edit konten tapi ga update gambar
   // ga edit tapi update gambar
   // update salah satu gambar
+  // error handling
+  // react quill
 });
