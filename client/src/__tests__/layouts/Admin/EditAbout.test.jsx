@@ -59,12 +59,6 @@ describe("AboutContent", () => {
     const input1 = screen.getByTestId("input-image-1");
     const input2 = screen.getByTestId("input-image-2");
 
-    // keambil kalo upload filenya yg input2
-    // mungkin kaya di handler beneran, yg kalo file req.files, kalo link body.file
-    // coba token.file
-    // coba dibikin FormData() baru input
-
-    // coba ubah code utamanya buat ngambil data
     await user.upload(input1, blob1);
     await user.upload(input2, blob2);
 
