@@ -98,15 +98,12 @@ export const handler = [
     return HttpResponse.json(dataAbout);
   }),
   // edit about MASIH KURANG TEPAT
-  http.put(testApiUrlAbout + "/api/about/:id", async ({ request, params }) => {
-    const { id } = params;
+  http.put(testApiUrlAbout + "/api/about/:id", async ({ request }) => {
     const data = await request.formData();
-    console.log(id, "ID");
     console.log(data, "DATA");
 
     let i = 0;
     let temp = "";
-    console.log(`========== VALUES ==========`);
     for (const value of data.values()) {
       i++;
       if (i == 7) {
