@@ -97,7 +97,7 @@ export const handler = [
   http.get(testApiUrlAbout + "/api/about", () => {
     return HttpResponse.json(dataAbout);
   }),
-  // edit about MASIH KURANG TEPAT
+  // edit about
   http.put(testApiUrlAbout + "/api/about/:id", async ({ request }) => {
     const data = await request.formData();
     console.log(data, "DATA");
