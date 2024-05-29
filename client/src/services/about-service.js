@@ -1,6 +1,5 @@
 import axios from "axios";
-// const apiUrl = import.meta.env.VITE_DAGINGUE_API_URL;
-const apiUrl = "http://localhost:4000";
+const apiUrl = import.meta.env.VITE_DAGINGUE_API_URL;
 
 export const getContent = (callback) => {
   axios
