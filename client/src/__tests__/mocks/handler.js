@@ -1,6 +1,5 @@
 import { http, HttpResponse } from "msw";
 const apiUrl = import.meta.env.VITE_DAGINGUE_API_URL;
-const testApiUrlAbout = "http://localhost:4000";
 
 const dataAbout = {
   data: [
@@ -94,11 +93,11 @@ const token = {
 
 export const handler = [
   // get About
-  http.get(testApiUrlAbout + "/api/about", () => {
+  http.get(apiUrl + "/api/about", () => {
     return HttpResponse.json(dataAbout);
   }),
   // edit about
-  http.put(testApiUrlAbout + "/api/about/:id", async ({ request }) => {
+  http.put(apiUrl + "/api/about/:id", async ({ request }) => {
     const data = await request.formData();
     console.log(data, "DATA");
 
