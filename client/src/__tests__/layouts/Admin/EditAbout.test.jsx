@@ -44,7 +44,7 @@ describe("AboutContent", () => {
     expect(submitButton).toBeInTheDocument();
   });
 
-  it("should run handler", async () => {
+  it("Should upload file when user input image file", async () => {
     const user = userEvent.setup();
     renderComponent();
 
