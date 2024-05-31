@@ -4,6 +4,8 @@ import userEvent from "@testing-library/user-event";
 
 import AboutContent from "../../../components/layouts/Admin/AboutContent";
 import DisplayStatusProvider from "../../../contexts/DisplayStatus";
+import { errorHandler } from "../../mocks/handler";
+import { server } from "../../mocks/server";
 
 describe("AboutContent", () => {
   const renderComponent = () =>
@@ -45,6 +47,31 @@ describe("AboutContent", () => {
   });
 
   it("Should upload file when user input image file", async () => {
+    const user = userEvent.setup();
+    renderComponent();
+
+    const blob1 = new File(["/dagingue-product.jpg"], "test-file-1", {
+      type: "image/jpg",
+    });
+
+    const blob2 = new File(["/dagingue-product.jpg"], "test-file-2", {
+      type: "image/jpg",
+    });
+
+    const input1 = screen.getByTestId("input-image-1");
+    const input2 = screen.getByTestId("input-image-2");
+
+    await user.upload(input1, blob1);
+    await user.upload(input2, blob2);
+
+    const submitButton = screen.getByRole("button", { name: /submit/i });
+
+    await user.click(submitButton);
+  });
+
+  it("should handler error", async () => {
+    server.use(...errorHandler);
+
     const user = userEvent.setup();
     renderComponent();
 
