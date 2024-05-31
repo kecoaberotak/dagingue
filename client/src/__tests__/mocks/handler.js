@@ -140,3 +140,10 @@ export const handler = [
     return HttpResponse.json(token);
   }),
 ];
+
+export const errorHandler = [
+  // edit about
+  http.put(apiUrl + "/api/about/:id", async () => {
+    return HttpResponse.json({ message: "update failed" }, { status: 400 });
+  }),
+];
