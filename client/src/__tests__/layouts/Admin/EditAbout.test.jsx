@@ -46,7 +46,7 @@ describe("AboutContent", () => {
     expect(submitButton).toBeInTheDocument();
   });
 
-  it("Should upload file when user input image file", async () => {
+  it("Should upload file when user input 2 image files", async () => {
     const user = userEvent.setup();
     renderComponent();
 
@@ -63,6 +63,32 @@ describe("AboutContent", () => {
 
     await user.upload(input1, blob1);
     await user.upload(input2, blob2);
+
+    const submitButton = screen.getByRole("button", { name: /submit/i });
+
+    await user.click(submitButton);
+  });
+
+  it("Should upload file when user input only one image file", async () => {
+    const user = userEvent.setup();
+    renderComponent();
+
+    const blob1 = new File(["/dagingue-product.jpg"], "test-file-1", {
+      type: "image/jpg",
+    });
+
+    const input1 = screen.getByTestId("input-image-1");
+
+    await user.upload(input1, blob1);
+
+    const submitButton = screen.getByRole("button", { name: /submit/i });
+
+    await user.click(submitButton);
+  });
+
+  it("Should upload file when user not input any image file", async () => {
+    const user = userEvent.setup();
+    renderComponent();
 
     const submitButton = screen.getByRole("button", { name: /submit/i });
 
@@ -94,11 +120,5 @@ describe("AboutContent", () => {
     await user.click(submitButton);
   });
 
-  // test user upload satu doang
-  // test kalo user ga ngedit konten dan ga update gambar
-  // test kalo user edit konten tapi ga update gambar
-  // ga edit tapi update gambar
-  // update salah satu gambar
-  // error handling
   // react quill
 });

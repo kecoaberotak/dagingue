@@ -99,22 +99,19 @@ export const handler = [
   // edit about
   http.put(apiUrl + "/api/about/:id", async ({ request }) => {
     const data = await request.formData();
-    console.log(data, "DATA");
 
-    let i = 0;
-    let temp = "";
     for (const value of data.values()) {
-      i++;
-      if (i == 7) {
-        temp = value;
+      if (value.includes("file1") && value.includes("file2")) {
+        return HttpResponse.json(
+          { message: "update success" },
+          { status: 200 }
+        );
+      } else if (value.includes("file2")) {
+        return HttpResponse.json(
+          { message: "update success" },
+          { status: 200 }
+        );
       }
-    }
-
-    // tambahin lagi use case
-    if (temp.includes("file1") && temp.includes("file2")) {
-      return HttpResponse.json({ message: "update success" }, { status: 200 });
-    } else {
-      return HttpResponse.json({ message: "update failed" }, { status: 400 });
     }
   }),
   // get potong
