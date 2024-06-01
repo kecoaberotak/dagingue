@@ -77,23 +77,14 @@ const EditAbout = () => {
     data.set("link1", imglink1);
     data.set("link2", imglink2);
 
-    if (
-      data
-        .get("content")
-        .replace(/<(.|\n)*?>/g, "")
-        .trim().length === 0
-    ) {
-      alert("Masukkan Data!");
-    } else {
-      putContent(idContent, data, (res) => {
-        if (res.status === 400) {
-          alert(res.data.message);
-        } else if (res.status === 200) {
-          alert(res.data.message);
-          setDisplayStatus("show");
-        }
-      });
-    }
+    putContent(idContent, data, (res) => {
+      if (res.status === 400) {
+        alert(res.data.message);
+      } else if (res.status === 200) {
+        alert(res.data.message);
+        setDisplayStatus("show");
+      }
+    });
   };
 
   return (
