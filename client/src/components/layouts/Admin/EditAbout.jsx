@@ -77,7 +77,13 @@ const EditAbout = () => {
     data.set("link1", imglink1);
     data.set("link2", imglink2);
 
-    if (data.get("content") === "undefined") {
+    // pengecekan content salah
+    if (
+      data
+        .get("content")
+        .replace(/<(.|\n)*?>/g, "")
+        .trim().length === 0
+    ) {
       alert("Masukkan Data!");
     } else {
       putContent(idContent, data, (res) => {

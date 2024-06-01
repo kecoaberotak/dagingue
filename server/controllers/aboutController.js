@@ -90,7 +90,7 @@ const updateAbout = asyncHandler(async (req, res) => {
     throw new Error("Content not found");
   }
 
-  if (req.body.content === "undefined" || req.body.content === "<p><br></p>") {
+  if (req.body.content.replace(/<(.|\n)*?>/g, "").trim().length === 0) {
     res.status(400);
     throw new Error("Please add content");
   }
@@ -183,28 +183,28 @@ const updateAbout = asyncHandler(async (req, res) => {
     });
   };
 
-  if (req.body.file1 == req.body.link1) {
-    const file1 = req.body.file1;
-    if (req.body.file2 == req.body.link2) {
-      const file2 = req.body.file2;
-      uploadBothLink(file1, file2);
-    } else {
-      const file2 = req.files.file2[0];
-      checkFile2(file2);
-      uploadLinkAndFile(file1, file2);
-    }
-  } else {
-    const file1 = req.files.file1[0];
-    checkFile1(file1);
-    if (req.body.file2 == req.body.link2) {
-      const file2 = req.body.link2;
-      uploadFileAndLink(file1, file2);
-    } else {
-      const file2 = req.files.file2[0];
-      checkFile2(file2);
-      uploadBothFiles(file1, file2);
-    }
-  }
+  // if (req.body.file1 == req.body.link1) {
+  //   const file1 = req.body.file1;
+  //   if (req.body.file2 == req.body.link2) {
+  //     const file2 = req.body.file2;
+  //     uploadBothLink(file1, file2);
+  //   } else {
+  //     const file2 = req.files.file2[0];
+  //     checkFile2(file2);
+  //     uploadLinkAndFile(file1, file2);
+  //   }
+  // } else {
+  //   const file1 = req.files.file1[0];
+  //   checkFile1(file1);
+  //   if (req.body.file2 == req.body.link2) {
+  //     const file2 = req.body.link2;
+  //     uploadFileAndLink(file1, file2);
+  //   } else {
+  //     const file2 = req.files.file2[0];
+  //     checkFile2(file2);
+  //     uploadBothFiles(file1, file2);
+  //   }
+  // }
 
   res.status(200).json({ message: "Success Edit Data" });
 });
