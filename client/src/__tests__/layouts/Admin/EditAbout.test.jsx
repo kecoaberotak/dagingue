@@ -120,5 +120,17 @@ describe("AboutContent", () => {
     await user.click(submitButton);
   });
 
-  // react quill
+  // react quill masih gagal
+  it("should give alert if user not input any description", async () => {
+    const { container } = renderComponent();
+    const user = userEvent.setup();
+
+    const quill = container.querySelector(".ql-editor");
+    await user.type(quill, "testtst");
+
+    const submitButton = screen.getByRole("button", { name: /submit/i });
+    await user.click(submitButton);
+
+    console.log(quill);
+  });
 });
