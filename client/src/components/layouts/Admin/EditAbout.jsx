@@ -77,7 +77,6 @@ const EditAbout = () => {
     data.set("link1", imglink1);
     data.set("link2", imglink2);
 
-    // pengecekan content salah
     if (
       data
         .get("content")
