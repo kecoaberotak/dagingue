@@ -6,7 +6,7 @@ import IdBumbuProvider from "../../../contexts/IdBumbu";
 import DisplayStatusProvider from "../../../contexts/DisplayStatus";
 
 describe("ShowBumbu", () => {
-  it("should render ShowBumbu Page", async () => {
+  const renderElements = async () => {
     render(
       <DisplayStatusProvider>
         <IdBumbuProvider>
@@ -15,7 +15,13 @@ describe("ShowBumbu", () => {
       </DisplayStatusProvider>
     );
 
-    const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
+    return {
+      buttonsEdit: await screen.findAllByRole("button", { name: /edit/i }),
+    };
+  };
+
+  it("should render ShowBumbu Page", async () => {
+    const { buttonsEdit } = await renderElements();
 
     expect(buttonsEdit[0]).toBeInTheDocument();
     screen.debug();
