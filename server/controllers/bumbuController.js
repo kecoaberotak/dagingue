@@ -1,60 +1,63 @@
-const asyncHandler = require('express-async-handler');
+const asyncHandler = require("express-async-handler");
 
 // firebase
-const { getStorage, ref, uploadBytes, getDownloadURL } = require("firebase/storage");
-const firebase = require('../firebase');
+const {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+} = require("firebase/storage");
+const firebase = require("../firebase");
 const storage = getStorage(firebase);
 
 // Model
-const BumbuModel = require('../models/Bumbu');
+const BumbuModel = require("../models/Bumbu");
 
 // Get Bumbu
 const getBumbu = asyncHandler(async (req, res) => {
   const data = await BumbuModel.find();
-  res.status(200).json({data, message: 'Get Bumbu'});
+  res.status(200).json({ data, message: "Get Bumbu" });
 });
-
 
 // Get Detail Bumbu
 const getDetailBumbu = asyncHandler(async (req, res) => {
-  const data = await BumbuModel.findById(req.params.id)
-  if(!data){
+  const data = await BumbuModel.findById(req.params.id);
+  if (!data) {
     res.status(400);
-    throw new Error('Data not found')
+    throw new Error("Data not found");
   }
-  res.status(200).json({data, message: 'Get Detail Bumbu'});
+  res.status(200).json({ data, message: "Get Detail Bumbu" });
 });
-
 
 // Set Bumbu
 const setBumbu = asyncHandler(async (req, res) => {
-  if(!req.body.title) {
+  if (!req.body.title) {
     res.status(400);
-    throw new Error('Please add title')
+    throw new Error("Please add title");
   }
 
-  if(req.body.desc === 'undefined' || req.body.desc === '<p><br></p>') {
+  if (req.body.desc.replace(/<(.|\n)*?>/g, "").trim().length === 0) {
     res.status(400);
-    throw new Error('Please add description')
+    throw new Error("Please add description");
   }
 
-  if(!req.file) {
+  if (!req.file) {
     res.status(400);
-    throw new Error('Please add image')
+    throw new Error("Please add image");
   }
 
-  if(!req.file.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
+  if (!req.file.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)) {
     res.status(400);
-    throw new Error('Only image files are allowed!')
+    throw new Error("Only image files are allowed!");
   }
 
   const file = req.file;
-  const {originalname} = req.file;
+  const { originalname } = req.file;
 
   const imageRef = ref(storage, `bumbu/${originalname}`);
   await uploadBytes(imageRef, file.buffer).then(() => {
-    getDownloadURL(ref (storage, `bumbu/${originalname}`)).then(async(url) => {
-      const {title, desc} = req.body;
+    getDownloadURL(ref(storage, `bumbu/${originalname}`)).then(async (url) => {
+      const { title, desc } = req.body;
       await BumbuModel.create({
         title,
         desc,
@@ -62,9 +65,8 @@ const setBumbu = asyncHandler(async (req, res) => {
       });
     });
   });
-  res.status(200).json({message: 'Success Add New Data'})
+  res.status(200).json({ message: "Success Add New Data" });
 });
-
 
 // Update Bumbu
 const updateBumbu = asyncHandler(async (req, res) => {
@@ -72,80 +74,78 @@ const updateBumbu = asyncHandler(async (req, res) => {
 
   if (!data) {
     res.status(400);
-    throw new Error('Bumbu not found');
+    throw new Error("Bumbu not found");
   }
 
-  if(!req.body.title) {
+  if (!req.body.title) {
     res.status(400);
-    throw new Error('Please add title')
+    throw new Error("Please add title");
   }
 
-  if(req.body.desc === 'undefined' || req.body.desc === '<p><br></p>') {
+  if (req.body.desc.replace(/<(.|\n)*?>/g, "").trim().length === 0) {
     res.status(400);
-    throw new Error('Please add description')
+    throw new Error("Please add description");
   }
 
-  const uploadLink = async() => {
-    const {title, desc, file} = req.body;
-    await BumbuModel.findByIdAndUpdate(req.params.id,
-    {
+  const uploadLink = async () => {
+    const { title, desc, file } = req.body;
+    await BumbuModel.findByIdAndUpdate(req.params.id, {
       title,
       desc,
       file,
     });
   };
 
-  const uploadFile = async() => {
+  const uploadFile = async () => {
     const file = req.file;
-    const {originalname} = req.file;
-  
+    const { originalname } = req.file;
+
     const imageRef = ref(storage, `bumbu/${originalname}`);
     await uploadBytes(imageRef, file.buffer).then(() => {
-      getDownloadURL(ref (storage, `bumbu/${originalname}`)).then(async(url) => {
-        const {title, desc} = req.body;
-        await BumbuModel.findByIdAndUpdate(req.params.id,
-        {
-          title,
-          desc,
-          file: url,
-        });
-      });
+      getDownloadURL(ref(storage, `bumbu/${originalname}`)).then(
+        async (url) => {
+          const { title, desc } = req.body;
+          await BumbuModel.findByIdAndUpdate(req.params.id, {
+            title,
+            desc,
+            file: url,
+          });
+        }
+      );
     });
   };
 
-  if(req.body.link == req.body.file){
+  if (req.body.link == req.body.file) {
     uploadLink();
   } else {
-    if(!req.file.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)){
+    if (!req.file.originalname.match(/\.(JPG|jpg|jpeg|png|gif)$/)) {
       res.status(400);
-      throw new Error('Only image files are allowed!')
+      throw new Error("Only image files are allowed!");
     }
     uploadFile();
   }
 
-  res.status(200).json({message: 'Success Edit Data'})
+  res.status(200).json({ message: "Success Edit Data" });
 });
-
 
 // Delete Bumbu
 const deleteBumbu = asyncHandler(async (req, res) => {
   const data = await BumbuModel.findById(req.params.id);
 
-  if(!data){
+  if (!data) {
     res.status(400);
-    throw new Error('Data not found');
-  };
+    throw new Error("Data not found");
+  }
 
-  await data.deleteOne({_id: req.params.id});
+  await data.deleteOne({ _id: req.params.id });
 
-  res.status(200).json({message: 'Data Deleted'});
+  res.status(200).json({ message: "Data Deleted" });
 });
-
 
 module.exports = {
   getBumbu,
   getDetailBumbu,
   setBumbu,
   updateBumbu,
-  deleteBumbu
-}
+  deleteBumbu,
+};
