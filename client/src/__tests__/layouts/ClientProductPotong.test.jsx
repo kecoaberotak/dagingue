@@ -7,6 +7,12 @@ import {
 } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 
+import { server } from "../mocks/server";
+import {
+  ProductPotong2Products,
+  ProductPotong1Product,
+} from "../mocks/handler";
+
 import ProductPotong from "../../components/layouts/ClientProductPotong";
 
 describe("ProductPotong Component", () => {
@@ -29,6 +35,30 @@ describe("ProductPotong Component", () => {
   });
 
   it("should render card when data is provided", async () => {
+    render(<ProductPotong />);
+
+    const cards = await screen.findAllByTestId("card-potong");
+    const image = within(cards[0]).getByRole("img");
+    expect(image).toBeInTheDocument();
+
+    fireEvent.load(image);
+    await waitFor(() => expect(image).toHaveClass("potong-img"));
+  });
+
+  it("should render card when provided with 2 data", async () => {
+    server.use(...ProductPotong2Products);
+    render(<ProductPotong />);
+
+    const cards = await screen.findAllByTestId("card-potong");
+    const image = within(cards[0]).getByRole("img");
+    expect(image).toBeInTheDocument();
+
+    fireEvent.load(image);
+    await waitFor(() => expect(image).toHaveClass("potong-img"));
+  });
+
+  it("should render card when only 1 data provided", async () => {
+    server.use(...ProductPotong1Product);
     render(<ProductPotong />);
 
     const cards = await screen.findAllByTestId("card-potong");

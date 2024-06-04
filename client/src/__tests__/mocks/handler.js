@@ -52,6 +52,45 @@ const dataPotong = {
   message: "Get Potong",
 };
 
+const dataPotong2Products = {
+  data: [
+    {
+      _id: "64e36d2af626ba024e0184b8",
+      title: "Slice Dadu",
+      desc: "500 gram",
+      file: "https://firebasestorage.googleapis.com/v0/b/dagingue-dc5c9.appspot.com/o/potong%2Fslice-dadu.jpg?alt=media&token=12ac67cd-dec4-464c-baac-2dcc6a5aa080",
+      createdAt: "2023-08-21T13:56:58.790Z",
+      updatedAt: "2023-08-21T13:56:58.790Z",
+      __v: 0,
+    },
+    {
+      _id: "64e36d39f626ba024e0184bb",
+      title: "Slice Tipis",
+      desc: "500 gram",
+      file: "https://firebasestorage.googleapis.com/v0/b/dagingue-dc5c9.appspot.com/o/potong%2Fslice-tipis.jpg?alt=media&token=d8b8cd45-73a7-4022-b28f-a980420ce523",
+      createdAt: "2023-08-21T13:57:13.112Z",
+      updatedAt: "2023-08-21T13:57:13.112Z",
+      __v: 0,
+    },
+  ],
+  message: "Get Potong",
+};
+
+const dataPotong1Product = {
+  data: [
+    {
+      _id: "64e36d2af626ba024e0184b8",
+      title: "Slice Dadu",
+      desc: "500 gram",
+      file: "https://firebasestorage.googleapis.com/v0/b/dagingue-dc5c9.appspot.com/o/potong%2Fslice-dadu.jpg?alt=media&token=12ac67cd-dec4-464c-baac-2dcc6a5aa080",
+      createdAt: "2023-08-21T13:56:58.790Z",
+      updatedAt: "2023-08-21T13:56:58.790Z",
+      __v: 0,
+    },
+  ],
+  message: "Get Potong",
+};
+
 const dataBumbu = {
   data: [
     {
@@ -146,5 +185,19 @@ export const errorHandler = [
   // edit about
   http.put(apiUrl + "/api/about/:id", async () => {
     return HttpResponse.json({ message: "update failed" }, { status: 400 });
+  }),
+];
+
+// Buat kondisi kalo data potong cuman ada 2
+export const ProductPotong2Products = [
+  http.get(apiUrl + "/api/potong", () => {
+    return HttpResponse.json(dataPotong2Products);
+  }),
+];
+
+// Buat kondisi kalo data potong cuman ada 1
+export const ProductPotong1Product = [
+  http.get(apiUrl + "/api/potong", () => {
+    return HttpResponse.json(dataPotong1Product);
   }),
 ];
