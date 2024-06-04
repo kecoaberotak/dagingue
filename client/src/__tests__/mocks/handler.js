@@ -122,6 +122,10 @@ export const handler = [
   http.get(apiUrl + "/api/bumbu", () => {
     return HttpResponse.json(dataBumbu);
   }),
+  // delete bumbu
+  http.delete(apiUrl + "/api/bumbu/:id", () => {
+    return HttpResponse.json({ message: "Data Deleted" }, { status: 200 });
+  }),
   //  login
   http.post(apiUrl + "/auth/login", async ({ request }) => {
     const data = await request.json();

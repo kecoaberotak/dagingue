@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 import ShowBumbu from "../../../components/layouts/Admin/ShowBumbu";
@@ -18,16 +18,22 @@ describe("ShowBumbu", () => {
 
     return {
       buttonsEdit: await screen.findAllByRole("button", { name: /edit/i }),
+      buttonsHapus: await screen.findAllByRole("button", { name: /hapus/i }),
     };
   };
 
+  window.URL.createObjectURL = vi.fn();
+  window.alert = vi.fn();
+  window.alert.mockClear();
+
   it("should render ShowBumbu Page", async () => {
     const user = userEvent.setup();
-    const { buttonsEdit } = await renderElements();
+    const { buttonsEdit, buttonsHapus } = await renderElements();
 
     expect(buttonsEdit[0]).toBeInTheDocument();
+    expect(buttonsHapus[0]).toBeInTheDocument();
 
     await user.click(buttonsEdit[0]);
-    screen.debug();
+    await user.click(buttonsHapus[0]);
   });
 });
