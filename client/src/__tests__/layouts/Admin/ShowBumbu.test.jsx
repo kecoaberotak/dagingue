@@ -19,6 +19,7 @@ describe("ShowBumbu", () => {
     return {
       buttonsEdit: await screen.findAllByRole("button", { name: /edit/i }),
       buttonsHapus: await screen.findAllByRole("button", { name: /hapus/i }),
+      buttonsTambah: await screen.findByRole("button", { name: /tambah/i }),
     };
   };
 
@@ -28,12 +29,14 @@ describe("ShowBumbu", () => {
 
   it("should render ShowBumbu Page", async () => {
     const user = userEvent.setup();
-    const { buttonsEdit, buttonsHapus } = await renderElements();
+    const { buttonsEdit, buttonsHapus, buttonsTambah } = await renderElements();
 
     expect(buttonsEdit[0]).toBeInTheDocument();
     expect(buttonsHapus[0]).toBeInTheDocument();
+    expect(buttonsTambah).toBeInTheDocument();
 
     await user.click(buttonsEdit[0]);
     await user.click(buttonsHapus[0]);
+    await user.click(buttonsTambah);
   });
 });
