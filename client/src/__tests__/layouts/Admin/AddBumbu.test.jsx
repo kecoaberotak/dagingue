@@ -5,12 +5,16 @@ import AddBumbu from "../../../components/layouts/Admin/AddBumbu";
 import DisplayStatusProvider from "../../../contexts/DisplayStatus";
 
 describe("AddBumbu", () => {
-  it("should render element", () => {
+  const renderElement = () => {
     render(
       <DisplayStatusProvider>
         <AddBumbu />
       </DisplayStatusProvider>
     );
+  };
+
+  it("should render element", () => {
+    renderElement();
 
     screen.debug();
   });
