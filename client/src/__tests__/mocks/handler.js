@@ -186,6 +186,11 @@ export const errorHandler = [
   http.put(apiUrl + "/api/about/:id", async () => {
     return HttpResponse.json({ message: "update failed" }, { status: 400 });
   }),
+
+  // add bumbu
+  http.post(apiUrl + "/api/bumbu", async () => {
+    return HttpResponse.json({ message: "failed add data" }, { status: 400 });
+  }),
 ];
 
 // Buat kondisi kalo data potong cuman ada 2
