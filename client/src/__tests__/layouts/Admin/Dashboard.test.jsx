@@ -66,7 +66,7 @@ describe("Dashboard", () => {
 });
 
 describe("ProductBumbu", () => {
-  it("should render ProductBumbu component when user click link 'Bumbu' ", async () => {
+  it("should render EditBumbu component when user click button 'Edit' ", async () => {
     renderComponent();
 
     const linkPotong = screen.getByRole("link", { name: /bumbu/i });
