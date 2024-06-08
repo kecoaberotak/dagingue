@@ -28,11 +28,11 @@ describe("AddBumbu", () => {
 
     const { buttonCancel, buttonSubmit } = await renderElement();
 
-    expect(buttonCancel).toBeInTheDocument();
-    await user.click(buttonCancel);
-
     expect(buttonSubmit).toBeInTheDocument();
     await user.click(buttonSubmit);
+
+    expect(buttonCancel).toBeInTheDocument();
+    await user.click(buttonCancel);
 
     screen.debug();
   });
