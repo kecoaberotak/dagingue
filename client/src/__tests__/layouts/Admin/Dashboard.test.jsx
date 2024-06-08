@@ -7,20 +7,20 @@ import DisplayStatusProvider from "../../../contexts/DisplayStatus";
 import AdminPanel from "../../../components/layouts/Admin/Dashboard";
 import { BrowserRouter } from "react-router-dom";
 
-describe("Dashboard", () => {
-  const renderComponent = () =>
-    render(
-      <BrowserRouter>
-        <LoginStatusProvider>
-          <AdminInfoProvider>
-            <DisplayStatusProvider>
-              <AdminPanel />
-            </DisplayStatusProvider>
-          </AdminInfoProvider>
-        </LoginStatusProvider>
-      </BrowserRouter>
-    );
+const renderComponent = () =>
+  render(
+    <BrowserRouter>
+      <LoginStatusProvider>
+        <AdminInfoProvider>
+          <DisplayStatusProvider>
+            <AdminPanel />
+          </DisplayStatusProvider>
+        </AdminInfoProvider>
+      </LoginStatusProvider>
+    </BrowserRouter>
+  );
 
+describe("Dashboard", () => {
   it("should render AboutContent component when first load", () => {
     renderComponent();
 
@@ -42,7 +42,7 @@ describe("Dashboard", () => {
     expect(headingPotong).toBeInTheDocument();
   });
 
-  it("should render ProductPotong component when user click link 'Bumbu' ", () => {
+  it("should render ProductBumbu component when user click link 'Bumbu' ", () => {
     renderComponent();
 
     const linkPotong = screen.getByRole("link", { name: /bumbu/i });
@@ -53,7 +53,7 @@ describe("Dashboard", () => {
     expect(headingPotong).toBeInTheDocument();
   });
 
-  it("should render ProductPotong component when user click link 'About' ", () => {
+  it("should render AboutContent component when user click link 'About' ", () => {
     renderComponent();
 
     const linkPotong = screen.getByRole("link", { name: /about/i });
@@ -62,5 +62,23 @@ describe("Dashboard", () => {
 
     const headingPotong = screen.getByRole("heading", { name: /about/i });
     expect(headingPotong).toBeInTheDocument();
+  });
+});
+
+describe("ProductBumbu", () => {
+  it("should render ProductBumbu component when user click link 'Bumbu' ", async () => {
+    renderComponent();
+
+    const linkPotong = screen.getByRole("link", { name: /bumbu/i });
+
+    fireEvent.click(linkPotong);
+
+    const headingPotong = screen.getByRole("heading", { name: /bumbu/i });
+    expect(headingPotong).toBeInTheDocument();
+
+    const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
+    fireEvent.click(buttonsEdit[0]);
+
+    screen.debug();
   });
 });

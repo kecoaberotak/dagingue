@@ -124,6 +124,21 @@ const dataBumbu = {
   message: "Get Bumbu",
 };
 
+const detailDataBumbu = {
+  data: [
+    {
+      _id: "64e42aba0285ca3fbfe0781d",
+      title: "Teriyaki Garlic",
+      desc: "<p>Memiliki rasa manis dan asin.</p><p>Dengan tambahan aroma khas</p><p>bawang putih, yang menambah</p><p>kenikmatan daging.</p>",
+      file: "https://firebasestorage.googleapis.com/v0/b/dagingue-dc5c9.appspot.com/o/bumbu%2Fteriyaki-garlic.jpg?alt=media&token=cf938dc3-e64f-442f-a4d1-4e41c3bf4f4f",
+      createdAt: "2023-08-22T03:25:46.359Z",
+      updatedAt: "2024-01-26T07:03:03.018Z",
+      __v: 0,
+    },
+  ],
+  message: "Get Bumbu",
+};
+
 const token = {
   username: "daging",
   id: "64c507aa0b8b845fa26c388d",
@@ -160,6 +175,10 @@ export const handler = [
   // get bumbu
   http.get(apiUrl + "/api/bumbu", () => {
     return HttpResponse.json(dataBumbu);
+  }),
+  // get detail bumbu
+  http.get(apiUrl + "/api/bumbu/:id", () => {
+    return HttpResponse.json(detailDataBumbu);
   }),
   // delete bumbu
   http.delete(apiUrl + "/api/bumbu/:id", () => {

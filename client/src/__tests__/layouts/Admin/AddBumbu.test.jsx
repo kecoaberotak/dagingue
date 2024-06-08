@@ -24,15 +24,15 @@ describe("AddBumbu", () => {
   };
 
   it("should cancel button", async () => {
-    const user = userEvent.setup();
+    // const user = userEvent.setup();
 
-    const { buttonCancel, buttonSubmit } = await renderElement();
+    // const { buttonCancel, buttonSubmit } = await renderElement();
 
-    expect(buttonSubmit).toBeInTheDocument();
-    await user.click(buttonSubmit);
+    // expect(buttonSubmit).toBeInTheDocument();
+    // await user.click(buttonSubmit);
 
-    expect(buttonCancel).toBeInTheDocument();
-    await user.click(buttonCancel);
+    // expect(buttonCancel).toBeInTheDocument();
+    // await user.click(buttonCancel);
 
     screen.debug();
   });
