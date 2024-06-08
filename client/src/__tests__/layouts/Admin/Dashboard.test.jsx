@@ -20,6 +20,7 @@ const renderComponent = () =>
     </BrowserRouter>
   );
 
+// Testing link menu Dashboard
 describe("Dashboard", () => {
   it("should render AboutContent component when first load", () => {
     renderComponent();
@@ -65,6 +66,7 @@ describe("Dashboard", () => {
   });
 });
 
+// Testing ProductBumbu
 describe("ProductBumbu", () => {
   it("should render EditBumbu component when user click button 'Edit' ", async () => {
     renderComponent();
