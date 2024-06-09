@@ -86,6 +86,10 @@ describe("ProductBumbu", () => {
     expect(image).toBeInTheDocument();
     fireEvent.load(image);
 
-    screen.debug();
+    const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
+    expect(buttonSubmit).toBeInTheDocument();
+    fireEvent.click(buttonSubmit);
+
+    // screen.debug();
   });
 });
