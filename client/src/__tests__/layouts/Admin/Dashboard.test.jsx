@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import userEvent from "@testing-library/user-event";
 
 import AdminInfoProvider from "../../../contexts/AdminInfo";
 import LoginStatusProvider from "../../../contexts/LoginStatus";
@@ -70,25 +71,26 @@ describe("Dashboard", () => {
 describe("ProductBumbu", () => {
   it("should render EditBumbu component when user click button 'Edit' ", async () => {
     renderComponent();
+    const user = userEvent.setup();
 
     const linkPotong = screen.getByRole("link", { name: /bumbu/i });
 
-    fireEvent.click(linkPotong);
+    await user.click(linkPotong);
 
     const headingPotong = screen.getByRole("heading", { name: /bumbu/i });
     expect(headingPotong).toBeInTheDocument();
 
     const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
-    fireEvent.click(buttonsEdit[0]);
+    await user.click(buttonsEdit[0]);
 
-    // cari tau biar bisa nunggu sampe gambar ke load
     const image = await screen.findByRole("img");
     expect(image).toBeInTheDocument();
     fireEvent.load(image);
 
+    // useState buttonStatus ga jalan
     const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
     expect(buttonSubmit).toBeInTheDocument();
-    fireEvent.click(buttonSubmit);
+    await user.click(buttonSubmit);
 
     // screen.debug();
   });
