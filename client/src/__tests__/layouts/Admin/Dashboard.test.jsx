@@ -81,6 +81,11 @@ describe("ProductBumbu", () => {
     const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
     fireEvent.click(buttonsEdit[0]);
 
+    // cari tau biar bisa nunggu sampe gambar ke load
+    const image = await screen.findByRole("img");
+    expect(image).toBeInTheDocument();
+    fireEvent.load(image);
+
     screen.debug();
   });
 });
