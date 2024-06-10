@@ -92,6 +92,10 @@ describe("ProductBumbu", () => {
     expect(buttonSubmit).toBeInTheDocument();
     await user.click(buttonSubmit);
 
-    // screen.debug();
+    const buttonCancel = await screen.findByRole("button", { name: /cancel/i });
+    expect(buttonCancel).toBeInTheDocument();
+    await user.click(buttonCancel);
+
+    screen.debug();
   });
 });

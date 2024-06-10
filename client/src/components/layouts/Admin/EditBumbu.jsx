@@ -12,7 +12,6 @@ const EditBumbu = () => {
   const [infoBumbu, setInfoBumbu] = useState([]);
 
   const [srcPreview, setSrcPreview] = useState();
-  const [buttonStatus, setButtonStatus] = useState("");
 
   const [title, setTitle] = useState("");
   const [file, setFile] = useState();
@@ -66,29 +65,27 @@ const EditBumbu = () => {
 
   const editBumbu = (e) => {
     e.preventDefault();
-    if (buttonStatus === "submit") {
-      const data = new FormData();
-      data.set("title", title);
-      data.set("desc", desc);
-      data.set("link", imglink);
+    const data = new FormData();
+    data.set("title", title);
+    data.set("desc", desc);
+    data.set("link", imglink);
 
-      if (file == imglink) {
-        data.set("file", file);
-      } else {
-        data.set("file", file[file.length - 1]);
-      }
-
-      putBumbu(infoBumbu.data._id, data, (res) => {
-        if (res.status === 400) {
-          alert(res.data.message);
-        } else if (res.status === 200) {
-          alert(res.data.message);
-          setDisplayStatus("show");
-        }
-      });
-    } else if (buttonStatus === "cancel") {
-      setDisplayStatus("show");
+    if (file == imglink) {
+      data.set("file", file);
+    } else {
+      data.set("file", file[file.length - 1]);
     }
+
+    console.log("UPDATE DATA");
+
+    // putBumbu(infoBumbu.data._id, data, (res) => {
+    //   if (res.status === 400) {
+    //     alert(res.data.message);
+    //   } else if (res.status === 200) {
+    //     alert(res.data.message);
+    //     setDisplayStatus("show");
+    //   }
+    // });
   };
 
   return (
@@ -131,9 +128,11 @@ const EditBumbu = () => {
           name="penjelasan-bumbu"
         />
         <div className="form-button">
-          <Button onClick={() => setButtonStatus("submit")}>Submit</Button>
+          <Button>Submit</Button>
           <div className="button-cancel">
-            <Button onClick={() => setButtonStatus("cancel")}>Cancel</Button>
+            <Button type="button" onClick={() => setDisplayStatus("show")}>
+              Cancel
+            </Button>
           </div>
         </div>
       </form>
