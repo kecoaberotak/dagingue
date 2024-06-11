@@ -212,6 +212,14 @@ export const errorHandler = [
   http.post(apiUrl + "/api/bumbu", async () => {
     return HttpResponse.json({ message: "failed add data" }, { status: 400 });
   }),
+
+  // edit bumbu
+  http.put(apiUrl + "/api/bumbu/:id", async () => {
+    return HttpResponse.json(
+      { message: "failed edit success" },
+      { status: 400 }
+    );
+  }),
 ];
 
 // Buat kondisi kalo data potong cuman ada 2
