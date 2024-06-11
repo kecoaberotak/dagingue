@@ -7,6 +7,8 @@ import LoginStatusProvider from "../../../contexts/LoginStatus";
 import DisplayStatusProvider from "../../../contexts/DisplayStatus";
 import AdminPanel from "../../../components/layouts/Admin/Dashboard";
 import { BrowserRouter } from "react-router-dom";
+import { server } from "../../mocks/server";
+import { errorHandler } from "../../mocks/handler";
 
 const renderComponent = () =>
   render(
@@ -109,6 +111,22 @@ describe("ProductBumbu", () => {
     const inputGambarBumbu = screen.getByTestId("input-gambar");
     expect(inputGambarBumbu).toBeInTheDocument();
     await user.upload(inputGambarBumbu, blob);
+
+    const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
+    expect(buttonSubmit).toBeInTheDocument();
+    await user.click(buttonSubmit);
+  });
+
+  it("error handlng", async () => {
+    server.use(...errorHandler);
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkBumbu = screen.getByRole("link", { name: /bumbu/i });
+    await user.click(linkBumbu);
+
+    const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
+    await user.click(buttonsEdit[0]);
 
     const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
     expect(buttonSubmit).toBeInTheDocument();
