@@ -76,16 +76,14 @@ const EditBumbu = () => {
       data.set("file", file[file.length - 1]);
     }
 
-    console.log("UPDATE DATA");
-
-    // putBumbu(infoBumbu.data._id, data, (res) => {
-    //   if (res.status === 400) {
-    //     alert(res.data.message);
-    //   } else if (res.status === 200) {
-    //     alert(res.data.message);
-    //     setDisplayStatus("show");
-    //   }
-    // });
+    putBumbu(infoBumbu.data._id, data, (res) => {
+      if (res.status === 400) {
+        alert(res.data.message);
+      } else if (res.status === 200) {
+        alert(res.data.message);
+        setDisplayStatus("show");
+      }
+    });
   };
 
   return (
@@ -94,6 +92,7 @@ const EditBumbu = () => {
       <form className="form-content" onSubmit={editBumbu}>
         <label htmlFor="nama-bumbu">Nama Bumbu</label>
         <input
+          data-testid="input-nama"
           type="title"
           placeholder="Nama bumbu"
           value={title}
@@ -110,6 +109,7 @@ const EditBumbu = () => {
           className="gambar-bumbu"
         />
         <input
+          data-testid="input-gambar"
           type="file"
           name="gambar-bumbu"
           onChange={(e) => {

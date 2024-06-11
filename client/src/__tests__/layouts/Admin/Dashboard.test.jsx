@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 import AdminInfoProvider from "../../../contexts/AdminInfo";
@@ -20,6 +20,10 @@ const renderComponent = () =>
       </LoginStatusProvider>
     </BrowserRouter>
   );
+
+window.URL.createObjectURL = vi.fn();
+window.alert = vi.fn();
+window.alert.mockClear();
 
 // Testing link menu Dashboard
 describe("Dashboard", () => {
@@ -47,9 +51,9 @@ describe("Dashboard", () => {
   it("should render ProductBumbu component when user click link 'Bumbu' ", () => {
     renderComponent();
 
-    const linkPotong = screen.getByRole("link", { name: /bumbu/i });
+    const linkBumbu = screen.getByRole("link", { name: /bumbu/i });
 
-    fireEvent.click(linkPotong);
+    fireEvent.click(linkBumbu);
 
     const headingPotong = screen.getByRole("heading", { name: /bumbu/i });
     expect(headingPotong).toBeInTheDocument();
@@ -58,9 +62,9 @@ describe("Dashboard", () => {
   it("should render AboutContent component when user click link 'About' ", () => {
     renderComponent();
 
-    const linkPotong = screen.getByRole("link", { name: /about/i });
+    const linkAbout = screen.getByRole("link", { name: /about/i });
 
-    fireEvent.click(linkPotong);
+    fireEvent.click(linkAbout);
 
     const headingPotong = screen.getByRole("heading", { name: /about/i });
     expect(headingPotong).toBeInTheDocument();
@@ -69,15 +73,42 @@ describe("Dashboard", () => {
 
 // Testing ProductBumbu
 describe("ProductBumbu", () => {
-  it("should open EditBumbu component and upload data when user submit edited data ", async () => {
+  it("should open EditBumbu component and success submit without user have to input any edited data", async () => {
     renderComponent();
     const user = userEvent.setup();
 
-    const linkPotong = screen.getByRole("link", { name: /bumbu/i });
-    await user.click(linkPotong);
+    const linkBumbu = screen.getByRole("link", { name: /bumbu/i });
+    await user.click(linkBumbu);
 
     const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
     await user.click(buttonsEdit[0]);
+
+    const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
+    expect(buttonSubmit).toBeInTheDocument();
+    await user.click(buttonSubmit);
+  });
+
+  it("should success submit when user has input edited data", async () => {
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkBumbu = screen.getByRole("link", { name: /bumbu/i });
+    await user.click(linkBumbu);
+
+    const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
+    await user.click(buttonsEdit[0]);
+
+    const inputNamaBumbu = screen.getByTestId("input-nama");
+    expect(inputNamaBumbu).toBeInTheDocument();
+    await user.type(inputNamaBumbu, "Nama Bumbu");
+
+    const blob = new File(["/dagingue-product.jpg"], "test-file-image", {
+      type: "image/jpg",
+    });
+
+    const inputGambarBumbu = screen.getByTestId("input-gambar");
+    expect(inputGambarBumbu).toBeInTheDocument();
+    await user.upload(inputGambarBumbu, blob);
 
     const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
     expect(buttonSubmit).toBeInTheDocument();
@@ -88,8 +119,8 @@ describe("ProductBumbu", () => {
     renderComponent();
     const user = userEvent.setup();
 
-    const linkPotong = screen.getByRole("link", { name: /bumbu/i });
-    await user.click(linkPotong);
+    const linkBumbu = screen.getByRole("link", { name: /bumbu/i });
+    await user.click(linkBumbu);
 
     const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
     await user.click(buttonsEdit[0]);

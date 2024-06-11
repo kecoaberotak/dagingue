@@ -178,6 +178,10 @@ export const handler = [
   http.get(apiUrl + "/api/bumbu/:id", () => {
     return HttpResponse.json(detailDataBumbu);
   }),
+  // edit bumbu
+  http.put(apiUrl + "/api/bumbu/:id", async () => {
+    return HttpResponse.json({ message: "update success" }, { status: 200 });
+  }),
   // delete bumbu
   http.delete(apiUrl + "/api/bumbu/:id", () => {
     return HttpResponse.json({ message: "Data Deleted" }, { status: 200 });
