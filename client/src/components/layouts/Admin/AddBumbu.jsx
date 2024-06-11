@@ -48,16 +48,14 @@ const AddBumbu = () => {
     data.set("file", file[file.length - 1]);
     data.set("desc", desc);
 
-    console.log("Add Bumbu!");
-
-    // addBumbu(data, (res) => {
-    //   if (res.status === 400) {
-    //     alert(res.data.message);
-    //   } else if (res.status === 200) {
-    //     alert(res.data.message);
-    //     setDisplayStatus("show");
-    //   }
-    // });
+    addBumbu(data, (res) => {
+      if (res.status === 400) {
+        alert(res.data.message);
+      } else if (res.status === 200) {
+        alert(res.data.message);
+        setDisplayStatus("show");
+      }
+    });
   };
 
   return (
@@ -66,6 +64,7 @@ const AddBumbu = () => {
       <form className="form-content" onSubmit={addNewBumbu}>
         <label htmlFor="nama-bumbu">Nama Bumbu</label>
         <input
+          data-testid="input-nama"
           type="title"
           placeholder="Nama bumbu"
           value={title}
@@ -84,6 +83,7 @@ const AddBumbu = () => {
           />
         )}
         <input
+          data-testid="input-gambar"
           type="file"
           name="gambar-bumbu"
           onChange={(e) => {

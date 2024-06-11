@@ -160,6 +160,37 @@ describe("ProductBumbu - AddBumbu", () => {
     const buttonTambah = await screen.findByRole("button", { name: /tambah/i });
     await user.click(buttonTambah);
 
+    const inputNamaBumbu = screen.getByTestId("input-nama");
+    expect(inputNamaBumbu).toBeInTheDocument();
+    await user.type(inputNamaBumbu, "Nama Bumbu");
+
+    const blob = new File(["/dagingue-product.jpg"], "test-file-image", {
+      type: "image/jpg",
+    });
+
+    const inputGambarBumbu = screen.getByTestId("input-gambar");
+    expect(inputGambarBumbu).toBeInTheDocument();
+    await user.upload(inputGambarBumbu, blob);
+
+    // tinggal gambarnya, bikin load
+    const gambarBumbu = await screen.findByRole("img");
+    expect(gambarBumbu).toBeInTheDocument();
+
+    const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
+    await user.click(buttonSubmit);
+  });
+
+  it("error handling", async () => {
+    server.use(...errorHandler);
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkBumbu = screen.getByRole("link", { name: /bumbu/i });
+    await user.click(linkBumbu);
+
+    const buttonTambah = await screen.findByRole("button", { name: /tambah/i });
+    await user.click(buttonTambah);
+
     const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
     await user.click(buttonSubmit);
   });

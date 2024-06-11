@@ -170,6 +170,13 @@ export const handler = [
   http.get(apiUrl + "/api/potong", () => {
     return HttpResponse.json(dataPotong);
   }),
+  // add bumbu
+  http.post(apiUrl + "/api/bumbu", () => {
+    return HttpResponse.json(
+      { message: "success add new data" },
+      { status: 200 }
+    );
+  }),
   // get bumbu
   http.get(apiUrl + "/api/bumbu", () => {
     return HttpResponse.json(dataBumbu);
