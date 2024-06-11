@@ -74,7 +74,7 @@ describe("Dashboard", () => {
 });
 
 // Testing ProductBumbu
-describe("ProductBumbu", () => {
+describe("ProductBumbu - EditBumbu", () => {
   it("should open EditBumbu component and success submit without user have to input any edited data", async () => {
     renderComponent();
     const user = userEvent.setup();
@@ -146,5 +146,20 @@ describe("ProductBumbu", () => {
     const buttonCancel = await screen.findByRole("button", { name: /cancel/i });
     expect(buttonCancel).toBeInTheDocument();
     await user.click(buttonCancel);
+  });
+});
+
+describe("ProductBumbu - AddBumbu", () => {
+  it("should open AddBumbu component", async () => {
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkBumbu = screen.getByRole("link", { name: /bumbu/i });
+    await user.click(linkBumbu);
+
+    const buttonTambah = await screen.findByRole("button", { name: /tambah/i });
+    await user.click(buttonTambah);
+
+    screen.debug();
   });
 });
