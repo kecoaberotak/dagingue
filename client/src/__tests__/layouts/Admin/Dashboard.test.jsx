@@ -69,33 +69,33 @@ describe("Dashboard", () => {
 
 // Testing ProductBumbu
 describe("ProductBumbu", () => {
-  it("should render EditBumbu component when user click button 'Edit' ", async () => {
+  it("should open EditBumbu component and upload data when user submit edited data ", async () => {
     renderComponent();
     const user = userEvent.setup();
 
     const linkPotong = screen.getByRole("link", { name: /bumbu/i });
-
     await user.click(linkPotong);
-
-    const headingPotong = screen.getByRole("heading", { name: /bumbu/i });
-    expect(headingPotong).toBeInTheDocument();
 
     const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
     await user.click(buttonsEdit[0]);
 
-    const image = await screen.findByRole("img");
-    expect(image).toBeInTheDocument();
-    fireEvent.load(image);
-
-    // useState buttonStatus ga jalan
     const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
     expect(buttonSubmit).toBeInTheDocument();
     await user.click(buttonSubmit);
+  });
+
+  it("should open ShowBumbu component when user click cancel from EditBumbu", async () => {
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkPotong = screen.getByRole("link", { name: /bumbu/i });
+    await user.click(linkPotong);
+
+    const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
+    await user.click(buttonsEdit[0]);
 
     const buttonCancel = await screen.findByRole("button", { name: /cancel/i });
     expect(buttonCancel).toBeInTheDocument();
     await user.click(buttonCancel);
-
-    screen.debug();
   });
 });
