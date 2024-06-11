@@ -160,6 +160,21 @@ describe("ProductBumbu - AddBumbu", () => {
     const buttonTambah = await screen.findByRole("button", { name: /tambah/i });
     await user.click(buttonTambah);
 
-    screen.debug();
+    const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
+    await user.click(buttonSubmit);
+  });
+
+  it("should open ShowBumbu component when user click cancel from EditBumbu", async () => {
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkBumbu = screen.getByRole("link", { name: /bumbu/i });
+    await user.click(linkBumbu);
+
+    const buttonTambah = await screen.findByRole("button", { name: /tambah/i });
+    await user.click(buttonTambah);
+
+    const buttonCancel = await screen.findByRole("button", { name: /cancel/i });
+    await user.click(buttonCancel);
   });
 });
