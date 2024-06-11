@@ -95,7 +95,7 @@ describe("AboutContent", () => {
     await user.click(submitButton);
   });
 
-  it("should handler error", async () => {
+  it("errorhandling", async () => {
     server.use(...errorHandler);
 
     const user = userEvent.setup();
