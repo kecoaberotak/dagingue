@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1718082819805" clover="3.2.0">
-  <project timestamp="1718082819805" name="All files">
+<coverage generated="1718347921845" clover="3.2.0">
+  <project timestamp="1718347921846" name="All files">
     <metrics statements="2253" coveredstatements="1920" conditionals="201" coveredconditionals="195" methods="101" coveredmethods="84" elements="2555" coveredelements="2199" complexity="0" loc="2253" ncloc="2253" packages="13" files="62" classes="62"/>
     <package name="client">
       <metrics statements="26" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="postcss.config.js" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\postcss.config.js">
+      <file name="postcss.config.js" path="D:\Dennis\Web Dev\TA\dagingue\client\postcss.config.js">
         <metrics statements="6" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -13,7 +13,7 @@
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
       </file>
-      <file name="tailwind.config.js" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\tailwind.config.js">
+      <file name="tailwind.config.js" path="D:\Dennis\Web Dev\TA\dagingue\client\tailwind.config.js">
         <metrics statements="20" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -39,7 +39,7 @@
     </package>
     <package name="client.src">
       <metrics statements="39" coveredstatements="30" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
-      <file name="App.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\App.jsx">
+      <file name="App.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\App.jsx">
         <metrics statements="30" coveredstatements="30" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -72,7 +72,7 @@
         <line num="29" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
       </file>
-      <file name="main.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\main.jsx">
+      <file name="main.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\main.jsx">
         <metrics statements="9" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -87,7 +87,7 @@
     </package>
     <package name="client.src.components.elements">
       <metrics statements="37" coveredstatements="37" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
-      <file name="Button.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\elements\Button.jsx">
+      <file name="Button.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\elements\Button.jsx">
         <metrics statements="12" coveredstatements="12" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -102,7 +102,7 @@
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
       </file>
-      <file name="Logo.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\elements\Logo.jsx">
+      <file name="Logo.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\elements\Logo.jsx">
         <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="4" type="stmt"/>
@@ -119,7 +119,7 @@
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
       </file>
-      <file name="Title.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\elements\Title.jsx">
+      <file name="Title.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\elements\Title.jsx">
         <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="31" type="stmt"/>
@@ -136,7 +136,7 @@
     </package>
     <package name="client.src.components.elements.gallery-info">
       <metrics statements="93" coveredstatements="93" conditionals="17" coveredconditionals="17" methods="4" coveredmethods="4"/>
-      <file name="GalleryInfo.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\elements\gallery-info\GalleryInfo.jsx">
+      <file name="GalleryInfo.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\elements\gallery-info\GalleryInfo.jsx">
         <metrics statements="50" coveredstatements="50" conditionals="11" coveredconditionals="11" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -189,7 +189,7 @@
         <line num="49" count="1" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
       </file>
-      <file name="GalleryInfoBumbu.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\elements\gallery-info\GalleryInfoBumbu.jsx">
+      <file name="GalleryInfoBumbu.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\elements\gallery-info\GalleryInfoBumbu.jsx">
         <metrics statements="16" coveredstatements="16" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="10" type="stmt"/>
@@ -208,7 +208,7 @@
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
       </file>
-      <file name="GalleryInfoImage.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\elements\gallery-info\GalleryInfoImage.jsx">
+      <file name="GalleryInfoImage.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\elements\gallery-info\GalleryInfoImage.jsx">
         <metrics statements="27" coveredstatements="27" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -241,7 +241,7 @@
     </package>
     <package name="client.src.components.elements.gallery-items">
       <metrics statements="87" coveredstatements="87" conditionals="14" coveredconditionals="14" methods="4" coveredmethods="4"/>
-      <file name="GalleryItems.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\elements\gallery-items\GalleryItems.jsx">
+      <file name="GalleryItems.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\elements\gallery-items\GalleryItems.jsx">
         <metrics statements="22" coveredstatements="22" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -266,7 +266,7 @@
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
       </file>
-      <file name="GalleryItemsImage.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\elements\gallery-items\GalleryItemsImage.jsx">
+      <file name="GalleryItemsImage.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\elements\gallery-items\GalleryItemsImage.jsx">
         <metrics statements="65" coveredstatements="65" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -337,7 +337,7 @@
     </package>
     <package name="client.src.components.fragments">
       <metrics statements="139" coveredstatements="131" conditionals="10" coveredconditionals="10" methods="8" coveredmethods="7"/>
-      <file name="Card.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\fragments\Card.jsx">
+      <file name="Card.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\fragments\Card.jsx">
         <metrics statements="33" coveredstatements="33" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -373,7 +373,7 @@
         <line num="32" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
       </file>
-      <file name="FooterBanner.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\fragments\FooterBanner.jsx">
+      <file name="FooterBanner.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\fragments\FooterBanner.jsx">
         <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -387,7 +387,7 @@
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="FooterContact.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\fragments\FooterContact.jsx">
+      <file name="FooterContact.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\fragments\FooterContact.jsx">
         <metrics statements="23" coveredstatements="23" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -413,7 +413,7 @@
         <line num="22" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
       </file>
-      <file name="Gallery.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\fragments\Gallery.jsx">
+      <file name="Gallery.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\fragments\Gallery.jsx">
         <metrics statements="13" coveredstatements="13" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -429,7 +429,7 @@
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
       </file>
-      <file name="Navbar.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\fragments\Navbar.jsx">
+      <file name="Navbar.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\fragments\Navbar.jsx">
         <metrics statements="33" coveredstatements="25" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -465,7 +465,7 @@
         <line num="32" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
       </file>
-      <file name="Socmed.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\fragments\Socmed.jsx">
+      <file name="Socmed.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\fragments\Socmed.jsx">
         <metrics statements="26" coveredstatements="26" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="4" type="stmt"/>
@@ -497,7 +497,7 @@
     </package>
     <package name="client.src.components.layouts">
       <metrics statements="187" coveredstatements="187" conditionals="29" coveredconditionals="29" methods="7" coveredmethods="7"/>
-      <file name="About.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\About.jsx">
+      <file name="About.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\About.jsx">
         <metrics statements="66" coveredstatements="66" conditionals="13" coveredconditionals="13" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -566,7 +566,7 @@
         <line num="65" count="1" type="stmt"/>
         <line num="66" count="1" type="stmt"/>
       </file>
-      <file name="ClientProductBumbu.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\ClientProductBumbu.jsx">
+      <file name="ClientProductBumbu.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\ClientProductBumbu.jsx">
         <metrics statements="22" coveredstatements="22" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -591,7 +591,7 @@
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
       </file>
-      <file name="ClientProductPotong.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\ClientProductPotong.jsx">
+      <file name="ClientProductPotong.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\ClientProductPotong.jsx">
         <metrics statements="44" coveredstatements="44" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -638,7 +638,7 @@
         <line num="43" count="1" type="stmt"/>
         <line num="44" count="1" type="stmt"/>
       </file>
-      <file name="Footer.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Footer.jsx">
+      <file name="Footer.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Footer.jsx">
         <metrics statements="12" coveredstatements="12" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -653,7 +653,7 @@
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
       </file>
-      <file name="Header.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Header.jsx">
+      <file name="Header.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Header.jsx">
         <metrics statements="18" coveredstatements="18" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -674,7 +674,7 @@
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
       </file>
-      <file name="Products.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Products.jsx">
+      <file name="Products.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Products.jsx">
         <metrics statements="25" coveredstatements="25" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -705,7 +705,7 @@
     </package>
     <package name="client.src.components.layouts.Admin">
       <metrics statements="877" coveredstatements="661" conditionals="62" coveredconditionals="60" methods="29" coveredmethods="25"/>
-      <file name="AboutContent.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Admin\AboutContent.jsx">
+      <file name="AboutContent.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Admin\AboutContent.jsx">
         <metrics statements="12" coveredstatements="12" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -720,7 +720,7 @@
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
       </file>
-      <file name="AddBumbu.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Admin\AddBumbu.jsx">
+      <file name="AddBumbu.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Admin\AddBumbu.jsx">
         <metrics statements="117" coveredstatements="112" conditionals="8" coveredconditionals="7" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -840,7 +840,7 @@
         <line num="116" count="1" type="stmt"/>
         <line num="117" count="1" type="stmt"/>
       </file>
-      <file name="AddPotong.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Admin\AddPotong.jsx">
+      <file name="AddPotong.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Admin\AddPotong.jsx">
         <metrics statements="86" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -929,7 +929,7 @@
         <line num="85" count="1" type="stmt"/>
         <line num="86" count="1" type="stmt"/>
       </file>
-      <file name="Dashboard.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Admin\Dashboard.jsx">
+      <file name="Dashboard.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Admin\Dashboard.jsx">
         <metrics statements="61" coveredstatements="61" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -993,7 +993,7 @@
         <line num="60" count="1" type="stmt"/>
         <line num="61" count="1" type="stmt"/>
       </file>
-      <file name="EditAbout.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Admin\EditAbout.jsx">
+      <file name="EditAbout.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Admin\EditAbout.jsx">
         <metrics statements="159" coveredstatements="159" conditionals="13" coveredconditionals="13" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1155,7 +1155,7 @@
         <line num="158" count="1" type="stmt"/>
         <line num="159" count="1" type="stmt"/>
       </file>
-      <file name="EditBumbu.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Admin\EditBumbu.jsx">
+      <file name="EditBumbu.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Admin\EditBumbu.jsx">
         <metrics statements="143" coveredstatements="143" conditionals="14" coveredconditionals="14" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1301,7 +1301,7 @@
         <line num="142" count="1" type="stmt"/>
         <line num="143" count="1" type="stmt"/>
       </file>
-      <file name="EditPotong.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Admin\EditPotong.jsx">
+      <file name="EditPotong.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Admin\EditPotong.jsx">
         <metrics statements="110" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1414,7 +1414,7 @@
         <line num="109" count="1" type="stmt"/>
         <line num="110" count="1" type="stmt"/>
       </file>
-      <file name="ProductBumbu.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Admin\ProductBumbu.jsx">
+      <file name="ProductBumbu.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Admin\ProductBumbu.jsx">
         <metrics statements="34" coveredstatements="34" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1451,7 +1451,7 @@
         <line num="33" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
       </file>
-      <file name="ProductPotong.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Admin\ProductPotong.jsx">
+      <file name="ProductPotong.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Admin\ProductPotong.jsx">
         <metrics statements="37" coveredstatements="29" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1491,7 +1491,7 @@
         <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
       </file>
-      <file name="ShowBumbu.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Admin\ShowBumbu.jsx">
+      <file name="ShowBumbu.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Admin\ShowBumbu.jsx">
         <metrics statements="60" coveredstatements="56" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1554,7 +1554,7 @@
         <line num="59" count="1" type="stmt"/>
         <line num="60" count="1" type="stmt"/>
       </file>
-      <file name="ShowPotong.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Admin\ShowPotong.jsx">
+      <file name="ShowPotong.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Admin\ShowPotong.jsx">
         <metrics statements="58" coveredstatements="38" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1618,7 +1618,7 @@
     </package>
     <package name="client.src.components.layouts.Skeleton">
       <metrics statements="109" coveredstatements="109" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
-      <file name="AboutArticleSkeleton.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Skeleton\AboutArticleSkeleton.jsx">
+      <file name="AboutArticleSkeleton.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Skeleton\AboutArticleSkeleton.jsx">
         <metrics statements="18" coveredstatements="18" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1639,7 +1639,7 @@
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
       </file>
-      <file name="AboutSkeletonImages.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Skeleton\AboutSkeletonImages.jsx">
+      <file name="AboutSkeletonImages.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Skeleton\AboutSkeletonImages.jsx">
         <metrics statements="17" coveredstatements="17" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1659,7 +1659,7 @@
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
       </file>
-      <file name="PotongSkeleton.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Skeleton\PotongSkeleton.jsx">
+      <file name="PotongSkeleton.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Skeleton\PotongSkeleton.jsx">
         <metrics statements="18" coveredstatements="18" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1680,7 +1680,7 @@
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
       </file>
-      <file name="SkeletonBumbuInfoContent.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Skeleton\SkeletonBumbuInfoContent.jsx">
+      <file name="SkeletonBumbuInfoContent.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Skeleton\SkeletonBumbuInfoContent.jsx">
         <metrics statements="17" coveredstatements="17" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1700,7 +1700,7 @@
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
       </file>
-      <file name="SkeletonBumbuInfoImage.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Skeleton\SkeletonBumbuInfoImage.jsx">
+      <file name="SkeletonBumbuInfoImage.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Skeleton\SkeletonBumbuInfoImage.jsx">
         <metrics statements="13" coveredstatements="13" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1716,7 +1716,7 @@
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
       </file>
-      <file name="SkeletonGalleryItems.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\components\layouts\Skeleton\SkeletonGalleryItems.jsx">
+      <file name="SkeletonGalleryItems.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\components\layouts\Skeleton\SkeletonGalleryItems.jsx">
         <metrics statements="26" coveredstatements="26" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1748,7 +1748,7 @@
     </package>
     <package name="client.src.contexts">
       <metrics statements="166" coveredstatements="151" conditionals="11" coveredconditionals="10" methods="11" coveredmethods="10"/>
-      <file name="AdminInfo.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\contexts\AdminInfo.jsx">
+      <file name="AdminInfo.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\contexts\AdminInfo.jsx">
         <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1766,7 +1766,7 @@
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="DataBumbu.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\contexts\DataBumbu.jsx">
+      <file name="DataBumbu.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\contexts\DataBumbu.jsx">
         <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1784,7 +1784,7 @@
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="DescSelected.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\contexts\DescSelected.jsx">
+      <file name="DescSelected.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\contexts\DescSelected.jsx">
         <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1802,7 +1802,7 @@
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="DisplayStatus.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\contexts\DisplayStatus.jsx">
+      <file name="DisplayStatus.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\contexts\DisplayStatus.jsx">
         <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1820,7 +1820,7 @@
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="IdAbout.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\contexts\IdAbout.jsx">
+      <file name="IdAbout.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\contexts\IdAbout.jsx">
         <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1838,7 +1838,7 @@
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="IdBumbu.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\contexts\IdBumbu.jsx">
+      <file name="IdBumbu.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\contexts\IdBumbu.jsx">
         <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1856,7 +1856,7 @@
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="IdPotong.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\contexts\IdPotong.jsx">
+      <file name="IdPotong.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\contexts\IdPotong.jsx">
         <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1874,7 +1874,7 @@
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="ImageSelected.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\contexts\ImageSelected.jsx">
+      <file name="ImageSelected.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\contexts\ImageSelected.jsx">
         <metrics statements="16" coveredstatements="16" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1893,7 +1893,7 @@
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
       </file>
-      <file name="LoginStatus.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\contexts\LoginStatus.jsx">
+      <file name="LoginStatus.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\contexts\LoginStatus.jsx">
         <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1911,7 +1911,7 @@
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="ResetPage.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\contexts\ResetPage.jsx">
+      <file name="ResetPage.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\contexts\ResetPage.jsx">
         <metrics statements="15" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1929,7 +1929,7 @@
         <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
       </file>
-      <file name="TitleSelected.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\contexts\TitleSelected.jsx">
+      <file name="TitleSelected.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\contexts\TitleSelected.jsx">
         <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1950,7 +1950,7 @@
     </package>
     <package name="client.src.pages">
       <metrics statements="301" coveredstatements="301" conditionals="21" coveredconditionals="21" methods="7" coveredmethods="7"/>
-      <file name="adminPage.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\pages\adminPage.jsx">
+      <file name="adminPage.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\pages\adminPage.jsx">
         <metrics statements="38" coveredstatements="38" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1991,7 +1991,7 @@
         <line num="37" count="1" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
       </file>
-      <file name="errorPage.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\pages\errorPage.jsx">
+      <file name="errorPage.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\pages\errorPage.jsx">
         <metrics statements="144" coveredstatements="144" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -2138,7 +2138,7 @@
         <line num="143" count="1" type="stmt"/>
         <line num="144" count="1" type="stmt"/>
       </file>
-      <file name="landingPage.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\pages\landingPage.jsx">
+      <file name="landingPage.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\pages\landingPage.jsx">
         <metrics statements="28" coveredstatements="28" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -2169,7 +2169,7 @@
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
       </file>
-      <file name="loginPage.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\pages\loginPage.jsx">
+      <file name="loginPage.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\pages\loginPage.jsx">
         <metrics statements="91" coveredstatements="91" conditionals="16" coveredconditionals="16" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -2266,7 +2266,7 @@
     </package>
     <package name="client.src.routes">
       <metrics statements="36" coveredstatements="36" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <file name="PrivateRoutes.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\routes\PrivateRoutes.jsx">
+      <file name="PrivateRoutes.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\routes\PrivateRoutes.jsx">
         <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -2282,7 +2282,7 @@
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
       </file>
-      <file name="routesConfig.jsx" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\routes\routesConfig.jsx">
+      <file name="routesConfig.jsx" path="D:\Dennis\Web Dev\TA\dagingue\client\src\routes\routesConfig.jsx">
         <metrics statements="23" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -2311,7 +2311,7 @@
     </package>
     <package name="client.src.services">
       <metrics statements="156" coveredstatements="97" conditionals="22" coveredconditionals="22" methods="17" coveredmethods="9"/>
-      <file name="about-service.js" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\services\about-service.js">
+      <file name="about-service.js" path="D:\Dennis\Web Dev\TA\dagingue\client\src\services\about-service.js">
         <metrics statements="46" coveredstatements="27" conditionals="5" coveredconditionals="5" methods="4" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -2360,7 +2360,7 @@
         <line num="45" count="4" type="stmt"/>
         <line num="46" count="4" type="stmt"/>
       </file>
-      <file name="auth-service.js" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\services\auth-service.js">
+      <file name="auth-service.js" path="D:\Dennis\Web Dev\TA\dagingue\client\src\services\auth-service.js">
         <metrics statements="26" coveredstatements="19" conditionals="5" coveredconditionals="5" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -2389,7 +2389,7 @@
         <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
       </file>
-      <file name="bumbu-service.js" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\services\bumbu-service.js">
+      <file name="bumbu-service.js" path="D:\Dennis\Web Dev\TA\dagingue\client\src\services\bumbu-service.js">
         <metrics statements="42" coveredstatements="34" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -2434,7 +2434,7 @@
         <line num="41" count="3" type="stmt"/>
         <line num="42" count="3" type="stmt"/>
       </file>
-      <file name="potong-service.js" path="D:\Dennis\Web Dev\Projects\Dagingue\dagingue\client\src\services\potong-service.js">
+      <file name="potong-service.js" path="D:\Dennis\Web Dev\TA\dagingue\client\src\services\potong-service.js">
         <metrics statements="42" coveredstatements="17" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
