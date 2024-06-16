@@ -74,6 +74,20 @@ describe("Dashboard", () => {
 });
 
 // Testing ProductBumbu
+describe("ProductBumbu -  ShowBumbu", () => {
+  it("should delete bumbu when user click Hapus button", async () => {
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkBumbu = screen.getByRole("link", { name: /bumbu/i });
+    await user.click(linkBumbu);
+
+    const buttonsHapus = await screen.findAllByRole("button", {
+      name: /hapus/i,
+    });
+    await user.click(buttonsHapus[0]);
+  });
+});
 describe("ProductBumbu - EditBumbu", () => {
   it("should open EditBumbu component and success submit without user have to input any edited data", async () => {
     renderComponent();

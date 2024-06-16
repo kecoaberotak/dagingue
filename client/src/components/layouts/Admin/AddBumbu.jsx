@@ -75,13 +75,13 @@ const AddBumbu = () => {
         <label htmlFor="gambar-bumbu">
           <p>Upload gambar bumbu</p>
         </label>
-        {srcPreview && (
+        <div className={srcPreview ? "" : "hidden"}>
           <img
             src={`${srcPreview}`}
             alt="Gambar Bumbu"
             className="gambar-bumbu"
           />
-        )}
+        </div>
         <input
           data-testid="input-gambar"
           type="file"
