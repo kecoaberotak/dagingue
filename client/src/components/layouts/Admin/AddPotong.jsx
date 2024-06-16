@@ -34,6 +34,7 @@ const AddPotong = () => {
       <form className="form-content" onSubmit={addNewPotong}>
         <label htmlFor="jenis-potong">Jenis Potongan</label>
         <input
+          data-testid="input-jenis"
           type="title"
           placeholder="Jenis Potongan"
           value={title}
@@ -43,6 +44,7 @@ const AddPotong = () => {
         />
         <label htmlFor="desc-potong">Penjelasan Jenis Potongan</label>
         <input
+          data-testid="input-desc"
           type="title"
           placeholder="Penjelasan jenis potongan"
           value={desc}

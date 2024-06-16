@@ -186,7 +186,6 @@ describe("ProductBumbu - AddBumbu", () => {
     expect(inputGambarBumbu).toBeInTheDocument();
     await user.upload(inputGambarBumbu, blob);
 
-    // tinggal gambarnya, bikin load
     const gambarBumbu = await screen.findByRole("img");
     expect(gambarBumbu).toBeInTheDocument();
 
@@ -232,6 +231,31 @@ describe("ProductPotong -  AddPotong", () => {
 
     const linkPotong = screen.getByRole("link", { name: /potong/i });
     await user.click(linkPotong);
+
+    const buttonTambah = await screen.findByRole("button", { name: /tambah/i });
+    await user.click(buttonTambah);
+
+    const inputJenisPotong = screen.getByTestId("input-jenis");
+    expect(inputJenisPotong).toBeInTheDocument();
+    await user.type(inputJenisPotong, "jenis potongan");
+
+    // const inputDescPotong = screen.getByTestId("input-desc");
+    // expect(inputDescPotong).toBeInTheDocument();
+    // await user.type(inputDescPotong, "Deskripsi potongan");
+
+    // const blob = new File(["/dagingue-product.jpg"], "test-file-image", {
+    //   type: "image/jpg",
+    // });
+
+    // const inputGambarPotong = screen.getByTestId("input-gambar");
+    // expect(inputGambarPotong).toBeInTheDocument();
+    // await user.upload(inputGambarPotong, blob);
+
+    // const gambarPotong = await screen.findByRole("img");
+    // expect(gambarPotong).toBeInTheDocument();
+
+    // const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
+    // await user.click(buttonSubmit);
 
     screen.debug();
   });
