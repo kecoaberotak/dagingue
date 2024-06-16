@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.76% </span>
+                <span class="strong">80.95% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/42</span>
+                <span class='fraction'>34/42</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/5</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.76% </span>
+                <span class="strong">80.95% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/42</span>
+                <span class='fraction'>34/42</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -116,12 +116,12 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -132,20 +132,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import axios from "axios";
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">import axios from "axios";
 const apiUrl = import.meta.env.VITE_DAGINGUE_API_URL;
 &nbsp;
 export const addPotong = (data, callback) =&gt; {
@@ -172,28 +172,28 @@ export const deletePotong = <span class="fstat-no" title="function not covered" 
 <span class="cstat-no" title="statement not covered" >  });</span>
 <span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;
-export const getDetailPotong = <span class="fstat-no" title="function not covered" >(id, callback) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  axios.get(apiUrl + '/api/potong/' + id).then(res =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    callback(res);</span>
-<span class="cstat-no" title="statement not covered" >  }).catch(err =&gt; {</span>
+export const getDetailPotong = (id, callback) =&gt; {
+  axios.get(apiUrl + '/api/potong/' + id).then(res =&gt; {
+    callback(res);
+  }).catch(err =&gt; {
 <span class="cstat-no" title="statement not covered" >    callback(err.response);</span>
-<span class="cstat-no" title="statement not covered" >  });</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+  });
+};
 &nbsp;
-export const putPotong = <span class="fstat-no" title="function not covered" >(id, data, callback) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  axios.put(apiUrl + '/api/potong/' + id, data).then(res =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    callback(res);</span>
-<span class="cstat-no" title="statement not covered" >  }).catch(err =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    callback(err.response);</span>
-<span class="cstat-no" title="statement not covered" >  });</span>
-<span class="cstat-no" title="statement not covered" >}</span></pre></td></tr></table></pre>
+export const putPotong = (id, data, callback) =&gt; {
+  axios.put(apiUrl + '/api/potong/' + id, data).then(res =&gt; {
+    callback(res);
+  }).catch(err =&gt; {
+    callback(err.response);
+  });
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-16T06:44:19.703Z
+                at 2024-06-16T06:55:10.339Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

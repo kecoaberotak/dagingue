@@ -58,8 +58,8 @@ const AddPotong = () => {
         <div className={srcPreview ? "" : "hidden"}>
           <img
             src={`${srcPreview}`}
-            alt="Gambar Bumbu"
-            className="gambar-bumbu"
+            alt="Gambar Potong"
+            className="gambar-Potong"
           />
         </div>
         <input

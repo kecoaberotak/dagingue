@@ -88,6 +88,7 @@ describe("ProductBumbu -  ShowBumbu", () => {
     await user.click(buttonsHapus[0]);
   });
 });
+
 describe("ProductBumbu - EditBumbu", () => {
   it("should open EditBumbu component and success submit without user have to input any edited data", async () => {
     renderComponent();
@@ -284,6 +285,88 @@ describe("ProductPotong -  AddPotong", () => {
     await user.click(buttonTambah);
 
     const buttonCancel = await screen.findByRole("button", { name: /cancel/i });
+    await user.click(buttonCancel);
+  });
+});
+
+describe("ProductPotong - EditPotong", () => {
+  it("should open EditPotong component and success submit without user have to input any edited data", async () => {
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkPotong = screen.getByRole("link", { name: /potong/i });
+    await user.click(linkPotong);
+
+    const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
+    await user.click(buttonsEdit[0]);
+
+    const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
+    expect(buttonSubmit).toBeInTheDocument();
+    await user.click(buttonSubmit);
+  });
+
+  it("should success submit when user has input edited data", async () => {
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkPotong = screen.getByRole("link", { name: /potong/i });
+    await user.click(linkPotong);
+
+    const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
+    await user.click(buttonsEdit[0]);
+
+    const inputJenisPotong = screen.getByTestId("input-jenis");
+    expect(inputJenisPotong).toBeInTheDocument();
+    await user.type(inputJenisPotong, "jenis potongan");
+
+    const inputDescPotong = screen.getByTestId("input-desc");
+    expect(inputDescPotong).toBeInTheDocument();
+    await user.type(inputDescPotong, "Deskripsi potongan");
+
+    const blob = new File(["/dagingue-product.jpg"], "test-file-image", {
+      type: "image/jpg",
+    });
+
+    const inputGambarPotong = screen.getByTestId("input-gambar");
+    expect(inputGambarPotong).toBeInTheDocument();
+    await user.upload(inputGambarPotong, blob);
+
+    const gambarPotong = await screen.findByRole("img");
+    expect(gambarPotong).toBeInTheDocument();
+
+    const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
+    expect(buttonSubmit).toBeInTheDocument();
+    await user.click(buttonSubmit);
+  });
+
+  it("error handlng", async () => {
+    server.use(...errorHandler);
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkPotong = screen.getByRole("link", { name: /potong/i });
+    await user.click(linkPotong);
+
+    const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
+    await user.click(buttonsEdit[0]);
+
+    const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
+    expect(buttonSubmit).toBeInTheDocument();
+    await user.click(buttonSubmit);
+  });
+
+  it("should open ShowBumbu component when user click cancel from EditBumbu", async () => {
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkPotong = screen.getByRole("link", { name: /potong/i });
+    await user.click(linkPotong);
+
+    const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
+    await user.click(buttonsEdit[0]);
+
+    const buttonCancel = await screen.findByRole("button", { name: /cancel/i });
+    expect(buttonCancel).toBeInTheDocument();
     await user.click(buttonCancel);
   });
 });

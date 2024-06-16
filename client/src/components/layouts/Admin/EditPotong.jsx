@@ -16,7 +16,7 @@ const EditPotong = () => {
 
   const [title, setTitle] = useState("");
   const [file, setFile] = useState();
-  const [desc, setDesc] = useState();
+  const [desc, setDesc] = useState("");
   const [imglink, setImgLink] = useState();
 
   useEffect(() => {
@@ -64,6 +64,7 @@ const EditPotong = () => {
       <form className="form-content" onSubmit={editPotong}>
         <label htmlFor="jenis-potong">Jenis Potongan</label>
         <input
+          data-testid="input-jenis"
           type="title"
           placeholder="Jenis Potongan"
           value={title}
@@ -73,6 +74,7 @@ const EditPotong = () => {
         />
         <label htmlFor="desc-potong">Penjelasan Jenis Potongan</label>
         <input
+          data-testid="input-desc"
           type="title"
           placeholder="Penjelasan jenis potongan"
           value={desc}
@@ -83,13 +85,13 @@ const EditPotong = () => {
         <label htmlFor="gambar-potong">
           <p>Upload gambar jenis potongan</p>
         </label>
-        {srcPreview && (
+        <div className={srcPreview ? "" : "hidden"}>
           <img
             src={`${srcPreview}`}
-            alt="Gambar Jenis Potongan"
-            className="gambar-potong"
+            alt="Gambar Potong"
+            className="gambar-Potong"
           />
-        )}
+        </div>
         <input
           data-testid="input-gambar"
           type="file"
