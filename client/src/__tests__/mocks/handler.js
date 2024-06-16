@@ -235,6 +235,10 @@ export const handler = [
       return HttpResponse.json({ message: "login failed" }, { status: 400 });
     }
   }),
+  // logout
+  http.post(apiUrl + "/auth/logout", () => {
+    return HttpResponse.json({ status: 200 });
+  }),
   // token
   http.get(apiUrl + "/auth/login", () => {
     return HttpResponse.json(token);

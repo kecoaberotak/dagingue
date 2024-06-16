@@ -76,4 +76,23 @@ describe("App entry point", () => {
     const navbarAdmin = screen.getByTestId("navbar-admin");
     expect(navbarAdmin).toBeInTheDocument();
   });
+
+  it("should render login page after logout", async () => {
+    renderRoutes("/login");
+
+    const loginButton = screen.getByRole("button", { name: /login/i });
+    expect(loginButton).toHaveTextContent(/login/i);
+
+    const inputUsername = screen.getByRole("textbox");
+    const inputPassword = screen.getByPlaceholderText(/password/i);
+
+    await userEvent.type(inputUsername, "admin");
+    await userEvent.type(inputPassword, "123");
+
+    await userEvent.click(loginButton);
+
+    const logoutButton = screen.getByRole("button", { name: /logout/i });
+    expect(logoutButton).toHaveTextContent(/logout/i);
+    await userEvent.click(logoutButton);
+  });
 });
