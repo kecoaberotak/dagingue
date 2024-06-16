@@ -85,6 +85,7 @@ const AddBumbu = () => {
         <input
           data-testid="input-gambar"
           type="file"
+          accept="image/*"
           name="gambar-bumbu"
           onChange={(e) => {
             const objectUrl = URL.createObjectURL(e.target.files[0]);
