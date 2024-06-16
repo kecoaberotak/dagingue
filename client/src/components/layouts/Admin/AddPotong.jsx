@@ -9,7 +9,7 @@ const AddPotong = () => {
 
   const [title, setTitle] = useState("");
   const [file, setFile] = useState("");
-  const [desc, setDesc] = useState();
+  const [desc, setDesc] = useState("");
 
   const addNewPotong = (e) => {
     e.preventDefault();
