@@ -223,3 +223,16 @@ describe("ProductBumbu - AddBumbu", () => {
     await user.click(buttonCancel);
   });
 });
+
+// Testing ProductPotong
+describe("ProductPotong -  AddPotong", () => {
+  it("should open AddPotong component", async () => {
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkPotong = screen.getByRole("link", { name: /potong/i });
+    await user.click(linkPotong);
+
+    screen.debug();
+  });
+});

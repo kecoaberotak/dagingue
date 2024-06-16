@@ -137,6 +137,19 @@ const detailDataBumbu = {
   message: "Get Detail Bumbu",
 };
 
+const detailDataPotong = {
+  data: {
+    _id: "64e36d2af626ba024e0184b8",
+    title: "Slice Dadu",
+    desc: "500 gram",
+    file: "https://firebasestorage.googleapis.com/v0/b/dagingue-dc5c9.appspot.com/o/potong%2Fslice-dadu.jpg?alt=media&token=12ac67cd-dec4-464c-baac-2dcc6a5aa080",
+    createdAt: "2023-08-21T13:56:58.790Z",
+    updatedAt: "2023-08-21T13:56:58.790Z",
+    __v: 0,
+  },
+  message: "Get Detail Potong",
+};
+
 const token = {
   username: "daging",
   id: "64c507aa0b8b845fa26c388d",
@@ -166,9 +179,28 @@ export const handler = [
       }
     }
   }),
+  // add potong
+  http.post(apiUrl + "/api/potong", () => {
+    return HttpResponse.json(
+      { message: "success add new data" },
+      { status: 200 }
+    );
+  }),
   // get potong
   http.get(apiUrl + "/api/potong", () => {
     return HttpResponse.json(dataPotong);
+  }),
+  // get detail potong
+  http.get(apiUrl + "/api/potong/:id", () => {
+    return HttpResponse.json(detailDataPotong);
+  }),
+  // edit potong
+  http.put(apiUrl + "/api/potong/:id", async () => {
+    return HttpResponse.json({ message: "update success" }, { status: 200 });
+  }),
+  // delete potong
+  http.delete(apiUrl + "/api/potong/:id", () => {
+    return HttpResponse.json({ message: "Data Deleted" }, { status: 200 });
   }),
   // add bumbu
   http.post(apiUrl + "/api/bumbu", () => {
@@ -222,6 +254,19 @@ export const errorHandler = [
 
   // edit bumbu
   http.put(apiUrl + "/api/bumbu/:id", async () => {
+    return HttpResponse.json(
+      { message: "failed edit success" },
+      { status: 400 }
+    );
+  }),
+
+  // add potong
+  http.post(apiUrl + "/api/potong", async () => {
+    return HttpResponse.json({ message: "failed add data" }, { status: 400 });
+  }),
+
+  // edit potong
+  http.put(apiUrl + "/api/potong/:id", async () => {
     return HttpResponse.json(
       { message: "failed edit success" },
       { status: 400 }
