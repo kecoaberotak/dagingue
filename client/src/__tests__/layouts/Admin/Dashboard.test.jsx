@@ -257,4 +257,33 @@ describe("ProductPotong -  AddPotong", () => {
     const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
     await user.click(buttonSubmit);
   });
+
+  it("error handling", async () => {
+    server.use(...errorHandler);
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkPotong = screen.getByRole("link", { name: /potong/i });
+    await user.click(linkPotong);
+
+    const buttonTambah = await screen.findByRole("button", { name: /tambah/i });
+    await user.click(buttonTambah);
+
+    const buttonSubmit = await screen.findByRole("button", { name: /submit/i });
+    await user.click(buttonSubmit);
+  });
+
+  it("should open ShowBumbu component when user click cancel from EditBumbu", async () => {
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkPotong = screen.getByRole("link", { name: /potong/i });
+    await user.click(linkPotong);
+
+    const buttonTambah = await screen.findByRole("button", { name: /tambah/i });
+    await user.click(buttonTambah);
+
+    const buttonCancel = await screen.findByRole("button", { name: /cancel/i });
+    await user.click(buttonCancel);
+  });
 });
