@@ -225,6 +225,21 @@ describe("ProductBumbu - AddBumbu", () => {
 });
 
 // Testing ProductPotong
+describe("ProductBumbu -  ShowBumbu", () => {
+  it("should delete bumbu when user click Hapus button", async () => {
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkPotong = screen.getByRole("link", { name: /potong/i });
+    await user.click(linkPotong);
+
+    const buttonsHapus = await screen.findAllByRole("button", {
+      name: /hapus/i,
+    });
+    await user.click(buttonsHapus[0]);
+  });
+});
+
 describe("ProductPotong -  AddPotong", () => {
   it("should open AddPotong component", async () => {
     renderComponent();
