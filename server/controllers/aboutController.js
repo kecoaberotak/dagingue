@@ -1,12 +1,7 @@
 const asyncHandler = require("express-async-handler");
 
 // firebase
-const {
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-} = require("firebase/storage");
+const { getStorage, ref, uploadBytes, getDownloadURL } = require("firebase/storage");
 const firebase = require("../firebase");
 const storage = getStorage(firebase);
 
@@ -16,6 +11,10 @@ const AboutModel = require("../models/About");
 // Get About
 const getAbout = asyncHandler(async (req, res) => {
   const data = await AboutModel.find();
+  if (!data) {
+    res.status(400);
+    throw new Error("Data not found");
+  }
   res.status(200).json({ data, message: "Get About" });
 });
 
@@ -64,16 +63,14 @@ const setAbout = asyncHandler(async (req, res) => {
   await uploadBytes(imageRef1, file1.buffer).then(() => {
     getDownloadURL(ref(storage, `about/${originalname}`)).then(async (url) => {
       await uploadBytes(imageRef2, file2.buffer).then(() => {
-        getDownloadURL(ref(storage, `about/${originalname2}`)).then(
-          async (url2) => {
-            const { content } = req.body;
-            data = await AboutModel.create({
-              content,
-              file1: url,
-              file2: url2,
-            });
-          }
-        );
+        getDownloadURL(ref(storage, `about/${originalname2}`)).then(async (url2) => {
+          const { content } = req.body;
+          data = await AboutModel.create({
+            content,
+            file1: url,
+            file2: url2,
+          });
+        });
       });
     });
   });
@@ -117,22 +114,18 @@ const updateAbout = asyncHandler(async (req, res) => {
     const imageRef2 = ref(storage, `about/${originalname2}`);
 
     await uploadBytes(imageRef1, file1.buffer).then(() => {
-      getDownloadURL(ref(storage, `about/${originalname}`)).then(
-        async (url) => {
-          await uploadBytes(imageRef2, file2.buffer).then(() => {
-            getDownloadURL(ref(storage, `about/${originalname2}`)).then(
-              async (url2) => {
-                const { content } = req.body;
-                await AboutModel.findByIdAndUpdate(req.params.id, {
-                  content,
-                  file1: url,
-                  file2: url2,
-                });
-              }
-            );
+      getDownloadURL(ref(storage, `about/${originalname}`)).then(async (url) => {
+        await uploadBytes(imageRef2, file2.buffer).then(() => {
+          getDownloadURL(ref(storage, `about/${originalname2}`)).then(async (url2) => {
+            const { content } = req.body;
+            await AboutModel.findByIdAndUpdate(req.params.id, {
+              content,
+              file1: url,
+              file2: url2,
+            });
           });
-        }
-      );
+        });
+      });
     });
   };
 
@@ -142,16 +135,14 @@ const updateAbout = asyncHandler(async (req, res) => {
     const imageRef1 = ref(storage, `about/${originalname}`);
 
     await uploadBytes(imageRef1, file1.buffer).then(() => {
-      getDownloadURL(ref(storage, `about/${originalname}`)).then(
-        async (url) => {
-          const { content } = req.body;
-          await AboutModel.findByIdAndUpdate(req.params.id, {
-            content,
-            file1: url,
-            file2,
-          });
-        }
-      );
+      getDownloadURL(ref(storage, `about/${originalname}`)).then(async (url) => {
+        const { content } = req.body;
+        await AboutModel.findByIdAndUpdate(req.params.id, {
+          content,
+          file1: url,
+          file2,
+        });
+      });
     });
   };
 
@@ -161,16 +152,14 @@ const updateAbout = asyncHandler(async (req, res) => {
     const imageRef1 = ref(storage, `about/${originalname}`);
 
     await uploadBytes(imageRef1, file2.buffer).then(() => {
-      getDownloadURL(ref(storage, `about/${originalname}`)).then(
-        async (url) => {
-          const { content } = req.body;
-          await AboutModel.findByIdAndUpdate(req.params.id, {
-            content,
-            file1,
-            file2: url,
-          });
-        }
-      );
+      getDownloadURL(ref(storage, `about/${originalname}`)).then(async (url) => {
+        const { content } = req.body;
+        await AboutModel.findByIdAndUpdate(req.params.id, {
+          content,
+          file1,
+          file2: url,
+        });
+      });
     });
   };
 
