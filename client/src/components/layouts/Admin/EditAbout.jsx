@@ -12,7 +12,6 @@ const EditAbout = () => {
   const [srcPreview2, setSrcPreview2] = useState();
   const { setDisplayStatus } = useContext(DisplayStatus);
 
-  // ubah upload file dipisah satu satu
   const [content, setContent] = useState();
   const [imglink1, setImgLink1] = useState();
   const [imglink2, setImgLink2] = useState();
