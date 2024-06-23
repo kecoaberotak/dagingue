@@ -5,7 +5,7 @@ export const getContent = (callback) => {
   axios
     .get(apiUrl + "/api/about")
     .then((res) => {
-      callback(res.data);
+      callback(res);
     })
     .catch((err) => {
       callback(err.response);
