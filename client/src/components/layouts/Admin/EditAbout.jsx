@@ -20,7 +20,15 @@ const EditAbout = () => {
   const [file2, setFile2] = useState();
 
   useEffect(() => {
-    getContent((res) => setData(res.data[0]));
+    getContent((res) => {
+      console.log(res);
+
+      if (res.status === 200) {
+        setData(res.data.data[0]);
+      } else if (res.status === 400) {
+        alert(res.data.message);
+      }
+    });
   }, []);
 
   useEffect(() => {
@@ -39,33 +47,10 @@ const EditAbout = () => {
   }, [data]);
 
   const modules = {
-    toolbar: [
-      [{ header: [1, 2, false] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" },
-      ],
-      ["link", "image"],
-      ["clean"],
-    ],
+    toolbar: [[{ header: [1, 2, false] }], ["bold", "italic", "underline", "strike", "blockquote"], [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }], ["link", "image"], ["clean"]],
   };
 
-  const formats = [
-    "header",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "image",
-  ];
+  const formats = ["header", "bold", "italic", "underline", "strike", "blockquote", "list", "bullet", "indent", "link", "image"];
 
   const editContent = (e) => {
     e.preventDefault();
@@ -96,13 +81,7 @@ const EditAbout = () => {
             <label htmlFor="gambar1">
               <p>Gambar content 1 :</p>
             </label>
-            {srcPreview && (
-              <img
-                src={`${srcPreview}`}
-                alt="Gambar Content"
-                className="gambar-content"
-              />
-            )}
+            {srcPreview && <img src={`${srcPreview}`} alt="Gambar Content" className="gambar-content" />}
             <input
               type="file"
               name="gambar1"
@@ -119,13 +98,7 @@ const EditAbout = () => {
             <label htmlFor="gambar2">
               <p>Gambar content 2 :</p>
             </label>
-            {srcPreview2 && (
-              <img
-                src={`${srcPreview2}`}
-                alt="Gambar Content"
-                className="gambar-content"
-              />
-            )}
+            {srcPreview2 && <img src={`${srcPreview2}`} alt="Gambar Content" className="gambar-content" />}
             <input
               type="file"
               name="gambar2"
@@ -140,14 +113,7 @@ const EditAbout = () => {
           </section>
         </div>
         <label htmlFor="main-content">Isi Content : </label>
-        <ReactQuill
-          theme="snow"
-          value={content}
-          onChange={setContent}
-          modules={modules}
-          formats={formats}
-          name="main-content"
-        />
+        <ReactQuill theme="snow" value={content} onChange={setContent} modules={modules} formats={formats} name="main-content" />
         <div className="form-button">
           <Button>Submit</Button>
         </div>
