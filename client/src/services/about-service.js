@@ -12,28 +12,6 @@ export const getContent = (callback) => {
     });
 };
 
-export const addContent = (data, callback) => {
-  axios
-    .post(apiUrl + "/api/about", data)
-    .then((res) => {
-      callback(res);
-    })
-    .catch((err) => {
-      callback(err.response);
-    });
-};
-
-export const getDetailContent = (id, callback) => {
-  axios
-    .get(apiUrl + "/api/about/" + id)
-    .then((res) => {
-      callback(res);
-    })
-    .catch((err) => {
-      callback(err.response);
-    });
-};
-
 export const putContent = (id, data, callback) => {
   axios
     .put(apiUrl + "/api/about/" + id, data)
@@ -44,3 +22,25 @@ export const putContent = (id, data, callback) => {
       callback(err.response);
     });
 };
+
+// export const addContent = (data, callback) => {
+//   axios
+//     .post(apiUrl + "/api/about", data)
+//     .then((res) => {
+//       callback(res);
+//     })
+//     .catch((err) => {
+//       callback(err.response);
+//     });
+// };
+
+// export const getDetailContent = (id, callback) => {
+//   axios
+//     .get(apiUrl + "/api/about/" + id)
+//     .then((res) => {
+//       callback(res);
+//     })
+//     .catch((err) => {
+//       callback(err.response);
+//     });
+// };
