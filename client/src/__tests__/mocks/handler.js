@@ -232,6 +232,14 @@ export const handler = [
 ];
 
 export const errorHandler = [
+  // logout
+  http.post(apiUrl + "/auth/logout", () => {
+    return HttpResponse.json({ message: "failed logout" }, { status: 400 });
+  }),
+  // token
+  http.get(apiUrl + "/auth/login", () => {
+    return HttpResponse.json({ message: "failed get token" }, { status: 400 });
+  }),
   // get About
   http.get(apiUrl + "/api/about", () => {
     return HttpResponse.json({ message: "data not found" }, { status: 400 });
