@@ -87,6 +87,19 @@ describe("ProductBumbu -  ShowBumbu", () => {
     });
     await user.click(buttonsHapus[0]);
   });
+  it("should delete bumbu when user click Hapus button", async () => {
+    server.use(...errorHandler);
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkBumbu = screen.getByRole("link", { name: /bumbu/i });
+    await user.click(linkBumbu);
+
+    const buttonsHapus = await screen.findAllByRole("button", {
+      name: /hapus/i,
+    });
+    await user.click(buttonsHapus[0]);
+  });
 
   it("error handling getBumbu", async () => {
     server.use(...errorGetBumbu);
@@ -245,7 +258,7 @@ describe("ProductBumbu - AddBumbu", () => {
 });
 
 // Testing ProductPotong
-describe("ProductBumbu -  ShowBumbu", () => {
+describe("ProductPotong -  ShowPotong", () => {
   it("should delete bumbu when user click Hapus button", async () => {
     renderComponent();
     const user = userEvent.setup();
