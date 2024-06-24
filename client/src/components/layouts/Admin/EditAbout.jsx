@@ -20,8 +20,6 @@ const EditAbout = () => {
 
   useEffect(() => {
     getContent((res) => {
-      console.log(res);
-
       if (res.status === 200) {
         setData(res.data.data[0]);
       } else if (res.status === 400) {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1719150909332" clover="3.2.0">
-  <project timestamp="1719150909332" name="All files">
-    <metrics statements="2203" coveredstatements="2160" conditionals="258" coveredconditionals="253" methods="110" coveredmethods="107" elements="2571" coveredelements="2520" complexity="0" loc="2203" ncloc="2203" packages="13" files="61" classes="61"/>
+<coverage generated="1719216640235" clover="3.2.0">
+  <project timestamp="1719216640236" name="All files">
+    <metrics statements="2203" coveredstatements="2158" conditionals="259" coveredconditionals="253" methods="110" coveredmethods="107" elements="2572" coveredelements="2518" complexity="0" loc="2203" ncloc="2203" packages="13" files="61" classes="61"/>
     <package name="client">
       <metrics statements="26" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="postcss.config.js" path="D:\Belajar Website\Project Base Learning\Dagingue\website-dagingue-mern\client\postcss.config.js">
@@ -690,7 +690,7 @@
       </file>
     </package>
     <package name="client.src.components.layouts.Admin">
-      <metrics statements="856" coveredstatements="856" conditionals="102" coveredconditionals="100" methods="41" coveredmethods="41"/>
+      <metrics statements="854" coveredstatements="854" conditionals="102" coveredconditionals="100" methods="41" coveredmethods="41"/>
       <file name="AboutContent.jsx" path="D:\Belajar Website\Project Base Learning\Dagingue\website-dagingue-mern\client\src\components\layouts\Admin\AboutContent.jsx">
         <metrics statements="12" coveredstatements="12" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -984,7 +984,7 @@
         <line num="61" count="1" type="stmt"/>
       </file>
       <file name="EditAbout.jsx" path="D:\Belajar Website\Project Base Learning\Dagingue\website-dagingue-mern\client\src\components\layouts\Admin\EditAbout.jsx">
-        <metrics statements="124" coveredstatements="124" conditionals="15" coveredconditionals="15" methods="4" coveredmethods="4"/>
+        <metrics statements="122" coveredstatements="122" conditionals="15" coveredconditionals="15" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -1007,18 +1007,18 @@
         <line num="20" count="68" type="stmt"/>
         <line num="21" count="68" type="cond" truecount="1" falsecount="0"/>
         <line num="22" count="28" type="cond" truecount="1" falsecount="0"/>
-        <line num="23" count="28" type="stmt"/>
-        <line num="24" count="28" type="stmt"/>
+        <line num="23" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="22" type="stmt"/>
         <line num="25" count="28" type="cond" truecount="1" falsecount="0"/>
-        <line num="26" count="22" type="stmt"/>
-        <line num="27" count="28" type="cond" truecount="1" falsecount="0"/>
-        <line num="28" count="6" type="stmt"/>
-        <line num="29" count="6" type="stmt"/>
-        <line num="30" count="28" type="stmt"/>
-        <line num="31" count="68" type="stmt"/>
-        <line num="32" count="68" type="stmt"/>
-        <line num="33" count="68" type="cond" truecount="1" falsecount="0"/>
-        <line num="34" count="45" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="28" count="28" type="stmt"/>
+        <line num="29" count="68" type="stmt"/>
+        <line num="30" count="68" type="stmt"/>
+        <line num="31" count="68" type="cond" truecount="1" falsecount="0"/>
+        <line num="32" count="45" type="cond" truecount="1" falsecount="0"/>
+        <line num="33" count="17" type="stmt"/>
+        <line num="34" count="17" type="stmt"/>
         <line num="35" count="17" type="stmt"/>
         <line num="36" count="17" type="stmt"/>
         <line num="37" count="17" type="stmt"/>
@@ -1028,17 +1028,17 @@
         <line num="41" count="17" type="stmt"/>
         <line num="42" count="17" type="stmt"/>
         <line num="43" count="17" type="stmt"/>
-        <line num="44" count="17" type="stmt"/>
-        <line num="45" count="17" type="stmt"/>
+        <line num="44" count="68" type="stmt"/>
+        <line num="45" count="68" type="stmt"/>
         <line num="46" count="68" type="stmt"/>
         <line num="47" count="68" type="stmt"/>
         <line num="48" count="68" type="stmt"/>
         <line num="49" count="68" type="stmt"/>
         <line num="50" count="68" type="stmt"/>
         <line num="51" count="68" type="stmt"/>
-        <line num="52" count="68" type="stmt"/>
-        <line num="53" count="68" type="stmt"/>
-        <line num="54" count="68" type="cond" truecount="1" falsecount="0"/>
+        <line num="52" count="68" type="cond" truecount="1" falsecount="0"/>
+        <line num="53" count="4" type="stmt"/>
+        <line num="54" count="4" type="stmt"/>
         <line num="55" count="4" type="stmt"/>
         <line num="56" count="4" type="stmt"/>
         <line num="57" count="4" type="stmt"/>
@@ -1046,17 +1046,17 @@
         <line num="59" count="4" type="stmt"/>
         <line num="60" count="4" type="stmt"/>
         <line num="61" count="4" type="stmt"/>
-        <line num="62" count="4" type="stmt"/>
-        <line num="63" count="4" type="stmt"/>
-        <line num="64" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="62" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="63" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="64" count="1" type="stmt"/>
         <line num="65" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="66" count="1" type="stmt"/>
-        <line num="67" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="66" count="3" type="stmt"/>
+        <line num="67" count="3" type="stmt"/>
         <line num="68" count="3" type="stmt"/>
-        <line num="69" count="3" type="stmt"/>
-        <line num="70" count="3" type="stmt"/>
-        <line num="71" count="4" type="stmt"/>
-        <line num="72" count="4" type="stmt"/>
+        <line num="69" count="4" type="stmt"/>
+        <line num="70" count="4" type="stmt"/>
+        <line num="71" count="68" type="stmt"/>
+        <line num="72" count="68" type="stmt"/>
         <line num="73" count="68" type="stmt"/>
         <line num="74" count="68" type="stmt"/>
         <line num="75" count="68" type="stmt"/>
@@ -1065,36 +1065,36 @@
         <line num="78" count="68" type="stmt"/>
         <line num="79" count="68" type="stmt"/>
         <line num="80" count="68" type="stmt"/>
-        <line num="81" count="68" type="stmt"/>
+        <line num="81" count="68" type="cond" truecount="1" falsecount="0"/>
         <line num="82" count="68" type="stmt"/>
-        <line num="83" count="68" type="cond" truecount="1" falsecount="0"/>
+        <line num="83" count="68" type="stmt"/>
         <line num="84" count="68" type="stmt"/>
         <line num="85" count="68" type="stmt"/>
         <line num="86" count="68" type="stmt"/>
-        <line num="87" count="68" type="stmt"/>
-        <line num="88" count="68" type="stmt"/>
-        <line num="89" count="68" type="cond" truecount="1" falsecount="0"/>
+        <line num="87" count="68" type="cond" truecount="1" falsecount="0"/>
+        <line num="88" count="3" type="stmt"/>
+        <line num="89" count="3" type="stmt"/>
         <line num="90" count="3" type="stmt"/>
         <line num="91" count="3" type="stmt"/>
-        <line num="92" count="3" type="stmt"/>
-        <line num="93" count="3" type="stmt"/>
+        <line num="92" count="68" type="stmt"/>
+        <line num="93" count="68" type="stmt"/>
         <line num="94" count="68" type="stmt"/>
         <line num="95" count="68" type="stmt"/>
         <line num="96" count="68" type="stmt"/>
         <line num="97" count="68" type="stmt"/>
-        <line num="98" count="68" type="stmt"/>
+        <line num="98" count="68" type="cond" truecount="1" falsecount="0"/>
         <line num="99" count="68" type="stmt"/>
-        <line num="100" count="68" type="cond" truecount="1" falsecount="0"/>
+        <line num="100" count="68" type="stmt"/>
         <line num="101" count="68" type="stmt"/>
         <line num="102" count="68" type="stmt"/>
         <line num="103" count="68" type="stmt"/>
-        <line num="104" count="68" type="stmt"/>
-        <line num="105" count="68" type="stmt"/>
-        <line num="106" count="68" type="cond" truecount="1" falsecount="0"/>
+        <line num="104" count="68" type="cond" truecount="1" falsecount="0"/>
+        <line num="105" count="2" type="stmt"/>
+        <line num="106" count="2" type="stmt"/>
         <line num="107" count="2" type="stmt"/>
         <line num="108" count="2" type="stmt"/>
-        <line num="109" count="2" type="stmt"/>
-        <line num="110" count="2" type="stmt"/>
+        <line num="109" count="68" type="stmt"/>
+        <line num="110" count="68" type="stmt"/>
         <line num="111" count="68" type="stmt"/>
         <line num="112" count="68" type="stmt"/>
         <line num="113" count="68" type="stmt"/>
@@ -1105,10 +1105,8 @@
         <line num="118" count="68" type="stmt"/>
         <line num="119" count="68" type="stmt"/>
         <line num="120" count="68" type="stmt"/>
-        <line num="121" count="68" type="stmt"/>
-        <line num="122" count="68" type="stmt"/>
-        <line num="123" count="1" type="stmt"/>
-        <line num="124" count="1" type="stmt"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="122" count="1" type="stmt"/>
       </file>
       <file name="EditBumbu.jsx" path="D:\Belajar Website\Project Base Learning\Dagingue\website-dagingue-mern\client\src\components\layouts\Admin\EditBumbu.jsx">
         <metrics statements="144" coveredstatements="144" conditionals="14" coveredconditionals="14" methods="5" coveredmethods="5"/>
@@ -1896,7 +1894,7 @@
       </file>
     </package>
     <package name="client.src.pages">
-      <metrics statements="301" coveredstatements="301" conditionals="21" coveredconditionals="21" methods="7" coveredmethods="7"/>
+      <metrics statements="294" coveredstatements="292" conditionals="22" coveredconditionals="21" methods="7" coveredmethods="7"/>
       <file name="adminPage.jsx" path="D:\Belajar Website\Project Base Learning\Dagingue\website-dagingue-mern\client\src\pages\adminPage.jsx">
         <metrics statements="38" coveredstatements="38" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -2117,7 +2115,7 @@
         <line num="28" count="1" type="stmt"/>
       </file>
       <file name="loginPage.jsx" path="D:\Belajar Website\Project Base Learning\Dagingue\website-dagingue-mern\client\src\pages\loginPage.jsx">
-        <metrics statements="91" coveredstatements="91" conditionals="16" coveredconditionals="16" methods="4" coveredmethods="4"/>
+        <metrics statements="84" coveredstatements="82" conditionals="17" coveredconditionals="16" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -2158,25 +2156,25 @@
         <line num="38" count="3" type="stmt"/>
         <line num="39" count="3" type="stmt"/>
         <line num="40" count="3" type="stmt"/>
-        <line num="41" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="42" count="4" type="stmt"/>
-        <line num="43" count="4" type="stmt"/>
-        <line num="44" count="7" type="stmt"/>
-        <line num="45" count="7" type="stmt"/>
-        <line num="46" count="8" type="stmt"/>
-        <line num="47" count="73" type="stmt"/>
-        <line num="48" count="73" type="cond" truecount="1" falsecount="0"/>
-        <line num="49" count="15" type="cond" truecount="2" falsecount="0"/>
-        <line num="50" count="4" type="stmt"/>
-        <line num="51" count="4" type="stmt"/>
-        <line num="52" count="73" type="stmt"/>
-        <line num="53" count="73" type="stmt"/>
-        <line num="54" count="73" type="cond" truecount="1" falsecount="0"/>
-        <line num="55" count="11" type="stmt"/>
+        <line num="41" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="45" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="46" count="4" type="stmt"/>
+        <line num="47" count="4" type="stmt"/>
+        <line num="48" count="7" type="stmt"/>
+        <line num="49" count="7" type="stmt"/>
+        <line num="50" count="8" type="stmt"/>
+        <line num="51" count="73" type="stmt"/>
+        <line num="52" count="73" type="cond" truecount="1" falsecount="0"/>
+        <line num="53" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="54" count="4" type="stmt"/>
+        <line num="55" count="4" type="stmt"/>
         <line num="56" count="73" type="stmt"/>
         <line num="57" count="73" type="stmt"/>
-        <line num="58" count="73" type="stmt"/>
-        <line num="59" count="73" type="stmt"/>
+        <line num="58" count="73" type="cond" truecount="1" falsecount="0"/>
+        <line num="59" count="11" type="stmt"/>
         <line num="60" count="73" type="stmt"/>
         <line num="61" count="73" type="stmt"/>
         <line num="62" count="73" type="stmt"/>
@@ -2188,27 +2186,20 @@
         <line num="68" count="73" type="stmt"/>
         <line num="69" count="73" type="stmt"/>
         <line num="70" count="73" type="stmt"/>
-        <line num="71" count="73" type="stmt"/>
+        <line num="71" count="73" type="cond" truecount="1" falsecount="0"/>
         <line num="72" count="73" type="cond" truecount="1" falsecount="0"/>
         <line num="73" count="73" type="stmt"/>
-        <line num="74" count="73" type="stmt"/>
-        <line num="75" count="73" type="stmt"/>
-        <line num="76" count="73" type="stmt"/>
-        <line num="77" count="73" type="stmt"/>
-        <line num="78" count="73" type="cond" truecount="1" falsecount="0"/>
+        <line num="74" count="73" type="cond" truecount="1" falsecount="0"/>
+        <line num="75" count="5" type="stmt"/>
+        <line num="76" count="5" type="stmt"/>
+        <line num="77" count="5" type="stmt"/>
+        <line num="78" count="73" type="stmt"/>
         <line num="79" count="73" type="stmt"/>
         <line num="80" count="73" type="stmt"/>
-        <line num="81" count="73" type="cond" truecount="1" falsecount="0"/>
-        <line num="82" count="5" type="stmt"/>
-        <line num="83" count="5" type="stmt"/>
-        <line num="84" count="5" type="stmt"/>
-        <line num="85" count="73" type="stmt"/>
-        <line num="86" count="73" type="stmt"/>
-        <line num="87" count="73" type="stmt"/>
-        <line num="88" count="73" type="stmt"/>
-        <line num="89" count="73" type="stmt"/>
-        <line num="90" count="1" type="stmt"/>
-        <line num="91" count="1" type="stmt"/>
+        <line num="81" count="73" type="stmt"/>
+        <line num="82" count="73" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
       </file>
     </package>
     <package name="client.src.routes">
@@ -2257,7 +2248,7 @@
       </file>
     </package>
     <package name="client.src.services">
-      <metrics statements="156" coveredstatements="148" conditionals="37" coveredconditionals="37" methods="15" coveredmethods="15"/>
+      <metrics statements="165" coveredstatements="157" conditionals="37" coveredconditionals="37" methods="15" coveredmethods="15"/>
       <file name="about-service.js" path="D:\Belajar Website\Project Base Learning\Dagingue\website-dagingue-mern\client\src\services\about-service.js">
         <metrics statements="46" coveredstatements="46" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
@@ -2308,33 +2299,42 @@
         <line num="46" count="1" type="stmt"/>
       </file>
       <file name="auth-service.js" path="D:\Belajar Website\Project Base Learning\Dagingue\website-dagingue-mern\client\src\services\auth-service.js">
-        <metrics statements="26" coveredstatements="24" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
+        <metrics statements="35" coveredstatements="33" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="5" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="6" count="3" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
         <line num="7" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="8" count="4" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
         <line num="9" count="7" type="stmt"/>
-        <line num="10" count="7" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="13" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <line num="10" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="3" type="stmt"/>
         <line num="17" count="3" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="21" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
+        <line num="18" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="26" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
       </file>
       <file name="bumbu-service.js" path="D:\Belajar Website\Project Base Learning\Dagingue\website-dagingue-mern\client\src\services\bumbu-service.js">
         <metrics statements="42" coveredstatements="39" conditionals="12" coveredconditionals="12" methods="5" coveredmethods="5"/>

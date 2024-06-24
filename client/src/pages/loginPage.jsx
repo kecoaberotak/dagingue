@@ -34,9 +34,13 @@ const LoginPage = () => {
       login(data, (res) => {
         if (res.status === 200) {
           getToken((res) => {
-            setLoginFailed(null);
-            setAdminInfo(res);
-            setLoginStatus(true);
+            if (res.status === 200) {
+              setLoginFailed(null);
+              setAdminInfo(res.data);
+              setLoginStatus(true);
+            } else if (res.status === 400) {
+              setLoginFailed(res.data.message);
+            }
           });
         } else if (res.status === 400) {
           setLoginFailed(res.data.message);
@@ -64,19 +68,8 @@ const LoginPage = () => {
 
       <form className="form-login" onSubmit={handleLogin}>
         <p>Login</p>
-        <input
-          type="text"
-          placeholder="Username"
-          name="username"
-          ref={usernameFocus}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <input type="text" placeholder="Username" name="username" ref={usernameFocus} onChange={(e) => setUsername(e.target.value)} />
+        <input type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
         <Button>Login</Button>
         {loginFailed && (
           <span className="login-failed" data-testid="login-failed-alert">
