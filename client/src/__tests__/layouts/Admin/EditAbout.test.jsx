@@ -19,6 +19,11 @@ describe("AboutContent", () => {
   window.alert = vi.fn();
   window.alert.mockClear();
 
+  it("error handling get about", () => {
+    server.use(...errorHandler);
+    renderComponent();
+  });
+
   it("should render EditAbout", async () => {
     const { container } = renderComponent();
 
@@ -95,7 +100,7 @@ describe("AboutContent", () => {
     await user.click(submitButton);
   });
 
-  it("errorhandling", async () => {
+  it("error handling edit about", async () => {
     server.use(...errorHandler);
 
     const user = userEvent.setup();

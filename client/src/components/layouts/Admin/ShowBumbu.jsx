@@ -6,12 +6,18 @@ import { IdBumbu } from "../../../contexts/IdBumbu";
 
 const ShowBumbu = () => {
   const [dataBumbu, setDataBumbu] = useState([]);
-  const {setDisplayStatus} = useContext(DisplayStatus);
-  const {setIdBumbu} = useContext(IdBumbu);
-  const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
+  const { setDisplayStatus } = useContext(DisplayStatus);
+  const { setIdBumbu } = useContext(IdBumbu);
+  const [reducerValue, forceUpdate] = useReducer((x) => x + 1, 0);
 
   useEffect(() => {
-    getBumbu(res => setDataBumbu(res.data));
+    getBumbu((res) => {
+      if (res.status === 200) {
+        setDataBumbu(res.data.data);
+      } else if (res.status === 400) {
+        alert(res.data.message);
+      }
+    });
   }, [reducerValue]);
 
   return (
@@ -25,36 +31,46 @@ const ShowBumbu = () => {
             <th scope="col">Aksi</th>
           </tr>
         </thead>
-          {dataBumbu.map(data => {
-            return(
-              <tbody key={data._id}>
-                <tr>
-                  <td>{data.title}</td>
-                  <td dangerouslySetInnerHTML={{__html:data.desc}}></td>
-                  <td>
-                    <div className="table-button">
-                      <Button classname="button-edit" onClick={() => {
-                        setDisplayStatus('edit')
+        {dataBumbu.map((data) => {
+          return (
+            <tbody key={data._id}>
+              <tr>
+                <td>{data.title}</td>
+                <td dangerouslySetInnerHTML={{ __html: data.desc }}></td>
+                <td>
+                  <div className="table-button">
+                    <Button
+                      classname="button-edit"
+                      onClick={() => {
+                        setDisplayStatus("edit");
                         setIdBumbu(data._id);
-                      }}>Edit</Button>
-                      <Button classname="button-delete" onClick={() => {
-                        deleteBumbu(data._id, res => {
+                      }}
+                    >
+                      Edit
+                    </Button>
+                    <Button
+                      classname="button-delete"
+                      onClick={() => {
+                        deleteBumbu(data._id, (res) => {
                           alert(res.data.message);
                           forceUpdate();
                         });
-                      }}>Hapus</Button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            )
-          })}
+                      }}
+                    >
+                      Hapus
+                    </Button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          );
+        })}
       </table>
       <div className="button-add">
-        <Button onClick={() => setDisplayStatus('add')}>Tambah</Button>
+        <Button onClick={() => setDisplayStatus("add")}>Tambah</Button>
       </div>
     </>
-  )
+  );
 };
 
 export default ShowBumbu;

@@ -8,5 +8,8 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: ["./src/__tests__/setup.js"],
+    coverage: {
+      exclude: ["src/main.jsx", "*.config.js", ".eslintrc.cjs"],
+    },
   },
 });

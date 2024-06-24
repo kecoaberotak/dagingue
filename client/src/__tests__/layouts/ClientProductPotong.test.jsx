@@ -1,21 +1,22 @@
-import {
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-  within,
-} from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
+import { describe, it, expect, vi } from "vitest";
 
 import { server } from "../mocks/server";
-import {
-  ProductPotong2Products,
-  ProductPotong1Product,
-} from "../mocks/handler";
+import { errorGetBumbuPotong } from "../mocks/handler";
+import { ProductPotong2Products, ProductPotong1Product } from "../mocks/handler";
 
 import ProductPotong from "../../components/layouts/ClientProductPotong";
 
+window.URL.createObjectURL = vi.fn();
+window.alert = vi.fn();
+window.alert.mockClear();
+
 describe("ProductPotong Component", () => {
+  it("error handling get potong", () => {
+    server.use(...errorGetBumbuPotong);
+    render(<ProductPotong />);
+  });
+
   it("should render heading and title", () => {
     render(<ProductPotong />);
 

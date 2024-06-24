@@ -18,6 +18,8 @@ const Navbar = () => {
         setAdminInfo("");
         setLoginStatus(false);
         navigate("/login");
+      } else if (res.status === 400) {
+        alert(res.data.message);
       }
     });
   };
