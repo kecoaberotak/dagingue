@@ -1,18 +1,19 @@
-import {
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-  within,
-} from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
+import { describe, it, expect, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
+
+import { server } from "../mocks/server";
+import { errorGetBumbuPotong } from "../mocks/handler";
 
 import ProductBumbu from "../../components/layouts/ClientProductBumbu";
 import DataBumbuProvider from "../../contexts/DataBumbu";
 import ImageSelectedContexProvider from "../../contexts/ImageSelected";
 import DescSelectedProvider from "../../contexts/DescSelected";
 import TitleSelectedProvider from "../../contexts/TitleSelected";
+
+window.URL.createObjectURL = vi.fn();
+window.alert = vi.fn();
+window.alert.mockClear();
 
 describe("ProductBumbu Component", () => {
   const renderComponent = () => {
@@ -33,6 +34,11 @@ describe("ProductBumbu Component", () => {
       subTitle: screen.getByText(/varian/i),
     };
   };
+
+  it("error handling get bumbu", () => {
+    server.use(...errorGetBumbuPotong);
+    renderComponent();
+  });
 
   //   GalleryInfo
   it("should render title and subtitle", () => {
@@ -117,9 +123,7 @@ describe("ProductBumbu Component", () => {
     const imageCover = container[0].querySelector(".cover");
     expect(imageCover).toHaveClass(/hidden/i);
 
-    const skeleton = within(container[0]).getByTestId(
-      "skeleton-gallery-item-image"
-    );
+    const skeleton = within(container[0]).getByTestId("skeleton-gallery-item-image");
     expect(skeleton).toBeInTheDocument();
   });
 
@@ -131,9 +135,7 @@ describe("ProductBumbu Component", () => {
     const image = within(itemImages[1]).getByRole("img");
     // const image2 = within(itemImages[0]).getByRole("img");
 
-    const imageCover = within(itemImages[1]).getByTestId(
-      "gallery-item-image-cover"
-    );
+    const imageCover = within(itemImages[1]).getByTestId("gallery-item-image-cover");
 
     // const imageCover2 = within(itemImages[0]).getByTestId(
     //   "gallery-item-image-cover"
@@ -156,13 +158,9 @@ describe("ProductBumbu Component", () => {
     const image = within(itemImages[0]).getByRole("img");
     const image2 = within(itemImages[1]).getByRole("img");
 
-    const imageCover = within(itemImages[0]).getByTestId(
-      "gallery-item-image-cover"
-    );
+    const imageCover = within(itemImages[0]).getByTestId("gallery-item-image-cover");
 
-    const imageCover2 = within(itemImages[1]).getByTestId(
-      "gallery-item-image-cover"
-    );
+    const imageCover2 = within(itemImages[1]).getByTestId("gallery-item-image-cover");
 
     fireEvent.load(image);
     await waitFor(() => expect(image).toHaveClass(/default/i));
