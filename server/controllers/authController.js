@@ -2,8 +2,7 @@ const asyncHandler = require("express-async-handler");
 
 // jwt
 const jwt = require("jsonwebtoken");
-const secret =
-  "IARZIMZEhm0l0qw3jLNqiFVuQkSrc1UqzKzmgob8cwF5v1NxQR962MzdAH5l6ay";
+const secret = "IARZIMZEhm0l0qw3jLNqiFVuQkSrc1UqzKzmgob8cwF5v1NxQR962MzdAH5l6ay";
 
 // models
 const AdminModel = require("../models/Admin");
@@ -14,7 +13,7 @@ const login = asyncHandler(async (req, res) => {
     httpOnly: true,
     expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
     sameSite: "none",
-    secure: true, // this was 'false' before. 'true' works.
+    secure: true,
   };
 
   const { username, password } = req.body;
@@ -25,10 +24,7 @@ const login = asyncHandler(async (req, res) => {
       // logged in
       jwt.sign({ username, id: adminDoc._id }, secret, {}, (err, token) => {
         if (err) throw err;
-        res
-          .cookie("token", token, cookieOptions)
-          .status(200)
-          .json({ message: "login success" });
+        res.cookie("token", token, cookieOptions).status(200).json({ message: "login success" });
       });
     } else {
       res.status(400);
