@@ -1,12 +1,7 @@
 const asyncHandler = require("express-async-handler");
 
 // firebase
-const {
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-} = require("firebase/storage");
+const { getStorage, ref, uploadBytes, getDownloadURL } = require("firebase/storage");
 const firebase = require("../firebase");
 const storage = getStorage(firebase);
 
@@ -36,7 +31,7 @@ const setBumbu = asyncHandler(async (req, res) => {
     throw new Error("Please add title");
   }
 
-  if (req.body.desc.replace(/<(.|\n)*?>/g, "").trim().length === 0) {
+  if (req.body.desc === "undefined" || req.body.desc.replace(/<(.|\n)*?>/g, "").trim().length === 0) {
     res.status(400);
     throw new Error("Please add description");
   }
@@ -102,16 +97,14 @@ const updateBumbu = asyncHandler(async (req, res) => {
 
     const imageRef = ref(storage, `bumbu/${originalname}`);
     await uploadBytes(imageRef, file.buffer).then(() => {
-      getDownloadURL(ref(storage, `bumbu/${originalname}`)).then(
-        async (url) => {
-          const { title, desc } = req.body;
-          await BumbuModel.findByIdAndUpdate(req.params.id, {
-            title,
-            desc,
-            file: url,
-          });
-        }
-      );
+      getDownloadURL(ref(storage, `bumbu/${originalname}`)).then(async (url) => {
+        const { title, desc } = req.body;
+        await BumbuModel.findByIdAndUpdate(req.params.id, {
+          title,
+          desc,
+          file: url,
+        });
+      });
     });
   };
 
