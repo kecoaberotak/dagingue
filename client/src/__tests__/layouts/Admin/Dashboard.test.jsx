@@ -99,6 +99,17 @@ describe("ProductBumbu -  ShowBumbu", () => {
 });
 
 describe("ProductBumbu - EditBumbu", () => {
+  it("errorhandling getDetailProductBumbu", async () => {
+    server.use(...errorGetDetailBumbu);
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkBumbu = screen.getByRole("link", { name: /bumbu/i });
+    await user.click(linkBumbu);
+
+    const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
+    await user.click(buttonsEdit[0]);
+  });
   it("should open EditBumbu component and success submit without user have to input any edited data", async () => {
     renderComponent();
     const user = userEvent.setup();

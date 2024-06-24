@@ -20,7 +20,11 @@ const EditBumbu = () => {
 
   useEffect(() => {
     getDetailBumbu(idBumbu, (res) => {
-      setInfoBumbu(res.data);
+      if (res.status === 200) {
+        setInfoBumbu(res.data);
+      } else if (res.status === 400) {
+        alert(res.message);
+      }
     });
   }, [idBumbu]);
 
@@ -35,33 +39,10 @@ const EditBumbu = () => {
   }, [infoBumbu]);
 
   const modules = {
-    toolbar: [
-      [{ header: [1, 2, false] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" },
-      ],
-      ["link", "image"],
-      ["clean"],
-    ],
+    toolbar: [[{ header: [1, 2, false] }], ["bold", "italic", "underline", "strike", "blockquote"], [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }], ["link", "image"], ["clean"]],
   };
 
-  const formats = [
-    "header",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "image",
-  ];
+  const formats = ["header", "bold", "italic", "underline", "strike", "blockquote", "list", "bullet", "indent", "link", "image"];
 
   const editBumbu = (e) => {
     e.preventDefault();
@@ -91,23 +72,11 @@ const EditBumbu = () => {
       <h1 className="form-title">Edit Bumbu</h1>
       <form className="form-content" onSubmit={editBumbu}>
         <label htmlFor="nama-bumbu">Nama Bumbu</label>
-        <input
-          data-testid="input-nama"
-          type="title"
-          placeholder="Nama bumbu"
-          value={title}
-          name="nama-bumbu"
-          className="input-info-produk"
-          onChange={(e) => setTitle(e.target.value)}
-        />
+        <input data-testid="input-nama" type="title" placeholder="Nama bumbu" value={title} name="nama-bumbu" className="input-info-produk" onChange={(e) => setTitle(e.target.value)} />
         <label htmlFor="gambar-bumbu">
           <p>Gambar bumbu</p>
         </label>
-        <img
-          src={`${srcPreview}`}
-          alt="Gambar Bumbu"
-          className="gambar-bumbu"
-        />
+        <img src={`${srcPreview}`} alt="Gambar Bumbu" className="gambar-bumbu" />
         <input
           data-testid="input-gambar"
           type="file"
@@ -120,14 +89,7 @@ const EditBumbu = () => {
           }}
         />
         <label htmlFor="penjelasan-bumbu">Penjelasan Bumbu</label>
-        <ReactQuill
-          theme="snow"
-          value={desc}
-          onChange={setDesc}
-          modules={modules}
-          formats={formats}
-          name="penjelasan-bumbu"
-        />
+        <ReactQuill theme="snow" value={desc} onChange={setDesc} modules={modules} formats={formats} name="penjelasan-bumbu" />
         <div className="form-button">
           <Button>Submit</Button>
           <div className="button-cancel">
