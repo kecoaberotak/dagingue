@@ -232,10 +232,6 @@ export const handler = [
 ];
 
 export const errorHandler = [
-  // logout
-  http.post(apiUrl + "/auth/logout", () => {
-    return HttpResponse.json({ message: "failed logout" }, { status: 400 });
-  }),
   // token
   http.get(apiUrl + "/auth/login", () => {
     return HttpResponse.json({ message: "failed get token" }, { status: 400 });
@@ -267,6 +263,13 @@ export const errorHandler = [
   // edit potong
   http.put(apiUrl + "/api/potong/:id", async () => {
     return HttpResponse.json({ message: "failed edit success" }, { status: 400 });
+  }),
+];
+
+export const errorLogout = [
+  // logout
+  http.post(apiUrl + "/auth/logout", () => {
+    return HttpResponse.json({ message: "failed logout" }, { status: 400 });
   }),
 ];
 
