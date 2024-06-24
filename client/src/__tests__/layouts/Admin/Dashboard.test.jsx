@@ -8,7 +8,7 @@ import DisplayStatusProvider from "../../../contexts/DisplayStatus";
 import AdminPanel from "../../../components/layouts/Admin/Dashboard";
 import { BrowserRouter } from "react-router-dom";
 import { server } from "../../mocks/server";
-import { errorHandler, errorGetBumbu, errorGetDetailBumbu } from "../../mocks/handler";
+import { errorHandler, errorGetBumbuPotong, errorGetDetailBumbuPotong } from "../../mocks/handler";
 
 const renderComponent = () =>
   render(
@@ -87,7 +87,7 @@ describe("ProductBumbu -  ShowBumbu", () => {
     });
     await user.click(buttonsHapus[0]);
   });
-  it("should delete bumbu when user click Hapus button", async () => {
+  it("error handling delete bumbu", async () => {
     server.use(...errorHandler);
     renderComponent();
     const user = userEvent.setup();
@@ -102,7 +102,7 @@ describe("ProductBumbu -  ShowBumbu", () => {
   });
 
   it("error handling getBumbu", async () => {
-    server.use(...errorGetBumbu);
+    server.use(...errorGetBumbuPotong);
     renderComponent();
     const user = userEvent.setup();
 
@@ -113,7 +113,7 @@ describe("ProductBumbu -  ShowBumbu", () => {
 
 describe("ProductBumbu - EditBumbu", () => {
   it("errorhandling getDetailProductBumbu", async () => {
-    server.use(...errorGetDetailBumbu);
+    server.use(...errorGetDetailBumbuPotong);
     renderComponent();
     const user = userEvent.setup();
 
@@ -259,7 +259,7 @@ describe("ProductBumbu - AddBumbu", () => {
 
 // Testing ProductPotong
 describe("ProductPotong -  ShowPotong", () => {
-  it("should delete bumbu when user click Hapus button", async () => {
+  it("should delete potong when user click Hapus button", async () => {
     renderComponent();
     const user = userEvent.setup();
 
@@ -270,6 +270,29 @@ describe("ProductPotong -  ShowPotong", () => {
       name: /hapus/i,
     });
     await user.click(buttonsHapus[0]);
+  });
+
+  it("error handling delete potong", async () => {
+    server.use(...errorHandler);
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkPotong = screen.getByRole("link", { name: /potong/i });
+    await user.click(linkPotong);
+
+    const buttonsHapus = await screen.findAllByRole("button", {
+      name: /hapus/i,
+    });
+    await user.click(buttonsHapus[0]);
+  });
+
+  it("error handling getPotong", async () => {
+    server.use(...errorGetBumbuPotong);
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkPotong = screen.getByRole("link", { name: /potong/i });
+    await user.click(linkPotong);
   });
 });
 
@@ -338,6 +361,18 @@ describe("ProductPotong -  AddPotong", () => {
 });
 
 describe("ProductPotong - EditPotong", () => {
+  it("errorhandling getDetailProductPotong", async () => {
+    server.use(...errorGetDetailBumbuPotong);
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkPotong = screen.getByRole("link", { name: /potong/i });
+    await user.click(linkPotong);
+
+    const buttonsEdit = await screen.findAllByRole("button", { name: /edit/i });
+    await user.click(buttonsEdit[0]);
+  });
+
   it("should open EditPotong component and success submit without user have to input any edited data", async () => {
     renderComponent();
     const user = userEvent.setup();

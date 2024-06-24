@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">95.83% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>44/44</span>
+                <span class='fraction'>46/48</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">90.9% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>10/11</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">95.83% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>44/44</span>
+                <span class='fraction'>46/48</span>
             </div>
         
             
@@ -106,7 +106,12 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -117,6 +122,12 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
@@ -135,8 +146,6 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">7x</span>
@@ -149,7 +158,8 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import Title from "../elements/Title";
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Title from "../elements/Title";
 import Card from "../fragments/Card";
 import { getPotong } from "../../services/potong-service";
 import { useEffect, useState } from "react";
@@ -157,49 +167,54 @@ import PotongSkeleton from "./Skeleton/PotongSkeleton";
 &nbsp;
 const ProductPotong = () =&gt; {
   const [data, setData] = useState();
-  let classname = '';
-  
+  let classname = "";
+&nbsp;
   useEffect(() =&gt; {
-    getPotong(res =&gt; setData(res.data));
+    getPotong((res) =&gt; {
+      if (res.status === 200) {
+        setData(res.data.data);
+<span class="branch-0 cbranch-no" title="branch not covered" >      } else if (res.status === 400) {</span>
+<span class="cstat-no" title="statement not covered" >        alert(res.data.message);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+    });
   }, []);
 &nbsp;
-  if(data) {
-    if(data.length &gt; 2){
-      classname = "cards-product-3"
-    }else if(data.length &lt; 2){
-      classname = "cards-product-1"
-    }else classname = "cards-product-2"
+  if (data) {
+    if (data.length &gt; 2) {
+      classname = "cards-product-3";
+    } else if (data.length &lt; 2) {
+      classname = "cards-product-1";
+    } else classname = "cards-product-2";
   }
 &nbsp;
-  return(
+  return (
     &lt;div className="product-potong"&gt;
-      &lt;Title classname='title-section potong' title='Produk' subTitle='Jenis Potongan' /&gt;
-      {data ? 
+      &lt;Title classname="title-section potong" title="Produk" subTitle="Jenis Potongan" /&gt;
+      {data ? (
         &lt;section className={classname}&gt;
-        {data.map(potong =&gt; {
-          return (
-            &lt;Card key={potong._id} tipe={potong.title} berat={potong.desc} image={potong.file} /&gt;
-          )
-        })}
+          {data.map((potong) =&gt; {
+            return &lt;Card key={potong._id} tipe={potong.title} berat={potong.desc} image={potong.file} /&gt;;
+          })}
         &lt;/section&gt;
-      :
+      ) : (
         &lt;section className="cards-product-2"&gt;
           &lt;PotongSkeleton /&gt;
           &lt;PotongSkeleton /&gt;
         &lt;/section&gt;
-      }
+      )}
     &lt;/div&gt;
   );
 };
 &nbsp;
-export default ProductPotong;</pre></td></tr></table></pre>
+export default ProductPotong;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-24T09:06:22.015Z
+                at 2024-06-24T09:55:15.988Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

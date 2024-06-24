@@ -2,10 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Button from "../../elements/Button";
 import { DisplayStatus } from "../../../contexts/DisplayStatus";
 import { IdPotong } from "../../../contexts/IdPotong";
-import {
-  getDetailPotong,
-  putPotong,
-} from "../../../services/potong-service.js";
+import { getDetailPotong, putPotong } from "../../../services/potong-service.js";
 
 const EditPotong = () => {
   const { setDisplayStatus } = useContext(DisplayStatus);
@@ -21,7 +18,11 @@ const EditPotong = () => {
 
   useEffect(() => {
     getDetailPotong(idPotong, (res) => {
-      setInfoPotong(res.data);
+      if (res.status === 200) {
+        setInfoPotong(res.data);
+      } else if (res.status === 400) {
+        alert(res.message);
+      }
     });
   }, [idPotong]);
 
@@ -63,34 +64,14 @@ const EditPotong = () => {
       <h1>Edit Jenis Potongan</h1>
       <form className="form-content" onSubmit={editPotong}>
         <label htmlFor="jenis-potong">Jenis Potongan</label>
-        <input
-          data-testid="input-jenis"
-          type="title"
-          placeholder="Jenis Potongan"
-          value={title}
-          name="jenis-potong"
-          className="input-info-produk"
-          onChange={(e) => setTitle(e.target.value)}
-        />
+        <input data-testid="input-jenis" type="title" placeholder="Jenis Potongan" value={title} name="jenis-potong" className="input-info-produk" onChange={(e) => setTitle(e.target.value)} />
         <label htmlFor="desc-potong">Penjelasan Jenis Potongan</label>
-        <input
-          data-testid="input-desc"
-          type="title"
-          placeholder="Penjelasan jenis potongan"
-          value={desc}
-          name="desc-potong"
-          className="input-info-produk"
-          onChange={(e) => setDesc(e.target.value)}
-        />
+        <input data-testid="input-desc" type="title" placeholder="Penjelasan jenis potongan" value={desc} name="desc-potong" className="input-info-produk" onChange={(e) => setDesc(e.target.value)} />
         <label htmlFor="gambar-potong">
           <p>Upload gambar jenis potongan</p>
         </label>
         <div className={srcPreview ? "" : "hidden"}>
-          <img
-            src={`${srcPreview}`}
-            alt="Gambar Potong"
-            className="gambar-Potong"
-          />
+          <img src={`${srcPreview}`} alt="Gambar Potong" className="gambar-Potong" />
         </div>
         <input
           data-testid="input-gambar"
