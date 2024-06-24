@@ -252,7 +252,12 @@ export const errorHandler = [
 
   // edit bumbu
   http.put(apiUrl + "/api/bumbu/:id", async () => {
-    return HttpResponse.json({ message: "failed edit success" }, { status: 400 });
+    return HttpResponse.json({ message: "failed edit data" }, { status: 400 });
+  }),
+
+  // delete bumbu
+  http.delete(apiUrl + "/api/bumbu/:id", () => {
+    return HttpResponse.json({ message: "failed delete data" }, { status: 400 });
   }),
 
   // add potong
@@ -270,6 +275,20 @@ export const errorLogout = [
   // logout
   http.post(apiUrl + "/auth/logout", () => {
     return HttpResponse.json({ message: "failed logout" }, { status: 400 });
+  }),
+];
+
+export const errorGetBumbu = [
+  // get bumbu
+  http.get(apiUrl + "/api/bumbu", () => {
+    return HttpResponse.json({ message: "data not found" }, { status: 400 });
+  }),
+];
+
+export const errorGetDetailBumbu = [
+  // get detail bumbu
+  http.get(apiUrl + "/api/bumbu/:id", () => {
+    return HttpResponse.json({ message: "data not found" }, { status: 400 });
   }),
 ];
 

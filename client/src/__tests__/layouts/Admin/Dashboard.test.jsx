@@ -8,7 +8,7 @@ import DisplayStatusProvider from "../../../contexts/DisplayStatus";
 import AdminPanel from "../../../components/layouts/Admin/Dashboard";
 import { BrowserRouter } from "react-router-dom";
 import { server } from "../../mocks/server";
-import { errorHandler } from "../../mocks/handler";
+import { errorHandler, errorGetBumbu, errorGetDetailBumbu } from "../../mocks/handler";
 
 const renderComponent = () =>
   render(
@@ -87,6 +87,15 @@ describe("ProductBumbu -  ShowBumbu", () => {
     });
     await user.click(buttonsHapus[0]);
   });
+
+  it("error handling getBumbu", async () => {
+    server.use(...errorGetBumbu);
+    renderComponent();
+    const user = userEvent.setup();
+
+    const linkBumbu = screen.getByRole("link", { name: /bumbu/i });
+    await user.click(linkBumbu);
+  });
 });
 
 describe("ProductBumbu - EditBumbu", () => {
@@ -132,7 +141,7 @@ describe("ProductBumbu - EditBumbu", () => {
     await user.click(buttonSubmit);
   });
 
-  it("error handlng", async () => {
+  it("error handling edit bumbu", async () => {
     server.use(...errorHandler);
     renderComponent();
     const user = userEvent.setup();
@@ -194,7 +203,7 @@ describe("ProductBumbu - AddBumbu", () => {
     await user.click(buttonSubmit);
   });
 
-  it("error handling", async () => {
+  it("error handling add bumbu", async () => {
     server.use(...errorHandler);
     renderComponent();
     const user = userEvent.setup();
@@ -274,7 +283,7 @@ describe("ProductPotong -  AddPotong", () => {
     await user.click(buttonSubmit);
   });
 
-  it("error handling", async () => {
+  it("error handling add potong", async () => {
     server.use(...errorHandler);
     renderComponent();
     const user = userEvent.setup();
@@ -354,7 +363,7 @@ describe("ProductPotong - EditPotong", () => {
     await user.click(buttonSubmit);
   });
 
-  it("error handlng", async () => {
+  it("error handling edit potong", async () => {
     server.use(...errorHandler);
     renderComponent();
     const user = userEvent.setup();
