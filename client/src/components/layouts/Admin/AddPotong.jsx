@@ -33,34 +33,14 @@ const AddPotong = () => {
       <h1 className="form-title">Tambah Jenis Potongan</h1>
       <form className="form-content" onSubmit={addNewPotong}>
         <label htmlFor="jenis-potong">Jenis Potongan</label>
-        <input
-          data-testid="input-jenis"
-          type="title"
-          placeholder="Jenis Potongan"
-          value={title}
-          name="jenis-potong"
-          className="input-info-produk"
-          onChange={(e) => setTitle(e.target.value)}
-        />
+        <input data-testid="input-jenis" type="title" placeholder="Jenis Potongan" value={title} name="jenis-potong" className="input-info-produk" onChange={(e) => setTitle(e.target.value)} />
         <label htmlFor="desc-potong">Penjelasan Jenis Potongan</label>
-        <input
-          data-testid="input-desc"
-          type="title"
-          placeholder="Penjelasan jenis potongan"
-          value={desc}
-          name="desc-potong"
-          className="input-info-produk"
-          onChange={(e) => setDesc(e.target.value)}
-        />
+        <input data-testid="input-desc" type="title" placeholder="Penjelasan jenis potongan" value={desc} name="desc-potong" className="input-info-produk" onChange={(e) => setDesc(e.target.value)} />
         <label htmlFor="gambar-potong">
           <p>Upload gambar jenis potongan</p>
         </label>
         <div className={srcPreview ? "" : "hidden"}>
-          <img
-            src={`${srcPreview}`}
-            alt="Gambar Potong"
-            className="gambar-Potong"
-          />
+          <img src={`${srcPreview}`} alt="Gambar Potong" className="gambar-Potong" />
         </div>
         <input
           data-testid="input-gambar"

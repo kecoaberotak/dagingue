@@ -1,12 +1,7 @@
 const asyncHandler = require("express-async-handler");
 
 // firebase
-const {
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-} = require("firebase/storage");
+const { getStorage, ref, uploadBytes, getDownloadURL } = require("firebase/storage");
 const firebase = require("../firebase");
 const storage = getStorage(firebase);
 
@@ -36,7 +31,7 @@ const setPotong = asyncHandler(async (req, res) => {
     throw new Error("Please add title");
   }
 
-  if (req.body.desc.replace(/<(.|\n)*?>/g, "").trim().length === 0) {
+  if (!req.body.desc) {
     res.status(400);
     throw new Error("Please add description");
   }
@@ -83,7 +78,7 @@ const updatePotong = asyncHandler(async (req, res) => {
     throw new Error("Please add title");
   }
 
-  if (req.body.desc.replace(/<(.|\n)*?>/g, "").trim().length === 0) {
+  if (!req.body.desc) {
     res.status(400);
     throw new Error("Please add description");
   }
@@ -103,16 +98,14 @@ const updatePotong = asyncHandler(async (req, res) => {
 
     const imageRef = ref(storage, `potong/${originalname}`);
     await uploadBytes(imageRef, file.buffer).then(() => {
-      getDownloadURL(ref(storage, `potong/${originalname}`)).then(
-        async (url) => {
-          const { title, desc } = req.body;
-          await PotongModel.findByIdAndUpdate(req.params.id, {
-            title,
-            desc,
-            file: url,
-          });
-        }
-      );
+      getDownloadURL(ref(storage, `potong/${originalname}`)).then(async (url) => {
+        const { title, desc } = req.body;
+        await PotongModel.findByIdAndUpdate(req.params.id, {
+          title,
+          desc,
+          file: url,
+        });
+      });
     });
   };
 
