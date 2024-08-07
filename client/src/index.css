@@ -47,10 +47,7 @@
 
 /* ============ Header ============*/
 .header {
-  background-image: image-set(
-    url("/hero-image.avif") type("image/avif"),
-    url("/hero-image.jpg") type("image/jpeg")
-  );
+  background-image: image-set(url("/hero-image.avif") type("image/avif"), url("/hero-image.jpg") type("image/jpeg"));
 }
 
 @layer components {
@@ -131,10 +128,7 @@
 
   /* ====== POTONG ====== */
   .product-potong {
-    background-image: image-set(
-      url("/background.avif") type("image/avif"),
-      url("/background.png") type("image/png")
-    );
+    background-image: image-set(url("/background.avif") type("image/avif"), url("/background.png") type("image/png"));
   }
 
   .product-potong {
@@ -250,10 +244,7 @@
 
   /* ================ Footer - Banner ================== */
   .footer-banner {
-    background-image: image-set(
-      url("/bg-banner-footer.avif") type("image/avif"),
-      url("/bg-banner-footer.jpg") type("image/jpeg")
-    );
+    background-image: image-set(url("/bg-banner-footer.avif") type("image/avif"), url("/bg-banner-footer.jpg") type("image/jpeg"));
   }
 
   .footer-banner {
@@ -261,7 +252,7 @@
   }
 
   .banner-info {
-    @apply ml-[2rem] md:ml-[5rem] lg:ml-[6rem] xl:ml-[7.6rem];
+    @apply ml-[2rem] md:ml-[5rem] lg:ml-[6rem] xl:ml-[12rem];
   }
 
   .banner-info h3 {
@@ -274,10 +265,7 @@
 
   /* ================ Footer - Contact ================== */
   .footer-contact {
-    background-image: image-set(
-      url("/bg-footer.avif") type("image/avif"),
-      url("/bg-footer.jpg") type("image/jpeg")
-    );
+    background-image: image-set(url("/bg-footer.avif") type("image/avif"), url("/bg-footer.jpg") type("image/jpeg"));
   }
 
   .footer-contact {
