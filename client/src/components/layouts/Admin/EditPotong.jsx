@@ -71,7 +71,7 @@ const EditPotong = () => {
           <p>Upload gambar jenis potongan</p>
         </label>
         <div className={srcPreview ? "" : "hidden"}>
-          <img src={`${srcPreview}`} alt="Gambar Potong" className="gambar-Potong" />
+          <img src={`${srcPreview}`} alt="Gambar Potong" className="gambar-potong" />
         </div>
         <input
           data-testid="input-gambar"
