@@ -68,7 +68,7 @@ const EditPotong = () => {
         <label htmlFor="desc-potong">Penjelasan Jenis Potongan</label>
         <input data-testid="input-desc" type="title" placeholder="Penjelasan jenis potongan" value={desc} name="desc-potong" className="input-info-produk" onChange={(e) => setDesc(e.target.value)} />
         <label htmlFor="gambar-potong">
-          <p>Upload gambar jenis potongan</p>
+          <p>Gambar jenis potongan</p>
         </label>
         <div className={srcPreview ? "" : "hidden"}>
           <img src={`${srcPreview}`} alt="Gambar Potong" className="gambar-potong" />
